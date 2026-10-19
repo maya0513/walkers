@@ -1,0 +1,9 @@
+.godot/
+*.blend1
+__pycache__/
+.cache/
+dist/
+reports/captures/
+*.log
+
+previews/.frames/

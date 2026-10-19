@@ -1,0 +1,96 @@
+{
+  "animations": {
+    "Idle": {
+      "loop": true,
+      "position_gap_m": 0.0,
+      "rotation_gap_degrees": 0.0,
+      "max_sample_step_seconds": 0.0
+    },
+    "Walk": {
+      "loop": true,
+      "position_gap_m": 0.0,
+      "rotation_gap_degrees": 0.0,
+      "max_sample_step_seconds": 0.016666710376739502
+    },
+    "Jog": {
+      "loop": true,
+      "position_gap_m": 0.0,
+      "rotation_gap_degrees": 0.0,
+      "max_sample_step_seconds": 0.016666710376739502
+    },
+    "StartWalkL": {
+      "loop": false,
+      "position_gap_m": 0.0,
+      "rotation_gap_degrees": 0.0,
+      "max_sample_step_seconds": 0.016666710376739502
+    },
+    "StopWalkL": {
+      "loop": false,
+      "position_gap_m": 0.0,
+      "rotation_gap_degrees": 0.0,
+      "max_sample_step_seconds": 0.016666680574417114
+    },
+    "StartWalkR": {
+      "loop": false,
+      "position_gap_m": 0.0,
+      "rotation_gap_degrees": 0.0,
+      "max_sample_step_seconds": 0.016666710376739502
+    },
+    "StopWalkR": {
+      "loop": false,
+      "position_gap_m": 0.0,
+      "rotation_gap_degrees": 0.0,
+      "max_sample_step_seconds": 0.016666680574417114
+    },
+    "StartJogL": {
+      "loop": false,
+      "position_gap_m": 0.0,
+      "rotation_gap_degrees": 0.0,
+      "max_sample_step_seconds": 0.016666680574417114
+    },
+    "StopJogL": {
+      "loop": false,
+      "position_gap_m": 0.0,
+      "rotation_gap_degrees": 0.0,
+      "max_sample_step_seconds": 0.016666710376739502
+    },
+    "StartJogR": {
+      "loop": false,
+      "position_gap_m": 0.0,
+      "rotation_gap_degrees": 0.0,
+      "max_sample_step_seconds": 0.016666680574417114
+    },
+    "StopJogR": {
+      "loop": false,
+      "position_gap_m": 0.0,
+      "rotation_gap_degrees": 0.0,
+      "max_sample_step_seconds": 0.016666710376739502
+    },
+    "Turn90L": {
+      "loop": false,
+      "position_gap_m": 0.0,
+      "rotation_gap_degrees": 0.0,
+      "max_sample_step_seconds": 0.016666680574417114
+    },
+    "Turn90R": {
+      "loop": false,
+      "position_gap_m": 0.0,
+      "rotation_gap_degrees": 0.0,
+      "max_sample_step_seconds": 0.016666680574417114
+    },
+    "Turn180L": {
+      "loop": false,
+      "position_gap_m": 0.0,
+      "rotation_gap_degrees": 0.0,
+      "max_sample_step_seconds": 0.016666680574417114
+    },
+    "Turn180R": {
+      "loop": false,
+      "position_gap_m": 0.0,
+      "rotation_gap_degrees": 0.0,
+      "max_sample_step_seconds": 0.016666680574417114
+    }
+  },
+  "asset_hashes_verified": 12,
+  "failures": []
+}

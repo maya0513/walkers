@@ -1,0 +1,385 @@
+{
+  "pose_divisions": 32,
+  "poses_per_strip": 33,
+  "decoded_pose_strips": 45,
+  "decoded_gif_frames": 1264,
+  "gifs": {
+    "Idle_front.gif": {
+      "frames": 1,
+      "duration_ms": 3200,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Idle_side.gif": {
+      "frames": 1,
+      "duration_ms": 3200,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Idle_three_quarter.gif": {
+      "frames": 1,
+      "duration_ms": 3200,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Jog_front.gif": {
+      "frames": 18,
+      "duration_ms": 720,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Jog_side.gif": {
+      "frames": 18,
+      "duration_ms": 720,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Jog_three_quarter.gif": {
+      "frames": 18,
+      "duration_ms": 720,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Runtime.gif": {
+      "frames": 487,
+      "duration_ms": 20320,
+      "size": [
+        768,
+        480
+      ]
+    },
+    "Runtime_slow.gif": {
+      "frames": 141,
+      "duration_ms": 14320,
+      "size": [
+        768,
+        480
+      ]
+    },
+    "StartJogL_front.gif": {
+      "frames": 14,
+      "duration_ms": 840,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StartJogL_side.gif": {
+      "frames": 14,
+      "duration_ms": 840,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StartJogL_three_quarter.gif": {
+      "frames": 14,
+      "duration_ms": 840,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StartJogR_front.gif": {
+      "frames": 14,
+      "duration_ms": 840,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StartJogR_side.gif": {
+      "frames": 14,
+      "duration_ms": 840,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StartJogR_three_quarter.gif": {
+      "frames": 14,
+      "duration_ms": 840,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StartWalkL_front.gif": {
+      "frames": 16,
+      "duration_ms": 920,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StartWalkL_side.gif": {
+      "frames": 16,
+      "duration_ms": 920,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StartWalkL_three_quarter.gif": {
+      "frames": 16,
+      "duration_ms": 920,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StartWalkR_front.gif": {
+      "frames": 16,
+      "duration_ms": 920,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StartWalkR_side.gif": {
+      "frames": 16,
+      "duration_ms": 920,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StartWalkR_three_quarter.gif": {
+      "frames": 16,
+      "duration_ms": 920,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StopJogL_front.gif": {
+      "frames": 17,
+      "duration_ms": 960,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StopJogL_side.gif": {
+      "frames": 17,
+      "duration_ms": 960,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StopJogL_three_quarter.gif": {
+      "frames": 17,
+      "duration_ms": 960,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StopJogR_front.gif": {
+      "frames": 17,
+      "duration_ms": 960,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StopJogR_side.gif": {
+      "frames": 17,
+      "duration_ms": 960,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StopJogR_three_quarter.gif": {
+      "frames": 17,
+      "duration_ms": 960,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StopWalkL_front.gif": {
+      "frames": 14,
+      "duration_ms": 840,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StopWalkL_side.gif": {
+      "frames": 14,
+      "duration_ms": 840,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StopWalkL_three_quarter.gif": {
+      "frames": 14,
+      "duration_ms": 840,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StopWalkR_front.gif": {
+      "frames": 14,
+      "duration_ms": 840,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StopWalkR_side.gif": {
+      "frames": 14,
+      "duration_ms": 840,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "StopWalkR_three_quarter.gif": {
+      "frames": 14,
+      "duration_ms": 840,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Turn180L_front.gif": {
+      "frames": 14,
+      "duration_ms": 840,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Turn180L_side.gif": {
+      "frames": 14,
+      "duration_ms": 840,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Turn180L_three_quarter.gif": {
+      "frames": 14,
+      "duration_ms": 840,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Turn180R_front.gif": {
+      "frames": 14,
+      "duration_ms": 840,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Turn180R_side.gif": {
+      "frames": 14,
+      "duration_ms": 840,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Turn180R_three_quarter.gif": {
+      "frames": 14,
+      "duration_ms": 840,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Turn90L_front.gif": {
+      "frames": 10,
+      "duration_ms": 680,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Turn90L_side.gif": {
+      "frames": 10,
+      "duration_ms": 680,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Turn90L_three_quarter.gif": {
+      "frames": 10,
+      "duration_ms": 680,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Turn90R_front.gif": {
+      "frames": 10,
+      "duration_ms": 680,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Turn90R_side.gif": {
+      "frames": 10,
+      "duration_ms": 680,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Turn90R_three_quarter.gif": {
+      "frames": 10,
+      "duration_ms": 680,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Walk_front.gif": {
+      "frames": 23,
+      "duration_ms": 920,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Walk_side.gif": {
+      "frames": 23,
+      "duration_ms": 920,
+      "size": [
+        320,
+        400
+      ]
+    },
+    "Walk_three_quarter.gif": {
+      "frames": 23,
+      "duration_ms": 920,
+      "size": [
+        320,
+        400
+      ]
+    }
+  },
+  "failures": []
+}

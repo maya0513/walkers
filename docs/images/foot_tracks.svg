@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="350" viewBox="0 0 1120 350" role="img" aria-labelledby="title desc">
+  <title id="title">歩行とジョギングの足の通り道</title>
+  <desc id="desc">上から見た左右二本の近い通り道。今回のモデルでは歩行は足の中心間10センチ、ジョギングは4センチ。足は交差しない。数値は人体の理想値ではない。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#555"/></marker>
+    <g id="foot"><path d="M-12 24C-17 16-14 2-13-9C-12-20-7-27 0-27C9-27 15-18 14-7L12 17C11 27-4 31-12 24Z"/></g>
+  </defs>
+  <rect width="1120" height="350" fill="white"/>
+  <g font-family="sans-serif" fill="#222">
+    <text x="44" y="38" font-size="23">足の通り道（上から見た模式図）</text>
+    <text x="44" y="65" font-size="15" fill="#666">左右の足の中心間の距離。数値は今回のモデルの表現設定で、人体の理想値ではありません。</text>
+    <text x="44" y="131" font-size="20">歩行</text><text x="44" y="157" font-size="16">約10cm</text>
+    <text x="44" y="247" font-size="20">ジョギング</text><text x="44" y="273" font-size="16">約4cm</text>
+    <text x="886" y="111" font-size="15">進行方向</text>
+  </g>
+  <g stroke="#d2d2d2" stroke-dasharray="5 6" stroke-width="1.5">
+    <path d="M210 118H1000M210 174H1000M210 249H1000M210 273H1000"/>
+  </g>
+  <g fill="#555"><use href="#foot" transform="translate(260 118) rotate(90)"/><use href="#foot" transform="translate(500 118) rotate(90)"/><use href="#foot" transform="translate(740 118) rotate(90)"/><use href="#foot" transform="translate(260 249) rotate(90)"/><use href="#foot" transform="translate(500 249) rotate(90)"/><use href="#foot" transform="translate(740 249) rotate(90)"/></g>
+  <g fill="#a0a0a0"><use href="#foot" transform="translate(380 174) rotate(90)"/><use href="#foot" transform="translate(620 174) rotate(90)"/><use href="#foot" transform="translate(860 174) rotate(90)"/><use href="#foot" transform="translate(380 273) rotate(90)"/><use href="#foot" transform="translate(620 273) rotate(90)"/><use href="#foot" transform="translate(860 273) rotate(90)"/></g>
+  <path d="M901 125H1000" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <g font-family="sans-serif" font-size="14" fill="#666"><text x="238" y="96">左</text><text x="358" y="209">右</text><text x="236" y="323">足を左右へ大きく開かず、反対側へ踏み越えない。</text></g>
+</svg>

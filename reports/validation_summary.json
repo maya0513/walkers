@@ -1,0 +1,3265 @@
+{
+  "status": "pass",
+  "godot": "4.7.2",
+  "blender": "5.2.2",
+  "render_rates": [
+    30,
+    60,
+    120
+  ],
+  "physics_rate": 60,
+  "assets": {
+    "animations": {
+      "Idle": {
+        "loop": true,
+        "position_gap_m": 0.0,
+        "rotation_gap_degrees": 0.0,
+        "max_sample_step_seconds": 0.0
+      },
+      "Walk": {
+        "loop": true,
+        "position_gap_m": 0.0,
+        "rotation_gap_degrees": 0.0,
+        "max_sample_step_seconds": 0.016666710376739502
+      },
+      "Jog": {
+        "loop": true,
+        "position_gap_m": 0.0,
+        "rotation_gap_degrees": 0.0,
+        "max_sample_step_seconds": 0.016666710376739502
+      },
+      "StartWalkL": {
+        "loop": false,
+        "position_gap_m": 0.0,
+        "rotation_gap_degrees": 0.0,
+        "max_sample_step_seconds": 0.016666710376739502
+      },
+      "StopWalkL": {
+        "loop": false,
+        "position_gap_m": 0.0,
+        "rotation_gap_degrees": 0.0,
+        "max_sample_step_seconds": 0.016666680574417114
+      },
+      "StartWalkR": {
+        "loop": false,
+        "position_gap_m": 0.0,
+        "rotation_gap_degrees": 0.0,
+        "max_sample_step_seconds": 0.016666710376739502
+      },
+      "StopWalkR": {
+        "loop": false,
+        "position_gap_m": 0.0,
+        "rotation_gap_degrees": 0.0,
+        "max_sample_step_seconds": 0.016666680574417114
+      },
+      "StartJogL": {
+        "loop": false,
+        "position_gap_m": 0.0,
+        "rotation_gap_degrees": 0.0,
+        "max_sample_step_seconds": 0.016666680574417114
+      },
+      "StopJogL": {
+        "loop": false,
+        "position_gap_m": 0.0,
+        "rotation_gap_degrees": 0.0,
+        "max_sample_step_seconds": 0.016666710376739502
+      },
+      "StartJogR": {
+        "loop": false,
+        "position_gap_m": 0.0,
+        "rotation_gap_degrees": 0.0,
+        "max_sample_step_seconds": 0.016666680574417114
+      },
+      "StopJogR": {
+        "loop": false,
+        "position_gap_m": 0.0,
+        "rotation_gap_degrees": 0.0,
+        "max_sample_step_seconds": 0.016666710376739502
+      },
+      "Turn90L": {
+        "loop": false,
+        "position_gap_m": 0.0,
+        "rotation_gap_degrees": 0.0,
+        "max_sample_step_seconds": 0.016666680574417114
+      },
+      "Turn90R": {
+        "loop": false,
+        "position_gap_m": 0.0,
+        "rotation_gap_degrees": 0.0,
+        "max_sample_step_seconds": 0.016666680574417114
+      },
+      "Turn180L": {
+        "loop": false,
+        "position_gap_m": 0.0,
+        "rotation_gap_degrees": 0.0,
+        "max_sample_step_seconds": 0.016666680574417114
+      },
+      "Turn180R": {
+        "loop": false,
+        "position_gap_m": 0.0,
+        "rotation_gap_degrees": 0.0,
+        "max_sample_step_seconds": 0.016666680574417114
+      }
+    },
+    "asset_hashes_verified": 12,
+    "failures": []
+  },
+  "previews": {
+    "pose_divisions": 32,
+    "poses_per_strip": 33,
+    "decoded_pose_strips": 45,
+    "decoded_gif_frames": 1262,
+    "gifs": {
+      "Idle_front.gif": {
+        "frames": 1,
+        "duration_ms": 3200,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Idle_side.gif": {
+        "frames": 1,
+        "duration_ms": 3200,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Idle_three_quarter.gif": {
+        "frames": 1,
+        "duration_ms": 3200,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Jog_front.gif": {
+        "frames": 18,
+        "duration_ms": 720,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Jog_side.gif": {
+        "frames": 18,
+        "duration_ms": 720,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Jog_three_quarter.gif": {
+        "frames": 18,
+        "duration_ms": 720,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Runtime.gif": {
+        "frames": 485,
+        "duration_ms": 20320,
+        "size": [
+          768,
+          480
+        ]
+      },
+      "Runtime_slow.gif": {
+        "frames": 141,
+        "duration_ms": 14320,
+        "size": [
+          768,
+          480
+        ]
+      },
+      "StartJogL_front.gif": {
+        "frames": 14,
+        "duration_ms": 840,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StartJogL_side.gif": {
+        "frames": 14,
+        "duration_ms": 840,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StartJogL_three_quarter.gif": {
+        "frames": 14,
+        "duration_ms": 840,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StartJogR_front.gif": {
+        "frames": 14,
+        "duration_ms": 840,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StartJogR_side.gif": {
+        "frames": 14,
+        "duration_ms": 840,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StartJogR_three_quarter.gif": {
+        "frames": 14,
+        "duration_ms": 840,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StartWalkL_front.gif": {
+        "frames": 16,
+        "duration_ms": 920,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StartWalkL_side.gif": {
+        "frames": 16,
+        "duration_ms": 920,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StartWalkL_three_quarter.gif": {
+        "frames": 16,
+        "duration_ms": 920,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StartWalkR_front.gif": {
+        "frames": 16,
+        "duration_ms": 920,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StartWalkR_side.gif": {
+        "frames": 16,
+        "duration_ms": 920,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StartWalkR_three_quarter.gif": {
+        "frames": 16,
+        "duration_ms": 920,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StopJogL_front.gif": {
+        "frames": 17,
+        "duration_ms": 960,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StopJogL_side.gif": {
+        "frames": 17,
+        "duration_ms": 960,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StopJogL_three_quarter.gif": {
+        "frames": 17,
+        "duration_ms": 960,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StopJogR_front.gif": {
+        "frames": 17,
+        "duration_ms": 960,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StopJogR_side.gif": {
+        "frames": 17,
+        "duration_ms": 960,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StopJogR_three_quarter.gif": {
+        "frames": 17,
+        "duration_ms": 960,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StopWalkL_front.gif": {
+        "frames": 14,
+        "duration_ms": 840,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StopWalkL_side.gif": {
+        "frames": 14,
+        "duration_ms": 840,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StopWalkL_three_quarter.gif": {
+        "frames": 14,
+        "duration_ms": 840,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StopWalkR_front.gif": {
+        "frames": 14,
+        "duration_ms": 840,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StopWalkR_side.gif": {
+        "frames": 14,
+        "duration_ms": 840,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "StopWalkR_three_quarter.gif": {
+        "frames": 14,
+        "duration_ms": 840,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Turn180L_front.gif": {
+        "frames": 14,
+        "duration_ms": 840,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Turn180L_side.gif": {
+        "frames": 14,
+        "duration_ms": 840,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Turn180L_three_quarter.gif": {
+        "frames": 14,
+        "duration_ms": 840,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Turn180R_front.gif": {
+        "frames": 14,
+        "duration_ms": 840,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Turn180R_side.gif": {
+        "frames": 14,
+        "duration_ms": 840,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Turn180R_three_quarter.gif": {
+        "frames": 14,
+        "duration_ms": 840,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Turn90L_front.gif": {
+        "frames": 10,
+        "duration_ms": 680,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Turn90L_side.gif": {
+        "frames": 10,
+        "duration_ms": 680,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Turn90L_three_quarter.gif": {
+        "frames": 10,
+        "duration_ms": 680,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Turn90R_front.gif": {
+        "frames": 10,
+        "duration_ms": 680,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Turn90R_side.gif": {
+        "frames": 10,
+        "duration_ms": 680,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Turn90R_three_quarter.gif": {
+        "frames": 10,
+        "duration_ms": 680,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Walk_front.gif": {
+        "frames": 23,
+        "duration_ms": 920,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Walk_side.gif": {
+        "frames": 23,
+        "duration_ms": 920,
+        "size": [
+          320,
+          400
+        ]
+      },
+      "Walk_three_quarter.gif": {
+        "frames": 23,
+        "duration_ms": 920,
+        "size": [
+          320,
+          400
+        ]
+      }
+    },
+    "failures": []
+  },
+  "extensibility": {
+    "extra_gait_speed": 4.20001029968262,
+    "failures": [],
+    "footfalls": 19,
+    "unlocked_footfalls": 5
+  },
+  "runtime": {
+    "30": {
+      "failures": [],
+      "cases": [
+        {
+          "body_height_after_settle": {
+            "max_m": 4.47044149041176e-05,
+            "min_m": 4.47044149041176e-05,
+            "range_m": 0.0,
+            "sample_count": 27
+          },
+          "eligible_support_samples": {
+            "Left": 0,
+            "Right": 0
+          },
+          "end_position": [
+            0.0,
+            4.47044149041176e-05,
+            5.0
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 0.976190476190476,
+          "head_height": {
+            "max_m": 1.62203013896942,
+            "min_m": 1.62191760540009,
+            "peak_to_peak_m": 0.000112533569335938,
+            "sample_count": 27,
+            "vertical_speed_max_mps": 0.0020599365234375
+          },
+          "max_body_height_m": 0.00227777753025293,
+          "mean_speed_after_settle": 0.0,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "idle",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle"
+          ],
+          "support_drift_max_m": 0.0
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 5.85936941206455e-05,
+            "min_m": 5.85936941206455e-05,
+            "range_m": 0.0,
+            "sample_count": 157
+          },
+          "eligible_support_samples": {
+            "Left": 86,
+            "Right": 78
+          },
+          "end_position": [
+            0.0,
+            5.85936941206455e-05,
+            -0.331670314073563
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61776757240295,
+            "min_m": 1.55906689167023,
+            "peak_to_peak_m": 0.0587006807327271,
+            "sample_count": 157,
+            "vertical_speed_max_mps": 0.399055480957031
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 1.39999892833127,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 15.1873064041138,
+              "sample_count": 18
+            },
+            "Right": {
+              "max_flex_degrees": 15.1894454956055,
+              "sample_count": 18
+            }
+          },
+          "name": "walk",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move"
+          ],
+          "support_drift_max_m": 7.17435227670649e-07
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 5.85936941206455e-05,
+            "min_m": 5.85936941206455e-05,
+            "range_m": 0.0,
+            "sample_count": 127
+          },
+          "eligible_support_samples": {
+            "Left": 39,
+            "Right": 33
+          },
+          "end_position": [
+            0.0,
+            5.85936941206455e-05,
+            -3.70332813262939
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.57884955406189,
+            "min_m": 1.55739033222198,
+            "peak_to_peak_m": 0.0214592218399048,
+            "sample_count": 127,
+            "vertical_speed_max_mps": 0.415019989013672
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 2.79999823457612,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "jog",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartJogR",
+            "Move"
+          ],
+          "support_drift_max_m": 3.57938176875905e-07
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 5.85936941206455e-05,
+            "min_m": 5.85936941206455e-05,
+            "range_m": 0.0,
+            "sample_count": 194
+          },
+          "eligible_support_samples": {
+            "Left": 65,
+            "Right": 74
+          },
+          "end_position": [
+            0.0,
+            5.85936941206455e-05,
+            -3.71125268936157
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61776375770569,
+            "min_m": 1.54548346996307,
+            "peak_to_peak_m": 0.0722802877426147,
+            "sample_count": 194,
+            "vertical_speed_max_mps": 0.803389549255371
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 1.52554064921174,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "walk_jog_stop",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move",
+            "StopWalkR"
+          ],
+          "support_drift_max_m": 4.81528900309058e-07
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 5.85936941206455e-05,
+            "min_m": 5.85936941206455e-05,
+            "range_m": 0.0,
+            "sample_count": 217
+          },
+          "eligible_support_samples": {
+            "Left": 124,
+            "Right": 96
+          },
+          "end_position": [
+            0.125227302312851,
+            5.85936941206455e-05,
+            7.06638956069946
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61780452728271,
+            "min_m": 1.55948615074158,
+            "peak_to_peak_m": 0.0583183765411377,
+            "sample_count": 217,
+            "vertical_speed_max_mps": 0.377812385559082
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 1.25929135372562,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "reverse180",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "Move"
+          ],
+          "support_drift_max_m": 0.00666068959981203
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 5.85936941206455e-05,
+            "min_m": 5.85936941206455e-05,
+            "range_m": 0.0,
+            "sample_count": 97
+          },
+          "eligible_support_samples": {
+            "Left": 54,
+            "Right": 52
+          },
+          "end_position": [
+            3.85436773300171,
+            5.85936941206455e-05,
+            4.91472244262695
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61759221553802,
+            "min_m": 1.55906689167023,
+            "peak_to_peak_m": 0.0585253238677979,
+            "sample_count": 97,
+            "vertical_speed_max_mps": 0.399048328399658
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 1.39999861938437,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "turn90",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move"
+          ],
+          "support_drift_max_m": 5.96046447753906e-07
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 5.85936941206455e-05,
+            "min_m": 5.85936941206455e-05,
+            "range_m": 0.0,
+            "sample_count": 16
+          },
+          "eligible_support_samples": {
+            "Left": 0,
+            "Right": 16
+          },
+          "end_position": [
+            0.0,
+            5.85936941206455e-05,
+            4.22624826431274
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61599504947662,
+            "min_m": 1.57903838157654,
+            "peak_to_peak_m": 0.0369566679000854,
+            "sample_count": 16,
+            "vertical_speed_max_mps": 0.37545919418335
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 0.330971650278835,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "interrupt_start",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "StopWalkL",
+            "StartWalkL",
+            "Move",
+            "StopWalkR"
+          ],
+          "support_drift_max_m": 4.82622851905035e-07
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.0,
+            "min_m": 0.0,
+            "range_m": 0.0,
+            "sample_count": 0
+          },
+          "eligible_support_samples": {
+            "Left": 0,
+            "Right": 0
+          },
+          "end_position": [
+            0.0,
+            0.000732421875,
+            -5.64374876022339
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 0.0,
+            "min_m": 0.0,
+            "peak_to_peak_m": 0.0,
+            "sample_count": 0,
+            "vertical_speed_max_mps": 0.0
+          },
+          "max_body_height_m": 0.000732421875,
+          "mean_speed_after_settle": 0.0,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "wall",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartJogL",
+            "Move",
+            "StopWalkL",
+            "StartJogR",
+            "StopWalkR"
+          ],
+          "support_drift_max_m": 0.0
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 1.15995621681213,
+            "min_m": 0.463460922241211,
+            "range_m": 0.696495294570923,
+            "sample_count": 97
+          },
+          "eligible_support_samples": {
+            "Left": 54,
+            "Right": 49
+          },
+          "end_position": [
+            -5.0,
+            1.15961289405823,
+            -3.67585229873657
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 2.77308797836304,
+            "min_m": 1.93422889709473,
+            "peak_to_peak_m": 0.838859081268311,
+            "sample_count": 97,
+            "vertical_speed_max_mps": 2.38487720489502
+          },
+          "max_body_height_m": 1.15995621681213,
+          "mean_speed_after_settle": 1.30385173104473,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "slope_up",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "Move"
+          ],
+          "support_drift_max_m": 0.013682353310287
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.385439813137054,
+            "min_m": 0.000857260078191757,
+            "range_m": 0.384582553058863,
+            "sample_count": 97
+          },
+          "eligible_support_samples": {
+            "Left": 46,
+            "Right": 57
+          },
+          "end_position": [
+            -5.0,
+            0.000857260078191757,
+            0.733515858650208
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.93711018562317,
+            "min_m": 1.56080269813538,
+            "peak_to_peak_m": 0.376307487487793,
+            "sample_count": 97,
+            "vertical_speed_max_mps": 1.98882579803467
+          },
+          "max_body_height_m": 1.09940266609192,
+          "mean_speed_after_settle": 1.34590899944306,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "slope_down",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "StartJogL",
+            "Move"
+          ],
+          "support_drift_max_m": 0.011445882730186
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.751999974250793,
+            "min_m": 0.435666650533676,
+            "range_m": 0.316333323717117,
+            "sample_count": 139
+          },
+          "eligible_support_samples": {
+            "Left": 59,
+            "Right": 52
+          },
+          "end_position": [
+            5.0,
+            0.723247885704041,
+            -2.91153049468994
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 0.757847533632287,
+          "head_height": {
+            "max_m": 2.36834001541138,
+            "min_m": 1.93300020694733,
+            "peak_to_peak_m": 0.43533980846405,
+            "sample_count": 139,
+            "vertical_speed_max_mps": 2.23641872406006
+          },
+          "max_body_height_m": 0.751999974250793,
+          "mean_speed_after_settle": 1.39994148813563,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "steps_up",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "Move"
+          ],
+          "support_drift_max_m": 7.15255737304688e-07
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.451661139726639,
+            "min_m": 0.00167349679395556,
+            "range_m": 0.449987642932683,
+            "sample_count": 139
+          },
+          "eligible_support_samples": {
+            "Left": 46,
+            "Right": 60
+          },
+          "end_position": [
+            5.0,
+            0.00167349679395556,
+            3.11128687858582
+          ],
+          "full_mesh_penetration_m": 0.0026755805592984,
+          "grounded_ratio": 0.766816143497758,
+          "head_height": {
+            "max_m": 2.06758594512939,
+            "min_m": 1.56224727630615,
+            "peak_to_peak_m": 0.505338668823242,
+            "sample_count": 139,
+            "vertical_speed_max_mps": 2.71079063415527
+          },
+          "max_body_height_m": 0.75727778673172,
+          "mean_speed_after_settle": 1.39979520718828,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "steps_down",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move"
+          ],
+          "support_drift_max_m": 6.05658278800547e-05
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.0,
+            "min_m": 0.0,
+            "range_m": 0.0,
+            "sample_count": 0
+          },
+          "eligible_support_samples": {
+            "Left": 0,
+            "Right": 0
+          },
+          "end_position": [
+            9.0,
+            5.85936941206455e-05,
+            1.63152766227722
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 0.0,
+            "min_m": 0.0,
+            "peak_to_peak_m": 0.0,
+            "sample_count": 0,
+            "vertical_speed_max_mps": 0.0
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 0.0,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "over_limit_step",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "StopWalkL",
+            "StartWalkL"
+          ],
+          "support_drift_max_m": 0.0
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.00189362186938524,
+            "min_m": -0.00170012819580734,
+            "range_m": 0.00359375006519258,
+            "sample_count": 73
+          },
+          "eligible_support_samples": {
+            "Left": 40,
+            "Right": 20
+          },
+          "end_position": [
+            3.5181405544281,
+            0.00189163372851908,
+            -2.73738694190979
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61804831027985,
+            "min_m": 1.55823063850403,
+            "peak_to_peak_m": 0.0598176717758179,
+            "sample_count": 73,
+            "vertical_speed_max_mps": 0.413839817047119
+          },
+          "max_body_height_m": 0.00189362186938524,
+          "mean_speed_after_settle": 0.991566551874761,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "stairs_side_left",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move"
+          ],
+          "support_drift_max_m": 0.00557577516883612
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.0018933160463348,
+            "min_m": 0.0018933160463348,
+            "range_m": 0.0,
+            "sample_count": 73
+          },
+          "eligible_support_samples": {
+            "Left": 20,
+            "Right": 40
+          },
+          "end_position": [
+            6.48185920715332,
+            0.0018933160463348,
+            -2.73737192153931
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61800491809845,
+            "min_m": 1.55825459957123,
+            "peak_to_peak_m": 0.0597503185272217,
+            "sample_count": 73,
+            "vertical_speed_max_mps": 0.275552272796631
+          },
+          "max_body_height_m": 0.0018933160463348,
+          "mean_speed_after_settle": 0.991560093344074,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "stairs_side_right",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "Move"
+          ],
+          "support_drift_max_m": 0.00557598704472184
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.00189295085147023,
+            "min_m": 0.00189295085147023,
+            "range_m": 0.0,
+            "sample_count": 109
+          },
+          "eligible_support_samples": {
+            "Left": 61,
+            "Right": 50
+          },
+          "end_position": [
+            1.27192854881287,
+            0.00189295085147023,
+            -1.6836838722229
+          ],
+          "full_mesh_penetration_m": 0.00151489523705095,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61802959442139,
+            "min_m": 1.55888879299164,
+            "peak_to_peak_m": 0.0591408014297485,
+            "sample_count": 109,
+            "vertical_speed_max_mps": 0.39085865020752
+          },
+          "max_body_height_m": 0.00189295085147023,
+          "mean_speed_after_settle": 1.27994949117713,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "stairs_corner_exit",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move"
+          ],
+          "support_drift_max_m": 0.00923553574830294
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.0018933160463348,
+            "min_m": 0.0018933160463348,
+            "range_m": 0.0,
+            "sample_count": 7
+          },
+          "eligible_support_samples": {
+            "Left": 0,
+            "Right": 16
+          },
+          "end_position": [
+            6.48185920715332,
+            0.0018933160463348,
+            -1.53475260734558
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61802804470062,
+            "min_m": 1.61669790744781,
+            "peak_to_peak_m": 0.00133013725280762,
+            "sample_count": 7,
+            "vertical_speed_max_mps": 0.0192689895629883
+          },
+          "max_body_height_m": 0.0018933160463348,
+          "mean_speed_after_settle": 0.0197196833241512,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "stairs_side_release",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "Move",
+            "StopWalkR"
+          ],
+          "support_drift_max_m": 0.00263428781181574
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.00189295085147023,
+            "min_m": 0.00189295085147023,
+            "range_m": 0.0,
+            "sample_count": 86
+          },
+          "eligible_support_samples": {
+            "Left": 63,
+            "Right": 29
+          },
+          "end_position": [
+            1.89845216274261,
+            0.00189295085147023,
+            0.125408142805099
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61803078651428,
+            "min_m": 1.55899131298065,
+            "peak_to_peak_m": 0.0590394735336304,
+            "sample_count": 86,
+            "vertical_speed_max_mps": 0.644009113311768
+          },
+          "max_body_height_m": 0.00189295085147023,
+          "mean_speed_after_settle": 1.17325100484342,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "stairs_side_reverse",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move",
+            "StopWalkL",
+            "StartWalkR"
+          ],
+          "support_drift_max_m": 7.90025751484791e-06
+        }
+      ]
+    },
+    "60": {
+      "failures": [],
+      "cases": [
+        {
+          "body_height_after_settle": {
+            "max_m": 4.47044149041176e-05,
+            "min_m": 4.47044149041176e-05,
+            "range_m": 0.0,
+            "sample_count": 27
+          },
+          "eligible_support_samples": {
+            "Left": 0,
+            "Right": 0
+          },
+          "end_position": [
+            0.0,
+            4.47044149041176e-05,
+            5.0
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 0.976190476190476,
+          "head_height": {
+            "max_m": 1.62203013896942,
+            "min_m": 1.62191760540009,
+            "peak_to_peak_m": 0.000112533569335938,
+            "sample_count": 27,
+            "vertical_speed_max_mps": 0.0020599365234375
+          },
+          "max_body_height_m": 0.00227777753025293,
+          "mean_speed_after_settle": 0.0,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "idle",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle"
+          ],
+          "support_drift_max_m": 0.0
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 5.85936941206455e-05,
+            "min_m": 5.85936941206455e-05,
+            "range_m": 0.0,
+            "sample_count": 157
+          },
+          "eligible_support_samples": {
+            "Left": 86,
+            "Right": 78
+          },
+          "end_position": [
+            0.0,
+            5.85936941206455e-05,
+            -0.331670314073563
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61776757240295,
+            "min_m": 1.55906689167023,
+            "peak_to_peak_m": 0.0587006807327271,
+            "sample_count": 157,
+            "vertical_speed_max_mps": 0.399055480957031
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 1.39999892833127,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 15.1873064041138,
+              "sample_count": 18
+            },
+            "Right": {
+              "max_flex_degrees": 15.1894454956055,
+              "sample_count": 18
+            }
+          },
+          "name": "walk",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move"
+          ],
+          "support_drift_max_m": 7.17435227670649e-07
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 5.85936941206455e-05,
+            "min_m": 5.85936941206455e-05,
+            "range_m": 0.0,
+            "sample_count": 127
+          },
+          "eligible_support_samples": {
+            "Left": 39,
+            "Right": 33
+          },
+          "end_position": [
+            0.0,
+            5.85936941206455e-05,
+            -3.70332813262939
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.57884955406189,
+            "min_m": 1.55739033222198,
+            "peak_to_peak_m": 0.0214592218399048,
+            "sample_count": 127,
+            "vertical_speed_max_mps": 0.415019989013672
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 2.79999823457612,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "jog",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartJogR",
+            "Move"
+          ],
+          "support_drift_max_m": 3.57938176875905e-07
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 5.85936941206455e-05,
+            "min_m": 5.85936941206455e-05,
+            "range_m": 0.0,
+            "sample_count": 194
+          },
+          "eligible_support_samples": {
+            "Left": 65,
+            "Right": 74
+          },
+          "end_position": [
+            0.0,
+            5.85936941206455e-05,
+            -3.71125268936157
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61776375770569,
+            "min_m": 1.54548346996307,
+            "peak_to_peak_m": 0.0722802877426147,
+            "sample_count": 194,
+            "vertical_speed_max_mps": 0.803389549255371
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 1.52554064921174,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "walk_jog_stop",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move",
+            "StopWalkR"
+          ],
+          "support_drift_max_m": 4.81528900309058e-07
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 5.85936941206455e-05,
+            "min_m": 5.85936941206455e-05,
+            "range_m": 0.0,
+            "sample_count": 217
+          },
+          "eligible_support_samples": {
+            "Left": 124,
+            "Right": 96
+          },
+          "end_position": [
+            0.125227302312851,
+            5.85936941206455e-05,
+            7.06638956069946
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61780452728271,
+            "min_m": 1.55948615074158,
+            "peak_to_peak_m": 0.0583183765411377,
+            "sample_count": 217,
+            "vertical_speed_max_mps": 0.377812385559082
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 1.25929135372562,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "reverse180",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "Move"
+          ],
+          "support_drift_max_m": 0.00666068959981203
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 5.85936941206455e-05,
+            "min_m": 5.85936941206455e-05,
+            "range_m": 0.0,
+            "sample_count": 97
+          },
+          "eligible_support_samples": {
+            "Left": 54,
+            "Right": 52
+          },
+          "end_position": [
+            3.85436773300171,
+            5.85936941206455e-05,
+            4.91472244262695
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61759221553802,
+            "min_m": 1.55906689167023,
+            "peak_to_peak_m": 0.0585253238677979,
+            "sample_count": 97,
+            "vertical_speed_max_mps": 0.399048328399658
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 1.39999861938437,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "turn90",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move"
+          ],
+          "support_drift_max_m": 5.96046447753906e-07
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 5.85936941206455e-05,
+            "min_m": 5.85936941206455e-05,
+            "range_m": 0.0,
+            "sample_count": 16
+          },
+          "eligible_support_samples": {
+            "Left": 0,
+            "Right": 16
+          },
+          "end_position": [
+            0.0,
+            5.85936941206455e-05,
+            4.22624826431274
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61599504947662,
+            "min_m": 1.57903838157654,
+            "peak_to_peak_m": 0.0369566679000854,
+            "sample_count": 16,
+            "vertical_speed_max_mps": 0.37545919418335
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 0.330971650278835,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "interrupt_start",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "StopWalkL",
+            "StartWalkL",
+            "Move",
+            "StopWalkR"
+          ],
+          "support_drift_max_m": 4.82622851905035e-07
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.0,
+            "min_m": 0.0,
+            "range_m": 0.0,
+            "sample_count": 0
+          },
+          "eligible_support_samples": {
+            "Left": 0,
+            "Right": 0
+          },
+          "end_position": [
+            0.0,
+            0.000732421875,
+            -5.64374876022339
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 0.0,
+            "min_m": 0.0,
+            "peak_to_peak_m": 0.0,
+            "sample_count": 0,
+            "vertical_speed_max_mps": 0.0
+          },
+          "max_body_height_m": 0.000732421875,
+          "mean_speed_after_settle": 0.0,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "wall",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartJogL",
+            "Move",
+            "StopWalkL",
+            "StartJogR",
+            "StopWalkR"
+          ],
+          "support_drift_max_m": 0.0
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 1.15995621681213,
+            "min_m": 0.463460922241211,
+            "range_m": 0.696495294570923,
+            "sample_count": 97
+          },
+          "eligible_support_samples": {
+            "Left": 54,
+            "Right": 49
+          },
+          "end_position": [
+            -5.0,
+            1.15961289405823,
+            -3.67585229873657
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 2.77308797836304,
+            "min_m": 1.93422889709473,
+            "peak_to_peak_m": 0.838859081268311,
+            "sample_count": 97,
+            "vertical_speed_max_mps": 2.38487720489502
+          },
+          "max_body_height_m": 1.15995621681213,
+          "mean_speed_after_settle": 1.30385173104473,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "slope_up",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "Move"
+          ],
+          "support_drift_max_m": 0.013682353310287
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.385439813137054,
+            "min_m": 0.000857260078191757,
+            "range_m": 0.384582553058863,
+            "sample_count": 97
+          },
+          "eligible_support_samples": {
+            "Left": 46,
+            "Right": 57
+          },
+          "end_position": [
+            -5.0,
+            0.000857260078191757,
+            0.733515858650208
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.93711018562317,
+            "min_m": 1.56080269813538,
+            "peak_to_peak_m": 0.376307487487793,
+            "sample_count": 97,
+            "vertical_speed_max_mps": 1.98882579803467
+          },
+          "max_body_height_m": 1.09940266609192,
+          "mean_speed_after_settle": 1.34590899944306,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "slope_down",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "StartJogL",
+            "Move"
+          ],
+          "support_drift_max_m": 0.011445882730186
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.751999974250793,
+            "min_m": 0.435666650533676,
+            "range_m": 0.316333323717117,
+            "sample_count": 139
+          },
+          "eligible_support_samples": {
+            "Left": 59,
+            "Right": 52
+          },
+          "end_position": [
+            5.0,
+            0.723247885704041,
+            -2.91153049468994
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 0.757847533632287,
+          "head_height": {
+            "max_m": 2.36834001541138,
+            "min_m": 1.93300020694733,
+            "peak_to_peak_m": 0.43533980846405,
+            "sample_count": 139,
+            "vertical_speed_max_mps": 2.23641872406006
+          },
+          "max_body_height_m": 0.751999974250793,
+          "mean_speed_after_settle": 1.39994148813563,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "steps_up",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "Move"
+          ],
+          "support_drift_max_m": 7.15255737304688e-07
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.451661139726639,
+            "min_m": 0.00167349679395556,
+            "range_m": 0.449987642932683,
+            "sample_count": 139
+          },
+          "eligible_support_samples": {
+            "Left": 46,
+            "Right": 60
+          },
+          "end_position": [
+            5.0,
+            0.00167349679395556,
+            3.11128687858582
+          ],
+          "full_mesh_penetration_m": 0.0026755805592984,
+          "grounded_ratio": 0.766816143497758,
+          "head_height": {
+            "max_m": 2.06758594512939,
+            "min_m": 1.56224727630615,
+            "peak_to_peak_m": 0.505338668823242,
+            "sample_count": 139,
+            "vertical_speed_max_mps": 2.71079063415527
+          },
+          "max_body_height_m": 0.75727778673172,
+          "mean_speed_after_settle": 1.39979520718828,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "steps_down",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move"
+          ],
+          "support_drift_max_m": 6.05658278800547e-05
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.0,
+            "min_m": 0.0,
+            "range_m": 0.0,
+            "sample_count": 0
+          },
+          "eligible_support_samples": {
+            "Left": 0,
+            "Right": 0
+          },
+          "end_position": [
+            9.0,
+            5.85936941206455e-05,
+            1.63152766227722
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 0.0,
+            "min_m": 0.0,
+            "peak_to_peak_m": 0.0,
+            "sample_count": 0,
+            "vertical_speed_max_mps": 0.0
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 0.0,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "over_limit_step",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "StopWalkL",
+            "StartWalkL"
+          ],
+          "support_drift_max_m": 0.0
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.00189362186938524,
+            "min_m": -0.00170012819580734,
+            "range_m": 0.00359375006519258,
+            "sample_count": 73
+          },
+          "eligible_support_samples": {
+            "Left": 40,
+            "Right": 20
+          },
+          "end_position": [
+            3.5181405544281,
+            0.00189163372851908,
+            -2.73738694190979
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61804831027985,
+            "min_m": 1.55823063850403,
+            "peak_to_peak_m": 0.0598176717758179,
+            "sample_count": 73,
+            "vertical_speed_max_mps": 0.413839817047119
+          },
+          "max_body_height_m": 0.00189362186938524,
+          "mean_speed_after_settle": 0.991566551874761,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "stairs_side_left",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move"
+          ],
+          "support_drift_max_m": 0.00557577516883612
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.0018933160463348,
+            "min_m": 0.0018933160463348,
+            "range_m": 0.0,
+            "sample_count": 73
+          },
+          "eligible_support_samples": {
+            "Left": 20,
+            "Right": 40
+          },
+          "end_position": [
+            6.48185920715332,
+            0.0018933160463348,
+            -2.73737192153931
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61800491809845,
+            "min_m": 1.55825459957123,
+            "peak_to_peak_m": 0.0597503185272217,
+            "sample_count": 73,
+            "vertical_speed_max_mps": 0.275552272796631
+          },
+          "max_body_height_m": 0.0018933160463348,
+          "mean_speed_after_settle": 0.991560093344074,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "stairs_side_right",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "Move"
+          ],
+          "support_drift_max_m": 0.00557598704472184
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.00189295085147023,
+            "min_m": 0.00189295085147023,
+            "range_m": 0.0,
+            "sample_count": 109
+          },
+          "eligible_support_samples": {
+            "Left": 61,
+            "Right": 50
+          },
+          "end_position": [
+            1.27192854881287,
+            0.00189295085147023,
+            -1.6836838722229
+          ],
+          "full_mesh_penetration_m": 0.00151489523705095,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61802959442139,
+            "min_m": 1.55888879299164,
+            "peak_to_peak_m": 0.0591408014297485,
+            "sample_count": 109,
+            "vertical_speed_max_mps": 0.39085865020752
+          },
+          "max_body_height_m": 0.00189295085147023,
+          "mean_speed_after_settle": 1.27994949117713,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "stairs_corner_exit",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move"
+          ],
+          "support_drift_max_m": 0.00923553574830294
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.0018933160463348,
+            "min_m": 0.0018933160463348,
+            "range_m": 0.0,
+            "sample_count": 7
+          },
+          "eligible_support_samples": {
+            "Left": 0,
+            "Right": 16
+          },
+          "end_position": [
+            6.48185920715332,
+            0.0018933160463348,
+            -1.53475260734558
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61802804470062,
+            "min_m": 1.61669790744781,
+            "peak_to_peak_m": 0.00133013725280762,
+            "sample_count": 7,
+            "vertical_speed_max_mps": 0.0192689895629883
+          },
+          "max_body_height_m": 0.0018933160463348,
+          "mean_speed_after_settle": 0.0197196833241512,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "stairs_side_release",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "Move",
+            "StopWalkR"
+          ],
+          "support_drift_max_m": 0.00263428781181574
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.00189295085147023,
+            "min_m": 0.00189295085147023,
+            "range_m": 0.0,
+            "sample_count": 86
+          },
+          "eligible_support_samples": {
+            "Left": 63,
+            "Right": 29
+          },
+          "end_position": [
+            1.89845216274261,
+            0.00189295085147023,
+            0.125408142805099
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61803078651428,
+            "min_m": 1.55899131298065,
+            "peak_to_peak_m": 0.0590394735336304,
+            "sample_count": 86,
+            "vertical_speed_max_mps": 0.644009113311768
+          },
+          "max_body_height_m": 0.00189295085147023,
+          "mean_speed_after_settle": 1.17325100484342,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "stairs_side_reverse",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move",
+            "StopWalkL",
+            "StartWalkR"
+          ],
+          "support_drift_max_m": 7.90025751484791e-06
+        }
+      ]
+    },
+    "120": {
+      "failures": [],
+      "cases": [
+        {
+          "body_height_after_settle": {
+            "max_m": 4.47044149041176e-05,
+            "min_m": 4.47044149041176e-05,
+            "range_m": 0.0,
+            "sample_count": 27
+          },
+          "eligible_support_samples": {
+            "Left": 0,
+            "Right": 0
+          },
+          "end_position": [
+            0.0,
+            4.47044149041176e-05,
+            5.0
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 0.976190476190476,
+          "head_height": {
+            "max_m": 1.62203013896942,
+            "min_m": 1.62191760540009,
+            "peak_to_peak_m": 0.000112533569335938,
+            "sample_count": 27,
+            "vertical_speed_max_mps": 0.0020599365234375
+          },
+          "max_body_height_m": 0.00227777753025293,
+          "mean_speed_after_settle": 0.0,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "idle",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle"
+          ],
+          "support_drift_max_m": 0.0
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 5.85936941206455e-05,
+            "min_m": 5.85936941206455e-05,
+            "range_m": 0.0,
+            "sample_count": 157
+          },
+          "eligible_support_samples": {
+            "Left": 86,
+            "Right": 78
+          },
+          "end_position": [
+            0.0,
+            5.85936941206455e-05,
+            -0.331670314073563
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61776757240295,
+            "min_m": 1.55906689167023,
+            "peak_to_peak_m": 0.0587006807327271,
+            "sample_count": 157,
+            "vertical_speed_max_mps": 0.399055480957031
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 1.39999892833127,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 15.1873064041138,
+              "sample_count": 18
+            },
+            "Right": {
+              "max_flex_degrees": 15.1894454956055,
+              "sample_count": 18
+            }
+          },
+          "name": "walk",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move"
+          ],
+          "support_drift_max_m": 7.17435227670649e-07
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 5.85936941206455e-05,
+            "min_m": 5.85936941206455e-05,
+            "range_m": 0.0,
+            "sample_count": 127
+          },
+          "eligible_support_samples": {
+            "Left": 39,
+            "Right": 33
+          },
+          "end_position": [
+            0.0,
+            5.85936941206455e-05,
+            -3.70332813262939
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.57884955406189,
+            "min_m": 1.55739033222198,
+            "peak_to_peak_m": 0.0214592218399048,
+            "sample_count": 127,
+            "vertical_speed_max_mps": 0.415019989013672
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 2.79999823457612,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "jog",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartJogR",
+            "Move"
+          ],
+          "support_drift_max_m": 3.57938176875905e-07
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 5.85936941206455e-05,
+            "min_m": 5.85936941206455e-05,
+            "range_m": 0.0,
+            "sample_count": 194
+          },
+          "eligible_support_samples": {
+            "Left": 65,
+            "Right": 74
+          },
+          "end_position": [
+            0.0,
+            5.85936941206455e-05,
+            -3.71125268936157
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61776375770569,
+            "min_m": 1.54548346996307,
+            "peak_to_peak_m": 0.0722802877426147,
+            "sample_count": 194,
+            "vertical_speed_max_mps": 0.803389549255371
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 1.52554064921174,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "walk_jog_stop",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move",
+            "StopWalkR"
+          ],
+          "support_drift_max_m": 4.81528900309058e-07
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 5.85936941206455e-05,
+            "min_m": 5.85936941206455e-05,
+            "range_m": 0.0,
+            "sample_count": 217
+          },
+          "eligible_support_samples": {
+            "Left": 124,
+            "Right": 96
+          },
+          "end_position": [
+            0.125227302312851,
+            5.85936941206455e-05,
+            7.06638956069946
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61780452728271,
+            "min_m": 1.55948615074158,
+            "peak_to_peak_m": 0.0583183765411377,
+            "sample_count": 217,
+            "vertical_speed_max_mps": 0.377812385559082
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 1.25929135372562,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "reverse180",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "Move"
+          ],
+          "support_drift_max_m": 0.00666068959981203
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 5.85936941206455e-05,
+            "min_m": 5.85936941206455e-05,
+            "range_m": 0.0,
+            "sample_count": 97
+          },
+          "eligible_support_samples": {
+            "Left": 54,
+            "Right": 52
+          },
+          "end_position": [
+            3.85436773300171,
+            5.85936941206455e-05,
+            4.91472244262695
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61759221553802,
+            "min_m": 1.55906689167023,
+            "peak_to_peak_m": 0.0585253238677979,
+            "sample_count": 97,
+            "vertical_speed_max_mps": 0.399048328399658
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 1.39999861938437,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "turn90",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move"
+          ],
+          "support_drift_max_m": 5.96046447753906e-07
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 5.85936941206455e-05,
+            "min_m": 5.85936941206455e-05,
+            "range_m": 0.0,
+            "sample_count": 16
+          },
+          "eligible_support_samples": {
+            "Left": 0,
+            "Right": 16
+          },
+          "end_position": [
+            0.0,
+            5.85936941206455e-05,
+            4.22624826431274
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61599504947662,
+            "min_m": 1.57903838157654,
+            "peak_to_peak_m": 0.0369566679000854,
+            "sample_count": 16,
+            "vertical_speed_max_mps": 0.37545919418335
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 0.330971650278835,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "interrupt_start",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "StopWalkL",
+            "StartWalkL",
+            "Move",
+            "StopWalkR"
+          ],
+          "support_drift_max_m": 4.82622851905035e-07
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.0,
+            "min_m": 0.0,
+            "range_m": 0.0,
+            "sample_count": 0
+          },
+          "eligible_support_samples": {
+            "Left": 0,
+            "Right": 0
+          },
+          "end_position": [
+            0.0,
+            0.000732421875,
+            -5.64374876022339
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 0.0,
+            "min_m": 0.0,
+            "peak_to_peak_m": 0.0,
+            "sample_count": 0,
+            "vertical_speed_max_mps": 0.0
+          },
+          "max_body_height_m": 0.000732421875,
+          "mean_speed_after_settle": 0.0,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "wall",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartJogL",
+            "Move",
+            "StopWalkL",
+            "StartJogR",
+            "StopWalkR"
+          ],
+          "support_drift_max_m": 0.0
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 1.15995621681213,
+            "min_m": 0.463460922241211,
+            "range_m": 0.696495294570923,
+            "sample_count": 97
+          },
+          "eligible_support_samples": {
+            "Left": 54,
+            "Right": 49
+          },
+          "end_position": [
+            -5.0,
+            1.15961289405823,
+            -3.67585229873657
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 2.77308797836304,
+            "min_m": 1.93422889709473,
+            "peak_to_peak_m": 0.838859081268311,
+            "sample_count": 97,
+            "vertical_speed_max_mps": 2.38487720489502
+          },
+          "max_body_height_m": 1.15995621681213,
+          "mean_speed_after_settle": 1.30385173104473,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "slope_up",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "Move"
+          ],
+          "support_drift_max_m": 0.013682353310287
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.385439813137054,
+            "min_m": 0.000857260078191757,
+            "range_m": 0.384582553058863,
+            "sample_count": 97
+          },
+          "eligible_support_samples": {
+            "Left": 46,
+            "Right": 57
+          },
+          "end_position": [
+            -5.0,
+            0.000857260078191757,
+            0.733515858650208
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.93711018562317,
+            "min_m": 1.56080269813538,
+            "peak_to_peak_m": 0.376307487487793,
+            "sample_count": 97,
+            "vertical_speed_max_mps": 1.98882579803467
+          },
+          "max_body_height_m": 1.09940266609192,
+          "mean_speed_after_settle": 1.34590899944306,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "slope_down",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "StartJogL",
+            "Move"
+          ],
+          "support_drift_max_m": 0.011445882730186
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.751999974250793,
+            "min_m": 0.435666650533676,
+            "range_m": 0.316333323717117,
+            "sample_count": 139
+          },
+          "eligible_support_samples": {
+            "Left": 59,
+            "Right": 52
+          },
+          "end_position": [
+            5.0,
+            0.723247885704041,
+            -2.91153049468994
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 0.757847533632287,
+          "head_height": {
+            "max_m": 2.36834001541138,
+            "min_m": 1.93300020694733,
+            "peak_to_peak_m": 0.43533980846405,
+            "sample_count": 139,
+            "vertical_speed_max_mps": 2.23641872406006
+          },
+          "max_body_height_m": 0.751999974250793,
+          "mean_speed_after_settle": 1.39994148813563,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "steps_up",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "Move"
+          ],
+          "support_drift_max_m": 7.15255737304688e-07
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.451661139726639,
+            "min_m": 0.00167349679395556,
+            "range_m": 0.449987642932683,
+            "sample_count": 139
+          },
+          "eligible_support_samples": {
+            "Left": 46,
+            "Right": 60
+          },
+          "end_position": [
+            5.0,
+            0.00167349679395556,
+            3.11128687858582
+          ],
+          "full_mesh_penetration_m": 0.0026755805592984,
+          "grounded_ratio": 0.766816143497758,
+          "head_height": {
+            "max_m": 2.06758594512939,
+            "min_m": 1.56224727630615,
+            "peak_to_peak_m": 0.505338668823242,
+            "sample_count": 139,
+            "vertical_speed_max_mps": 2.71079063415527
+          },
+          "max_body_height_m": 0.75727778673172,
+          "mean_speed_after_settle": 1.39979520718828,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "steps_down",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move"
+          ],
+          "support_drift_max_m": 6.05658278800547e-05
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.0,
+            "min_m": 0.0,
+            "range_m": 0.0,
+            "sample_count": 0
+          },
+          "eligible_support_samples": {
+            "Left": 0,
+            "Right": 0
+          },
+          "end_position": [
+            9.0,
+            5.85936941206455e-05,
+            1.63152766227722
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 0.0,
+            "min_m": 0.0,
+            "peak_to_peak_m": 0.0,
+            "sample_count": 0,
+            "vertical_speed_max_mps": 0.0
+          },
+          "max_body_height_m": 5.85936941206455e-05,
+          "mean_speed_after_settle": 0.0,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "over_limit_step",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "StopWalkL",
+            "StartWalkL"
+          ],
+          "support_drift_max_m": 0.0
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.00189362186938524,
+            "min_m": -0.00170012819580734,
+            "range_m": 0.00359375006519258,
+            "sample_count": 73
+          },
+          "eligible_support_samples": {
+            "Left": 40,
+            "Right": 20
+          },
+          "end_position": [
+            3.5181405544281,
+            0.00189163372851908,
+            -2.73738694190979
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61804831027985,
+            "min_m": 1.55823063850403,
+            "peak_to_peak_m": 0.0598176717758179,
+            "sample_count": 73,
+            "vertical_speed_max_mps": 0.413839817047119
+          },
+          "max_body_height_m": 0.00189362186938524,
+          "mean_speed_after_settle": 0.991566551874761,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "stairs_side_left",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move"
+          ],
+          "support_drift_max_m": 0.00557577516883612
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.0018933160463348,
+            "min_m": 0.0018933160463348,
+            "range_m": 0.0,
+            "sample_count": 73
+          },
+          "eligible_support_samples": {
+            "Left": 20,
+            "Right": 40
+          },
+          "end_position": [
+            6.48185920715332,
+            0.0018933160463348,
+            -2.73737192153931
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61800491809845,
+            "min_m": 1.55825459957123,
+            "peak_to_peak_m": 0.0597503185272217,
+            "sample_count": 73,
+            "vertical_speed_max_mps": 0.275552272796631
+          },
+          "max_body_height_m": 0.0018933160463348,
+          "mean_speed_after_settle": 0.991560093344074,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "stairs_side_right",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "Move"
+          ],
+          "support_drift_max_m": 0.00557598704472184
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.00189295085147023,
+            "min_m": 0.00189295085147023,
+            "range_m": 0.0,
+            "sample_count": 109
+          },
+          "eligible_support_samples": {
+            "Left": 61,
+            "Right": 50
+          },
+          "end_position": [
+            1.27192854881287,
+            0.00189295085147023,
+            -1.6836838722229
+          ],
+          "full_mesh_penetration_m": 0.00151489523705095,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61802959442139,
+            "min_m": 1.55888879299164,
+            "peak_to_peak_m": 0.0591408014297485,
+            "sample_count": 109,
+            "vertical_speed_max_mps": 0.39085865020752
+          },
+          "max_body_height_m": 0.00189295085147023,
+          "mean_speed_after_settle": 1.27994949117713,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "stairs_corner_exit",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move"
+          ],
+          "support_drift_max_m": 0.00923553574830294
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.0018933160463348,
+            "min_m": 0.0018933160463348,
+            "range_m": 0.0,
+            "sample_count": 7
+          },
+          "eligible_support_samples": {
+            "Left": 0,
+            "Right": 16
+          },
+          "end_position": [
+            6.48185920715332,
+            0.0018933160463348,
+            -1.53475260734558
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61802804470062,
+            "min_m": 1.61669790744781,
+            "peak_to_peak_m": 0.00133013725280762,
+            "sample_count": 7,
+            "vertical_speed_max_mps": 0.0192689895629883
+          },
+          "max_body_height_m": 0.0018933160463348,
+          "mean_speed_after_settle": 0.0197196833241512,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "stairs_side_release",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkR",
+            "Move",
+            "StopWalkR"
+          ],
+          "support_drift_max_m": 0.00263428781181574
+        },
+        {
+          "body_height_after_settle": {
+            "max_m": 0.00189295085147023,
+            "min_m": 0.00189295085147023,
+            "range_m": 0.0,
+            "sample_count": 86
+          },
+          "eligible_support_samples": {
+            "Left": 63,
+            "Right": 29
+          },
+          "end_position": [
+            1.89845216274261,
+            0.00189295085147023,
+            0.125408142805099
+          ],
+          "full_mesh_penetration_m": 0.0,
+          "grounded_ratio": 1.0,
+          "head_height": {
+            "max_m": 1.61803078651428,
+            "min_m": 1.55899131298065,
+            "peak_to_peak_m": 0.0590394735336304,
+            "sample_count": 86,
+            "vertical_speed_max_mps": 0.644009113311768
+          },
+          "max_body_height_m": 0.00189295085147023,
+          "mean_speed_after_settle": 1.17325100484342,
+          "midstance_knees": {
+            "Left": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            },
+            "Right": {
+              "max_flex_degrees": 0.0,
+              "sample_count": 0
+            }
+          },
+          "name": "stairs_side_reverse",
+          "sole_penetration_max_m": 0.0,
+          "states": [
+            "Idle",
+            "StartWalkL",
+            "Move",
+            "StopWalkL",
+            "StartWalkR"
+          ],
+          "support_drift_max_m": 7.90025751484791e-06
+        }
+      ]
+    }
+  },
+  "controls": {
+    "failures": [],
+    "measured": {
+      "camera_obstruction_length_m": 0.566964566707611,
+      "idle_horizontal_displacement_m": 0.0,
+      "no_input_seconds": 22,
+      "turn_response_seconds": {
+        "180": 0.383333333333333,
+        "90": 0.183333333333333
+      }
+    }
+  },
+  "blender_source": {
+    "blender": "5.2.2 LTS",
+    "actions": 15,
+    "height_m": 1.7799999713897705,
+    "phenotype": {
+      "gender": "male",
+      "age": "adult",
+      "muscle": "average",
+      "weight": "average",
+      "height_m": 1.78
+    },
+    "postures": {
+      "Idle": {
+        "evaluated_frames": 193,
+        "evaluated_bones": 57,
+        "max_bone_translation_change_m": 0.0,
+        "max_bone_rotation_change_degrees": 0.0,
+        "max_bone_scale_change": 0.0
+      },
+      "Walk": {
+        "evaluated_frames": 55,
+        "vertical_motion": {
+          "hips": {
+            "height_min_m": 0.8979296088218689,
+            "height_max_m": 0.9461819529533386,
+            "vertical_peak_to_peak_m": 0.04825234413146973,
+            "vertical_peak_speed_mps": 0.3366208076477051,
+            "max_adjacent_displacement_m": 0.005771275492539054,
+            "seam_velocity_difference_mps": 0.07927179312346773
+          },
+          "head": {
+            "height_min_m": 1.5699312686920166,
+            "height_max_m": 1.6181836128234863,
+            "vertical_peak_to_peak_m": 0.04825234413146973,
+            "vertical_peak_speed_mps": 0.3366208076477051,
+            "max_adjacent_displacement_m": 0.005717977984795771,
+            "seam_velocity_difference_mps": 0.0792646405055646
+          }
+        },
+        "hips_max_adjacent_displacement_m": 0.005771275492539054,
+        "hips_seam_velocity_difference_mps": 0.07927179312346773,
+        "hips_to_neck_lean_max_degrees": 1.869806468121145,
+        "upper_arm_abduction_max_degrees": 3.8684192769689454,
+        "foot_track_width_min_m": 0.09999991580843925,
+        "foot_track_width_max_m": 0.10004160925745964,
+        "foot_track_width_mean_m": 0.10000351538712328,
+        "knee_forward_offset_min_m": {
+          "Left": 0.03919403254985809,
+          "Right": 0.03919409215450287
+        },
+        "foot_pitch_min_degrees": {
+          "Left": -29.931834526381934,
+          "Right": -29.931846588968625
+        },
+        "foot_pitch_max_degrees": {
+          "Left": 12.999992719754704,
+          "Right": 12.999986896513475
+        },
+        "foot_pitch_span_degrees": {
+          "Left": 42.931827246136635,
+          "Right": 42.9318334854821
+        },
+        "midstance_knee_flexion": {
+          "Left": {
+            "samples": [
+              {
+                "frame": 11,
+                "side_phase": 0.2037037037037037,
+                "degrees": 12.57168215850416
+              },
+              {
+                "frame": 12,
+                "side_phase": 0.2222222222222222,
+                "degrees": 11.20494764520626
+              },
+              {
+                "frame": 13,
+                "side_phase": 0.24074074074074073,
+                "degrees": 10.964606948691852
+              },
+              {
+                "frame": 14,
+                "side_phase": 0.25925925925925924,
+                "degrees": 10.964606948691852
+              },
+              {
+                "frame": 15,
+                "side_phase": 0.2777777777777778,
+                "degrees": 12.05138566828927
+              },
+              {
+                "frame": 16,
+                "side_phase": 0.2962962962962963,
+                "degrees": 13.798466095708477
+              }
+            ],
+            "max_degrees": 13.798466095708477
+          },
+          "Right": {
+            "samples": [
+              {
+                "frame": 38,
+                "side_phase": 0.20370370370370372,
+                "degrees": 12.571654837747474
+              },
+              {
+                "frame": 39,
+                "side_phase": 0.22222222222222232,
+                "degrees": 11.20494764520626
+              },
+              {
+                "frame": 40,
+                "side_phase": 0.2407407407407407,
+                "degrees": 10.964606948691852
+              },
+              {
+                "frame": 41,
+                "side_phase": 0.2592592592592593,
+                "degrees": 10.964606948691852
+              },
+              {
+                "frame": 42,
+                "side_phase": 0.2777777777777777,
+                "degrees": 12.05138566828927
+              },
+              {
+                "frame": 43,
+                "side_phase": 0.2962962962962963,
+                "degrees": 13.798425114573462
+              }
+            ],
+            "max_degrees": 13.798425114573462
+          }
+        }
+      },
+      "Jog": {
+        "evaluated_frames": 43,
+        "vertical_motion": {
+          "hips": {
+            "height_min_m": 0.8917068839073181,
+            "height_max_m": 0.9148679375648499,
+            "vertical_peak_to_peak_m": 0.02316105365753174,
+            "vertical_peak_speed_mps": 0.3785061836242676,
+            "max_adjacent_displacement_m": 0.006364372041457288,
+            "seam_velocity_difference_mps": 0.13416767044174413
+          },
+          "head": {
+            "height_min_m": 1.5580673217773438,
+            "height_max_m": 1.581228256225586,
+            "vertical_peak_to_peak_m": 0.023160934448242188,
+            "vertical_peak_speed_mps": 0.3785061836242676,
+            "max_adjacent_displacement_m": 0.00632572497755218,
+            "seam_velocity_difference_mps": 0.13416775857055935
+          }
+        },
+        "hips_max_adjacent_displacement_m": 0.006364372041457288,
+        "hips_seam_velocity_difference_mps": 0.13416767044174413,
+        "hips_to_neck_lean_max_degrees": 5.869197118754887,
+        "upper_arm_abduction_max_degrees": 4.0101520417262675,
+        "foot_track_width_min_m": 0.03999977558851242,
+        "foot_track_width_max_m": 0.04000057652592659,
+        "foot_track_width_mean_m": 0.04000017176880393,
+        "knee_forward_offset_min_m": {
+          "Left": 0.04550691694021225,
+          "Right": 0.04550711065530777
+        },
+        "foot_pitch_min_degrees": {
+          "Left": -23.96573282464754,
+          "Right": -23.96573750566008
+        },
+        "foot_pitch_max_degrees": {
+          "Left": 1.60632780194325e-05,
+          "Right": 1.5761462173066098e-05
+        },
+        "foot_pitch_span_degrees": {
+          "Left": 23.965748887925557,
+          "Right": 23.965753267122253
+        }
+      }
+    },
+    "support": {
+      "Walk": {
+        "left_right_half_cycle_contact_error": 0.0,
+        "flight_fraction": 0.0,
+        "support_regions": {
+          "Left": [
+            "air",
+            "ball",
+            "heel",
+            "sole",
+            "toes"
+          ],
+          "Right": [
+            "air",
+            "ball",
+            "heel",
+            "sole",
+            "toes"
+          ]
+        }
+      },
+      "Jog": {
+        "left_right_half_cycle_contact_error": 0.0,
+        "flight_fraction": 0.2857142857142857,
+        "support_regions": {
+          "Left": [
+            "air",
+            "ball",
+            "sole",
+            "toes"
+          ],
+          "Right": [
+            "air",
+            "ball",
+            "sole",
+            "toes"
+          ]
+        }
+      }
+    },
+    "fk_ik_foot_position_error_m": 9.394307638470995e-07,
+    "fk_ik_foot_rotation_error_degrees": 0.0,
+    "fk_ik_knee_displacement_m": 0.002464565060389131,
+    "failures": []
+  },
+  "exported_pack": {
+    "export": "pass",
+    "standalone_start": "pass",
+    "original_project_directory_used": false
+  }
+}

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="390" viewBox="0 0 1120 390" role="img" aria-labelledby="title desc">
+  <title id="title">同じ足の接地から次の同じ足の接地までが一周期</title>
+  <desc id="desc">左足の接地、右足の接地、次の左足の接地を並べた図。歩行には両脚支持があり、今回のジョギングには両足が地面を離れる浮遊がある。支持時間の割合は説明用。</desc>
+  <rect width="1120" height="390" fill="white"/>
+  <g font-family="sans-serif" fill="#222">
+    <text x="44" y="39" font-size="23">左 → 右 → 次の左で、一周期</text>
+    <text x="44" y="65" font-size="15" fill="#666">接地している時間の割合は説明用です。個人や速度によって変わります。</text>
+    <text x="207" y="110" font-size="17">左の接地</text><text x="566" y="110" font-size="17">右の接地</text><text x="902" y="110" font-size="17">次の左の接地</text>
+    <text x="44" y="174" font-size="20">歩行</text><text x="44" y="275" font-size="20">ジョギング</text>
+    <text x="166" y="166" font-size="14">左</text><text x="166" y="193" font-size="14">右</text>
+    <text x="166" y="267" font-size="14">左</text><text x="166" y="294" font-size="14">右</text>
+  </g>
+  <g stroke="#aaa" stroke-dasharray="3 5"><path d="M250 119V307M610 119V307M970 119V307"/></g>
+  <g fill="#ededed"><rect x="250" y="150" width="720" height="18"/><rect x="250" y="177" width="720" height="18"/><rect x="250" y="251" width="720" height="18"/><rect x="250" y="278" width="720" height="18"/></g>
+  <g fill="#555"><rect x="250" y="150" width="432" height="18"/><rect x="250" y="251" width="288" height="18"/></g>
+  <g fill="#888"><rect x="250" y="177" width="72" height="18"/><rect x="610" y="177" width="360" height="18"/><rect x="610" y="278" width="288" height="18"/></g>
+  <g font-family="sans-serif" font-size="14" fill="#444">
+    <text x="257" y="223">両脚支持</text><text x="619" y="223">両脚支持</text>
+    <text x="547" y="322">浮遊</text><text x="908" y="322">浮遊</text>
+  </g>
+  <path d="M250 340V350H970V340M610 350V356" stroke="#666" fill="none"/>
+  <g font-family="sans-serif" font-size="17" fill="#222"><text x="573" y="379">一周期</text></g>
+  <g font-family="sans-serif" font-size="14" fill="#666"><text x="44" y="354">濃い帯：接地</text><text x="44" y="377">薄い帯：空中</text></g>
+</svg>

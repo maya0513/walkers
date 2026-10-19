@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://addons/walkers/motor.gd" id="1"]
+[ext_resource type="PackedScene" path="res://addons/walkers/assets/humanoid.glb" id="2"]
+[ext_resource type="Resource" path="res://addons/walkers/default_config.tres" id="3"]
+
+[sub_resource type="CapsuleShape3D" id="Capsule"]
+radius = 0.23
+height = 1.78
+
+[node name="Humanoid" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1")
+config = ExtResource("3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+position = Vector3(0, 0.89, 0)
+shape = SubResource("Capsule")
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="Model" parent="Visual" instance=ExtResource("2")]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]

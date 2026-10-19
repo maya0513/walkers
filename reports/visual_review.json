@@ -1,0 +1,140 @@
+{
+  "review_scope": "Independent visual review of delivered Blender-derived source-motion previews; runtime pose accumulation reviewed separately.",
+  "method": [
+    "Pillowで全GIFフレームをデコードし、ファイル・再生時間・ループ指定を検証。",
+    "全15モーションの側面・正面・斜めについて、リセット区間を除く全GIF姿勢を一覧画像で確認。静止するIdleは先頭・末尾を確認。",
+    "Walk・Jogの側面、StartWalkL・StopJogRの側面、Turn180L・Turn180Rの正面を33ポーズの大きな一覧で追加確認。",
+    "周期の継ぎ目、膝の中間支持期、頭の上下動をBlender評価済みの数値と照合。"
+  ],
+  "motions": [
+    "Idle",
+    "Walk",
+    "Jog",
+    "StartWalkL",
+    "StopWalkL",
+    "StartWalkR",
+    "StopWalkR",
+    "StartJogL",
+    "StopJogL",
+    "StartJogR",
+    "StopJogR",
+    "Turn90L",
+    "Turn90R",
+    "Turn180L",
+    "Turn180R"
+  ],
+  "views": [
+    "front",
+    "side",
+    "three_quarter"
+  ],
+  "checks": {
+    "male_body": "筋肉を誇張しない成人男性の体型。マットな無彩色の外観。",
+    "idle": "直立で一定の姿勢。腕を下げ、肩や全身の待機揺れを加えていない。",
+    "walk": "体幹を起こし、指を自然に曲げ、狭く交差しない接地軌道。身体が足の上を通る時に支持膝が伸び、中腰を残していない。",
+    "jog": "腰で折らない軽い前傾。荷重時の膝屈曲、遊脚の回収、踵が上がる前足部での蹴り出しが見える。腕が身体から大きく離れない。",
+    "transitions": "左右の発進・停止が直立または移動の端姿勢へつながる。新たな大きい関節反転や手形状の乱れは認めない。",
+    "turns": "左右90度・180度で足を置き直す姿勢を確認。大きい膝の反転を認めない。",
+    "presentation": "無地背景と単純な床。共通縮尺・床線の横長33ポーズ画像。番号・位相は小さく、非周期GIFには空白のリセット区間。"
+  },
+  "walk_head_peak_to_peak_m": 0.04825234413146973,
+  "walk_midstance_knee_max_degrees": {
+    "Left": 13.798466095708477,
+    "Right": 13.798425114573462
+  },
+  "cycle_boundary_pixel_difference": {
+    "Idle": {
+      "front": 0.0,
+      "side": 0.0,
+      "three_quarter": 0.0
+    },
+    "Walk": {
+      "front": 0.0,
+      "side": 0.0,
+      "three_quarter": 0.0
+    },
+    "Jog": {
+      "front": 0.0,
+      "side": 0.0,
+      "three_quarter": 0.0
+    }
+  },
+  "preview_decode_failures": [],
+  "source_blend_sha256": "87b58eb2501fa82c3447ab3417afb3440ca60676a08d92ee91775d2d91366a0a",
+  "blocking_source_pose_issues": [],
+  "runtime_review_status": "最終版のGodot実行画面GIFとスローGIFを全フレームで確認し、承認。頭が一瞬跳ねる挙動、支持脚が中腰のままになる挙動、新たな大きい姿勢反転は認めない。接地・腕・手と加減速・停止・反転のつながりを確認した。",
+  "runtime_review": {
+    "method": "実際の最終GIFを全フレームデコードし、キャラクター全身を拡大した連続一覧で確認。通常版486姿勢、スロー版140姿勢と各リセット区間を確認。通常版の同一フレーム統合は持続時間の合算で保持される。",
+    "gifs": {
+      "Runtime.gif": {
+        "sha256": "7c5342754006c7a442686529bc234210e5ad6290b8716b6e79516ba8f17ef364",
+        "decoded_frames": 487,
+        "decoded_nonreset_frames": 486,
+        "duration_ms": 20320,
+        "captured_frames": 500,
+        "approved": true
+      },
+      "Runtime_slow.gif": {
+        "sha256": "e95e204396a09ee0bba91067dcd48c7802745270ffbc6dbde69213f36dd0348c",
+        "decoded_frames": 141,
+        "decoded_nonreset_frames": 140,
+        "duration_ms": 14320,
+        "captured_frames": 140,
+        "approved": true
+      }
+    },
+    "blocking_visual_issues": [],
+    "evaluated_metrics": {
+      "walk": {
+        "body_height_after_settle": {
+          "max_m": 5.85936941206455e-05,
+          "min_m": 5.85936941206455e-05,
+          "range_m": 0.0,
+          "sample_count": 157
+        },
+        "head_height": {
+          "max_m": 1.61776757240295,
+          "min_m": 1.55906689167023,
+          "peak_to_peak_m": 0.0587006807327271,
+          "sample_count": 157,
+          "vertical_speed_max_mps": 0.399055480957031
+        },
+        "midstance_knees": {
+          "Left": {
+            "max_flex_degrees": 15.1873064041138,
+            "sample_count": 18
+          },
+          "Right": {
+            "max_flex_degrees": 15.1894454956055,
+            "sample_count": 18
+          }
+        }
+      },
+      "jog": {
+        "body_height_after_settle": {
+          "max_m": 5.85936941206455e-05,
+          "min_m": 5.85936941206455e-05,
+          "range_m": 0.0,
+          "sample_count": 127
+        },
+        "head_height": {
+          "max_m": 1.57884955406189,
+          "min_m": 1.55739033222198,
+          "peak_to_peak_m": 0.0214592218399048,
+          "sample_count": 127,
+          "vertical_speed_max_mps": 0.415019989013672
+        },
+        "midstance_knees": {
+          "Left": {
+            "max_flex_degrees": 0.0,
+            "sample_count": 0
+          },
+          "Right": {
+            "max_flex_degrees": 0.0,
+            "sample_count": 0
+          }
+        }
+      }
+    }
+  }
+}

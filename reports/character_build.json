@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "blender": "5.2.2 LTS",
+  "vertices": 13380,
+  "polygons": 13378,
+  "bones": 53,
+  "actions": 15,
+  "fps": 60,
+  "height": 1.78
+}

@@ -1,0 +1,78 @@
+{
+  "sources": [
+    {
+      "repository": "makehumancommunity/mpfb2",
+      "commit": "3af0cd5a2ffba072e93a34e5f6f494fdc4813ddf",
+      "license": "CC0-1.0",
+      "files": [
+        {
+          "path": "base.obj",
+          "url": "https://raw.githubusercontent.com/makehumancommunity/mpfb2/3af0cd5a2ffba072e93a34e5f6f494fdc4813ddf/src/mpfb/data/3dobjs/base.obj",
+          "sha256": "8e761e6624b8f54536409135d1636da63b32486a90d4897f84e121d144f6fb4c"
+        },
+        {
+          "path": "rig.game_engine.json",
+          "url": "https://raw.githubusercontent.com/makehumancommunity/mpfb2/3af0cd5a2ffba072e93a34e5f6f494fdc4813ddf/src/mpfb/data/rigs/standard/rig.game_engine.json",
+          "sha256": "b324ddb4b707721c19630bfadb87c3e3b38eed3b6e4590bb3cead43ea918f799"
+        },
+        {
+          "path": "weights.game_engine.json",
+          "url": "https://raw.githubusercontent.com/makehumancommunity/mpfb2/3af0cd5a2ffba072e93a34e5f6f494fdc4813ddf/src/mpfb/data/rigs/standard/weights.game_engine.json",
+          "sha256": "9f4a773e74ce5ba08415b4f30070338e9f75bae5971b5075b10cd6b9caa58473"
+        },
+        {
+          "path": "macro.json",
+          "url": "https://raw.githubusercontent.com/makehumancommunity/mpfb2/3af0cd5a2ffba072e93a34e5f6f494fdc4813ddf/src/mpfb/data/targets/macrodetails/macro.json",
+          "sha256": "5b6dfabced7b7912df45d3c39f6ef34bca55a72cb6de8ee6c8d66c371de4447c"
+        },
+        {
+          "path": "african-male-young.target.gz",
+          "url": "https://raw.githubusercontent.com/makehumancommunity/mpfb2/3af0cd5a2ffba072e93a34e5f6f494fdc4813ddf/src/mpfb/data/targets/macrodetails/african-male-young.target.gz",
+          "sha256": "05ed84d6df36e788cdfa8da0be15376850524b960cf2f17f3e592b9cf7d21c85"
+        },
+        {
+          "path": "asian-male-young.target.gz",
+          "url": "https://raw.githubusercontent.com/makehumancommunity/mpfb2/3af0cd5a2ffba072e93a34e5f6f494fdc4813ddf/src/mpfb/data/targets/macrodetails/asian-male-young.target.gz",
+          "sha256": "0928ed8b9f08f60afb9884cf9e9f33a939ed3a85d7f136de9ccc88a76981d6d7"
+        },
+        {
+          "path": "caucasian-male-young.target.gz",
+          "url": "https://raw.githubusercontent.com/makehumancommunity/mpfb2/3af0cd5a2ffba072e93a34e5f6f494fdc4813ddf/src/mpfb/data/targets/macrodetails/caucasian-male-young.target.gz",
+          "sha256": "ffe69537e53148edff2776204ba48cf3bf1f3cbc72966592c8a562ab80b07333"
+        },
+        {
+          "path": "universal-male-young-averagemuscle-averageweight.target.gz",
+          "url": "https://raw.githubusercontent.com/makehumancommunity/mpfb2/3af0cd5a2ffba072e93a34e5f6f494fdc4813ddf/src/mpfb/data/targets/macrodetails/universal-male-young-averagemuscle-averageweight.target.gz",
+          "sha256": "e814651195c53971503d9823d6841216718a561951ef064f81d132297f4fa494"
+        }
+      ]
+    },
+    {
+      "repository": "J-Ponzo/gltf-universal-animation-library",
+      "commit": "e24c23cf2a1323488a3faa226ea7ea21f644b73e",
+      "license": "CC0-1.0",
+      "files": [
+        {
+          "path": "AnimationLibrary_Godot_Standard.gltf",
+          "url": "https://raw.githubusercontent.com/J-Ponzo/gltf-universal-animation-library/e24c23cf2a1323488a3faa226ea7ea21f644b73e/glTF/AnimationLibrary_Godot_Standard.gltf",
+          "sha256": "0ff075c7ad6855c5c2c37a171592ee8f0d6ab2f58259e2be77a9b63dd8027765"
+        },
+        {
+          "path": "AnimationLibrary_Godot_Standard.bin",
+          "url": "https://raw.githubusercontent.com/J-Ponzo/gltf-universal-animation-library/e24c23cf2a1323488a3faa226ea7ea21f644b73e/glTF/AnimationLibrary_Godot_Standard.bin",
+          "sha256": "6e65377d81558333c4093dbb144a48fd19019343d82b1a3a7992a98ec0e0543c"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/J-Ponzo/gltf-universal-animation-library/e24c23cf2a1323488a3faa226ea7ea21f644b73e/README.md",
+          "sha256": "370e6ff244ef43b269f936be7d630a77a3eb7ed8bbc3315ffcae5b327b814fcb"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/J-Ponzo/gltf-universal-animation-library/e24c23cf2a1323488a3faa226ea7ea21f644b73e/LICENSE",
+          "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+        }
+      ]
+    }
+  ]
+}

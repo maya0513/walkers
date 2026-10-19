@@ -1,0 +1,12 @@
+{
+	"failures": [],
+	"measured": {
+		"camera_obstruction_length_m": 0.566964566707611,
+		"idle_horizontal_displacement_m": 0.0,
+		"no_input_seconds": 22,
+		"turn_response_seconds": {
+			"180": 0.383333333333333,
+			"90": 0.183333333333333
+		}
+	}
+}
