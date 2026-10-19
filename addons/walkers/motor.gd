@@ -103,13 +103,9 @@ func reset_at(position_on_floor: Vector3, yaw: float = 0.0) -> void:
 	_step_visual_offset = 0
 	step_active = false
 	if is_instance_valid(grounding):
-		grounding.locked = [false, false]
-		grounding.pelvis_offset = 0
+		grounding.reset_contacts()
 	if is_instance_valid(animator):
-		animator.forced_turn = false
-		animator.change(&"Idle")
-		animator.state_time = 0.0
-		animator.tree.advance(0.0)
+		animator.reset_to_idle()
 	visual.position.y = 0.0
 	visual.rotation.y = facing_yaw + PI
 	skeleton.advance(0.0)

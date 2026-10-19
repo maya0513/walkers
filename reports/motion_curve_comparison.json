@@ -3,25 +3,25 @@
   "before_source": {
     "kind": "evaluated_Blender_FK",
     "blend": "character.blend",
-    "blend_sha256": "87b58eb2501fa82c3447ab3417afb3440ca60676a08d92ee91775d2d91366a0a"
+    "blend_sha256": "4b0ccee210cc774e2bdab3eb00c965d7d356a0c88da4753fd4108af04d444fac"
   },
   "after_source": {
     "kind": "evaluated_Blender_FK",
     "blend": "character.blend",
-    "blend_sha256": "4b0ccee210cc774e2bdab3eb00c965d7d356a0c88da4753fd4108af04d444fac"
+    "blend_sha256": "4d1669adc251d1dacd0e3fdc8b3834f609ef2b23a4ff9c862318bfe571925aa2"
   },
   "clips": {
     "Walk": {
       "period_seconds": {
-        "before": 0.9,
+        "before": 1.05,
         "after": 1.05
       },
       "cadence_steps_per_minute": {
-        "before": 133.33333333333334,
+        "before": 114.28571428571428,
         "after": 114.28571428571428
       },
       "step_length_m": {
-        "before": 0.63,
+        "before": 0.735,
         "after": 0.735
       },
       "pelvis_vertical_extrema_per_stride": {
@@ -36,28 +36,6 @@
       },
       "arms_relative_to_chest": {
         "before": {
-          "Left": {
-            "upper_arm_sagittal_min_degrees": -10.53886673823263,
-            "upper_arm_sagittal_max_degrees": 21.461123874463006,
-            "elbow_flexion_min_degrees": 12.203219757847393,
-            "elbow_flexion_max_degrees": 12.203242908370356,
-            "elbow_flexion_span_degrees": 2.315052296353315e-05,
-            "upper_arm_abduction_max_degrees": 4.128189029487691,
-            "hand_forward_of_shoulder_min_m": -0.04014539778042563,
-            "hand_forward_of_shoulder_max_m": 0.24535629841644183
-          },
-          "Right": {
-            "upper_arm_sagittal_min_degrees": -10.538871227075434,
-            "upper_arm_sagittal_max_degrees": 21.461126536124617,
-            "elbow_flexion_min_degrees": 12.203218971930852,
-            "elbow_flexion_max_degrees": 12.203235997146606,
-            "elbow_flexion_span_degrees": 1.70252157545292e-05,
-            "upper_arm_abduction_max_degrees": 4.1281452930516505,
-            "hand_forward_of_shoulder_min_m": -0.04014540137393487,
-            "hand_forward_of_shoulder_max_m": 0.2453563393235142
-          }
-        },
-        "after": {
           "Left": {
             "upper_arm_sagittal_min_degrees": -17.99999843432709,
             "upper_arm_sagittal_max_degrees": 17.97761738452909,
@@ -78,43 +56,65 @@
             "hand_forward_of_shoulder_min_m": -0.1099293745416842,
             "hand_forward_of_shoulder_max_m": 0.2262647662069371
           }
+        },
+        "after": {
+          "Left": {
+            "upper_arm_sagittal_min_degrees": -18.000528413158374,
+            "upper_arm_sagittal_max_degrees": 17.97714203479964,
+            "elbow_flexion_min_degrees": 9.208692062334364,
+            "elbow_flexion_max_degrees": 17.09145978188701,
+            "elbow_flexion_span_degrees": 7.882767719552646,
+            "upper_arm_abduction_max_degrees": 4.235082678785917,
+            "hand_forward_of_shoulder_min_m": -0.11007683157733736,
+            "hand_forward_of_shoulder_max_m": 0.22606880769422572
+          },
+          "Right": {
+            "upper_arm_sagittal_min_degrees": -17.97819463602434,
+            "upper_arm_sagittal_max_degrees": 17.999465888816548,
+            "elbow_flexion_min_degrees": 9.208572309176532,
+            "elbow_flexion_max_degrees": 17.091268961886527,
+            "elbow_flexion_span_degrees": 7.8826966527099955,
+            "upper_arm_abduction_max_degrees": 4.235651153353382,
+            "hand_forward_of_shoulder_min_m": -0.10993269847724306,
+            "hand_forward_of_shoulder_max_m": 0.22626005543552036
+          }
         }
       },
       "adjacent_velocity_change": {
         "LeftFoot": {
-          "before_mps": 0.8734087490479232,
-          "after_mps": 0.702525663993198,
-          "reduction_percent": 19.565075944224255
+          "before_mps": 0.702525663993198,
+          "after_mps": 0.6426709677014183,
+          "reduction_percent": 8.519930211739467
         },
         "RightFoot": {
-          "before_mps": 0.8734069616878495,
-          "after_mps": 0.7021864851382482,
-          "reduction_percent": 19.603745339826418
+          "before_mps": 0.7021864851382482,
+          "after_mps": 0.6430269015155544,
+          "reduction_percent": 8.42505301295372
         },
         "LeftLowerLeg": {
-          "before_mps": 1.8671081849007185,
-          "after_mps": 0.9776620989326908,
-          "reduction_percent": 47.63762984710621
+          "before_mps": 0.9776620989326908,
+          "after_mps": 0.9271629198331643,
+          "reduction_percent": 5.165299867373019
         },
         "RightLowerLeg": {
-          "before_mps": 1.8670933061410413,
-          "after_mps": 0.97665411959007,
-          "reduction_percent": 47.69119912873315
+          "before_mps": 0.97665411959007,
+          "after_mps": 0.8871905478902563,
+          "reduction_percent": 9.160210345230935
         },
         "LeftHand": {
-          "before_mps": 0.13199527409726047,
-          "after_mps": 0.10677566421851761,
-          "reduction_percent": 19.106449114352266
+          "before_mps": 0.10677566421851761,
+          "after_mps": 0.11114477078686175,
+          "reduction_percent": -4.091856136247207
         },
         "RightHand": {
-          "before_mps": 0.13198130348135614,
-          "after_mps": 0.10668759632476832,
-          "reduction_percent": 19.164613842566613
+          "before_mps": 0.10668759632476832,
+          "after_mps": 0.1111491815253753,
+          "reduction_percent": -4.181915568727823
         },
         "Hips": {
-          "before_mps": 0.07927179344614889,
-          "after_mps": 0.0694568310133371,
-          "reduction_percent": 12.38140580164786
+          "before_mps": 0.0694568310133371,
+          "after_mps": 0.06945681778545024,
+          "reduction_percent": 1.904476014669143e-05
         }
       }
     },
@@ -133,8 +133,8 @@
       },
       "pelvis_vertical_extrema_per_stride": {
         "before": {
-          "maxima": 4,
-          "minima": 4
+          "maxima": 2,
+          "minima": 2
         },
         "after": {
           "maxima": 2,
@@ -143,28 +143,6 @@
       },
       "arms_relative_to_chest": {
         "before": {
-          "Left": {
-            "upper_arm_sagittal_min_degrees": -12.538863483858337,
-            "upper_arm_sagittal_max_degrees": 31.461128151055092,
-            "elbow_flexion_min_degrees": 77.93445662214067,
-            "elbow_flexion_max_degrees": 77.9345241628072,
-            "elbow_flexion_span_degrees": 6.75406665209266e-05,
-            "upper_arm_abduction_max_degrees": 4.595907745071383,
-            "hand_forward_of_shoulder_min_m": 0.1933071912811008,
-            "hand_forward_of_shoulder_max_m": 0.3928386671583086
-          },
-          "Right": {
-            "upper_arm_sagittal_min_degrees": -12.53885502078242,
-            "upper_arm_sagittal_max_degrees": 31.461128980124453,
-            "elbow_flexion_min_degrees": 77.9344524892531,
-            "elbow_flexion_max_degrees": 77.93453229109383,
-            "elbow_flexion_span_degrees": 7.980184072664542e-05,
-            "upper_arm_abduction_max_degrees": 4.59589845758341,
-            "hand_forward_of_shoulder_min_m": 0.1933072541996231,
-            "hand_forward_of_shoulder_max_m": 0.39283868108820164
-          }
-        },
-        "after": {
           "Left": {
             "upper_arm_sagittal_min_degrees": -37.999989762691634,
             "upper_arm_sagittal_max_degrees": 19.9999962579187,
@@ -185,43 +163,65 @@
             "hand_forward_of_shoulder_min_m": 0.024690488776470725,
             "hand_forward_of_shoulder_max_m": 0.31248547931240744
           }
+        },
+        "after": {
+          "Left": {
+            "upper_arm_sagittal_min_degrees": -38.00061166496611,
+            "upper_arm_sagittal_max_degrees": 19.999663308787767,
+            "elbow_flexion_min_degrees": 79.88964762592208,
+            "elbow_flexion_max_degrees": 104.80830172203511,
+            "elbow_flexion_span_degrees": 24.91865409611303,
+            "upper_arm_abduction_max_degrees": 5.06242979150655,
+            "hand_forward_of_shoulder_min_m": 0.024689615076779917,
+            "hand_forward_of_shoulder_max_m": 0.3124852197286213
+          },
+          "Right": {
+            "upper_arm_sagittal_min_degrees": -38.00060735746698,
+            "upper_arm_sagittal_max_degrees": 19.999666197847276,
+            "elbow_flexion_min_degrees": 79.88962680625217,
+            "elbow_flexion_max_degrees": 104.80826776711118,
+            "elbow_flexion_span_degrees": 24.91864096085901,
+            "upper_arm_abduction_max_degrees": 5.062426874450531,
+            "hand_forward_of_shoulder_min_m": 0.02468959613044403,
+            "hand_forward_of_shoulder_max_m": 0.3124852783709118
+          }
         }
       },
       "adjacent_velocity_change": {
         "LeftFoot": {
-          "before_mps": 1.6864807460511522,
-          "after_mps": 0.9119626451359542,
-          "reduction_percent": 45.92510781571095
+          "before_mps": 0.9119626451359542,
+          "after_mps": 0.9102605909470339,
+          "reduction_percent": 0.18663639327753945
         },
         "RightFoot": {
-          "before_mps": 1.6864697654551029,
-          "after_mps": 0.9119762298712609,
-          "reduction_percent": 45.92395022123866
+          "before_mps": 0.9119762298712609,
+          "after_mps": 0.9102505293776465,
+          "reduction_percent": 0.18922647730171827
         },
         "LeftLowerLeg": {
-          "before_mps": 4.597661278057976,
-          "after_mps": 1.5170046104297028,
-          "reduction_percent": 67.00486358859223
+          "before_mps": 1.5170046104297028,
+          "after_mps": 1.3997812707270514,
+          "reduction_percent": 7.72728961380329
         },
         "RightLowerLeg": {
-          "before_mps": 4.5976329876732756,
-          "after_mps": 1.5169918284751034,
-          "reduction_percent": 67.00493857290668
+          "before_mps": 1.5169918284751034,
+          "after_mps": 1.3998191223938115,
+          "reduction_percent": 7.724016957894575
         },
         "LeftHand": {
-          "before_mps": 0.4883978904063491,
-          "after_mps": 0.3673450039662448,
-          "reduction_percent": 24.785710343545464
+          "before_mps": 0.3673450039662448,
+          "after_mps": 0.36037096973812227,
+          "reduction_percent": 1.8984970947810598
         },
         "RightHand": {
-          "before_mps": 0.4884009261528554,
-          "after_mps": 0.367305102520798,
-          "reduction_percent": 24.79434766554024
+          "before_mps": 0.367305102520798,
+          "after_mps": 0.3603925971956953,
+          "reduction_percent": 1.8819518916733058
         },
         "Hips": {
-          "before_mps": 0.3374241223634625,
-          "after_mps": 0.0935611337565298,
-          "reduction_percent": 72.27194869732854
+          "before_mps": 0.0935611337565298,
+          "after_mps": 0.09355402278009134,
+          "reduction_percent": 0.007600353002312765
         }
       }
     }

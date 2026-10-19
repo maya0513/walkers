@@ -1,0 +1,2437 @@
+{
+	"camera": {
+		"projection": "orthographic",
+		"size": 1.14999997615814,
+		"target_height_m": 0.5,
+		"world_offset_m": [
+			3,
+			0.15,
+			0.7
+		]
+	},
+	"captured": {
+		"Stairs": 300
+	},
+	"fps": 60,
+	"frames": [
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0001.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "08d892a39f4d32bdcce90f671e4ff7e4d8a0cabb4e86bb6b7f214a89aa24036e",
+			"state": "StartWalkL",
+			"time_seconds": 0.0166666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0002.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "a3d8075f3cafc1d2fb96f09b7093edcbd43ae4ff9c9d7ee277bb319c393dceaf",
+			"state": "StartWalkL",
+			"time_seconds": 0.0333333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0003.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "f341086c1768e9f37b7ea32eed0240ab29801642e9b73a06b0981dcc4d43b763",
+			"state": "StartWalkL",
+			"time_seconds": 0.05
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0004.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "823d67a6aefdc8a6c0cf79e77f1a7424dffd2823289c57d629a3ece5b2fc8474",
+			"state": "StartWalkL",
+			"time_seconds": 0.0666666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0005.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "1bdc22ce701b0015849eb0677959ac9b7c07d4fe7d00172edcff16a0367c87a6",
+			"state": "StartWalkL",
+			"time_seconds": 0.0833333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0006.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "a712ec8662df2a36d50d7f9ebb6bfc5826f5f292b53312e1b333eb2630f44bad",
+			"state": "StartWalkL",
+			"time_seconds": 0.1
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0007.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "422179d9af2c83326e56459492b2f99448b67e81bbe3f6c6009e13a976a1137a",
+			"state": "StartWalkL",
+			"time_seconds": 0.116666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0008.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "5d1661c07da3d00df692447e215f12c6ad19fc814016373a3ffeeefe924f0106",
+			"state": "StartWalkL",
+			"time_seconds": 0.133333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0009.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "76da43ca8a76b99b970ee2c288ef7b52b43d130e5ff8a9cc04e48a1422e39824",
+			"state": "StartWalkL",
+			"time_seconds": 0.15
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0010.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "552ebc0438b3a684bb3106cfd6354e4c2da69d7dc4b78fbb4bb497f7a3ef1bd0",
+			"state": "StartWalkL",
+			"time_seconds": 0.166666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0011.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "cfde8b785eeef2e6301dd8d2f9f14418d21cb5e532531223492c433f2ae9f306",
+			"state": "StartWalkL",
+			"time_seconds": 0.183333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0012.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "cd7337292c238b5f748a5ea906de56912dfe8231a722cc76e9e0fb36da3c9834",
+			"state": "StartWalkL",
+			"time_seconds": 0.2
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0013.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "e131795310d1dbe6ae449859a0f431ade1ba9cb572359c1e38f8b669fea110b3",
+			"state": "StartWalkL",
+			"time_seconds": 0.216666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0014.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "e1e9d3b6b870f25fa367ec6bcda59e66eb2dd8755eeffa498f22b69d9a69ec1c",
+			"state": "StartWalkL",
+			"time_seconds": 0.233333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0015.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "5825acf83136ca07b646d9854f0a8a365ccf102c1e025b9ddff87f77b2a05b3b",
+			"state": "StartWalkL",
+			"time_seconds": 0.25
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0016.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "2dd5c9cace73f5ad07cd95e4389bfce74257215fc22b54b2bac3cb47decf0d6a",
+			"state": "StartWalkL",
+			"time_seconds": 0.266666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0017.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "489ae4ae2c088ddaa20946cb824584b3b3dc0f270b4b2042107b377a3a04eec7",
+			"state": "StartWalkL",
+			"time_seconds": 0.283333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0018.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "e43455b4087d0ec4660d302fe7335b0039d755ca80d69ab2a6b15a3069e656d5",
+			"state": "StartWalkL",
+			"time_seconds": 0.3
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0019.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "a4314e8ad9513968e611abf1c386485cbf3916dc1139b760dee301a728ef3155",
+			"state": "StartWalkL",
+			"time_seconds": 0.316666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0020.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "877c71dddc777c15c20afa236d2a86f7cf8a016cad075a227159ff1b54d50b11",
+			"state": "StartWalkL",
+			"time_seconds": 0.333333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0021.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "fcbc02dce504e477d0fcf790527a1304562b148cd93d675518381983f4e8600c",
+			"state": "StartWalkL",
+			"time_seconds": 0.35
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0022.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "53adff056daee72851df1f832b564eb099e66b1dfa53c130b06080a878681630",
+			"state": "StartWalkL",
+			"time_seconds": 0.366666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0023.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "7a8f0bd83cf7d79ef4368a7997c0fe14427cc79039efdbdd287e4cef2bb32772",
+			"state": "StartWalkL",
+			"time_seconds": 0.383333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0024.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "cc750387bdeabffd49073097c1af0b936f72e839ab738e6b618c1910d184362e",
+			"state": "StartWalkL",
+			"time_seconds": 0.4
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0025.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "6f083ad0b0dfa752bffe541ef8a6d9341c7c7d7da7bb65b5cf0c297fdf509b98",
+			"state": "StartWalkL",
+			"time_seconds": 0.416666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0026.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "00c262f61a1bcfd03d1903407b23f318ae0d1d814bf0c2ac8e0ae6fba6a565b8",
+			"state": "StartWalkL",
+			"time_seconds": 0.433333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0027.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "2ffed24f3a7a6349d514183eb00b869037fb6e4585a37b3ab25e22e1c8958d38",
+			"state": "StartWalkL",
+			"time_seconds": 0.45
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0028.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "73ff4aa926ce409510905c02aaa8dc8e42948aa365c20b52638227ba6985cdf7",
+			"state": "StartWalkL",
+			"time_seconds": 0.466666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0029.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "e88608d4e3a1699bc7ff978b0f15c5f0c6b6dcd0af8ad49b322e8e01aca99514",
+			"state": "StartWalkL",
+			"time_seconds": 0.483333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0030.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "331a5764f1071b327deb42b123f49035fa8f2937827bfbc880a7e99afa2385fc",
+			"state": "StartWalkL",
+			"time_seconds": 0.5
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0031.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "e78bb49975454f963030b4ad1349b07c5e7f6e83ceb4f2cf0f6e748bc16723f0",
+			"state": "StartWalkL",
+			"time_seconds": 0.516666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0032.png",
+			"gait": "Stairs",
+			"phase": 0.0,
+			"sha256": "edd73b4a02e6e4f7b237d5d48d9fd7173331c016dc0b755405c77aea73c52e7f",
+			"state": "StartWalkL",
+			"time_seconds": 0.533333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0033.png",
+			"gait": "Stairs",
+			"phase": 0.534599886459558,
+			"sha256": "f642317d9d8564ffb41d1d002f96773cd5eba8c9227258be8afa28b584afead6",
+			"state": "Move",
+			"time_seconds": 0.55
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0034.png",
+			"gait": "Stairs",
+			"phase": 0.545416475153294,
+			"sha256": "6b6fb161852de8acf1d85733d5a28b2be5c1bc5b472fe36b3fdfe6e2d4b277d3",
+			"state": "Move",
+			"time_seconds": 0.566666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0035.png",
+			"gait": "Stairs",
+			"phase": 0.556260179229875,
+			"sha256": "ef5ed1c1c7b43ce38af1f354873a6cd9f58a1d40f9e68ba1fce4942d5ed7768c",
+			"state": "Move",
+			"time_seconds": 0.583333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0036.png",
+			"gait": "Stairs",
+			"phase": 0.567126972334726,
+			"sha256": "c3217a584d12c17247a4d449933f66dd3afdbaae0dcabcaecc51be8f8bacea23",
+			"state": "Move",
+			"time_seconds": 0.6
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0037.png",
+			"gait": "Stairs",
+			"phase": 0.578017766108048,
+			"sha256": "8c9f212882be4c777e9ecefa89d28f90953e26d159a5cd541d0b6b86326a6c24",
+			"state": "Move",
+			"time_seconds": 0.616666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0038.png",
+			"gait": "Stairs",
+			"phase": 0.588928876820606,
+			"sha256": "fff391021694e6cfd4813d90e9db38dfd83d4382a58b58d8024e92ea0d2ca170",
+			"state": "Move",
+			"time_seconds": 0.633333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0039.png",
+			"gait": "Stairs",
+			"phase": 0.599861195838911,
+			"sha256": "1b3d0f1812a7df6491e9cf749fd4945c20d35697b4a5980241651b6ffcebcf55",
+			"state": "Move",
+			"time_seconds": 0.65
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0040.png",
+			"gait": "Stairs",
+			"phase": 0.610811363136958,
+			"sha256": "b18d0e026368d1f2e0bf91e463fa00451547d82b09fcea1cf3239d1763dd7d7b",
+			"state": "Move",
+			"time_seconds": 0.666666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0041.png",
+			"gait": "Stairs",
+			"phase": 0.621780309952846,
+			"sha256": "5e02879b201b68d57326116efe15d87712eee2165df4d8f408f32ee49006e40e",
+			"state": "Move",
+			"time_seconds": 0.683333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0042.png",
+			"gait": "Stairs",
+			"phase": 0.632765001315379,
+			"sha256": "44f9359f9201d544109dec42e15398841a39f2ee6ca049c649f5bdb833fe2aca",
+			"state": "Move",
+			"time_seconds": 0.7
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0043.png",
+			"gait": "Stairs",
+			"phase": 0.643766287367901,
+			"sha256": "0e9e6f71206bb35a325455625a571f6576e806fc7309442d222b4f01b2fceb79",
+			"state": "Move",
+			"time_seconds": 0.716666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0044.png",
+			"gait": "Stairs",
+			"phase": 0.6547813750719,
+			"sha256": "075104659bc8dfd472de13cd3ba9145fcb9ffb8c60084cd391605369d64c7751",
+			"state": "Move",
+			"time_seconds": 0.733333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0045.png",
+			"gait": "Stairs",
+			"phase": 0.665811195665477,
+			"sha256": "a8e83755ba42d3e6aa212b2d25f12e28f58ea618357b244c08893ca4ad439ee5",
+			"state": "Move",
+			"time_seconds": 0.75
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0046.png",
+			"gait": "Stairs",
+			"phase": 0.676853117623838,
+			"sha256": "710065017e257417947eaf06d86e5e5fb6edb40471dc3fb87003b1e48c3b37d4",
+			"state": "Move",
+			"time_seconds": 0.766666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0047.png",
+			"gait": "Stairs",
+			"phase": 0.687908072185084,
+			"sha256": "a2c3cd81e16900f6c3cc69887f5ae8b52443dfcf5c7fc9a91db98142b0017dd7",
+			"state": "Move",
+			"time_seconds": 0.783333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0048.png",
+			"gait": "Stairs",
+			"phase": 0.698973731929753,
+			"sha256": "3e3e1c99204059881ae5b3f62c9c8f86dc5b61e455795b175d428de9508cfdea",
+			"state": "Move",
+			"time_seconds": 0.8
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0049.png",
+			"gait": "Stairs",
+			"phase": 0.710066334730914,
+			"sha256": "4d4c34ecec75023aa2e463bf6c16f89b3a70176fff20189dc8f05623ef88c51f",
+			"state": "Move",
+			"time_seconds": 0.816666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0050.png",
+			"gait": "Stairs",
+			"phase": 0.721153325099253,
+			"sha256": "db4db4d85f708d2e8590587000b56a2a2ad298f04e95766a87207c1966ba9153",
+			"state": "Move",
+			"time_seconds": 0.833333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0051.png",
+			"gait": "Stairs",
+			"phase": 0.732249801526535,
+			"sha256": "cb4b85d351b731c777d424485aeefa131d35cda9fdec139649339470bcf827e3",
+			"state": "Move",
+			"time_seconds": 0.85
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0052.png",
+			"gait": "Stairs",
+			"phase": 0.743354762492537,
+			"sha256": "88d9d99a13938557ff972edec166c897475038ea5c9e8d5b905e52e5b8dc49f9",
+			"state": "Move",
+			"time_seconds": 0.866666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0053.png",
+			"gait": "Stairs",
+			"phase": 0.754468830399503,
+			"sha256": "8d5ebe305472fb33053a4a1ed5a12f943d8ffefff90a3089dbf58b47a0828b29",
+			"state": "Move",
+			"time_seconds": 0.883333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0054.png",
+			"gait": "Stairs",
+			"phase": 0.765590062352265,
+			"sha256": "8b38869bda519055e6775c6ab6d7e498453063f2adb25dac7be6ec2c716575ff",
+			"state": "Move",
+			"time_seconds": 0.9
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0055.png",
+			"gait": "Stairs",
+			"phase": 0.776719389588925,
+			"sha256": "cabb7c7bccdf67659798bb96ee8ff5c500bf01925063042dd7d69701ee415d64",
+			"state": "Move",
+			"time_seconds": 0.916666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0056.png",
+			"gait": "Stairs",
+			"phase": 0.78785495030907,
+			"sha256": "ca466be9cfaf9bd1ed7190e50a88fe0dda72f11119433da9c0baacf73842f86d",
+			"state": "Move",
+			"time_seconds": 0.933333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0057.png",
+			"gait": "Stairs",
+			"phase": 0.79899771562239,
+			"sha256": "7f3b28e896fdc4c4827b066cf3404758875115be3eb98a97e2ced1630048a368",
+			"state": "Move",
+			"time_seconds": 0.95
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0058.png",
+			"gait": "Stairs",
+			"phase": 0.810145904823226,
+			"sha256": "79fdbe68d8f484dace60428d7e90a559d5202df47797c3a51f7c5d7234929dfd",
+			"state": "Move",
+			"time_seconds": 0.966666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0059.png",
+			"gait": "Stairs",
+			"phase": 0.821300489021267,
+			"sha256": "6ee009dba96453ad835ac2326f40fd839bddbf27a44929486980426668ed3cc3",
+			"state": "Move",
+			"time_seconds": 0.983333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0060.png",
+			"gait": "Stairs",
+			"phase": 0.832459849700366,
+			"sha256": "7b05c228158c2a96e0c86b4c1c1b7848cdb14767db79f2c432752c183c35bb45",
+			"state": "Move",
+			"time_seconds": 1.0
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0061.png",
+			"gait": "Stairs",
+			"phase": 0.843624876875456,
+			"sha256": "269e4ed799b597cc96ff9392b0d48473da45c48898b0f8455d40923f9901f0da",
+			"state": "Move",
+			"time_seconds": 1.01666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0062.png",
+			"gait": "Stairs",
+			"phase": 0.85479411354411,
+			"sha256": "a1ebf02001d924d4275170368fef14847ad6488488ad2d59772daf01a43055f6",
+			"state": "Move",
+			"time_seconds": 1.03333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0063.png",
+			"gait": "Stairs",
+			"phase": 0.865968369302296,
+			"sha256": "b2cde297dd2f49b1a2fcda4689deb3ae03647ab469cf3e520e675e2cdf27e926",
+			"state": "Move",
+			"time_seconds": 1.05
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0064.png",
+			"gait": "Stairs",
+			"phase": 0.877146268242341,
+			"sha256": "435059fb05835e1c48a69428714ea4ebfd24d91b413f3d859f9d8888e18ad1eb",
+			"state": "Move",
+			"time_seconds": 1.06666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0065.png",
+			"gait": "Stairs",
+			"phase": 0.888328700379179,
+			"sha256": "554b290b20f8faefed5c75430670ed2a02f3dc1dda306ac27ad7f52f8f2b982f",
+			"state": "Move",
+			"time_seconds": 1.08333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0066.png",
+			"gait": "Stairs",
+			"phase": 0.899514289129348,
+			"sha256": "cea43eb7ab0b82e15982dc1be2fa6c4cea95e60f1ab3b6c2290d861fea9215b6",
+			"state": "Move",
+			"time_seconds": 1.1
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0067.png",
+			"gait": "Stairs",
+			"phase": 0.910703925859361,
+			"sha256": "5d9e131539ef47b48b46d1cd56bc1ce9cc048c19f8515177517ff1d0039c218c",
+			"state": "Move",
+			"time_seconds": 1.11666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0068.png",
+			"gait": "Stairs",
+			"phase": 0.921896233985754,
+			"sha256": "e80c3fddd01c453a6fa1e7c0a217e6633fccbf10ec37228b70adb648a02e7940",
+			"state": "Move",
+			"time_seconds": 1.13333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0069.png",
+			"gait": "Stairs",
+			"phase": 0.933092185294007,
+			"sha256": "762f486c76bc303369db9396759c1e4b56ee461f9bae6bf01de5130fc22989c1",
+			"state": "Move",
+			"time_seconds": 1.15
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0070.png",
+			"gait": "Stairs",
+			"phase": 0.944290483619621,
+			"sha256": "3ca1b0ba8dc51aa3a0308ee92ff824441b743f2b8c2471b11ffe7bd2fc6453f0",
+			"state": "Move",
+			"time_seconds": 1.16666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0071.png",
+			"gait": "Stairs",
+			"phase": 0.95549202032911,
+			"sha256": "2d0969a68aa143d022207c7aa1267a4e9ebf911942f1f59c3079482eebcf7aaf",
+			"state": "Move",
+			"time_seconds": 1.18333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0072.png",
+			"gait": "Stairs",
+			"phase": 0.966695581028521,
+			"sha256": "b74b8e15db7f4516f61ecf42a0283ddafa2e5660937a070970c3f312c5c4e4b0",
+			"state": "Move",
+			"time_seconds": 1.2
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0073.png",
+			"gait": "Stairs",
+			"phase": 0.977902055732788,
+			"sha256": "c3a4d5558ba615e26edc566c79deb6e6308e845d3c38dadd11fc0c43fcabd653",
+			"state": "Move",
+			"time_seconds": 1.21666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0074.png",
+			"gait": "Stairs",
+			"phase": 0.989110230723747,
+			"sha256": "a17f1416ab6f67456d7005871dacd025735ebc98b6380b88b91548c01623082d",
+			"state": "Move",
+			"time_seconds": 1.23333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0075.png",
+			"gait": "Stairs",
+			"phase": 0.000321077111086643,
+			"sha256": "680838328d8da4b7170eb051c55252da947ce05c5a052889c05b190879a595c8",
+			"state": "Move",
+			"time_seconds": 1.25
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0076.png",
+			"gait": "Stairs",
+			"phase": 0.0115333805008543,
+			"sha256": "6f4d75ed12c384fdd3c09bf2d0da7060bee5205274d39b218cbad1c99c6efb8e",
+			"state": "Move",
+			"time_seconds": 1.26666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0077.png",
+			"gait": "Stairs",
+			"phase": 0.0227480315837733,
+			"sha256": "3b2e30720449165922f3325aed2ab9d3a3765a5aece1daa65ee4d8bf82a615d2",
+			"state": "Move",
+			"time_seconds": 1.28333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0078.png",
+			"gait": "Stairs",
+			"phase": 0.0339639781554002,
+			"sha256": "4461c1cef6874e81d1e2bd918537b2b3731d6b091b6fca83e3f60c1413d97ac7",
+			"state": "Move",
+			"time_seconds": 1.3
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0079.png",
+			"gait": "Stairs",
+			"phase": 0.0451820298117037,
+			"sha256": "662e64ba92ee63dc420729ec1c4dc74b1ebc218a39b94000f0ce0d287b604e95",
+			"state": "Move",
+			"time_seconds": 1.31666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0080.png",
+			"gait": "Stairs",
+			"phase": 0.0564011336724507,
+			"sha256": "5fd5390aa9d5aeffa8c63a460e06088e10e9df705eb3ae134bebaa679edfe1a2",
+			"state": "Move",
+			"time_seconds": 1.33333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0081.png",
+			"gait": "Stairs",
+			"phase": 0.0676221804283647,
+			"sha256": "7dfcb4430f43d80ca6c98ab2bf11c6c80166964c484e074407c71e12a75bcc2e",
+			"state": "Move",
+			"time_seconds": 1.35
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0082.png",
+			"gait": "Stairs",
+			"phase": 0.0788441171992126,
+			"sha256": "685a70acbc2243c982d9303e1a3c3acb73feab0498d049d4c8d0c5fd160434a7",
+			"state": "Move",
+			"time_seconds": 1.36666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0083.png",
+			"gait": "Stairs",
+			"phase": 0.0900677542567526,
+			"sha256": "42f3af98fea697f26664682d64ade6bee946ed7202a3f97ad657955067b81ef7",
+			"state": "Move",
+			"time_seconds": 1.38333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0084.png",
+			"gait": "Stairs",
+			"phase": 0.101292119815507,
+			"sha256": "f859bb4ef06c0af8639e57b451a223482685d2a7379240f969afc7927c82dad5",
+			"state": "Move",
+			"time_seconds": 1.4
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0085.png",
+			"gait": "Stairs",
+			"phase": 0.112518104566198,
+			"sha256": "c759f33fdac6be0629497ad039cf775168e20ff24109a52f2fed5b11872da1cc",
+			"state": "Move",
+			"time_seconds": 1.41666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0086.png",
+			"gait": "Stairs",
+			"phase": 0.123744656304384,
+			"sha256": "65810ff77346e710f3675f18598d0f860af5d1081c3799f6a4114a54aa715dff",
+			"state": "Move",
+			"time_seconds": 1.43333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0087.png",
+			"gait": "Stairs",
+			"phase": 0.134972952931376,
+			"sha256": "403d00831ea94062439effc3228b7035b77c5f8492422cc411b5addbc406660f",
+			"state": "Move",
+			"time_seconds": 1.45
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0088.png",
+			"gait": "Stairs",
+			"phase": 0.146201932781678,
+			"sha256": "1500ca9bee063b42b09d96bc6f870124721bdab1b20f90f18d66c1391878a586",
+			"state": "Move",
+			"time_seconds": 1.46666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0089.png",
+			"gait": "Stairs",
+			"phase": 0.157442194263952,
+			"sha256": "d5fbb3ddf563edb974e33e8e93a27e94c261f1e81f41ce4b88dfe7c4fee26495",
+			"state": "Move",
+			"time_seconds": 1.48333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0090.png",
+			"gait": "Stairs",
+			"phase": 0.168672631792471,
+			"sha256": "774fcecb1a04c11c7d20726a7849b2fbc18848f96a844064b3375f1bd779fb74",
+			"state": "Move",
+			"time_seconds": 1.5
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0091.png",
+			"gait": "Stairs",
+			"phase": 0.179903887702224,
+			"sha256": "22bed128fc6417c6c569998dd6431c002d738fd49834246e5c6b36586ee75943",
+			"state": "Move",
+			"time_seconds": 1.51666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0092.png",
+			"gait": "Stairs",
+			"phase": 0.191135620043662,
+			"sha256": "6e5924389166ad56a62e721a308697f21dd2d071a895b4841d56f2b706b039b2",
+			"state": "Move",
+			"time_seconds": 1.53333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0093.png",
+			"gait": "Stairs",
+			"phase": 0.202368486360087,
+			"sha256": "f3583a5131507a0b044c83d7e5cee052532d624c14c5f805f09186faded41614",
+			"state": "Move",
+			"time_seconds": 1.55
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0094.png",
+			"gait": "Stairs",
+			"phase": 0.213601514190233,
+			"sha256": "e262403be59e00289914e7a7d9513c898f5b9c860a1c318fe31e5ca3269c2b4c",
+			"state": "Move",
+			"time_seconds": 1.56666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0095.png",
+			"gait": "Stairs",
+			"phase": 0.224835594224822,
+			"sha256": "3c1280eafa8d575c02809a004efc0411f7fc16e5a7179c8637ef14ff116aa7d8",
+			"state": "Move",
+			"time_seconds": 1.58333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0096.png",
+			"gait": "Stairs",
+			"phase": 0.236069836448921,
+			"sha256": "1b2c4c36efe5e87f86df32121b640ffaf6a3fbdbc32f2d20d1287862225c0f67",
+			"state": "Move",
+			"time_seconds": 1.6
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0097.png",
+			"gait": "Stairs",
+			"phase": 0.247305049782708,
+			"sha256": "e047557b05eecc9072b9e91d8bea9731e5dc87cdad096e3937020d216457cc2d",
+			"state": "Move",
+			"time_seconds": 1.61666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0098.png",
+			"gait": "Stairs",
+			"phase": 0.258540263116495,
+			"sha256": "694c054e87c4519dbbe78c0f9a40a3f01c517640a3091fe1eed551836b86c0a8",
+			"state": "Move",
+			"time_seconds": 1.63333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0099.png",
+			"gait": "Stairs",
+			"phase": 0.269776448235761,
+			"sha256": "014e1be0af2cbe3275acb4d23143c2139a4e844cac6b4c5408ca14b896037166",
+			"state": "Move",
+			"time_seconds": 1.65
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0100.png",
+			"gait": "Stairs",
+			"phase": 0.281012633355026,
+			"sha256": "3bec17d27c54593ffc6a78fb818d017bbd4504dbbbef36e01f21da9c75aabc54",
+			"state": "Move",
+			"time_seconds": 1.66666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0101.png",
+			"gait": "Stairs",
+			"phase": 0.292249628070261,
+			"sha256": "4cd2ccfac9e9c3705da754d6597f52c704ed27fe9909fe22b3b78c030d82f223",
+			"state": "Move",
+			"time_seconds": 1.68333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0102.png",
+			"gait": "Stairs",
+			"phase": 0.30348654169074,
+			"sha256": "e36fa362c02bfbce7a6aac6b74b0eeba5b78b68981f3adb1b085c9da1f28b60b",
+			"state": "Move",
+			"time_seconds": 1.7
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0103.png",
+			"gait": "Stairs",
+			"phase": 0.314724264907188,
+			"sha256": "52f1fc38801d19f456725371f19e63e11fd746333d90d631fd156ab4e45ed381",
+			"state": "Move",
+			"time_seconds": 1.71666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0104.png",
+			"gait": "Stairs",
+			"phase": 0.325961907028882,
+			"sha256": "6d89e3af754db86faf8a493ef321a58451a2abdb75718f61353cfa77a543e09a",
+			"state": "Move",
+			"time_seconds": 1.73333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0105.png",
+			"gait": "Stairs",
+			"phase": 0.337200358746544,
+			"sha256": "9300ff12c662d98625d00443f80aa99b1017620250f5707bfd6c5332ef906290",
+			"state": "Move",
+			"time_seconds": 1.75
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0106.png",
+			"gait": "Stairs",
+			"phase": 0.348438648274697,
+			"sha256": "925ee3f827dd1dd5ba1aecc4bf4e322543793b12b37d19d03276219c84073287",
+			"state": "Move",
+			"time_seconds": 1.76666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0107.png",
+			"gait": "Stairs",
+			"phase": 0.359677666304063,
+			"sha256": "60f19618dafe1a3790a303992e5f22c00a7bbabb0963617e73693cb58f343937",
+			"state": "Move",
+			"time_seconds": 1.78333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0108.png",
+			"gait": "Stairs",
+			"phase": 0.37091652281971,
+			"sha256": "f3cce958c9fe3ad64383a294e7da1e19831f29c4817c45837d6b901cfdc4aaf9",
+			"state": "Move",
+			"time_seconds": 1.8
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0109.png",
+			"gait": "Stairs",
+			"phase": 0.382156026741815,
+			"sha256": "8e28aca8493e5b0049efadc1378f45446bc58b7d7a67a38b1d9d253098772c9b",
+			"state": "Move",
+			"time_seconds": 1.81666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0110.png",
+			"gait": "Stairs",
+			"phase": 0.393395369150201,
+			"sha256": "d7b5c70e9fa6e5884ea05cfb29dd214195a71c2babafb39631d55198f635af39",
+			"state": "Move",
+			"time_seconds": 1.83333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0111.png",
+			"gait": "Stairs",
+			"phase": 0.404635358965046,
+			"sha256": "f62663c86b0947eb4eaf9e538378e13fe14fc16334d8dc61477a41e4acd8bc90",
+			"state": "Move",
+			"time_seconds": 1.85
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0112.png",
+			"gait": "Stairs",
+			"phase": 0.415875106171416,
+			"sha256": "1b4d819a66eaadac1d715093b6c3c9337a579df27b924a0fe0e9b82ca0c3c291",
+			"state": "Move",
+			"time_seconds": 1.86666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0113.png",
+			"gait": "Stairs",
+			"phase": 0.427115500784245,
+			"sha256": "2a6cccea66d724595e23406d40bb59806498144cc8bf504732d97a2f10c5e069",
+			"state": "Move",
+			"time_seconds": 1.88333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0114.png",
+			"gait": "Stairs",
+			"phase": 0.438355652788599,
+			"sha256": "c6b6562dfc00f37f39de886c31c4c2c43eff7b1f56ec5f5170291d19d6606678",
+			"state": "Move",
+			"time_seconds": 1.9
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0115.png",
+			"gait": "Stairs",
+			"phase": 0.449596371104658,
+			"sha256": "529fd1ed2fe50c7b10a2a8be714a1ecf473bcf5bd9778c10c517b12bde43bd5c",
+			"state": "Move",
+			"time_seconds": 1.91666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0116.png",
+			"gait": "Stairs",
+			"phase": 0.460836846812242,
+			"sha256": "812dfc1da447895f6ec122538cc1e55a8817628c6aa36741f730c93fa9726f06",
+			"state": "Move",
+			"time_seconds": 1.93333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0117.png",
+			"gait": "Stairs",
+			"phase": 0.47207788883153,
+			"sha256": "d083c39a95b7af8bc951da354b000c287d5422f737ad6859fc3188714b38f126",
+			"state": "Move",
+			"time_seconds": 1.95
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0118.png",
+			"gait": "Stairs",
+			"phase": 0.483318607147589,
+			"sha256": "a79450ff46b31e48cd0779b6e34bed8aeb29e7e1544ae133dedaa97e476016bb",
+			"state": "Move",
+			"time_seconds": 1.96666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0119.png",
+			"gait": "Stairs",
+			"phase": 0.494559972870107,
+			"sha256": "bb6b263ed678cc5a9f4b55c71e8b1b843f86b3cd78a4e2ab8d70c7675b802ade",
+			"state": "Move",
+			"time_seconds": 1.98333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0120.png",
+			"gait": "Stairs",
+			"phase": 0.505801014889395,
+			"sha256": "0574b8e1e7a63d5c8c2925f1b4df4abfe01f9cb557c01235ab11f65f94bcf5c5",
+			"state": "Move",
+			"time_seconds": 2.0
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0121.png",
+			"gait": "Stairs",
+			"phase": 0.517042542801423,
+			"sha256": "e2c4aa077c79e68d7573f8a12d5a74da192477adb010a9510ecae18746fdd416",
+			"state": "Move",
+			"time_seconds": 2.01666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0122.png",
+			"gait": "Stairs",
+			"phase": 0.528283747010221,
+			"sha256": "fd859da17a04537354b0ea4fb0710174e97ec7ccbc0b238a216116a12826f9e8",
+			"state": "Move",
+			"time_seconds": 2.03333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0123.png",
+			"gait": "Stairs",
+			"phase": 0.539525598625478,
+			"sha256": "28dee7c291d89aec1cb7a617417314c1a1bd6def86787d308277b1a851cd1712",
+			"state": "Move",
+			"time_seconds": 2.05
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0124.png",
+			"gait": "Stairs",
+			"phase": 0.550766964347996,
+			"sha256": "fbff7d9c5eef78ebcbffbd0080342fbf1942f75b16715ceb75d35e3cbeec1080",
+			"state": "Move",
+			"time_seconds": 2.06666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0125.png",
+			"gait": "Stairs",
+			"phase": 0.562008978152762,
+			"sha256": "b3b8747126aaff1c2c600789f4858a6f59fd24ca85fcbeaee8d76f77680bc5e4",
+			"state": "Move",
+			"time_seconds": 2.08333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0126.png",
+			"gait": "Stairs",
+			"phase": 0.573250668254299,
+			"sha256": "033e3c90b899c8cde65b156df8f2a2958321e4b8a660501004974c4a3f400422",
+			"state": "Move",
+			"time_seconds": 2.1
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0127.png",
+			"gait": "Stairs",
+			"phase": 0.584492843572786,
+			"sha256": "55a4be5bfc0c5afcf44eea290adf67c0f69c73b017ec7aab80d207aab21d5e39",
+			"state": "Move",
+			"time_seconds": 2.11666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0128.png",
+			"gait": "Stairs",
+			"phase": 0.595734695188043,
+			"sha256": "7284a0d0d59bc710be8f21a418c2aff43eac2e0ed4076c2f620315291ce94d84",
+			"state": "Move",
+			"time_seconds": 2.13333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0129.png",
+			"gait": "Stairs",
+			"phase": 0.606977032696039,
+			"sha256": "5fa566d907faea65f28ae2df27bee4a74566bca818edf2def3bf76540a752a68",
+			"state": "Move",
+			"time_seconds": 2.15
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0130.png",
+			"gait": "Stairs",
+			"phase": 0.618218884311296,
+			"sha256": "2960c798772e9c305a965ed1d0ff6dcfbcea6d3ebe13e9f06dae148c78b0f7ae",
+			"state": "Move",
+			"time_seconds": 2.16666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0131.png",
+			"gait": "Stairs",
+			"phase": 0.629461221819292,
+			"sha256": "d6028bc56481b5ad6ca3bb522ef2a316dc3007a1082fa96fe90f078608528ec7",
+			"state": "Move",
+			"time_seconds": 2.18333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0132.png",
+			"gait": "Stairs",
+			"phase": 0.640703235624059,
+			"sha256": "8012176f2870068f5b60097a541a758cc3fe908eb6ba76cba72f9771a0c53cde",
+			"state": "Move",
+			"time_seconds": 2.2
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0133.png",
+			"gait": "Stairs",
+			"phase": 0.651945734645775,
+			"sha256": "8027c578c92ece459b183744aa6c99f02ff322a8c3befbdbd0a597d6edf15b51",
+			"state": "Move",
+			"time_seconds": 2.21666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0134.png",
+			"gait": "Stairs",
+			"phase": 0.663187909964262,
+			"sha256": "01db36443bcf86a96665144878ae541782fe69a7ab36e3f53337792872da927a",
+			"state": "Move",
+			"time_seconds": 2.23333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0135.png",
+			"gait": "Stairs",
+			"phase": 0.674430571175487,
+			"sha256": "33c624e9fc8e65ed41a8c92ce11e546af140375454baa6a81c817736a37d2b2f",
+			"state": "Move",
+			"time_seconds": 2.25
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0136.png",
+			"gait": "Stairs",
+			"phase": 0.685672746493974,
+			"sha256": "dea007b9b7199e2c8c8398bb017bc3029fb0ac38335d3f0ea2c4fdd4ee278994",
+			"state": "Move",
+			"time_seconds": 2.26666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0137.png",
+			"gait": "Stairs",
+			"phase": 0.6969154077052,
+			"sha256": "9110402ad1dbe263fac0992c0141a176e3bdc27e62b594e1a7b43dd40878b858",
+			"state": "Move",
+			"time_seconds": 2.28333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0138.png",
+			"gait": "Stairs",
+			"phase": 0.708157745213196,
+			"sha256": "c84f74fabd7bf27c0e8bf0d88627ca2916c243ccb83ffa8b48a842b33d4d2649",
+			"state": "Move",
+			"time_seconds": 2.3
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0139.png",
+			"gait": "Stairs",
+			"phase": 0.719400568613931,
+			"sha256": "82c6c5f2e9a599cb6852120a9c6f02f19d81574436fc9cab1569253501db1402",
+			"state": "Move",
+			"time_seconds": 2.31666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0140.png",
+			"gait": "Stairs",
+			"phase": 0.730642906121928,
+			"sha256": "b3e3fea809db2e40b1c3d506093d147f577f435f4aba781c757a3b091f3df759",
+			"state": "Move",
+			"time_seconds": 2.33333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0141.png",
+			"gait": "Stairs",
+			"phase": 0.741885729522663,
+			"sha256": "f4cdf85586e33a906539d26d770bc37a2177ad870b34966922e052c4bb5ef35b",
+			"state": "Move",
+			"time_seconds": 2.35
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0142.png",
+			"gait": "Stairs",
+			"phase": 0.753128228544379,
+			"sha256": "2bcb62eb893434362a92a24888bd161bfd592074229411af82ab6c938716e33e",
+			"state": "Move",
+			"time_seconds": 2.36666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0143.png",
+			"gait": "Stairs",
+			"phase": 0.764371214134624,
+			"sha256": "0b6c80c19e07815f5e820a107d164a4f3d71b5a1f91a80e6e87ddf99f46117a9",
+			"state": "Move",
+			"time_seconds": 2.38333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0144.png",
+			"gait": "Stairs",
+			"phase": 0.77561371315634,
+			"sha256": "fa98277cca5124b39f05ab7a77be669833f4a5c0749e643ebd2d3cf673efc6b6",
+			"state": "Move",
+			"time_seconds": 2.4
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0145.png",
+			"gait": "Stairs",
+			"phase": 0.786856698746585,
+			"sha256": "310aaaa021a693d5859816b0c7009a6c64414a0c12fb9495662006832aa61730",
+			"state": "Move",
+			"time_seconds": 2.41666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0146.png",
+			"gait": "Stairs",
+			"phase": 0.798099197768301,
+			"sha256": "0bf851b509ed92456e554eb0d87d3d69ea779c37854ed053c3ff4ac36091b137",
+			"state": "Move",
+			"time_seconds": 2.43333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0147.png",
+			"gait": "Stairs",
+			"phase": 0.809342183358546,
+			"sha256": "ea2b4050229cc23c0d9d647f71daf45a1b568d1f3d9595207402ff6cf6cbed68",
+			"state": "Move",
+			"time_seconds": 2.45
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0148.png",
+			"gait": "Stairs",
+			"phase": 0.820584844569772,
+			"sha256": "9d3b830a04c447c9af7ebce83f5d94ba3ae66c3d34f0d0c457c8221be9fa42a9",
+			"state": "Move",
+			"time_seconds": 2.46666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0149.png",
+			"gait": "Stairs",
+			"phase": 0.831827991673737,
+			"sha256": "cd85ce54568ca345bc9c26055b3b495d014364c655a7aab618e7d2c6227d1799",
+			"state": "Move",
+			"time_seconds": 2.48333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0150.png",
+			"gait": "Stairs",
+			"phase": 0.843070652884963,
+			"sha256": "94c5b0e0c3464ba5abe257574c950f9a19897f536b21f4c607a3e09a71a4ad31",
+			"state": "Move",
+			"time_seconds": 2.5
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0151.png",
+			"gait": "Stairs",
+			"phase": 0.854313799988927,
+			"sha256": "dbce5d6cdd4e30b42d2804e2a4641a487a5f7e35f89ce7d5384cb8e27cd6bbd0",
+			"state": "Move",
+			"time_seconds": 2.51666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0152.png",
+			"gait": "Stairs",
+			"phase": 0.865556461200153,
+			"sha256": "9e2d6b9dd558689f07cb78ea0b9df09fe5540279ebd9777e182bed92606587d7",
+			"state": "Move",
+			"time_seconds": 2.53333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0153.png",
+			"gait": "Stairs",
+			"phase": 0.876799608304118,
+			"sha256": "c066d1fcdf50323729f83dd50cbc1c1c6acf2acbd764b0b474a1ee77ccd628b5",
+			"state": "Move",
+			"time_seconds": 2.55
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0154.png",
+			"gait": "Stairs",
+			"phase": 0.888042269515344,
+			"sha256": "9de1e9e8a14d0ac887514e858d50fefdc5c1e5e930821eaf5cc0f516cc74f169",
+			"state": "Move",
+			"time_seconds": 2.56666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0155.png",
+			"gait": "Stairs",
+			"phase": 0.899285416619309,
+			"sha256": "7db5472864032dcc5174fe2ff176278a0c498f4a7a5776215dfe6288953cfa15",
+			"state": "Move",
+			"time_seconds": 2.58333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0156.png",
+			"gait": "Stairs",
+			"phase": 0.910528240020044,
+			"sha256": "0a14c8d6098c0188ede4a7dc0ad32c313f1e411a9fac376d5313f53c005c5764",
+			"state": "Move",
+			"time_seconds": 2.6
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0157.png",
+			"gait": "Stairs",
+			"phase": 0.921771387124009,
+			"sha256": "0eb36a4bf5db9ef7fba34091bcc96127299b06e5267a4ed29246420bdde40075",
+			"state": "Move",
+			"time_seconds": 2.61666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0158.png",
+			"gait": "Stairs",
+			"phase": 0.933014210524744,
+			"sha256": "b88bbde4f290d398af43846697b3567f6a2a898da1d8e521afa541038c354830",
+			"state": "Move",
+			"time_seconds": 2.63333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0159.png",
+			"gait": "Stairs",
+			"phase": 0.944276812936174,
+			"sha256": "cdff64710b2b066b3fad40bf81f029fd04efdda1ca744246306829917cbcfbb5",
+			"state": "Move",
+			"time_seconds": 2.65
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0160.png",
+			"gait": "Stairs",
+			"phase": 0.955642423932516,
+			"sha256": "e74e78ed90862381fb55421ff55b55aae7135fe9008f66becaf16a82af5a999a",
+			"state": "Move",
+			"time_seconds": 2.66666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0161.png",
+			"gait": "Stairs",
+			"phase": 0.967074485322517,
+			"sha256": "da1816a8ce3661a7ce837e792f364d082f167b77e56d54fd5efa032467e62d7a",
+			"state": "Move",
+			"time_seconds": 2.68333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0162.png",
+			"gait": "Stairs",
+			"phase": 0.978635449528425,
+			"sha256": "26d27c406f9c25ce52ca435fffd6bb007747054b3468d7b40f4cfbdfade79313",
+			"state": "Move",
+			"time_seconds": 2.7
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0163.png",
+			"gait": "Stairs",
+			"phase": 0.990365757152879,
+			"sha256": "02e15507530186171622d1a2b89a6ed32b9db9bf1b3328e67b7081bf864ae244",
+			"state": "Move",
+			"time_seconds": 2.71666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0164.png",
+			"gait": "Stairs",
+			"phase": 0.00229731898189001,
+			"sha256": "80d0e8a4ee48280de9701877b67c5349fd4486582b463e8f841ab12f9f93ea7c",
+			"state": "Move",
+			"time_seconds": 2.73333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0165.png",
+			"gait": "Stairs",
+			"phase": 0.0144628972963966,
+			"sha256": "ad9ba09c5ad1518d28d4b3fcbd20e03591d695fc3fef3595d57e82c4a6efc78b",
+			"state": "Move",
+			"time_seconds": 2.75
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0166.png",
+			"gait": "Stairs",
+			"phase": 0.0268933175642758,
+			"sha256": "44583ba2170df99cb061c820ccc9e1df2ddd1cda10042e896a37410937e0ece2",
+			"state": "Move",
+			"time_seconds": 2.76666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0167.png",
+			"gait": "Stairs",
+			"phase": 0.0396174819561373,
+			"sha256": "dd2cf293282012da63ba3a2743742bb1f092c7de6321c40813f84ef686bb44d4",
+			"state": "Move",
+			"time_seconds": 2.78333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0168.png",
+			"gait": "Stairs",
+			"phase": 0.0526623396105791,
+			"sha256": "05a2c4015ad08da6e660cd4f8352af72a405018d3a0074d7d541e71741ca1a5b",
+			"state": "Move",
+			"time_seconds": 2.8
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0169.png",
+			"gait": "Stairs",
+			"phase": 0.0660530380110636,
+			"sha256": "96cc7986e69b7cf4c6ca1e21ea40f6c3e5c8ecac7bdfb7f90061d76370720c9c",
+			"state": "Move",
+			"time_seconds": 2.81666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0170.png",
+			"gait": "Stairs",
+			"phase": 0.0798125661689962,
+			"sha256": "1355044ca035dfe3d3d38236d819ac2a8defb26744272200358e5257e03b193f",
+			"state": "Move",
+			"time_seconds": 2.83333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0171.png",
+			"gait": "Stairs",
+			"phase": 0.0939622425438339,
+			"sha256": "942d92abfbe85b497d07e58c4a4ff1b55b8fd093a1e08344cdafaaadd3ec20a3",
+			"state": "Move",
+			"time_seconds": 2.85
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0172.png",
+			"gait": "Stairs",
+			"phase": 0.108521673144128,
+			"sha256": "e3f827676958d3bc5294453527ca7ca765fe0e77d560f42a591f328ac3ebd6ee",
+			"state": "Move",
+			"time_seconds": 2.86666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0173.png",
+			"gait": "Stairs",
+			"phase": 0.123508640698026,
+			"sha256": "2e967c5ec22f1adaee7c98483e50af238b304cd777510270690f970c5d96390d",
+			"state": "Move",
+			"time_seconds": 2.88333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0174.png",
+			"gait": "Stairs",
+			"phase": 0.138939853428174,
+			"sha256": "0210697b4826bf6ff0b28ec4513e4f6c4657a59ef375e95d847d3ff2d68ea03e",
+			"state": "Move",
+			"time_seconds": 2.9
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0175.png",
+			"gait": "Stairs",
+			"phase": 0.154812756849796,
+			"sha256": "76a3935788897455e0713ed06bf06f4725136f99c01d9f28174b1c4781a5a310",
+			"state": "Move",
+			"time_seconds": 2.91666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0176.png",
+			"gait": "Stairs",
+			"phase": 0.170685660271419,
+			"sha256": "b5b20607c453edb343f30a3b572e701f4afbed41d0286dfa384c2a0f3af06370",
+			"state": "Move",
+			"time_seconds": 2.93333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0177.png",
+			"gait": "Stairs",
+			"phase": 0.186558563693041,
+			"sha256": "d01152f6113cab4b966eae6266e519097158b5557c34cce81f62adf4b720ac6d",
+			"state": "Move",
+			"time_seconds": 2.95
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0178.png",
+			"gait": "Stairs",
+			"phase": 0.202431467114664,
+			"sha256": "8e4f348dd8f35c607c33606292047fe54e884048be9e366c2df25a30574997a7",
+			"state": "Move",
+			"time_seconds": 2.96666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0179.png",
+			"gait": "Stairs",
+			"phase": 0.218304370536287,
+			"sha256": "e5452311dd300bcd75b75154dffe6b7a91a5a09472d6970bf8bc273ddbe3e643",
+			"state": "Move",
+			"time_seconds": 2.98333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0180.png",
+			"gait": "Stairs",
+			"phase": 0.234177273957909,
+			"sha256": "eb6bc3f6a14895441334f6ad747e616b2607bef8a4d1965105fd4ec5b33de74e",
+			"state": "Move",
+			"time_seconds": 3.0
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0181.png",
+			"gait": "Stairs",
+			"phase": 0.249200015111306,
+			"sha256": "b616569a08aa9a5ffc17f9eb814b8af79b93579c70e2752101ce3d59c8c7a29a",
+			"state": "Move",
+			"time_seconds": 3.01666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0182.png",
+			"gait": "Stairs",
+			"phase": 0.263372365579585,
+			"sha256": "ebef0ce27ba5df99bde56745dfe43ea2d31f83bb91f231534e59a424b1d874ea",
+			"state": "Move",
+			"time_seconds": 3.03333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0183.png",
+			"gait": "Stairs",
+			"phase": 0.276694324011166,
+			"sha256": "a829f8500c6dd3ea892b9551aee7a7215a40e8945ee7307302523257403ee4b6",
+			"state": "Move",
+			"time_seconds": 3.05
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0184.png",
+			"gait": "Stairs",
+			"phase": 0.289166005290286,
+			"sha256": "4a2ba0732e652856d859804e7159115c4e5aac25ecdc1fddd39e2ae67d66f494",
+			"state": "Move",
+			"time_seconds": 3.06666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0185.png",
+			"gait": "Stairs",
+			"phase": 0.300787295884287,
+			"sha256": "637a2ed01ba490418e6cdcf9ffa632deadfc2bb059921648f5071d6657407e57",
+			"state": "Move",
+			"time_seconds": 3.08333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0186.png",
+			"gait": "Stairs",
+			"phase": 0.311558194441591,
+			"sha256": "0916b1123a4a2fb7618a259e218e9592b76bc007149f98ccbbbbce4ae3e660e3",
+			"state": "Move",
+			"time_seconds": 3.1
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0187.png",
+			"gait": "Stairs",
+			"phase": 0.32147893073067,
+			"sha256": "1b0ca5a8d90035c514b6eebcd137e662ec3770666f6ffc263ac0adfdcffd8320",
+			"state": "Move",
+			"time_seconds": 3.11666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0188.png",
+			"gait": "Stairs",
+			"phase": 0.330549162126184,
+			"sha256": "60cad102b1e6ce9006c6500f7f35e363ca96461a094bff7277e7632e7996c889",
+			"state": "Move",
+			"time_seconds": 3.13333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0189.png",
+			"gait": "Stairs",
+			"phase": 0.338769231253472,
+			"sha256": "e5639b4b56438ff06a5bdd5edc7d64c43d46e36205a4b0399b9ef28a54b5a6d1",
+			"state": "Move",
+			"time_seconds": 3.15
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0190.png",
+			"gait": "Stairs",
+			"phase": 0.346138908344063,
+			"sha256": "a845d5351887cae520889599683146a0efc55f590357975b51c4a8582a1f4468",
+			"state": "Move",
+			"time_seconds": 3.16666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0191.png",
+			"gait": "Stairs",
+			"phase": 0.35265807918951,
+			"sha256": "36a08844de80ff7947cbf64afc7dd2fc7fd0e4ef8904b0a2363ef14bf9fe23cd",
+			"state": "Move",
+			"time_seconds": 3.18333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0192.png",
+			"gait": "Stairs",
+			"phase": 0.358327087766731,
+			"sha256": "886a3d33bad771b54969329f74e14ae7ea1603442fa40e45d65d3f0134d469b6",
+			"state": "Move",
+			"time_seconds": 3.2
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0193.png",
+			"gait": "Stairs",
+			"phase": 0.363145704983044,
+			"sha256": "d1d6b2bf5b6731de71c72968d85da77322adbc6d0b918d59c0312b59269a53e5",
+			"state": "Move",
+			"time_seconds": 3.21666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0194.png",
+			"gait": "Stairs",
+			"phase": 0.36711393083845,
+			"sha256": "f78f51bfb08c3d5a5f72540a8129e1b556b9be00e3231a2cdb6c591864557ea0",
+			"state": "Move",
+			"time_seconds": 3.23333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0195.png",
+			"gait": "Stairs",
+			"phase": 0.370231879879289,
+			"sha256": "0ab86aa1f855c3d3ba67e054311b6fcabd7d5d0ac3f2dfa507772fb4538d708a",
+			"state": "Move",
+			"time_seconds": 3.25
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0196.png",
+			"gait": "Stairs",
+			"phase": 0.372499437728167,
+			"sha256": "0d1c19364bb2b944ef59b244be94e0b0c555046ca446341a9a97b109514baa90",
+			"state": "Move",
+			"time_seconds": 3.26666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0197.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "5c0e70cbaedcb68496615c38ae275792a42ac438c225ad4c34ff0c976ccd14a9",
+			"state": "Move",
+			"time_seconds": 3.28333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0198.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "de96847a0187bbfb5434460f29348f0ab644a206ad97bfd6d6bae3a2244475b8",
+			"state": "StopWalkL",
+			"time_seconds": 3.3
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0199.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "5e207a451b648db139d1219da5ebde5877a0b121cb47ff8d1d715c4435c1fc36",
+			"state": "StopWalkL",
+			"time_seconds": 3.31666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0200.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "c91938d0222088ebfbffe4f0f96d74fdb41cc6e78f6cf1d278a0143307c35941",
+			"state": "StopWalkL",
+			"time_seconds": 3.33333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0201.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "785a5d9b820c34526aac952e8db66a3cf7048ee292551d184872f6558a5bb486",
+			"state": "StopWalkL",
+			"time_seconds": 3.35
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0202.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "fc5595bf5ee2229b771e83f09bb82d3bcbb3002598001c8aa5a7466fac324095",
+			"state": "StopWalkL",
+			"time_seconds": 3.36666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0203.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "809b84297eae448e360395ecbfb14f516e03720bb03c8763a7dfe9edf85fa797",
+			"state": "StopWalkL",
+			"time_seconds": 3.38333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0204.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "3f3f79e816fba83170e5db733aae2727c7d792796d7d81836138f7cdb2c9abc7",
+			"state": "StopWalkL",
+			"time_seconds": 3.4
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0205.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "f89b44eb68cea503e1d7e9d6e7674de916fe64bf53dfece1f3e94c2d4e3ebd0e",
+			"state": "StopWalkL",
+			"time_seconds": 3.41666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0206.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "1fdf9ee5444c8866602aba1883c2ee41092dca980cfee5d9200f81569ca67f8c",
+			"state": "StopWalkL",
+			"time_seconds": 3.43333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0207.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "d10c0f156bfe6a4844517f120ef7b82b644f29b2f7520d77aae9bbcd00be9377",
+			"state": "StopWalkL",
+			"time_seconds": 3.45
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0208.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "ce55d1bf6765dd048b0677012cc242ab2c8198f632a9b61f8b12f718691a0ba3",
+			"state": "StopWalkL",
+			"time_seconds": 3.46666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0209.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "91a6c98e5a946e7eb8aa6f22a5fb6b5e6a4d776211770c4ccc4185f54b7697d9",
+			"state": "StopWalkL",
+			"time_seconds": 3.48333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0210.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "480a2dccac2e8206a46bc07d2cf87638591d0e6d097a1228f9eaaff148f18758",
+			"state": "StopWalkL",
+			"time_seconds": 3.5
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0211.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "33610149bc3fee63c15267bb69b5b10679c18866cbfc0c85cad6fa83e7af7602",
+			"state": "StopWalkL",
+			"time_seconds": 3.51666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0212.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "13e7507c65c85215dabfaff40fad4afab200fa00b2e928ad88f617f57d300c5c",
+			"state": "StopWalkL",
+			"time_seconds": 3.53333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0213.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "3a613d0dc1dfcd12ac7cc05075ab2b579117451573e4ff4a118e0471c98800a9",
+			"state": "StopWalkL",
+			"time_seconds": 3.55
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0214.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "93929e1a3f32bef1c5dfb175795f0afca1c418364e954f038e67326cfa93358e",
+			"state": "StopWalkL",
+			"time_seconds": 3.56666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0215.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "23d294f8913838738ef483ed26395a5ae36952283b4431a27c0df87467f2e166",
+			"state": "StopWalkL",
+			"time_seconds": 3.58333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0216.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "c83db14fad0f72aa2281ccf1356f36d5e08ff9967cf31b019bdbef213625a568",
+			"state": "StopWalkL",
+			"time_seconds": 3.6
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0217.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "5d2fe054581af11b5dc7f991e573101b9b8dc7daba8bbfab68abe237b6569c8f",
+			"state": "StopWalkL",
+			"time_seconds": 3.61666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0218.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "f4769020b4d0f1b8b6c30bdc1a9b7bb3b016848b828151e2036b23552b8d9c60",
+			"state": "StopWalkL",
+			"time_seconds": 3.63333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0219.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "41719338c6f05f76500541ae92077dc93ff2dd66fab08fbd2e9e8af645b3dc12",
+			"state": "StopWalkL",
+			"time_seconds": 3.65
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0220.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "3702340c7a41c6221d936e6fff22930fccd164ba0f0cdea3e445931f5c2c96c6",
+			"state": "StopWalkL",
+			"time_seconds": 3.66666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0221.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "5d1744839d4a22dc4a4c59836e08d5bb3a499a5e0c18ced50b864bf76c5599c0",
+			"state": "StartWalkR",
+			"time_seconds": 3.68333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0222.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "213fd8bd299f2ac9d12b83b0718a2417f597b60f75978e278c32aa6028d7bb18",
+			"state": "StartWalkR",
+			"time_seconds": 3.7
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0223.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "478c6ddcfd71f4257a081b37bbce5244b8b0cba3d078e48534b64ff902674ccd",
+			"state": "StartWalkR",
+			"time_seconds": 3.71666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0224.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "36fc2986a4470ba59cb5e14654e873c2d1412f44bd6a8739e2d0b41504a443ee",
+			"state": "StartWalkR",
+			"time_seconds": 3.73333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0225.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "cf132ffe1e62243e9245d622ddffda76d489bea24e7cff82b0701ba5e82113f7",
+			"state": "StartWalkR",
+			"time_seconds": 3.75
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0226.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "4ca5e90ce2753056ce65b0d356d0338e957228dadc9694877c174c888f42b6c2",
+			"state": "StartWalkR",
+			"time_seconds": 3.76666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0227.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "f982580de950f1af4b873b6bf92009d9657fb972b92212710088d9112bfcca7f",
+			"state": "StartWalkR",
+			"time_seconds": 3.78333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0228.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "1b87afb6f5c70be3f906e760a855a4c99361d6d1080dd1270b33d933da813318",
+			"state": "StartWalkR",
+			"time_seconds": 3.8
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0229.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "0c0155b87de369e11434c2e05941c7e7c4a01bcb34a7e81e40e264cd8f2ee2ed",
+			"state": "StartWalkR",
+			"time_seconds": 3.81666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0230.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "35797e0608eefc02358e54e9936d4e36edc2b1936c64846fb45852c8fc9291e7",
+			"state": "StartWalkR",
+			"time_seconds": 3.83333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0231.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "084fac205d1e9d8efce5ba80b5414c19a3241771f86f06f1f2f02957811bb55a",
+			"state": "StartWalkR",
+			"time_seconds": 3.85
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0232.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "d35db8308d47d72ef9b7ece13c3dc8f4009cb614542c45c42dc928f85b67e640",
+			"state": "StartWalkR",
+			"time_seconds": 3.86666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0233.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "d8b5fc28bc9acb336d1b5f3f01ae73876252d0b8a0f0e698337e87d9693a25b7",
+			"state": "StartWalkR",
+			"time_seconds": 3.88333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0234.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "56c4d353543a6eb74e6ed1ba51ccdbb15f81aa3010a70bfde1713462d4d468fc",
+			"state": "StartWalkR",
+			"time_seconds": 3.9
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0235.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "45c6b05227c28951b7d61434deb3dc55ed3fb18e80610418429c08648d080798",
+			"state": "StartWalkR",
+			"time_seconds": 3.91666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0236.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "e09894d7c3d2ede14a7675df3414e1c13e1c5fb69865923efdcc8adb701e597e",
+			"state": "StartWalkR",
+			"time_seconds": 3.93333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0237.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "10271c698875ce532ea15043258cb1c1bb9999d37d74674c26acc6d459a04f2c",
+			"state": "StartWalkR",
+			"time_seconds": 3.95
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0238.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "cd4346bb1720dd8252c4a7ea07b881253e8844bfdba0c8930c12414c0a85146c",
+			"state": "StartWalkR",
+			"time_seconds": 3.96666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0239.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "07bb86597a03c0a4420bdd6095708c7a23a940cf950d05a0ab94bc0e9967c054",
+			"state": "StartWalkR",
+			"time_seconds": 3.98333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0240.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "7626a15ee163605d4f170fc7b1c990868c6dd72f40eb10a40458e6924d5fd1a5",
+			"state": "StartWalkR",
+			"time_seconds": 4.0
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0241.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "1c245ca78a34a651d6d787b9dad05b607bd425976777c91acc03e20558fa3f25",
+			"state": "StartWalkR",
+			"time_seconds": 4.01666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0242.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "0192db6f678faa88ee21470ea6f58db595beafcc8672120efbb6ff810a0947b4",
+			"state": "StartWalkR",
+			"time_seconds": 4.03333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0243.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "c25d66ba246c6821b80dbc70ec81318c21d9eff81c7362cd85ceb4cdd3aa6ca0",
+			"state": "StartWalkR",
+			"time_seconds": 4.05
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0244.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "bfc8401803f23bb302b3e6fc927e0e02df4bd27cb70ac191500eb3c770b8ff48",
+			"state": "StartWalkR",
+			"time_seconds": 4.06666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0245.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "e646175d389cecd3de6db1e2516fdc579f0e16e705cb208b0728bd590a768325",
+			"state": "StartWalkR",
+			"time_seconds": 4.08333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0246.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "7c066a55c918ddafb411a25860b9f720f17858aca9392a5023b203e2ac37e228",
+			"state": "StartWalkR",
+			"time_seconds": 4.1
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0247.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "25b28fe065d85b36ccd5efb7f97415e0cbb7077b441bf0be6b6946ab310bf601",
+			"state": "StartWalkR",
+			"time_seconds": 4.11666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0248.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "f5dab1cb6440dae2e691234d7f1defc8639cafa09d92093f8934850ba5efa497",
+			"state": "StartWalkR",
+			"time_seconds": 4.13333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0249.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "8ea3a8edffd1c2011977142e6dfd8ce38dd0aeab9efa4838548960f37763a397",
+			"state": "StartWalkR",
+			"time_seconds": 4.15
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0250.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "db905cfe1dc5e21dcfc7f95c87444c53bed2a71b583b1137383c350e06cd3689",
+			"state": "StartWalkR",
+			"time_seconds": 4.16666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0251.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "61fa0cb2aa153143648419c62b362ebc047268f231e7f66cfb3d28cebcbc9df6",
+			"state": "StartWalkR",
+			"time_seconds": 4.18333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0252.png",
+			"gait": "Stairs",
+			"phase": 0.373916603878243,
+			"sha256": "25bb01c1476e1811eb05a7938b85cc55c175c149774eea4e2c5a8ff0efc5c083",
+			"state": "StartWalkR",
+			"time_seconds": 4.2
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0253.png",
+			"gait": "Stairs",
+			"phase": 0.0362249131646015,
+			"sha256": "39b461d328e3ccb8815da4dabed7493cbc59a8824805d5eb0ca568fd0c5209ca",
+			"state": "Move",
+			"time_seconds": 4.21666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0254.png",
+			"gait": "Stairs",
+			"phase": 0.0491706176139329,
+			"sha256": "3c349989454d0d4b0ec71c4318ae47c7b95c3f48847198ba84d43530d1b3cef6",
+			"state": "Move",
+			"time_seconds": 4.23333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0255.png",
+			"gait": "Stairs",
+			"phase": 0.0626582242463991,
+			"sha256": "9b435bf0a53c72bcf938b3569712b1a04041c9e35d8fcd1a9a08ea70b830f27c",
+			"state": "Move",
+			"time_seconds": 4.25
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0256.png",
+			"gait": "Stairs",
+			"phase": 0.0766979780326894,
+			"sha256": "0af0087e4280b0b04fa0b827407086af81fef8a7235ff21d1fa2ed510603bd2e",
+			"state": "Move",
+			"time_seconds": 4.26666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0257.png",
+			"gait": "Stairs",
+			"phase": 0.0912989602337618,
+			"sha256": "be2630f58d4dc88fce54beda2939bcdda2060273059555f247b762f5523a1601",
+			"state": "Move",
+			"time_seconds": 4.28333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0258.png",
+			"gait": "Stairs",
+			"phase": 0.106469010009247,
+			"sha256": "45dd01fec580abd5ab05fb6665f9584b643046eaaae3d14b0bcb61239905079e",
+			"state": "Move",
+			"time_seconds": 4.3
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0259.png",
+			"gait": "Stairs",
+			"phase": 0.122215565099738,
+			"sha256": "5eae0aabd16fd962df2e791f82ddd09ce95788ac9923f0f87c1e2d7a149acc70",
+			"state": "Move",
+			"time_seconds": 4.31666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0260.png",
+			"gait": "Stairs",
+			"phase": 0.13808846852136,
+			"sha256": "2b02e2982e7a40e0add6599b660812fc247999d4516c66c2da8348f52e97130f",
+			"state": "Move",
+			"time_seconds": 4.33333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0261.png",
+			"gait": "Stairs",
+			"phase": 0.153961371942983,
+			"sha256": "64f7a54c28ff65965b68ee0fa6a4fb791f76fd9d8d1e43e54ca0d992b92d9291",
+			"state": "Move",
+			"time_seconds": 4.35
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0262.png",
+			"gait": "Stairs",
+			"phase": 0.169834275364605,
+			"sha256": "f034b28759e8d63ce7dfe2c6227abe463a64d8ab1c05b96689e82db3741b8dc8",
+			"state": "Move",
+			"time_seconds": 4.36666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0263.png",
+			"gait": "Stairs",
+			"phase": 0.185707178786228,
+			"sha256": "098baf7b2b881518531f890826b50f0af3ef8eff1444cb4289af8e9089210735",
+			"state": "Move",
+			"time_seconds": 4.38333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0264.png",
+			"gait": "Stairs",
+			"phase": 0.201580082207851,
+			"sha256": "12512cf44718d7977f78a1ae320fbb08ccac2efb64725f1d78dc1c62821145d7",
+			"state": "Move",
+			"time_seconds": 4.4
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0265.png",
+			"gait": "Stairs",
+			"phase": 0.217452985629473,
+			"sha256": "20657b724bd13c76da7c8cefc9b5d88ae7300d1d4b4ce4f96c793ce29ee9e44b",
+			"state": "Move",
+			"time_seconds": 4.41666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0266.png",
+			"gait": "Stairs",
+			"phase": 0.233325889051096,
+			"sha256": "d7e08b2045f21ab4082ff9d0f94623c1e5fed51396af128a79e20368b6ee2afe",
+			"state": "Move",
+			"time_seconds": 4.43333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0267.png",
+			"gait": "Stairs",
+			"phase": 0.249198792472718,
+			"sha256": "57d320f88ddb2c2a33c6a55b78206060174808d03fe9caf278763a2a8ddb5563",
+			"state": "Move",
+			"time_seconds": 4.45
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0268.png",
+			"gait": "Stairs",
+			"phase": 0.265071695894341,
+			"sha256": "55ecf04afa9ccd40ef90b704229fd8f67ee4ca3dc4ba747994aace48f3e6d708",
+			"state": "Move",
+			"time_seconds": 4.46666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0269.png",
+			"gait": "Stairs",
+			"phase": 0.280944599315963,
+			"sha256": "d3a35b3a6792981d30fee63f3d9f84f001a83783bf0b8ed1c158f6f332b4c6b8",
+			"state": "Move",
+			"time_seconds": 4.48333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0270.png",
+			"gait": "Stairs",
+			"phase": 0.296817502737586,
+			"sha256": "4c07c9ab48b89445a1e6fd49e2b5df9db7904b1c887c573a9e54c54448c40c68",
+			"state": "Move",
+			"time_seconds": 4.5
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0271.png",
+			"gait": "Stairs",
+			"phase": 0.312690406159208,
+			"sha256": "e70a264cafa98cdccdbd319af05cd1cf809519c4af225b192e172135457074ba",
+			"state": "Move",
+			"time_seconds": 4.51666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0272.png",
+			"gait": "Stairs",
+			"phase": 0.328563309580831,
+			"sha256": "0a1f207050da3747f4c45afe8b7b96f044d7f52a0452df881a8f36b283392584",
+			"state": "Move",
+			"time_seconds": 4.53333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0273.png",
+			"gait": "Stairs",
+			"phase": 0.344436213002454,
+			"sha256": "2f6253a9143233a981722eebded8ad813a8ed448f503e7d9d8648fd16fa3565e",
+			"state": "Move",
+			"time_seconds": 4.55
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0274.png",
+			"gait": "Stairs",
+			"phase": 0.360309116424076,
+			"sha256": "1690630b12da913e9072fb2ee1a0ab43a52531886efd74e6edd6900f2a12d53b",
+			"state": "Move",
+			"time_seconds": 4.56666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0275.png",
+			"gait": "Stairs",
+			"phase": 0.376182019845699,
+			"sha256": "e13ef555977d195ac334bd0c4b2266c962b4453971cfb37188094a40051a514e",
+			"state": "Move",
+			"time_seconds": 4.58333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0276.png",
+			"gait": "Stairs",
+			"phase": 0.392054923267321,
+			"sha256": "2684d7c9642cf41a2b906589f43797f76a2f93be1a63a080ae43f61bff4b675a",
+			"state": "Move",
+			"time_seconds": 4.6
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0277.png",
+			"gait": "Stairs",
+			"phase": 0.407927826688944,
+			"sha256": "40f0c1ad85bab21cff7828b77deced8d2768b12cc5a27b23a887a298557dc8d6",
+			"state": "Move",
+			"time_seconds": 4.61666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0278.png",
+			"gait": "Stairs",
+			"phase": 0.423800730110566,
+			"sha256": "e2d87431ba2c0f6b324e4742b5a6bb376499908afeb85179b4b4b0fc2674716c",
+			"state": "Move",
+			"time_seconds": 4.63333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0279.png",
+			"gait": "Stairs",
+			"phase": 0.439673633532189,
+			"sha256": "ada676471ca4d4c2909ea89dcb54d414648449926c003e6c99cc979c04afa52e",
+			"state": "Move",
+			"time_seconds": 4.65
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0280.png",
+			"gait": "Stairs",
+			"phase": 0.455546536953812,
+			"sha256": "5af6ba6b77ba5aac330257cdd2a2532754a3c0b3f55ab5ed726605e3ea3e8d88",
+			"state": "Move",
+			"time_seconds": 4.66666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0281.png",
+			"gait": "Stairs",
+			"phase": 0.471419440375434,
+			"sha256": "51328faff750461acb0b1a7c4be1be16ee9ab76ee260c4e913a24ef33cde751f",
+			"state": "Move",
+			"time_seconds": 4.68333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0282.png",
+			"gait": "Stairs",
+			"phase": 0.487292343797057,
+			"sha256": "6a81feb0caa31006b7ce09f0687945ff87fce499374ebcc69be68f7f4903e061",
+			"state": "Move",
+			"time_seconds": 4.7
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0283.png",
+			"gait": "Stairs",
+			"phase": 0.503165247218679,
+			"sha256": "ae5454115adf08a94652f20b2ac6629ca8a90458d52a50f26d7604a5ad862b71",
+			"state": "Move",
+			"time_seconds": 4.71666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0284.png",
+			"gait": "Stairs",
+			"phase": 0.519038150640302,
+			"sha256": "191bc4a6ce238139b0ba7df3a647ccc3a92f31dc2fff2501b0943b5c4150b77b",
+			"state": "Move",
+			"time_seconds": 4.73333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0285.png",
+			"gait": "Stairs",
+			"phase": 0.534911054061924,
+			"sha256": "7ce41ca5a59e1aba3e4bcb5789796f61b6ff54c395fc1e1b4528834f7c5ace97",
+			"state": "Move",
+			"time_seconds": 4.75
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0286.png",
+			"gait": "Stairs",
+			"phase": 0.550783957483547,
+			"sha256": "c0af109bedbf83fa193b745fd4d92f9b7c97b31b59772e70c19a846e3db04759",
+			"state": "Move",
+			"time_seconds": 4.76666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0287.png",
+			"gait": "Stairs",
+			"phase": 0.566656860905169,
+			"sha256": "564580b6a1e76919412d60d56098fd5e5591d351d6528ad354824241ed52da6f",
+			"state": "Move",
+			"time_seconds": 4.78333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0288.png",
+			"gait": "Stairs",
+			"phase": 0.582529764326792,
+			"sha256": "d1c43b37ad1e97dc417ed4251e1b7f7ab498155732c87539431293a6b11686c3",
+			"state": "Move",
+			"time_seconds": 4.8
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0289.png",
+			"gait": "Stairs",
+			"phase": 0.598402667748414,
+			"sha256": "157c2a0cbce66cde6c05ffc7dbbba0553f2ad1fa3d893e7f266ee5dcd103984d",
+			"state": "Move",
+			"time_seconds": 4.81666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0290.png",
+			"gait": "Stairs",
+			"phase": 0.614275571170037,
+			"sha256": "9c63112618daf78495044d5be452446079abc1498eb1407f2c8fb89eec10e307",
+			"state": "Move",
+			"time_seconds": 4.83333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0291.png",
+			"gait": "Stairs",
+			"phase": 0.630148474591659,
+			"sha256": "411d8b1f245e6d0e1e3e72ab6331b03ca413207a1c50fa2ad7c314745ad1e7c7",
+			"state": "Move",
+			"time_seconds": 4.85
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0292.png",
+			"gait": "Stairs",
+			"phase": 0.646021378013282,
+			"sha256": "7affcc2aa7048e84157ae3c15ee3b574c8f1338ac88dfb9c086284eed35c4c3e",
+			"state": "Move",
+			"time_seconds": 4.86666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0293.png",
+			"gait": "Stairs",
+			"phase": 0.661894281434904,
+			"sha256": "f6f4922c78f0d62436e8eafa1ab5aa7c3fed9035ed0cf4cba6d2c8931a1f9d84",
+			"state": "Move",
+			"time_seconds": 4.88333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0294.png",
+			"gait": "Stairs",
+			"phase": 0.677767184856527,
+			"sha256": "29a154d402a9d8990a3b064eb16c0d69ac16b256bccf695d5f89899dfb4946e5",
+			"state": "Move",
+			"time_seconds": 4.9
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0295.png",
+			"gait": "Stairs",
+			"phase": 0.693640088278149,
+			"sha256": "b136435d2519c2e77ada587fb112b92336669865519b630dd8dbf6a716d87e9d",
+			"state": "Move",
+			"time_seconds": 4.91666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0296.png",
+			"gait": "Stairs",
+			"phase": 0.709512991699772,
+			"sha256": "64f59031e29f97d17e1fcb314a49390aa3e10b08ab3119ecdcb6d018b47974cd",
+			"state": "Move",
+			"time_seconds": 4.93333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0297.png",
+			"gait": "Stairs",
+			"phase": 0.725385895121394,
+			"sha256": "d1907a44831aed8683aefd0eb6c4be8ed63bb1abcf266861e3f90d00269aa31f",
+			"state": "Move",
+			"time_seconds": 4.95
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0298.png",
+			"gait": "Stairs",
+			"phase": 0.741258798543017,
+			"sha256": "e5190aef45919e10a8d79060b42d245af7afaa998a9a8fda5300e3a08c3b5dfe",
+			"state": "Move",
+			"time_seconds": 4.96666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0299.png",
+			"gait": "Stairs",
+			"phase": 0.757131701964639,
+			"sha256": "b3d45dc866d91791627ec54751935d20a19a3f9a0d90844b2dd45f59116417c0",
+			"state": "Move",
+			"time_seconds": 4.98333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_stairs/Stairs_0300.png",
+			"gait": "Stairs",
+			"phase": 0.773004605386262,
+			"sha256": "8f44ad2a0958b041d08e83883bc10ed94c3bcb9a937cbe11869715d2d035e095",
+			"state": "Move",
+			"time_seconds": 5.0
+		}
+	],
+	"godot": "4.7.2-stable (official)",
+	"mode": "stairs_side_release_reverse",
+	"physics_hz": 60,
+	"sequence": "Diagonal right-side stair rub: 0–3s; release: 3–3.667s; reverse and depart: 3.667–5s.",
+	"sha256": {
+		"addons/walkers/animation_driver.gd": "02e343cd89c90ece8047ace6f84b8c10a7c0d774e4c29db378090f2aac5ecb0f",
+		"addons/walkers/assets/humanoid.glb": "63c7b9d225bee4e7faff63e881d24950f32a8e82db5605f237a32378592855d9",
+		"addons/walkers/assets/motions.json": "249ce0fa7be003d785a06f457e475fb9f83730808ee02d838e0356ef7a8710e5",
+		"addons/walkers/grounding.gd": "77e7a01a0688f2c68e8ed84f17932e7b5babdccbc56c6d90b635bceb763f4ee9",
+		"addons/walkers/motor.gd": "02a5b7dc8385cbf48ac1ba3d2502139570467c54dfc53444477f74657072f7c9",
+		"addons/walkers/presentation.gd": "af56a7b7a5d32cbb44d5c4bd1fd6b193872d693344e682074bd6ce733f9a9f2c",
+		"source/character.blend": "4d1669adc251d1dacd0e3fdc8b3834f609ef2b23a4ff9c862318bfe571925aa2",
+		"tests/contact_viewport_capture.gd": "0dc0e7b0399624521da881d2496621fbd3eb71c42038eecc8a6fb947fb26a213"
+	},
+	"size": [
+		960,
+		600
+	],
+	"source": "Actual Godot OpenGL viewport"
+}

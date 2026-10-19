@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "source_blend_sha256": "4d1669adc251d1dacd0e3fdc8b3834f609ef2b23a4ff9c862318bfe571925aa2",
+  "motion_metadata_sha256": "249ce0fa7be003d785a06f457e475fb9f83730808ee02d838e0356ef7a8710e5",
+  "clips": 15,
+  "foot_samples": 1304,
+  "maximum_offset_difference_m": 4.859644050065456e-06,
+  "maximum_weight_sum_error": 9.980904991380157e-13,
+  "method": "Regenerate bindings from Blender evaluated skinned mesh and compare with delivered analytic-author metadata; no Action or mesh edits.",
+  "failures": []
+}

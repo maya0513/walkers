@@ -13,313 +13,313 @@
       "stride_length_m": 1.47,
       "trajectories": {
         "LeftFoot": {
-          "peak_speed_mps": 4.227542328716811,
-          "peak_acceleration_mps2": 42.151539839591884,
-          "peak_jerk_mps3": 1342.4397523448235,
-          "max_adjacent_velocity_change_mps": 0.702525663993198,
-          "rms_acceleration_mps2": 19.019735385814787,
-          "seam_velocity_difference_mps": 0.06323225215794981,
+          "peak_speed_mps": 4.246610336527894,
+          "peak_acceleration_mps2": 38.5602580620851,
+          "peak_jerk_mps3": 1717.7810440784333,
+          "max_adjacent_velocity_change_mps": 0.6426709677014183,
+          "rms_acceleration_mps2": 17.807952112664378,
+          "seam_velocity_difference_mps": 0.0708739419831092,
           "longest_near_stationary_interval_seconds": 0.0,
           "largest_velocity_changes": [
             {
-              "frame": 40,
-              "phase": 0.6349206349206349,
-              "mps": 0.702525663993198
-            },
-            {
               "frame": 41,
               "phase": 0.6507936507936508,
-              "mps": 0.6892338010535195
-            },
-            {
-              "frame": 39,
-              "phase": 0.6190476190476191,
-              "mps": 0.6640187103678346
+              "mps": 0.6426709677014183
             },
             {
               "frame": 42,
               "phase": 0.6666666666666666,
-              "mps": 0.6304666986712123
+              "mps": 0.631431692655253
             },
             {
               "frame": 53,
               "phase": 0.8412698412698413,
-              "mps": 0.6084888114873832
+              "mps": 0.6276968996446102
             },
             {
-              "frame": 55,
-              "phase": 0.873015873015873,
-              "mps": 0.6067110710547585
+              "frame": 54,
+              "phase": 0.8571428571428571,
+              "mps": 0.6185403971302431
+            },
+            {
+              "frame": 40,
+              "phase": 0.6349206349206349,
+              "mps": 0.6016730313650015
+            },
+            {
+              "frame": 52,
+              "phase": 0.8253968253968254,
+              "mps": 0.591108429100286
             }
           ]
         },
         "RightFoot": {
-          "peak_speed_mps": 4.241541484699805,
-          "peak_acceleration_mps2": 42.1311891082949,
-          "peak_jerk_mps3": 1091.5255076154767,
-          "max_adjacent_velocity_change_mps": 0.7021864851382482,
-          "rms_acceleration_mps2": 18.98097263136943,
-          "seam_velocity_difference_mps": 0.2149480904939594,
+          "peak_speed_mps": 4.233882124058031,
+          "peak_acceleration_mps2": 38.581614090933265,
+          "peak_jerk_mps3": 1367.2961300280808,
+          "max_adjacent_velocity_change_mps": 0.6430269015155544,
+          "rms_acceleration_mps2": 17.791522488137407,
+          "seam_velocity_difference_mps": 0.08465719104638807,
           "longest_near_stationary_interval_seconds": 0.0,
           "largest_velocity_changes": [
             {
-              "frame": 9,
-              "phase": 0.14285714285714285,
-              "mps": 0.7021864851382482
-            },
-            {
-              "frame": 8,
-              "phase": 0.12698412698412698,
-              "mps": 0.6898290290631411
-            },
-            {
               "frame": 10,
               "phase": 0.15873015873015872,
-              "mps": 0.6647097583391613
+              "mps": 0.6430269015155544
             },
             {
-              "frame": 7,
-              "phase": 0.1111111111111111,
-              "mps": 0.6249060180458115
+              "frame": 9,
+              "phase": 0.14285714285714285,
+              "mps": 0.6292834088279282
             },
             {
               "frame": 22,
               "phase": 0.3492063492063492,
-              "mps": 0.6092141812102818
+              "mps": 0.6292474362597101
             },
             {
               "frame": 21,
               "phase": 0.3333333333333333,
-              "mps": 0.5918825331705131
+              "mps": 0.6146619026307445
+            },
+            {
+              "frame": 11,
+              "phase": 0.1746031746031746,
+              "mps": 0.6088951084545845
+            },
+            {
+              "frame": 23,
+              "phase": 0.36507936507936506,
+              "mps": 0.5946924151034922
             }
           ]
         },
         "LeftLowerLeg": {
-          "peak_speed_mps": 3.1565215326111935,
-          "peak_acceleration_mps2": 58.65972593596145,
-          "peak_jerk_mps3": 3417.5781302305595,
-          "max_adjacent_velocity_change_mps": 0.9776620989326908,
-          "rms_acceleration_mps2": 22.76632559080221,
-          "seam_velocity_difference_mps": 0.31523248327227515,
+          "peak_speed_mps": 3.24041903476422,
+          "peak_acceleration_mps2": 55.62977518998986,
+          "peak_jerk_mps3": 3074.836005262765,
+          "max_adjacent_velocity_change_mps": 0.9271629198331643,
+          "rms_acceleration_mps2": 20.563717158311658,
+          "seam_velocity_difference_mps": 0.2873337372939271,
           "longest_near_stationary_interval_seconds": 0.0,
           "largest_velocity_changes": [
             {
               "frame": 39,
               "phase": 0.6190476190476191,
-              "mps": 0.9776620989326908
+              "mps": 0.9271629198331643
             },
             {
               "frame": 40,
               "phase": 0.6349206349206349,
-              "mps": 0.8987196396374514
+              "mps": 0.7880266787438015
             },
             {
-              "frame": 38,
-              "phase": 0.6031746031746031,
-              "mps": 0.7373720284875592
-            },
-            {
-              "frame": 51,
-              "phase": 0.8095238095238095,
-              "mps": 0.7341390226568536
+              "frame": 36,
+              "phase": 0.5714285714285714,
+              "mps": 0.70600084593738
             },
             {
               "frame": 50,
               "phase": 0.7936507936507936,
-              "mps": 0.7270171218569405
+              "mps": 0.6778899930012309
             },
             {
-              "frame": 41,
-              "phase": 0.6507936507936508,
-              "mps": 0.6574894508045797
+              "frame": 51,
+              "phase": 0.8095238095238095,
+              "mps": 0.6616906291680299
+            },
+            {
+              "frame": 49,
+              "phase": 0.7777777777777778,
+              "mps": 0.6216407315588541
             }
           ]
         },
         "RightLowerLeg": {
-          "peak_speed_mps": 3.143713567699461,
-          "peak_acceleration_mps2": 58.5992471754042,
-          "peak_jerk_mps3": 2845.265459388771,
-          "max_adjacent_velocity_change_mps": 0.97665411959007,
-          "rms_acceleration_mps2": 22.705322388329133,
-          "seam_velocity_difference_mps": 0.3938468130744233,
+          "peak_speed_mps": 3.244314677923511,
+          "peak_acceleration_mps2": 53.23143287341538,
+          "peak_jerk_mps3": 2047.1687034731701,
+          "max_adjacent_velocity_change_mps": 0.8871905478902563,
+          "rms_acceleration_mps2": 20.54755531312846,
+          "seam_velocity_difference_mps": 0.2445406195526678,
           "longest_near_stationary_interval_seconds": 0.0,
           "largest_velocity_changes": [
             {
               "frame": 8,
               "phase": 0.12698412698412698,
-              "mps": 0.97665411959007
+              "mps": 0.8871905478902563
             },
             {
               "frame": 7,
               "phase": 0.1111111111111111,
-              "mps": 0.8908583958200853
+              "mps": 0.8257737283364304
             },
             {
-              "frame": 58,
-              "phase": 0.9206349206349206,
-              "mps": 0.8380001090328278
-            },
-            {
-              "frame": 9,
-              "phase": 0.14285714285714285,
-              "mps": 0.7798095953895838
+              "frame": 5,
+              "phase": 0.07936507936507936,
+              "mps": 0.712037868084755
             },
             {
               "frame": 19,
               "phase": 0.30158730158730157,
-              "mps": 0.7476687744260659
+              "mps": 0.6787877750439507
+            },
+            {
+              "frame": 9,
+              "phase": 0.14285714285714285,
+              "mps": 0.6744865426809894
             },
             {
               "frame": 18,
               "phase": 0.2857142857142857,
-              "mps": 0.6887258684066448
+              "mps": 0.6585721561471856
             }
           ]
         },
         "LeftHand": {
-          "peak_speed_mps": 1.0397452296090135,
-          "peak_acceleration_mps2": 6.406539853111057,
-          "peak_jerk_mps3": 42.74528107655625,
-          "max_adjacent_velocity_change_mps": 0.10677566421851761,
-          "rms_acceleration_mps2": 4.607736848706797,
-          "seam_velocity_difference_mps": 0.10473908845073666,
+          "peak_speed_mps": 1.079449122346295,
+          "peak_acceleration_mps2": 6.6686862472117046,
+          "peak_jerk_mps3": 44.22928994114894,
+          "max_adjacent_velocity_change_mps": 0.11114477078686175,
+          "rms_acceleration_mps2": 4.776375032927691,
+          "seam_velocity_difference_mps": 0.11019053999209955,
           "longest_near_stationary_interval_seconds": 0.0,
           "largest_velocity_changes": [
             {
-              "frame": 61,
-              "phase": 0.9682539682539683,
-              "mps": 0.10677566421851761
-            },
-            {
               "frame": 62,
               "phase": 0.9841269841269841,
-              "mps": 0.10632938936799732
+              "mps": 0.11114477078686175
             },
             {
-              "frame": 60,
-              "phase": 0.9523809523809523,
-              "mps": 0.10601421208183981
+              "frame": 61,
+              "phase": 0.9682539682539683,
+              "mps": 0.11080865030113747
             },
             {
               "frame": 63,
               "phase": 1.0,
-              "mps": 0.10473908845073666
+              "mps": 0.11019053999209955
+            },
+            {
+              "frame": 60,
+              "phase": 0.9523809523809523,
+              "mps": 0.10918862610352961
+            },
+            {
+              "frame": 1,
+              "phase": 0.015873015873015872,
+              "mps": 0.10805484093883332
             },
             {
               "frame": 59,
               "phase": 0.9365079365079365,
-              "mps": 0.10404246090049493
-            },
-            {
-              "frame": 30,
-              "phase": 0.47619047619047616,
-              "mps": 0.10242989290645596
+              "mps": 0.10625547125474252
             }
           ]
         },
         "RightHand": {
-          "peak_speed_mps": 1.0402341647243376,
-          "peak_acceleration_mps2": 6.4012557794861,
-          "peak_jerk_mps3": 42.72012042401772,
-          "max_adjacent_velocity_change_mps": 0.10668759632476832,
-          "rms_acceleration_mps2": 4.607736256094853,
-          "seam_velocity_difference_mps": 0.10110329088064733,
+          "peak_speed_mps": 1.0801267170874262,
+          "peak_acceleration_mps2": 6.668950891522518,
+          "peak_jerk_mps3": 44.29287908634658,
+          "max_adjacent_velocity_change_mps": 0.1111491815253753,
+          "rms_acceleration_mps2": 4.776376017843651,
+          "seam_velocity_difference_mps": 0.10466013341201666,
           "longest_near_stationary_interval_seconds": 0.0,
           "largest_velocity_changes": [
             {
               "frame": 30,
               "phase": 0.47619047619047616,
-              "mps": 0.10668759632476832
-            },
-            {
-              "frame": 29,
-              "phase": 0.4603174603174603,
-              "mps": 0.10654906941275537
+              "mps": 0.1111491815253753
             },
             {
               "frame": 31,
               "phase": 0.49206349206349204,
-              "mps": 0.10569066212747091
+              "mps": 0.11081750544970886
             },
             {
-              "frame": 28,
-              "phase": 0.4444444444444444,
-              "mps": 0.10518035391935482
+              "frame": 29,
+              "phase": 0.4603174603174603,
+              "mps": 0.11015207518788338
             },
             {
               "frame": 32,
               "phase": 0.5079365079365079,
-              "mps": 0.10353009305620203
+              "mps": 0.10925636308315702
             },
             {
-              "frame": 27,
-              "phase": 0.42857142857142855,
-              "mps": 0.1026154233945954
+              "frame": 28,
+              "phase": 0.4444444444444444,
+              "mps": 0.10788265462632338
+            },
+            {
+              "frame": 33,
+              "phase": 0.5238095238095238,
+              "mps": 0.1065974775684377
             }
           ]
         },
         "Hips": {
-          "peak_speed_mps": 0.3527288454446117,
-          "peak_acceleration_mps2": 4.167409860800227,
-          "peak_jerk_mps3": 49.470414564451374,
-          "max_adjacent_velocity_change_mps": 0.0694568310133371,
-          "rms_acceleration_mps2": 2.948760868870572,
-          "seam_velocity_difference_mps": 0.06562471394376368,
+          "peak_speed_mps": 0.35272533316561,
+          "peak_acceleration_mps2": 4.167409067127014,
+          "peak_jerk_mps3": 49.496104343214036,
+          "max_adjacent_velocity_change_mps": 0.06945681778545024,
+          "rms_acceleration_mps2": 2.9487604916947525,
+          "seam_velocity_difference_mps": 0.06561756134071273,
           "longest_near_stationary_interval_seconds": 0.016666666666666666,
           "largest_velocity_changes": [
             {
               "frame": 14,
               "phase": 0.2222222222222222,
-              "mps": 0.0694568310133371
+              "mps": 0.06945681778545024
             },
             {
               "frame": 46,
               "phase": 0.7301587301587301,
-              "mps": 0.06935767867840884
+              "mps": 0.06935768535800445
             },
             {
               "frame": 30,
               "phase": 0.47619047619047616,
-              "mps": 0.0690083626609758
+              "mps": 0.06900836195094033
             },
             {
               "frame": 45,
               "phase": 0.7142857142857143,
-              "mps": 0.0688575806146004
+              "mps": 0.06885403599877374
             },
             {
               "frame": 61,
               "phase": 0.9682539682539683,
-              "mps": 0.06876312850178436
+              "mps": 0.06876312850323747
             },
             {
               "frame": 15,
               "phase": 0.23809523809523808,
-              "mps": 0.06856386467507376
+              "mps": 0.06856387145874249
             }
           ]
         }
       },
       "arms_relative_to_chest": {
         "Left": {
-          "upper_arm_sagittal_min_degrees": -17.99999843432709,
-          "upper_arm_sagittal_max_degrees": 17.97761738452909,
-          "elbow_flexion_min_degrees": 9.208202021864878,
-          "elbow_flexion_max_degrees": 17.09180023894953,
-          "elbow_flexion_span_degrees": 7.8835982170846535,
-          "upper_arm_abduction_max_degrees": 4.2095106710968455,
-          "hand_forward_of_shoulder_min_m": -0.11007379283903376,
-          "hand_forward_of_shoulder_max_m": 0.2260732262005575
+          "upper_arm_sagittal_min_degrees": -18.000528413158374,
+          "upper_arm_sagittal_max_degrees": 17.97714203479964,
+          "elbow_flexion_min_degrees": 9.208692062334364,
+          "elbow_flexion_max_degrees": 17.09145978188701,
+          "elbow_flexion_span_degrees": 7.882767719552646,
+          "upper_arm_abduction_max_degrees": 4.235082678785917,
+          "hand_forward_of_shoulder_min_m": -0.11007683157733736,
+          "hand_forward_of_shoulder_max_m": 0.22606880769422572
         },
         "Right": {
-          "upper_arm_sagittal_min_degrees": -17.977620539992742,
-          "upper_arm_sagittal_max_degrees": 17.999996798199717,
-          "elbow_flexion_min_degrees": 9.208040999954164,
-          "elbow_flexion_max_degrees": 17.09163890323586,
-          "elbow_flexion_span_degrees": 7.8835979032816965,
-          "upper_arm_abduction_max_degrees": 4.209508411454796,
-          "hand_forward_of_shoulder_min_m": -0.1099293745416842,
-          "hand_forward_of_shoulder_max_m": 0.2262647662069371
+          "upper_arm_sagittal_min_degrees": -17.97819463602434,
+          "upper_arm_sagittal_max_degrees": 17.999465888816548,
+          "elbow_flexion_min_degrees": 9.208572309176532,
+          "elbow_flexion_max_degrees": 17.091268961886527,
+          "elbow_flexion_span_degrees": 7.8826966527099955,
+          "upper_arm_abduction_max_degrees": 4.235651153353382,
+          "hand_forward_of_shoulder_min_m": -0.10993269847724306,
+          "hand_forward_of_shoulder_max_m": 0.22626005543552036
         }
       },
       "pelvis_vertical_extrema_per_stride": {
@@ -336,313 +336,313 @@
       "stride_length_m": 1.9599999999999997,
       "trajectories": {
         "LeftFoot": {
-          "peak_speed_mps": 4.764252758342867,
-          "peak_acceleration_mps2": 54.717758708157255,
-          "peak_jerk_mps3": 4154.782275868508,
-          "max_adjacent_velocity_change_mps": 0.9119626451359542,
-          "rms_acceleration_mps2": 33.3742450986826,
-          "seam_velocity_difference_mps": 0.20798058728490568,
+          "peak_speed_mps": 4.63511840685396,
+          "peak_acceleration_mps2": 54.61563545682204,
+          "peak_jerk_mps3": 3004.396616564468,
+          "max_adjacent_velocity_change_mps": 0.9102605909470339,
+          "rms_acceleration_mps2": 32.92653272488001,
+          "seam_velocity_difference_mps": 0.21741479917413467,
           "longest_near_stationary_interval_seconds": 0.0,
           "largest_velocity_changes": [
             {
-              "frame": 21,
-              "phase": 0.5,
-              "mps": 0.9119626451359542
+              "frame": 40,
+              "phase": 0.9523809523809523,
+              "mps": 0.9102605909470339
             },
             {
               "frame": 20,
               "phase": 0.47619047619047616,
-              "mps": 0.9025448054031222
-            },
-            {
-              "frame": 40,
-              "phase": 0.9523809523809523,
-              "mps": 0.9017169359329062
-            },
-            {
-              "frame": 22,
-              "phase": 0.5238095238095238,
-              "mps": 0.8855187432192186
+              "mps": 0.8838516920313977
             },
             {
               "frame": 19,
               "phase": 0.4523809523809524,
-              "mps": 0.8780675708168417
+              "mps": 0.8758920840235257
             },
             {
-              "frame": 12,
-              "phase": 0.2857142857142857,
-              "mps": 0.8582479931217678
-            }
-          ]
-        },
-        "RightFoot": {
-          "peak_speed_mps": 4.764245622476302,
-          "peak_acceleration_mps2": 54.71857379227567,
-          "peak_jerk_mps3": 4154.83416102079,
-          "max_adjacent_velocity_change_mps": 0.9119762298712609,
-          "rms_acceleration_mps2": 33.37429118844631,
-          "seam_velocity_difference_mps": 0.9119762298712609,
-          "longest_near_stationary_interval_seconds": 0.0,
-          "largest_velocity_changes": [
-            {
-              "frame": 42,
-              "phase": 1.0,
-              "mps": 0.9119762298712609
-            },
-            {
-              "frame": 41,
-              "phase": 0.9761904761904762,
-              "mps": 0.9025290674710766
-            },
-            {
-              "frame": 19,
-              "phase": 0.4523809523809524,
-              "mps": 0.9017304097813216
-            },
-            {
-              "frame": 1,
-              "phase": 0.023809523809523808,
-              "mps": 0.8855202783552466
-            },
-            {
-              "frame": 40,
-              "phase": 0.9523809523809523,
-              "mps": 0.8780707729047855
-            },
-            {
-              "frame": 33,
-              "phase": 0.7857142857142857,
-              "mps": 0.8582632938324887
-            }
-          ]
-        },
-        "LeftLowerLeg": {
-          "peak_speed_mps": 4.095137741768821,
-          "peak_acceleration_mps2": 91.02027662578219,
-          "peak_jerk_mps3": 6474.987854304214,
-          "max_adjacent_velocity_change_mps": 1.5170046104297028,
-          "rms_acceleration_mps2": 44.61520002160747,
-          "seam_velocity_difference_mps": 0.6076729096433251,
-          "longest_near_stationary_interval_seconds": 0.0,
-          "largest_velocity_changes": [
-            {
-              "frame": 18,
-              "phase": 0.42857142857142855,
-              "mps": 1.5170046104297028
-            },
-            {
-              "frame": 17,
-              "phase": 0.40476190476190477,
-              "mps": 1.4099721445054991
-            },
-            {
-              "frame": 39,
-              "phase": 0.9285714285714286,
-              "mps": 1.298710871812053
-            },
-            {
-              "frame": 12,
-              "phase": 0.2857142857142857,
-              "mps": 1.2827890975012732
-            },
-            {
-              "frame": 14,
-              "phase": 0.3333333333333333,
-              "mps": 1.1655347553013917
+              "frame": 21,
+              "phase": 0.5,
+              "mps": 0.853912372106187
             },
             {
               "frame": 11,
               "phase": 0.2619047619047619,
-              "mps": 1.1050097088636626
-            }
-          ]
-        },
-        "RightLowerLeg": {
-          "peak_speed_mps": 4.095130549575301,
-          "peak_acceleration_mps2": 91.0195097085062,
-          "peak_jerk_mps3": 6475.108904494647,
-          "max_adjacent_velocity_change_mps": 1.5169918284751034,
-          "rms_acceleration_mps2": 44.615265601969014,
-          "seam_velocity_difference_mps": 0.5022881006634916,
-          "longest_near_stationary_interval_seconds": 0.0,
-          "largest_velocity_changes": [
-            {
-              "frame": 39,
-              "phase": 0.9285714285714286,
-              "mps": 1.5169918284751034
-            },
-            {
-              "frame": 38,
-              "phase": 0.9047619047619048,
-              "mps": 1.4099920511804298
+              "mps": 0.8319537358963082
             },
             {
               "frame": 18,
               "phase": 0.42857142857142855,
-              "mps": 1.2987231360531064
-            },
-            {
-              "frame": 33,
-              "phase": 0.7857142857142857,
-              "mps": 1.2828167616028656
-            },
-            {
-              "frame": 35,
-              "phase": 0.8333333333333334,
-              "mps": 1.1655430200144135
-            },
-            {
-              "frame": 32,
-              "phase": 0.7619047619047619,
-              "mps": 1.1049872752781087
+              "mps": 0.8055791528737403
             }
           ]
         },
-        "LeftHand": {
-          "peak_speed_mps": 2.281127199979289,
-          "peak_acceleration_mps2": 22.04070023797469,
-          "peak_jerk_mps3": 336.9043316792052,
-          "max_adjacent_velocity_change_mps": 0.3673450039662448,
-          "rms_acceleration_mps2": 16.63057180033474,
-          "seam_velocity_difference_mps": 0.3351867466831108,
+        "RightFoot": {
+          "peak_speed_mps": 4.6351171675286595,
+          "peak_acceleration_mps2": 54.6150317626588,
+          "peak_jerk_mps3": 3004.4418359813517,
+          "max_adjacent_velocity_change_mps": 0.9102505293776465,
+          "rms_acceleration_mps2": 32.926559756512944,
+          "seam_velocity_difference_mps": 0.8538969766270607,
           "longest_near_stationary_interval_seconds": 0.0,
           "largest_velocity_changes": [
             {
               "frame": 19,
               "phase": 0.4523809523809524,
-              "mps": 0.3673450039662448
-            },
-            {
-              "frame": 18,
-              "phase": 0.42857142857142855,
-              "mps": 0.3630594485892681
-            },
-            {
-              "frame": 20,
-              "phase": 0.47619047619047616,
-              "mps": 0.35889760199913295
-            },
-            {
-              "frame": 17,
-              "phase": 0.40476190476190477,
-              "mps": 0.34687714686957916
-            },
-            {
-              "frame": 21,
-              "phase": 0.5,
-              "mps": 0.33848853917879523
-            },
-            {
-              "frame": 42,
-              "phase": 1.0,
-              "mps": 0.3351867466831108
-            }
-          ]
-        },
-        "RightHand": {
-          "peak_speed_mps": 2.281117269510925,
-          "peak_acceleration_mps2": 22.038306151247887,
-          "peak_jerk_mps3": 336.8694034167838,
-          "max_adjacent_velocity_change_mps": 0.367305102520798,
-          "rms_acceleration_mps2": 16.630572045835603,
-          "seam_velocity_difference_mps": 0.3384883274366467,
-          "longest_near_stationary_interval_seconds": 0.0,
-          "largest_velocity_changes": [
-            {
-              "frame": 40,
-              "phase": 0.9523809523809523,
-              "mps": 0.367305102520798
-            },
-            {
-              "frame": 39,
-              "phase": 0.9285714285714286,
-              "mps": 0.363090099704676
+              "mps": 0.9102505293776465
             },
             {
               "frame": 41,
               "phase": 0.9761904761904762,
-              "mps": 0.35892518998885775
+              "mps": 0.883847648164975
             },
             {
-              "frame": 38,
-              "phase": 0.9047619047619048,
-              "mps": 0.3468756489977579
+              "frame": 40,
+              "phase": 0.9523809523809523,
+              "mps": 0.875890872061768
             },
             {
               "frame": 42,
               "phase": 1.0,
-              "mps": 0.3384883274366467
+              "mps": 0.8538969766270607
             },
+            {
+              "frame": 32,
+              "phase": 0.7619047619047619,
+              "mps": 0.8319601229671262
+            },
+            {
+              "frame": 39,
+              "phase": 0.9285714285714286,
+              "mps": 0.8056043142136542
+            }
+          ]
+        },
+        "LeftLowerLeg": {
+          "peak_speed_mps": 4.070778285984643,
+          "peak_acceleration_mps2": 83.9868762436231,
+          "peak_jerk_mps3": 4372.731786910557,
+          "max_adjacent_velocity_change_mps": 1.3997812707270514,
+          "rms_acceleration_mps2": 42.5501152766159,
+          "seam_velocity_difference_mps": 0.6493616215083035,
+          "longest_near_stationary_interval_seconds": 0.0,
+          "largest_velocity_changes": [
+            {
+              "frame": 39,
+              "phase": 0.9285714285714286,
+              "mps": 1.3997812707270514
+            },
+            {
+              "frame": 18,
+              "phase": 0.42857142857142855,
+              "mps": 1.2941146827948933
+            },
+            {
+              "frame": 17,
+              "phase": 0.40476190476190477,
+              "mps": 1.0902940049653531
+            },
+            {
+              "frame": 40,
+              "phase": 0.9523809523809523,
+              "mps": 1.0766374253441804
+            },
+            {
+              "frame": 11,
+              "phase": 0.2619047619047619,
+              "mps": 1.0605400966692624
+            },
+            {
+              "frame": 30,
+              "phase": 0.7142857142857143,
+              "mps": 1.053134885811504
+            }
+          ]
+        },
+        "RightLowerLeg": {
+          "peak_speed_mps": 4.07078841375591,
+          "peak_acceleration_mps2": 83.9891473436287,
+          "peak_jerk_mps3": 4372.572742530934,
+          "max_adjacent_velocity_change_mps": 1.3998191223938115,
+          "rms_acceleration_mps2": 42.55016033436409,
+          "seam_velocity_difference_mps": 0.5844965327647939,
+          "longest_near_stationary_interval_seconds": 0.0,
+          "largest_velocity_changes": [
+            {
+              "frame": 18,
+              "phase": 0.42857142857142855,
+              "mps": 1.3998191223938115
+            },
+            {
+              "frame": 39,
+              "phase": 0.9285714285714286,
+              "mps": 1.294126649177712
+            },
+            {
+              "frame": 38,
+              "phase": 0.9047619047619048,
+              "mps": 1.0902865410724547
+            },
+            {
+              "frame": 19,
+              "phase": 0.4523809523809524,
+              "mps": 1.076608923249426
+            },
+            {
+              "frame": 32,
+              "phase": 0.7619047619047619,
+              "mps": 1.060550172717857
+            },
+            {
+              "frame": 9,
+              "phase": 0.21428571428571427,
+              "mps": 1.0531473618282368
+            }
+          ]
+        },
+        "LeftHand": {
+          "peak_speed_mps": 2.347821768377106,
+          "peak_acceleration_mps2": 21.62225818428734,
+          "peak_jerk_mps3": 331.5341521550831,
+          "max_adjacent_velocity_change_mps": 0.36037096973812227,
+          "rms_acceleration_mps2": 16.872315623445967,
+          "seam_velocity_difference_mps": 0.36037096973812227,
+          "longest_near_stationary_interval_seconds": 0.0,
+          "largest_velocity_changes": [
+            {
+              "frame": 42,
+              "phase": 1.0,
+              "mps": 0.36037096973812227
+            },
+            {
+              "frame": 1,
+              "phase": 0.023809523809523808,
+              "mps": 0.35563164777076384
+            },
+            {
+              "frame": 41,
+              "phase": 0.9761904761904762,
+              "mps": 0.3549341681800063
+            },
+            {
+              "frame": 19,
+              "phase": 0.4523809523809524,
+              "mps": 0.35318440555744035
+            },
+            {
+              "frame": 18,
+              "phase": 0.42857142857142855,
+              "mps": 0.35249851393060766
+            },
+            {
+              "frame": 2,
+              "phase": 0.047619047619047616,
+              "mps": 0.3448555872671131
+            }
+          ]
+        },
+        "RightHand": {
+          "peak_speed_mps": 2.347833629918067,
+          "peak_acceleration_mps2": 21.623555831741722,
+          "peak_jerk_mps3": 331.4540721037807,
+          "max_adjacent_velocity_change_mps": 0.3603925971956953,
+          "rms_acceleration_mps2": 16.872317737851862,
+          "seam_velocity_difference_mps": 0.32215764953141,
+          "longest_near_stationary_interval_seconds": 0.0,
+          "largest_velocity_changes": [
             {
               "frame": 21,
               "phase": 0.5,
-              "mps": 0.3351906630988459
+              "mps": 0.3603925971956953
+            },
+            {
+              "frame": 22,
+              "phase": 0.5238095238095238,
+              "mps": 0.355629535737669
+            },
+            {
+              "frame": 20,
+              "phase": 0.47619047619047616,
+              "mps": 0.3549199111184685
+            },
+            {
+              "frame": 40,
+              "phase": 0.9523809523809523,
+              "mps": 0.3531810827573544
+            },
+            {
+              "frame": 39,
+              "phase": 0.9285714285714286,
+              "mps": 0.35250806522753864
+            },
+            {
+              "frame": 23,
+              "phase": 0.5476190476190477,
+              "mps": 0.34485379519392106
             }
           ]
         },
         "Hips": {
-          "peak_speed_mps": 0.32271401226654256,
-          "peak_acceleration_mps2": 5.61366802539179,
-          "peak_jerk_mps3": 100.29984892696206,
-          "max_adjacent_velocity_change_mps": 0.0935611337565298,
-          "rms_acceleration_mps2": 3.991207400837714,
-          "seam_velocity_difference_mps": 0.03973245627659018,
+          "peak_speed_mps": 0.32272095066542567,
+          "peak_acceleration_mps2": 5.613241366805482,
+          "peak_jerk_mps3": 100.35124079617138,
+          "max_adjacent_velocity_change_mps": 0.09355402278009134,
+          "rms_acceleration_mps2": 3.9912081205589582,
+          "seam_velocity_difference_mps": 0.039725303652417616,
           "longest_near_stationary_interval_seconds": 0.0,
           "largest_velocity_changes": [
             {
               "frame": 7,
               "phase": 0.16666666666666666,
-              "mps": 0.0935611337565298
+              "mps": 0.09355402278009134
             },
             {
               "frame": 28,
               "phase": 0.6666666666666666,
-              "mps": 0.09356112751730769
+              "mps": 0.09355402278009134
             },
             {
               "frame": 17,
               "phase": 0.40476190476190477,
-              "mps": 0.09333821423889428
+              "mps": 0.09333821422919272
             },
             {
               "frame": 38,
               "phase": 0.9047619047619048,
-              "mps": 0.09333821017313214
+              "mps": 0.0933382101627615
             },
             {
               "frame": 27,
               "phase": 0.6428571428571429,
-              "mps": 0.0916281104995407
+              "mps": 0.0916316706932732
             },
             {
               "frame": 6,
               "phase": 0.14285714285714285,
-              "mps": 0.09162810474804402
+              "mps": 0.09163165919072641
             }
           ]
         }
       },
       "arms_relative_to_chest": {
         "Left": {
-          "upper_arm_sagittal_min_degrees": -37.999989762691634,
-          "upper_arm_sagittal_max_degrees": 19.9999962579187,
-          "elbow_flexion_min_degrees": 79.88866709482926,
-          "elbow_flexion_max_degrees": 104.80834986210485,
-          "elbow_flexion_span_degrees": 24.91968276727559,
-          "upper_arm_abduction_max_degrees": 5.0763352987484875,
-          "hand_forward_of_shoulder_min_m": 0.02469049220388367,
-          "hand_forward_of_shoulder_max_m": 0.31248551226904947
+          "upper_arm_sagittal_min_degrees": -38.00061166496611,
+          "upper_arm_sagittal_max_degrees": 19.999663308787767,
+          "elbow_flexion_min_degrees": 79.88964762592208,
+          "elbow_flexion_max_degrees": 104.80830172203511,
+          "elbow_flexion_span_degrees": 24.91865409611303,
+          "upper_arm_abduction_max_degrees": 5.06242979150655,
+          "hand_forward_of_shoulder_min_m": 0.024689615076779917,
+          "hand_forward_of_shoulder_max_m": 0.3124852197286213
         },
         "Right": {
-          "upper_arm_sagittal_min_degrees": -38.000016090492146,
-          "upper_arm_sagittal_max_degrees": 19.999996428171457,
-          "elbow_flexion_min_degrees": 79.88870328343545,
-          "elbow_flexion_max_degrees": 104.80835047646892,
-          "elbow_flexion_span_degrees": 24.91964719303347,
-          "upper_arm_abduction_max_degrees": 5.076336924051132,
-          "hand_forward_of_shoulder_min_m": 0.024690488776470725,
-          "hand_forward_of_shoulder_max_m": 0.31248547931240744
+          "upper_arm_sagittal_min_degrees": -38.00060735746698,
+          "upper_arm_sagittal_max_degrees": 19.999666197847276,
+          "elbow_flexion_min_degrees": 79.88962680625217,
+          "elbow_flexion_max_degrees": 104.80826776711118,
+          "elbow_flexion_span_degrees": 24.91864096085901,
+          "upper_arm_abduction_max_degrees": 5.062426874450531,
+          "hand_forward_of_shoulder_min_m": 0.02468959613044403,
+          "hand_forward_of_shoulder_max_m": 0.3124852783709118
         }
       },
       "pelvis_vertical_extrema_per_stride": {
@@ -655,6 +655,6 @@
   "measurement_source": {
     "kind": "evaluated_Blender_FK",
     "blend": "character.blend",
-    "blend_sha256": "4b0ccee210cc774e2bdab3eb00c965d7d356a0c88da4753fd4108af04d444fac"
+    "blend_sha256": "4d1669adc251d1dacd0e3fdc8b3834f609ef2b23a4ff9c862318bfe571925aa2"
   }
 }

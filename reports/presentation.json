@@ -2,7 +2,7 @@
 	"display_modifier_evaluations": 0,
 	"failures": [],
 	"footsteps": 6,
-	"maximum_final_ik_snapshot_error_m": 0.000000574999489799666,
+	"maximum_final_ik_snapshot_error_m": 0.000000320980831247653,
 	"maximum_pose_error_m": 0.0,
 	"maximum_rotation_error_radians": 0.0,
 	"physics_frame_distance_m": 0.0233333110809326,

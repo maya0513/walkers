@@ -1,15 +1,15 @@
 {
-  "schema_version": 1,
-  "reviewed_at_utc": "2026-10-19T07:16:51.207768+00:00",
-  "reviewer": "independent subagent /root/quality_checks",
-  "status": "reviewed_no_blocking_source_motion_issue",
+  "schema_version": 2,
+  "reviewed_at_utc": "2026-10-19T17:20:46.336771+00:00",
+  "reviewer": "independent subagent /root/contact_validation",
+  "status": "reviewed_no_blocking_source_media_issue",
   "source_hashes": {
-    "source/character.blend": "4b0ccee210cc774e2bdab3eb00c965d7d356a0c88da4753fd4108af04d444fac",
-    "addons/walkers/assets/humanoid.glb": "41925fc5b5c22cff2a53ca58f91e47696df010213a780576a9571810c1d38833",
-    "addons/walkers/assets/motions.json": "b3d0490ac45563226f70acc24f965fec365e06391968a500c6dba418d88c75fb",
-    "previews/inventory.json": "b97d684fd4a6045f6ba61cf15559e0ab63609d773ab8cc01bff8b4920501db3e"
+    "source/character.blend": "4d1669adc251d1dacd0e3fdc8b3834f609ef2b23a4ff9c862318bfe571925aa2",
+    "addons/walkers/assets/humanoid.glb": "63c7b9d225bee4e7faff63e881d24950f32a8e82db5605f237a32378592855d9",
+    "addons/walkers/assets/motions.json": "249ce0fa7be003d785a06f457e475fb9f83730808ee02d838e0356ef7a8710e5",
+    "previews/inventory.json": "1c40962209e15d12a72efe9b36086faf25ff34fc04e5cbb85782dd41c086715a"
   },
-  "render_input_signature": "62e57687f5be6b955cd70d3825ef4033bd10ebbb6fbf1cfb7c5ce17efcf2936d",
+  "render_input_signature": "824efd16381f0c627af3d5c486fed97883b067657919b66d92bb4489d567efad",
   "scope": {
     "clips": [
       "Idle",
@@ -35,65 +35,53 @@
     ],
     "source_pose_samples": 1485,
     "source_pose_count_per_clip_view": 33,
-    "additional_60hz_source_samples": 315,
-    "additional_60hz_breakdown": {
-      "Walk": {
-        "frames_per_view": 63,
-        "views": 3
-      },
-      "Jog": {
-        "frames_per_view": 42,
-        "views": 3
-      }
-    },
+    "direct_gif_source_samples": 846,
+    "unique_raw_source_images_visually_opened": 1887,
     "decoded_source_gifs": 45,
     "decoded_gif_frames": 645,
+    "published_pngs_opened": 45,
+    "source_review_boards": 45,
+    "encoded_gif_review_boards": 29,
+    "published_png_review_boards": 15,
+    "additional_focused_source_review": "contact_visual_review.json:96全身姿勢・29足元拡大姿勢を別途確認",
     "excluded": [
-      "Runtime_accel_stop_reverse.gif と Runtime_terrain.gif の操作・衝突評価。これはランタイム担当の別レビュー。"
+      "Godot実行画面・操作・地形補正はランタイム担当の別レビュー",
+      "比較動画の実時間視聴と全フレーム検証は本レビューに含めない"
     ]
   },
   "method": [
-    "全15動作・3視点それぞれの33姿勢（両境界を含む）を、動作順に並べた一覧で全て開いて確認した。全身の姿勢、膝、支持脚、腕、左右対称性、周期境界を見た。",
-    "Walk 63枚・Jog 42枚の60Hz比較用新ソース画像を各3視点で全て順序目視し、33分割で隠れる中間の足回収、膝、骨盤、腕の折返しを確認した。",
-    "公開GIF45本をPillowで全フレームデコードし、表示時間と順序を記した一覧を全て開いた。非周期GIFの25Hz固有時刻についても33姿勢間の異常がないか確認した。",
-    "比較MP4の全6804フレームと60fps PTSの検証は別担当の reports/comparison_validation.json を参照する。本レビューの独立目視は元画像とGIFの全姿勢一覧であり、動画の通常速度の知覚を直接視聴したという主張はしない。",
-    "数値テストの合格は目視合格の根拠に代用しなかった。全身表示の一覧で確認できる範囲の所見であり、全三角形の非貫通や人間による主観的自然さを証明するものではない。"
+    "全15動作・3視点の33元姿勢と、GIF用に独立した時刻で描画した全846元サンプルをデコードした。完全に同じRGBA画素の画像だけを同一視点内で統合し、全1887固有画像を順序付き一覧で実際に開いて確認した。Idleは113元画像/視点が同一であり、1固有姿勢/視点を確認した。",
+    "公開済みGIF45本をPillowで全645フレームデコードし、フレーム番号と実表示時間を付けた29一覧画像を全て開いた。PNG元画像の確認だけで公開GIFの確認を代用していない。320msの無地resetを含め、出力後の姿勢とパレットを見た。",
+    "公開済み横長PNG45枚も実際に開き、全幅を3つの重なる範囲に分けて縦へ並べた15一覧で、全33姿勢・端部・床線・番号・縮尺を確認した。切り出しの境界は閲覧用であり、納品PNGの改変ではない。",
+    "Walk/Jogの接地前後・離地前後は別途600×360の足元画像、骨盤と胸郭は全身3視点の診断画像でも確認した。詳細はcontact_visual_review.json。",
+    "これは時間順の静止画像・実表示時間のレビューであり、通常速度やスローの動画を実時間で直接視聴したという主張ではない。数値検証の合格を目視確認の代用にせず、床反力・筋力・主観的自然さを画像だけから証明しない。"
   ],
+  "real_time_playback_watched": false,
   "observations": [
     {
       "clips": [
         "Idle"
       ],
-      "phases": "0–100%",
-      "finding": "全姿勢で直立を維持し、肩・頭・骨盤の不要な揺れは見られない。腕は体側、足は過度に開かず、胸郭が腰から前へ折れる姿勢は見られない。"
+      "finding": "全画像で直立を維持し、頭・肩・骨盤の不要な動きはない。体側の腕と狭すぎない静止足幅を保つ。"
     },
     {
       "clips": [
         "Walk"
       ],
-      "phases": "支持0–56%、遊脚56–100%、反対脚は50%ずれ",
-      "finding": "支持中盤に膝が伸び、後半で踵が上がってつま先離地へ移る。56–80%の脚回収から80–100%の着地準備まで、隣接姿勢が全身ごと待つような区間や旧版の急な骨盤落下は見られない。正面・斜めでは狭い非交差の足運びを保つ。"
-    },
-    {
-      "clips": [
-        "Walk"
-      ],
-      "phases": "0/50/100% および全60Hz中間姿勢",
-      "finding": "1.05秒の一周期で左右交互の接地を経て同じ足に戻る。旧0.9秒版より歩調が落ち、1.4m/sに対応した一歩約0.735mの前後幅を持つ。腕や足の折返しで局所的に速度が落ちることと、全身が一瞬静止することを分けて確認し、後者の明瞭な停滞は認めなかった。"
+      "finding": "踵から受け入れて前足部が下がり、後半に踵が上がって足指側を残す流れが見える。つま先関節を曲げた支持から膝を曲げる回収へ続き、足全体を一枚の板として床へ貼り付ける旧表現は緩和している。正面・斜めで明瞭な膝反転や足の交差は見られない。"
     },
     {
       "clips": [
         "Jog"
       ],
-      "phases": "0/50%の前後極値、25/75%付近の通過姿勢",
-      "finding": "肘と上腕の後方振りが体幹の後ろへ届き、手が常時肩より前に残る旧姿勢は解消している。肘の形が周期で変わり、正面では脇を不自然に横へ張らず、腕を胴へ固定した姿勢にもなっていない。"
+      "finding": "最終4度設定では前足部寄りの受け入れから踵が下がり、後半は踵上昇と足指側の支持、離地・回収へ続く。8度候補で見られたつま先先行の着地は修正済み。後方の肘と腰付近へ戻る手が見え、脇を張り出した姿勢や腰折れは認めない。"
     },
     {
       "clips": [
+        "Walk",
         "Jog"
       ],
-      "phases": "各脚0–36%の荷重・押返し、36–50%の浮遊、反対側は50%ずれ",
-      "finding": "膝と足首で受けた後に伸び、踵の回収、遊脚の前送り、短い浮遊が続く。支持中の足の傾きが変わり、全支持時間に足裏を平らに貼り付ける見え方はない。上体は荷重に小さく応じ、腰折れや一歩に二度の大きな上下の山は見られない。"
+      "finding": "骨盤の回旋・左右の傾きに対して胸郭と肩が異なる位相で応じ、腹部が一塊で固定された見え方は緩和している。頭を空間へ固定する姿勢や、隣接姿勢で全身が突然飛ぶ破綻は今回の一覧では見られない。"
     },
     {
       "clips": [
@@ -102,8 +90,7 @@
         "StartJogL",
         "StartJogR"
       ],
-      "phases": "0–30%と30–100%",
-      "finding": "冒頭の姿勢変化は緩く、そこから脚と反対腕が連続して動き出す。GIF固有の25Hz時刻でも突然の膝反転や接地から浮遊への体の跳躍は見られない。ソースの立ち上がりの緩急とゲーム入力の即時応答は別評価。"
+      "finding": "冒頭の変化は小さく、次第に脚と反対腕が動き出す。GIF固有時刻でも、突然の膝反転や足部メッシュの崩壊は見られない。この緩い立ち上がりとゲーム入力への即時応答は別評価。"
     },
     {
       "clips": [
@@ -112,8 +99,7 @@
         "StopJogL",
         "StopJogR"
       ],
-      "phases": "0–100%と末尾の空白320ms",
-      "finding": "支持を経て直立へ収束し、腕も体側へ戻る。空白のreset区間は動作の後に明示され、動作途中の停止として混在していない。左右版に片側だけの大きな姿勢破綻は見られない。"
+      "finding": "走行の曲げた肘から体側の腕へ戻り、脚と体幹が直立へ収束する。左右版の片方だけの大きな姿勢破綻は見られない。"
     },
     {
       "clips": [
@@ -122,31 +108,322 @@
         "Turn180L",
         "Turn180R"
       ],
-      "phases": "全33姿勢とGIF全25Hz時刻",
-      "finding": "コンパクトな踏み替えと小さな荷重移動で向きが変わり、最後は直立へ戻る。前後・斜めの視点で急な膝の裏返り、骨盤の飛び、手足の大きな貫通は見られない。"
+      "finding": "小さな踏み替えと荷重移動を伴って方向を変え、最後に直立へ戻る。膝の裏返り、骨盤の飛び、手足の大きな貫通は見られない。"
+    },
+    {
+      "clips": [
+        "Idle",
+        "Walk",
+        "Jog",
+        "StartWalkL",
+        "StopWalkL",
+        "StartWalkR",
+        "StopWalkR",
+        "StartJogL",
+        "StopJogL",
+        "StartJogR",
+        "StopJogR",
+        "Turn90L",
+        "Turn90R",
+        "Turn180L",
+        "Turn180R"
+      ],
+      "finding": "公開PNGは床線と縮尺を保ち、頭や足を上下で切っていない。公開GIFは簡素な背景と人物を保ち、非周期動作の最後に320msのresetがある。観察した全フレームに壊れた画像や途中の意図しない空白は見られない。"
     }
   ],
   "gif_timing_review": {
     "Walk": {
       "source_cycle_seconds": 1.05,
-      "decoded_frames": 26,
+      "frames_per_view": 26,
       "duration_ms": 1040,
-      "sampling": "i * 1.05 / 26, i=0..25",
-      "finding": "等位相。終端の重複なし。GIF量子化により全体を約0.95%短縮する。継ぎ目だけ短い位相間隔にはしない。"
+      "sample_phase": "i/26, i=0..25",
+      "note": "等位相・末尾重複なし。GIFの40ms量子化で周期全体を約0.95%短縮。"
     },
     "Jog": {
       "source_cycle_seconds": 0.7,
-      "decoded_frames": 18,
+      "frames_per_view": 18,
       "duration_ms": 720,
-      "sampling": "i * 0.7 / 18, i=0..17",
-      "finding": "等位相。終端の重複なし。GIF量子化により全体を約2.86%延長する。正確な周期の比較には60fps動画を使う。"
+      "sample_phase": "i/18, i=0..17",
+      "note": "等位相・末尾重複なし。GIF量子化で周期全体を約2.86%延長。"
     },
-    "Idle": "同一姿勢はGIF最適化で1フレーム3200msに統合される。意図した静止。",
-    "nonperiodic": "動作終了後に空白reset 320ms。静止リセット画像の重複はGIF最適化で1フレームに統合される。"
+    "Idle": "静止の同一画像が1フレーム3200msへ統合される。意図した保持。",
+    "nonperiodic": "動作の後に無地reset320msを明示。動作途中の停止とは区別する。"
   },
   "blocking_findings": [],
+  "raw_view_reviews": {
+    "StopJogR/front": {
+      "pose_count": 33,
+      "gif_source_samples": 16,
+      "unique_images": 47,
+      "board_sha256": "4d45490041b4ae47d5c8ef25dcafca1a863d5f212b338748d54a78997888504e"
+    },
+    "StopJogR/side": {
+      "pose_count": 33,
+      "gif_source_samples": 16,
+      "unique_images": 47,
+      "board_sha256": "0c4757ccd5edfbf47971746ef97a9436802d46e11d9ab5691db11cb4bd917bae"
+    },
+    "StopJogR/three_quarter": {
+      "pose_count": 33,
+      "gif_source_samples": 16,
+      "unique_images": 47,
+      "board_sha256": "d0e7979996fdd819f29605a3ee1c6c4b0d918abcc4e09b016066a0db424c53b8"
+    },
+    "Turn90L/front": {
+      "pose_count": 33,
+      "gif_source_samples": 9,
+      "unique_images": 40,
+      "board_sha256": "27c39e5484e3f4f87189189889a9d95e06c8c51a54f13adfa742d40f975985a9"
+    },
+    "Turn90L/side": {
+      "pose_count": 33,
+      "gif_source_samples": 9,
+      "unique_images": 40,
+      "board_sha256": "7097462f05464dd62e7919a74869f36795d02175aa1286e6ed1f068ddf50ec91"
+    },
+    "Turn90L/three_quarter": {
+      "pose_count": 33,
+      "gif_source_samples": 9,
+      "unique_images": 40,
+      "board_sha256": "65e811ff9b4511d9aa711c1103ac7cac2c6e4e4d2cadf1ca57b0165f498a953d"
+    },
+    "Turn90R/front": {
+      "pose_count": 33,
+      "gif_source_samples": 9,
+      "unique_images": 40,
+      "board_sha256": "e0a6633bb636fcdcba83592251ab88f98ea56b75b3891c72ede533169a24bd66"
+    },
+    "Turn90R/side": {
+      "pose_count": 33,
+      "gif_source_samples": 9,
+      "unique_images": 40,
+      "board_sha256": "5a4f72b327c394050bf471d96d3a02cb24b6544b577bd8f1b6f6ac6e5fd1bb23"
+    },
+    "Turn90R/three_quarter": {
+      "pose_count": 33,
+      "gif_source_samples": 9,
+      "unique_images": 40,
+      "board_sha256": "8f7e644419288065724e4c2a8386ff4c6d6ca122cd1d695b00d4bb84f4329ac0"
+    },
+    "Turn180L/front": {
+      "pose_count": 33,
+      "gif_source_samples": 13,
+      "unique_images": 44,
+      "board_sha256": "efa863445b8568e719c41ca538220947d748a5eca65c63790eb90a4d4cecd973"
+    },
+    "Turn180L/side": {
+      "pose_count": 33,
+      "gif_source_samples": 13,
+      "unique_images": 44,
+      "board_sha256": "78f7d286b6dc1d646c431f675982432ea3ec04f41239e889040c44c7a7c61c9f"
+    },
+    "Turn180L/three_quarter": {
+      "pose_count": 33,
+      "gif_source_samples": 13,
+      "unique_images": 44,
+      "board_sha256": "4586592ae67064977debc8b5f879595d1f87bf2b16c62ebb95880767e68ad61c"
+    },
+    "Turn180R/front": {
+      "pose_count": 33,
+      "gif_source_samples": 13,
+      "unique_images": 44,
+      "board_sha256": "4ec0217a4aad8079ba77a5d03ef58ad7fd262aafc23f8396b2c6e4f23c26a053"
+    },
+    "Turn180R/side": {
+      "pose_count": 33,
+      "gif_source_samples": 13,
+      "unique_images": 44,
+      "board_sha256": "d2bcbe3d1748e060629894417ed4e2702c5bf34df6365f5023b699f1fba25123"
+    },
+    "Turn180R/three_quarter": {
+      "pose_count": 33,
+      "gif_source_samples": 13,
+      "unique_images": 44,
+      "board_sha256": "0fbbbcacf538e59c028fea6a499579b9c4ac4b588da8493f77aeac7e6d9e62ad"
+    },
+    "Idle/front": {
+      "pose_count": 33,
+      "gif_source_samples": 80,
+      "unique_images": 1,
+      "board_sha256": "d64aaa114dfd82b1558fdbd586c4b1dc84a46ea3928463d4a43b557b340000cf"
+    },
+    "Idle/side": {
+      "pose_count": 33,
+      "gif_source_samples": 80,
+      "unique_images": 1,
+      "board_sha256": "1a2b7b2f73fddd32e70b160e5b43810476911078566460a99bd6c2a04d7b364d"
+    },
+    "Idle/three_quarter": {
+      "pose_count": 33,
+      "gif_source_samples": 80,
+      "unique_images": 1,
+      "board_sha256": "94cd5f33a521143d3697219f2550168abd1dfdad50cc405629d49e711bbfb8c5"
+    },
+    "Walk/front": {
+      "pose_count": 33,
+      "gif_source_samples": 26,
+      "unique_images": 56,
+      "board_sha256": "8920ec7a3ac3a1155c963f7dca4c0be3d8c7183bf4f6c26b5184e236dd8c3998"
+    },
+    "Walk/side": {
+      "pose_count": 33,
+      "gif_source_samples": 26,
+      "unique_images": 56,
+      "board_sha256": "b6e2f5006f09695beeb916a69a08d82ad29f89b68485cfa8d6c846b6f1510e19"
+    },
+    "Walk/three_quarter": {
+      "pose_count": 33,
+      "gif_source_samples": 26,
+      "unique_images": 56,
+      "board_sha256": "7cbff9330c298fd6246f4ee9325d09291d483f3b38da04aabce060faf963dbc6"
+    },
+    "Jog/front": {
+      "pose_count": 33,
+      "gif_source_samples": 18,
+      "unique_images": 48,
+      "board_sha256": "881f88a23545089f828fff52367855d830a5117f6ad7607b8c8a3f2bd0a27c20"
+    },
+    "Jog/side": {
+      "pose_count": 33,
+      "gif_source_samples": 18,
+      "unique_images": 48,
+      "board_sha256": "1f7d02e5d2b1c74f265be811109ae0cae655173d5b334be96780c82bf5f02bf0"
+    },
+    "Jog/three_quarter": {
+      "pose_count": 33,
+      "gif_source_samples": 18,
+      "unique_images": 48,
+      "board_sha256": "cae7fb238650dfadd9bd472c5add3860cedf477213e6660283557457f0934067"
+    },
+    "StartWalkL/front": {
+      "pose_count": 33,
+      "gif_source_samples": 15,
+      "unique_images": 46,
+      "board_sha256": "27a7dcd3fb73724181afdd8fb1ffc643d360f404148ca5510acad442c1b2cc8b"
+    },
+    "StartWalkL/side": {
+      "pose_count": 33,
+      "gif_source_samples": 15,
+      "unique_images": 46,
+      "board_sha256": "336af1156f7d0777be17844d2fa46adb50e20b6eb0e473210fdd4614a6afe500"
+    },
+    "StartWalkL/three_quarter": {
+      "pose_count": 33,
+      "gif_source_samples": 15,
+      "unique_images": 46,
+      "board_sha256": "a80d225d28cbd50919133226f4859b2ef91f809f5af03f10c89a404faf815f77"
+    },
+    "StopWalkL/front": {
+      "pose_count": 33,
+      "gif_source_samples": 13,
+      "unique_images": 41,
+      "board_sha256": "3df124d9308e53b13049ac9aeb991525aced3ab3031d225bc43730033e05e929"
+    },
+    "StopWalkL/side": {
+      "pose_count": 33,
+      "gif_source_samples": 13,
+      "unique_images": 41,
+      "board_sha256": "c0a529b3533015fa8101a0ac99a284a63e1ad85e8f6a8b7f01d241e6095529c1"
+    },
+    "StopWalkL/three_quarter": {
+      "pose_count": 33,
+      "gif_source_samples": 13,
+      "unique_images": 41,
+      "board_sha256": "8453e52f6c5ef13849cfa3c8da3ab5a6334c022235d77a4b2f431da14bbf7435"
+    },
+    "StartWalkR/front": {
+      "pose_count": 33,
+      "gif_source_samples": 15,
+      "unique_images": 46,
+      "board_sha256": "a5d58d04dfe53269d35f0462ba8f04bd0604b4281459237954d1404e8da71c8c"
+    },
+    "StartWalkR/side": {
+      "pose_count": 33,
+      "gif_source_samples": 15,
+      "unique_images": 46,
+      "board_sha256": "bf10462801fa2662de4f5a348f63424223c594056d9d634fd23e0ef3e5ae277e"
+    },
+    "StartWalkR/three_quarter": {
+      "pose_count": 33,
+      "gif_source_samples": 15,
+      "unique_images": 46,
+      "board_sha256": "0470df105cd2d4399c2f29e4be70259e6054934b52950aaa27da13702501afbb"
+    },
+    "StopWalkR/front": {
+      "pose_count": 33,
+      "gif_source_samples": 13,
+      "unique_images": 41,
+      "board_sha256": "3e9f6d058900e42730f4346db5c3f2e427f33f7e54279e8c24b8f75ce5b0db17"
+    },
+    "StopWalkR/side": {
+      "pose_count": 33,
+      "gif_source_samples": 13,
+      "unique_images": 41,
+      "board_sha256": "0c66d3733df2645dc36ed95a7d09ed388d497f7993c57160b81090d1729af2f0"
+    },
+    "StopWalkR/three_quarter": {
+      "pose_count": 33,
+      "gif_source_samples": 13,
+      "unique_images": 41,
+      "board_sha256": "7b73a69293d9f68b2f1355a41131c4fe15851784d034fc9992335bc00ca075ef"
+    },
+    "StartJogL/front": {
+      "pose_count": 33,
+      "gif_source_samples": 13,
+      "unique_images": 44,
+      "board_sha256": "98b8e2203ae2bd9751a79fd738a0fef25cd10083f21c7ada226ebdbe1b562063"
+    },
+    "StartJogL/side": {
+      "pose_count": 33,
+      "gif_source_samples": 13,
+      "unique_images": 44,
+      "board_sha256": "dd066f8691b1e7a26ce6d12626e2f41f722e6275a352dedf76284bb1bdbdbd9d"
+    },
+    "StartJogL/three_quarter": {
+      "pose_count": 33,
+      "gif_source_samples": 13,
+      "unique_images": 44,
+      "board_sha256": "e71cd5ae34480c10a4d50f529f6400822d3814a49aba0b89ccb568653e2cec27"
+    },
+    "StopJogL/front": {
+      "pose_count": 33,
+      "gif_source_samples": 16,
+      "unique_images": 47,
+      "board_sha256": "6b6196db6ec0b2288b2fddcbbf0e3a89e100f47d8bd56f3c90340c802494280c"
+    },
+    "StopJogL/side": {
+      "pose_count": 33,
+      "gif_source_samples": 16,
+      "unique_images": 47,
+      "board_sha256": "867de25d7cd24d695bee865d48a71a5aafc3ae171f06eb659a9b74e154feb7bb"
+    },
+    "StopJogL/three_quarter": {
+      "pose_count": 33,
+      "gif_source_samples": 16,
+      "unique_images": 47,
+      "board_sha256": "55d1ebf70676196288d2c5ba88954bbb4baaa5b6037c6e7b37d2baed3098d48c"
+    },
+    "StartJogR/front": {
+      "pose_count": 33,
+      "gif_source_samples": 13,
+      "unique_images": 44,
+      "board_sha256": "ed5d4a2ae1ba333eaa2ff6c536b34b4dd29d99c530fdb79f66de360665e6db4f"
+    },
+    "StartJogR/side": {
+      "pose_count": 33,
+      "gif_source_samples": 13,
+      "unique_images": 44,
+      "board_sha256": "0a980766e0cf07ce6ff095545bfb8a434b5f5b30cd34b681b540c35bce053ae6"
+    },
+    "StartJogR/three_quarter": {
+      "pose_count": 33,
+      "gif_source_samples": 13,
+      "unique_images": 44,
+      "board_sha256": "e76b7a7270c49d1b0a7353721cc0164dbc2892461d361a30dd02892d2b7a6f43"
+    }
+  },
   "source_gif_files": {
-    "Idle_front": {
+    "Idle/front": {
       "path": "previews/gifs/Idle_front.gif",
       "sha256": "252be4a6913e7c863e8d7e29ffd4e7b934a0a3184e501cb7ba05675f6880f5e5",
       "decoded_frames": 1,
@@ -156,7 +433,7 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "Idle_side": {
+    "Idle/side": {
       "path": "previews/gifs/Idle_side.gif",
       "sha256": "a9f3f2e2510335d82ba1b78410fb037ddd3564aeca79a816dbfae976d9a0ab76",
       "decoded_frames": 1,
@@ -166,7 +443,7 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "Idle_three_quarter": {
+    "Idle/three_quarter": {
       "path": "previews/gifs/Idle_three_quarter.gif",
       "sha256": "cccc76686247e17d28530d242f36ce3b77ac122137247a4b5c1fb19242c63806",
       "decoded_frames": 1,
@@ -176,9 +453,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "Walk_front": {
+    "Walk/front": {
       "path": "previews/gifs/Walk_front.gif",
-      "sha256": "1d8e1613248c19ff6b5b2bd491c864ca9998e8fd4897c1e121802226516993d7",
+      "sha256": "ebf942ac61db515bdcadcd96e91aaa7039c86213fe851d989a77d92e8eee0985",
       "decoded_frames": 26,
       "duration_ms": 1040,
       "frame_duration_ms": [
@@ -211,9 +488,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "Walk_side": {
+    "Walk/side": {
       "path": "previews/gifs/Walk_side.gif",
-      "sha256": "8045b021daa8d46d9b5fad508cf0889286af37264ce453d7e4cbf1d97f0cbc6e",
+      "sha256": "96a976bd136dec5e7d61fdef8e28a788c934ec1ba8bdd2542f25b04a24bab09e",
       "decoded_frames": 26,
       "duration_ms": 1040,
       "frame_duration_ms": [
@@ -246,9 +523,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "Walk_three_quarter": {
+    "Walk/three_quarter": {
       "path": "previews/gifs/Walk_three_quarter.gif",
-      "sha256": "3d2a60f14398a24e5002b11c1b990edba8e3bd0cc4d8c4b7e197106dd283f01a",
+      "sha256": "31247cb160f32776a063fb9a1d8fde60583dfb6358e4db74905ccfb9497e1804",
       "decoded_frames": 26,
       "duration_ms": 1040,
       "frame_duration_ms": [
@@ -281,9 +558,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "Jog_front": {
+    "Jog/front": {
       "path": "previews/gifs/Jog_front.gif",
-      "sha256": "f85fb9e9001fc7b70b8dbe5451cf42d6bfeb200869124ba6006503d7e8fa7cb9",
+      "sha256": "69b535a62b174b6ef434a44126bea58f9355d5a195abcc393e1ebcd473f65967",
       "decoded_frames": 18,
       "duration_ms": 720,
       "frame_duration_ms": [
@@ -308,9 +585,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "Jog_side": {
+    "Jog/side": {
       "path": "previews/gifs/Jog_side.gif",
-      "sha256": "7a7c9aea37d3ad1b36e817dd34f92b57526ca79c3e045ee6eaaa58948bcfb89f",
+      "sha256": "d3a31ba0fba603066bcbf51b522dfdde6a738dffd873abae524bf6c0f3522c10",
       "decoded_frames": 18,
       "duration_ms": 720,
       "frame_duration_ms": [
@@ -335,9 +612,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "Jog_three_quarter": {
+    "Jog/three_quarter": {
       "path": "previews/gifs/Jog_three_quarter.gif",
-      "sha256": "4e5c1e47ab9385bc3e7935ba711ead83ccb078a7ad84da026fc920e2239a6512",
+      "sha256": "51979c5fe99d72f623983fdffe90d4ac228b8a4cc7ed12e2053fa6f462316d26",
       "decoded_frames": 18,
       "duration_ms": 720,
       "frame_duration_ms": [
@@ -362,9 +639,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StartWalkL_front": {
+    "StartWalkL/front": {
       "path": "previews/gifs/StartWalkL_front.gif",
-      "sha256": "d8f67bfeeba58c65835999b3973a0133e9c74efb55608c6e1d4399ad87f468bd",
+      "sha256": "2dd69e1a48c7b7c32e167da4c713d6576c3c75f34805c72a7e671d69435007c5",
       "decoded_frames": 16,
       "duration_ms": 920,
       "frame_duration_ms": [
@@ -387,9 +664,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StartWalkL_side": {
+    "StartWalkL/side": {
       "path": "previews/gifs/StartWalkL_side.gif",
-      "sha256": "16d241a87082018ce7642a3ace3055f91587541ea692ef204cfd873f155e2cc1",
+      "sha256": "505271cc5123f62b5e727814d5f1fab95c59fccfd9557961f1c0ae0b487aca1c",
       "decoded_frames": 16,
       "duration_ms": 920,
       "frame_duration_ms": [
@@ -412,9 +689,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StartWalkL_three_quarter": {
+    "StartWalkL/three_quarter": {
       "path": "previews/gifs/StartWalkL_three_quarter.gif",
-      "sha256": "f61ae880ea183167bf9bd7d6db6c0046fd88d9770bf99a306ae4d8a22715355b",
+      "sha256": "6cf602280529cd2ebba8ee5d948965e838f1a52af7a9b4cfdc1837f7b9df2998",
       "decoded_frames": 16,
       "duration_ms": 920,
       "frame_duration_ms": [
@@ -437,9 +714,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StopWalkL_front": {
+    "StopWalkL/front": {
       "path": "previews/gifs/StopWalkL_front.gif",
-      "sha256": "7d6b5fff8543d10aff455cdf1d395962ad61ac7ea399670c32a36f386d902502",
+      "sha256": "dc5e674500d81fbb8fec0fc7a0cff9711e717014785517821bd725e01e7f3cf3",
       "decoded_frames": 14,
       "duration_ms": 840,
       "frame_duration_ms": [
@@ -460,9 +737,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StopWalkL_side": {
+    "StopWalkL/side": {
       "path": "previews/gifs/StopWalkL_side.gif",
-      "sha256": "684859e3b1cee605b4b4a4e95ce3f41dff3ba94ad1a0d2bc1eeb512db4a1d711",
+      "sha256": "1c4e9f44949dac55a85548d0000526ae2d143ea1d6e91ce42db21bbb6de75009",
       "decoded_frames": 14,
       "duration_ms": 840,
       "frame_duration_ms": [
@@ -483,9 +760,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StopWalkL_three_quarter": {
+    "StopWalkL/three_quarter": {
       "path": "previews/gifs/StopWalkL_three_quarter.gif",
-      "sha256": "2be26dab12f8d75731b447b959048e06e665a0ba1175ca5c46742b2b3d47536b",
+      "sha256": "e6f6e69888c502ae60072e532ee043b27fa1a7e1dbe454f897441a0e28297692",
       "decoded_frames": 14,
       "duration_ms": 840,
       "frame_duration_ms": [
@@ -506,9 +783,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StartWalkR_front": {
+    "StartWalkR/front": {
       "path": "previews/gifs/StartWalkR_front.gif",
-      "sha256": "128d1497f174e1a57b23743aec83c4623034f00d0cf779d2ca823a663ada6c39",
+      "sha256": "b4d066ce5f4163876aa2dc1179c5ab116ab2f7e4425a82c8f744cdec927810b7",
       "decoded_frames": 16,
       "duration_ms": 920,
       "frame_duration_ms": [
@@ -531,9 +808,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StartWalkR_side": {
+    "StartWalkR/side": {
       "path": "previews/gifs/StartWalkR_side.gif",
-      "sha256": "31cd2012c20f429920b0fe10feed186bf39aee4f6458e1f771469c3c124d7afa",
+      "sha256": "50cdac329813eef3a2da6e1c99a48d1e8033254c8d05945a08693c53219b8d0e",
       "decoded_frames": 16,
       "duration_ms": 920,
       "frame_duration_ms": [
@@ -556,9 +833,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StartWalkR_three_quarter": {
+    "StartWalkR/three_quarter": {
       "path": "previews/gifs/StartWalkR_three_quarter.gif",
-      "sha256": "e363b777814500d0c829217790fb56c45e920be7edac69cbd9394ab2398ae934",
+      "sha256": "ade2028311739e6d8fbd92c599ee049343d3fe64a05373ebc42b74eb5a22d66f",
       "decoded_frames": 16,
       "duration_ms": 920,
       "frame_duration_ms": [
@@ -581,9 +858,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StopWalkR_front": {
+    "StopWalkR/front": {
       "path": "previews/gifs/StopWalkR_front.gif",
-      "sha256": "4b6832e8009785269360462a016d7ea8764f73f831a6cb17db1aaf81a13c1b48",
+      "sha256": "65716c3513327fec646024850acbc18882a83970caed7cae37e90e9cc63cf172",
       "decoded_frames": 14,
       "duration_ms": 840,
       "frame_duration_ms": [
@@ -604,9 +881,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StopWalkR_side": {
+    "StopWalkR/side": {
       "path": "previews/gifs/StopWalkR_side.gif",
-      "sha256": "5d967a5956aa6813668cfc9098539913f3f2753aa84bbeed2f0f35277604729a",
+      "sha256": "5ec07177242432135f2edc9fe6933fa128c8f0541e2f2c33347197ea9ba1c397",
       "decoded_frames": 14,
       "duration_ms": 840,
       "frame_duration_ms": [
@@ -627,9 +904,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StopWalkR_three_quarter": {
+    "StopWalkR/three_quarter": {
       "path": "previews/gifs/StopWalkR_three_quarter.gif",
-      "sha256": "8d25bc53d97fad21ae83df3072836f2b625a7fb78c65447e64e313ed03747c92",
+      "sha256": "27e4b581b6f441f7ffc70dd36cdacd75b485f6c965baf558663aecbef1ab08d5",
       "decoded_frames": 14,
       "duration_ms": 840,
       "frame_duration_ms": [
@@ -650,9 +927,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StartJogL_front": {
+    "StartJogL/front": {
       "path": "previews/gifs/StartJogL_front.gif",
-      "sha256": "6767a59f3bf6a48b4402e86ee3622304bcbeab8049c7370afccfb88c4de1dfea",
+      "sha256": "eda1782135961e7a639b4f130b6d38ef194dd700ed5b22b09165b29818fa1ab1",
       "decoded_frames": 14,
       "duration_ms": 840,
       "frame_duration_ms": [
@@ -673,9 +950,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StartJogL_side": {
+    "StartJogL/side": {
       "path": "previews/gifs/StartJogL_side.gif",
-      "sha256": "47d17d83084f1c814e6f38c405f15a6c63ba304a5aa46815865382ae344cec12",
+      "sha256": "87e08f29e3dc723e5cb8d584fb1a1bad8f527e2ba354d79387749f9914f5c5eb",
       "decoded_frames": 14,
       "duration_ms": 840,
       "frame_duration_ms": [
@@ -696,9 +973,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StartJogL_three_quarter": {
+    "StartJogL/three_quarter": {
       "path": "previews/gifs/StartJogL_three_quarter.gif",
-      "sha256": "d01053cc3d9162c9c4f0d557f457d49bf4ce6f581d1c5a0c0c411ef060950718",
+      "sha256": "38399fbcbf78acba50db3bb0e82135d3a5185803cf0d35539cddc8d2eab4c116",
       "decoded_frames": 14,
       "duration_ms": 840,
       "frame_duration_ms": [
@@ -719,9 +996,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StopJogL_front": {
+    "StopJogL/front": {
       "path": "previews/gifs/StopJogL_front.gif",
-      "sha256": "5e88580d44904fa417ad2a2a2024385697ebb8ffcc48aa45696993b28dd4d433",
+      "sha256": "c53f17fbda19db91d39bfffa82165e12afe109f109a194edb4307a43f32c60a1",
       "decoded_frames": 17,
       "duration_ms": 960,
       "frame_duration_ms": [
@@ -745,9 +1022,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StopJogL_side": {
+    "StopJogL/side": {
       "path": "previews/gifs/StopJogL_side.gif",
-      "sha256": "80863368e899d7da36536a848462d7f6a28ed4c832aedc99f3c0934f90732112",
+      "sha256": "4d2bd6bd836cb0c7312f8d00589e10252d613eec711c3d0e31827c07076c33d7",
       "decoded_frames": 17,
       "duration_ms": 960,
       "frame_duration_ms": [
@@ -771,9 +1048,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StopJogL_three_quarter": {
+    "StopJogL/three_quarter": {
       "path": "previews/gifs/StopJogL_three_quarter.gif",
-      "sha256": "74355e9a85935daaa0559ce17698d4665bd9357c20288c4ff2df5b8c8611d219",
+      "sha256": "5f6d1688ea7048f122cf98b9f5f28f0b9a56657e5976cf73fd27753f4469c34a",
       "decoded_frames": 17,
       "duration_ms": 960,
       "frame_duration_ms": [
@@ -797,9 +1074,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StartJogR_front": {
+    "StartJogR/front": {
       "path": "previews/gifs/StartJogR_front.gif",
-      "sha256": "c56a5db91780d25dacb29cb80f033874fe68f6e2a863ae493fba6011e3c3a883",
+      "sha256": "524e45f2b8273cd45d25b942a6a45ef96d7b0e78f6df89f7942df52c2a663148",
       "decoded_frames": 14,
       "duration_ms": 840,
       "frame_duration_ms": [
@@ -820,9 +1097,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StartJogR_side": {
+    "StartJogR/side": {
       "path": "previews/gifs/StartJogR_side.gif",
-      "sha256": "c4ac70b83e83decb167d20d853d0d2100f6357301167276521fd905b33f6754c",
+      "sha256": "15a6fd5e6d3493c89018e87f69b0c77f58710e46b31c825743e523a88356865e",
       "decoded_frames": 14,
       "duration_ms": 840,
       "frame_duration_ms": [
@@ -843,9 +1120,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StartJogR_three_quarter": {
+    "StartJogR/three_quarter": {
       "path": "previews/gifs/StartJogR_three_quarter.gif",
-      "sha256": "107b0b3e1c174bad978025609f885258c4898f19d30393eb3d94e7104f63cb38",
+      "sha256": "1189156fec32f778e7b17674a659d40f50a92655f342f8266b9b7d1fd25ad036",
       "decoded_frames": 14,
       "duration_ms": 840,
       "frame_duration_ms": [
@@ -866,9 +1143,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StopJogR_front": {
+    "StopJogR/front": {
       "path": "previews/gifs/StopJogR_front.gif",
-      "sha256": "235eec4ee38c19f4f2fd9fdd5fa6025340788d3dfe628a6e8137aca22c97dde2",
+      "sha256": "7a1af10744429fa8790e3a1f5a0ebdc204398769443f3475008334c5ba29731c",
       "decoded_frames": 17,
       "duration_ms": 960,
       "frame_duration_ms": [
@@ -892,9 +1169,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StopJogR_side": {
+    "StopJogR/side": {
       "path": "previews/gifs/StopJogR_side.gif",
-      "sha256": "30469f3e4773eb10c9bb8ff838d5829d30483e038581a1840297e06fd813f993",
+      "sha256": "776c977306dd657a415d0a4ddd2393fb87d83a7435f810ec4970edbab70f5824",
       "decoded_frames": 17,
       "duration_ms": 960,
       "frame_duration_ms": [
@@ -918,9 +1195,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "StopJogR_three_quarter": {
+    "StopJogR/three_quarter": {
       "path": "previews/gifs/StopJogR_three_quarter.gif",
-      "sha256": "3de74c3d74e6be7ef8c13e5baf9d2d8f9774935e32d343c3710ebfe6913ebf28",
+      "sha256": "1b696aafedec903c48f380de1cd2b7f6529c862c36870255d643493276079de6",
       "decoded_frames": 17,
       "duration_ms": 960,
       "frame_duration_ms": [
@@ -944,9 +1221,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "Turn90L_front": {
+    "Turn90L/front": {
       "path": "previews/gifs/Turn90L_front.gif",
-      "sha256": "6bbc3c89072a115103f7dab6c1e74c5e88e99a441c057a2fb06764f11b2d2148",
+      "sha256": "c980ce75950c201db5c894d62bcf500041943da6b01087a9c7eb5455318499b0",
       "decoded_frames": 10,
       "duration_ms": 680,
       "frame_duration_ms": [
@@ -963,9 +1240,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "Turn90L_side": {
+    "Turn90L/side": {
       "path": "previews/gifs/Turn90L_side.gif",
-      "sha256": "4e1905a3e7d3f6374768bcef3ddcd90a0a54a34f37f3da59fc66a079c4bd1bd0",
+      "sha256": "dee51c6526bce68e6f6274aa309fccbee59ebc7daae8b773579ebac851eed558",
       "decoded_frames": 10,
       "duration_ms": 680,
       "frame_duration_ms": [
@@ -982,9 +1259,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "Turn90L_three_quarter": {
+    "Turn90L/three_quarter": {
       "path": "previews/gifs/Turn90L_three_quarter.gif",
-      "sha256": "cc3364f78fbee783b4155db4e69b0f43df3f1ba3e9f0dc92a06b3f9fb2cff881",
+      "sha256": "bc01c69b1e580fe2c98a2745fd89983ec3530659af727f8422dbc4067120bd50",
       "decoded_frames": 10,
       "duration_ms": 680,
       "frame_duration_ms": [
@@ -1001,9 +1278,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "Turn90R_front": {
+    "Turn90R/front": {
       "path": "previews/gifs/Turn90R_front.gif",
-      "sha256": "3157e4afcc26d04c3f0a8ce0e81cc5edec33f99893b4db0f1a96a5ad4c8a5c67",
+      "sha256": "8699c1bd4ab16244df84197717476f0fd1dc446ed202dcfcdbec3ac961785a8e",
       "decoded_frames": 10,
       "duration_ms": 680,
       "frame_duration_ms": [
@@ -1020,9 +1297,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "Turn90R_side": {
+    "Turn90R/side": {
       "path": "previews/gifs/Turn90R_side.gif",
-      "sha256": "d047be683801bdd23218f62f3d6b9d4b849ba288e3b69631f1b8d79646d5737f",
+      "sha256": "60d3463f9a24acd44474c9c2780b68b54ab8f21936bc91735bfaf866de3080d0",
       "decoded_frames": 10,
       "duration_ms": 680,
       "frame_duration_ms": [
@@ -1039,9 +1316,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "Turn90R_three_quarter": {
+    "Turn90R/three_quarter": {
       "path": "previews/gifs/Turn90R_three_quarter.gif",
-      "sha256": "e3b9f30e63d45747eb126b0b369819dc3ed50994380201943faa2af6799903d5",
+      "sha256": "84aea561ba55554cc1c210857bedb87d404129df3e04204ef556e6c7288f4bcf",
       "decoded_frames": 10,
       "duration_ms": 680,
       "frame_duration_ms": [
@@ -1058,9 +1335,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "Turn180L_front": {
+    "Turn180L/front": {
       "path": "previews/gifs/Turn180L_front.gif",
-      "sha256": "e0b48500f5e661bd9ce0014f1725aaa1099a4490178f9abcf8ea60a6bb067b00",
+      "sha256": "415584f6997f92fe20808594ba933b55a927557fbb58c405b4ac37822609d6af",
       "decoded_frames": 14,
       "duration_ms": 840,
       "frame_duration_ms": [
@@ -1081,9 +1358,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "Turn180L_side": {
+    "Turn180L/side": {
       "path": "previews/gifs/Turn180L_side.gif",
-      "sha256": "6f328e58954dccdc62dfa663cf20459fe9dec6e9f3125e91c3813abc0645c919",
+      "sha256": "506dad2e5f60f31ed1ca3c467c50ec7597e30e737f25c420f2ae7febbb9bf5c7",
       "decoded_frames": 14,
       "duration_ms": 840,
       "frame_duration_ms": [
@@ -1104,9 +1381,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "Turn180L_three_quarter": {
+    "Turn180L/three_quarter": {
       "path": "previews/gifs/Turn180L_three_quarter.gif",
-      "sha256": "d45e3dbae1d7d271bb462444ca0d5871e2db5406aebc18d0743ec8885e11641a",
+      "sha256": "4ccaa5e6d729c7c4350b853f9bb7f675d42f011ad00424125c74527272c6fae8",
       "decoded_frames": 14,
       "duration_ms": 840,
       "frame_duration_ms": [
@@ -1127,9 +1404,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "Turn180R_front": {
+    "Turn180R/front": {
       "path": "previews/gifs/Turn180R_front.gif",
-      "sha256": "4cd59e2d3b92d4d0c92cd2138948277d41685543830d88f89d9b48e5a7556f50",
+      "sha256": "33d3226fdd8af335721d4ae88a777b7266f2edecdf6fcd5f0cf48cd64f836f9c",
       "decoded_frames": 14,
       "duration_ms": 840,
       "frame_duration_ms": [
@@ -1150,9 +1427,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "Turn180R_side": {
+    "Turn180R/side": {
       "path": "previews/gifs/Turn180R_side.gif",
-      "sha256": "3e868101e288b69df2aedbf7624dcebd97a455a2c950bccdcd3f9d35955da275",
+      "sha256": "d79763d1e40d8cc903b274c6fd0bdd91fc7bb9a39829d83a53fc5303d68c10bc",
       "decoded_frames": 14,
       "duration_ms": 840,
       "frame_duration_ms": [
@@ -1173,9 +1450,9 @@
       ],
       "visually_reviewed_all_frames": true
     },
-    "Turn180R_three_quarter": {
+    "Turn180R/three_quarter": {
       "path": "previews/gifs/Turn180R_three_quarter.gif",
-      "sha256": "18d0122765f46b32fa187af089ce1d79309a848872a9526f940f733dc9be6634",
+      "sha256": "4905b365078c5688f048d17b92bcee0b5348240998a730e8c33c9fbf1593b697",
       "decoded_frames": 14,
       "duration_ms": 840,
       "frame_duration_ms": [
@@ -1197,282 +1474,420 @@
       "visually_reviewed_all_frames": true
     }
   },
-  "source_sheet_files": {
-    "Idle_front": {
+  "source_pose_sheets": {
+    "Idle/front": {
       "path": "previews/sheets/Idle_front.png",
-      "sha256": "c571028a5b060ec91f5564569dbfe30bf749a41975863ea6e4a779040e9c6383",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "dd9d67536b8e83ebbdc7d7687317d9e4dca1d2078e804bb25daf7fbe3b975207",
+      "size": [
+        2871,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "Idle_side": {
+    "Idle/side": {
       "path": "previews/sheets/Idle_side.png",
-      "sha256": "9c7edfd2525540b119e66d5b372aaddf8c38871fcaca5f2260d853efa20d31cf",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "4a24b85d0481d476b0fa28e241f3bb4dba622283ac42666f2d07b433938e1266",
+      "size": [
+        1914,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "Idle_three_quarter": {
+    "Idle/three_quarter": {
       "path": "previews/sheets/Idle_three_quarter.png",
-      "sha256": "ecbf6b4c8ebb11a82aad8a1e86399a5a8e4bc1794ad3e835986234362aaebead",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "e6d9ffcd2f8ceadad3c4ad70fc1454ec5bb3caf98df971054179194c7dba9b1c",
+      "size": [
+        2541,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "Walk_front": {
+    "Walk/front": {
       "path": "previews/sheets/Walk_front.png",
-      "sha256": "024483c271e15baf82309c6b6cb5a7a5d192a9d5bf231f723c5d476d629afdf4",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "86d60665f98ff6ec445ac7a9f54d8949b377b9cf40840e0fd369f7f8120ccf85",
+      "size": [
+        2889,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "Walk_side": {
+    "Walk/side": {
       "path": "previews/sheets/Walk_side.png",
-      "sha256": "49abcfda3bcdee05bd25c2a26b5343e1e32a648f3eb07a874a5400a4a74f2635",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "fd2979008b78bbb073e806e631f45b7cc071f14688aa23637c405183e0bb7761",
+      "size": [
+        4190,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "Walk_three_quarter": {
+    "Walk/three_quarter": {
       "path": "previews/sheets/Walk_three_quarter.png",
-      "sha256": "7f9c089fdf84bcabe93c857194e403521fe6faf12e708eb09493a0600aaea6c2",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "5d00e15902118cf4d25013e1ad3c2e851170350050d5f5ec077e6def93c7578e",
+      "size": [
+        3184,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "Jog_front": {
+    "Jog/front": {
       "path": "previews/sheets/Jog_front.png",
-      "sha256": "a5b810da58ec405291f56983a395a8ce863faaef04c75639b8d76fbdfa033691",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "abb6a7e2a35b327db7076ce23c6b6617e247593baad83e1a485d52d842171cb1",
+      "size": [
+        2892,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "Jog_side": {
+    "Jog/side": {
       "path": "previews/sheets/Jog_side.png",
-      "sha256": "b1b6852cdbd7c676c351b63d5f09f5236548a3232612d1f1030eced475dded4b",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "07ca05de56f0fd369233e31f5aad4f55cfcca8773ce46ff9bc76f0835f62a1ee",
+      "size": [
+        4665,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "Jog_three_quarter": {
+    "Jog/three_quarter": {
       "path": "previews/sheets/Jog_three_quarter.png",
-      "sha256": "a12e17c733233ffbfaf6a77b86f1d2f84029f3fec9eeac40df4d730a45e11cdd",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "fb433d929deb948e8f3061766a25bead0550b8120c7fa8bf87c4b392cf8b4cdc",
+      "size": [
+        3598,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StartWalkL_front": {
+    "StartWalkL/front": {
       "path": "previews/sheets/StartWalkL_front.png",
-      "sha256": "fc9b9355c56925e5119b3a1f9ca87e87974c93b121218dbcb57860519d8181f9",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "d3f01bca83bfe90aca13b29826ae0cf2a5caf08115b6a298f770f6361835606b",
+      "size": [
+        2887,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StartWalkL_side": {
+    "StartWalkL/side": {
       "path": "previews/sheets/StartWalkL_side.png",
-      "sha256": "40ba0169fee19bf56e8d9ba3c52163c35558bbc0f7cbde32e13203cbd3a1d533",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "b4b8b10e51a4cd7f95b10119f5d04b89d8cfb85469471fb4908bef881a9f0c9b",
+      "size": [
+        3038,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StartWalkL_three_quarter": {
+    "StartWalkL/three_quarter": {
       "path": "previews/sheets/StartWalkL_three_quarter.png",
-      "sha256": "efd44c56cccefd762f5a49f278cccb70e9a69c6668caf5012f992e0d89125ef7",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "76c190f6f859ddbdc8cd1569d7b498cfcdbdaf32b40ab2c280834de214368fd6",
+      "size": [
+        2872,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StopWalkL_front": {
+    "StopWalkL/front": {
       "path": "previews/sheets/StopWalkL_front.png",
-      "sha256": "4d983d3739b3d26cf20665523e1b532502c9537f43abba023136b03c6afd7000",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "08dc5f0b1b36a95859fd035e8137d4be32d34671b54ab6257af058b93e3c0ed8",
+      "size": [
+        2878,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StopWalkL_side": {
+    "StopWalkL/side": {
       "path": "previews/sheets/StopWalkL_side.png",
-      "sha256": "afdc7b7c0c7f506fa374b7af56af420fa6050dd60ce7129817e31049f96eef4c",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "d9a9d592f4f8ba8727ea94652656b118d0aa6ea06ee0bc83fb73612536922148",
+      "size": [
+        3039,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StopWalkL_three_quarter": {
+    "StopWalkL/three_quarter": {
       "path": "previews/sheets/StopWalkL_three_quarter.png",
-      "sha256": "6e8b10ffd74309865471d8d07eb734489e3dc1ee3de52ab8a6e62a525141bcf7",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "dbfa67ab468f372a312d7079b3cd9ce5c9a0f08ab25a3c6ba6e5852101744082",
+      "size": [
+        2795,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StartWalkR_front": {
+    "StartWalkR/front": {
       "path": "previews/sheets/StartWalkR_front.png",
-      "sha256": "1090daf368728c9a9fd9beb991823961838f66bc3dcb346c859f3406f39e4677",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "7a0fdcd4fe74d100b0b332a1ae20b33b61ccf556f21a0104cd12587b612a11cc",
+      "size": [
+        2888,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StartWalkR_side": {
+    "StartWalkR/side": {
       "path": "previews/sheets/StartWalkR_side.png",
-      "sha256": "0ea39e4bbf4aefb17e3c17331047cd5afd46cca96accd3fb5fff2619a553ebcc",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "bea53754131ab5a3fc56f78033445849d68ae1d6c7af32a227bf1f0ddbeebaa9",
+      "size": [
+        3038,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StartWalkR_three_quarter": {
+    "StartWalkR/three_quarter": {
       "path": "previews/sheets/StartWalkR_three_quarter.png",
-      "sha256": "a1bc6c9b40ba988b00f6aa212adc5aab2188bc3036011c4d1e50e31e4a7a09a9",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "ed0b9e6e837948ef9749bf0573dc8653f1bb64b15ed649cdb50e628d28045c08",
+      "size": [
+        2833,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StopWalkR_front": {
+    "StopWalkR/front": {
       "path": "previews/sheets/StopWalkR_front.png",
-      "sha256": "bb437e7657d155e942a32657a712149b76ec0125c4e2905608047b683e28bd26",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "3759a440c75a639af6f6c688a18764951841bcd7d9c63e2cd7a846373e67480d",
+      "size": [
+        2878,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StopWalkR_side": {
+    "StopWalkR/side": {
       "path": "previews/sheets/StopWalkR_side.png",
-      "sha256": "3ad8da78751a3774189fc4f6b6ab780fd951b0a4c771e88b43b5e2b76a6a0e28",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "51d4b60d40eb23ee6014353f50096e8ac3dbbe6599fb5192717beb2a572f6f63",
+      "size": [
+        3039,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StopWalkR_three_quarter": {
+    "StopWalkR/three_quarter": {
       "path": "previews/sheets/StopWalkR_three_quarter.png",
-      "sha256": "de5d2eddb4d25d1c505511d763cc3433cbbe866a590406cd033887793b737f9a",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "85d9316409b077ec9f18435cc88d0931cb4736c50302ec6464dbc96ee7331b29",
+      "size": [
+        2862,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StartJogL_front": {
+    "StartJogL/front": {
       "path": "previews/sheets/StartJogL_front.png",
-      "sha256": "13128fd4e7914cbc1f80df5015ac8aaf162c095c0201a8b8cffc3d525e5e1cfa",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "67e380e777a894a0a4a3099e91816cd430c4a47833c535d9b182655756f98188",
+      "size": [
+        2910,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StartJogL_side": {
+    "StartJogL/side": {
       "path": "previews/sheets/StartJogL_side.png",
-      "sha256": "15e9255151925179330ef7ae90ae48f46108dc698673b166833b397acceebe8a",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "ec5970b0ee5cffa56a90a9d701110c33a53b3aa89ef369e4795f1e11f1fa312a",
+      "size": [
+        3384,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StartJogL_three_quarter": {
+    "StartJogL/three_quarter": {
       "path": "previews/sheets/StartJogL_three_quarter.png",
-      "sha256": "67072ed67997452f5252387bd122846e0489b09ffcfa072ac52139e020188169",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "d485136f20e6a296972f12b942e22a5568046b10ae739168f62a72077a602546",
+      "size": [
+        2906,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StopJogL_front": {
+    "StopJogL/front": {
       "path": "previews/sheets/StopJogL_front.png",
-      "sha256": "5358919cd115b400c9c72281de62ff9bb83a5d9dee5ea2dbe74ceb3674fea239",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "ba14d58ff77ff8d8e41b8c96cc7b4b4285fb40faf6b9893d970a1d7e47fd6c17",
+      "size": [
+        2925,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StopJogL_side": {
+    "StopJogL/side": {
       "path": "previews/sheets/StopJogL_side.png",
-      "sha256": "836d19a47f7c5653653f49d2730fef9125a346cd34a76cd8b2ac06c336932d64",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "efa8cf0908dfa928f73b87c30790d573dc01541f0b2d7e3359f689605b007b64",
+      "size": [
+        3271,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StopJogL_three_quarter": {
+    "StopJogL/three_quarter": {
       "path": "previews/sheets/StopJogL_three_quarter.png",
-      "sha256": "5f51f831df7da41b90059a8865f0caa0a06c2d14531bb07206fc8bedbb1095cf",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "6aeb9d0bc5e76679a5d66d18763b21d6dd9c1302bd36b22874623d431a69bc29",
+      "size": [
+        3049,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StartJogR_front": {
+    "StartJogR/front": {
       "path": "previews/sheets/StartJogR_front.png",
-      "sha256": "d375f3eb9ebe986e55e7187d3a60929aa12ac652958f1c32ac179bc8f39f789d",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "f4629f467e20492929ccfa0c4f5680d66c9170b1bc173f5f21466df39e181444",
+      "size": [
+        2911,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StartJogR_side": {
+    "StartJogR/side": {
       "path": "previews/sheets/StartJogR_side.png",
-      "sha256": "7531bc65b2e7f24318b70f33d6531edc72f0a4855e2764bf75ddfd996906f15b",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "3024f44535bca4840c077a9ab12c22c39e23f86ac4b0933f6b2ebb0bf5ac0111",
+      "size": [
+        3384,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StartJogR_three_quarter": {
+    "StartJogR/three_quarter": {
       "path": "previews/sheets/StartJogR_three_quarter.png",
-      "sha256": "766cd8848144c9afa116c07d9435e74738c6f881c4dbbc7a05e04b33272977ef",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "5079f3e28672d7169a4e160279fc4368bd27a2a235860a0db655ee62bb8eb1e9",
+      "size": [
+        3311,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StopJogR_front": {
+    "StopJogR/front": {
       "path": "previews/sheets/StopJogR_front.png",
-      "sha256": "1fb1179e611aece032b0d8b54c8857f7076ec6dc29993b4f4cfa013887d82da8",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "d2094a6c6aa423d9ca1767fa6175f90ae29fa96a1fd32735a00974003496418a",
+      "size": [
+        2925,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StopJogR_side": {
+    "StopJogR/side": {
       "path": "previews/sheets/StopJogR_side.png",
-      "sha256": "2354950802808d7b46428e2cb7d6c3a4e8e65e042e37bb3be06bc3b394cbecfc",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "16e86d1fa69762e3ede60467899a9a89c50cfc42bb85a18c31d7481d97fe5cf1",
+      "size": [
+        3271,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "StopJogR_three_quarter": {
+    "StopJogR/three_quarter": {
       "path": "previews/sheets/StopJogR_three_quarter.png",
-      "sha256": "819046f53c9eca62308ec988baab0a58f77c6ef947c9a9a419ab0ff64740d583",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "8a0b451758dd09ef217b13f8ce850e40994d3855b03cff682a854a50fd970f13",
+      "size": [
+        3103,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "Turn90L_front": {
+    "Turn90L/front": {
       "path": "previews/sheets/Turn90L_front.png",
-      "sha256": "e05e01b4a081381a937e79ac483493e4478b364db5cc0297c95bac56fd21eb3a",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "2441ea6a98ccd280a3a57e6f8bf9e42895fd6d48866dd0cd5ab61511499495af",
+      "size": [
+        2362,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "Turn90L_side": {
+    "Turn90L/side": {
       "path": "previews/sheets/Turn90L_side.png",
-      "sha256": "3a5a140df27558a6f897605bbc1afedb4e0eae9e5d3f7bb4e55a7ebe56cd615a",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "eff0b8cb928d999b65e8e5346b5874e72c60fd62a83697176fb9c494559273c3",
+      "size": [
+        2410,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "Turn90L_three_quarter": {
+    "Turn90L/three_quarter": {
       "path": "previews/sheets/Turn90L_three_quarter.png",
-      "sha256": "066655b03c89a484f64107f19e2c249e20dcdb90b72117aa1d8d44044f37041c",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "c04a0dd2c1a056e4c9a328317fcc2d798151d69a5ddc7d37c7aef65781d153e9",
+      "size": [
+        2549,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "Turn90R_front": {
+    "Turn90R/front": {
       "path": "previews/sheets/Turn90R_front.png",
-      "sha256": "d0002034e1078c8e4dfb711bb143607a38e8bd2bb5e4f41354bbf94fda4189b0",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "2e7395eb325e78d5b0c924e8092a439b6ed046857145c4d41b3a4e60bf4c1243",
+      "size": [
+        2421,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "Turn90R_side": {
+    "Turn90R/side": {
       "path": "previews/sheets/Turn90R_side.png",
-      "sha256": "9d4b499aa03ff5a07af30e4c4081463ac6716178ea1b18f57c1241d581e8385a",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "2364380354cde4c1bd9a912a77ba99cbf17371221c51c5988e91a92be103367e",
+      "size": [
+        2467,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "Turn90R_three_quarter": {
+    "Turn90R/three_quarter": {
       "path": "previews/sheets/Turn90R_three_quarter.png",
-      "sha256": "051150bfca2dd8e315451cab682e831efb5918baadfbb17766fe38baf1f442ae",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "bc2b96523eb30abca0b92e47ddecefe31ed22a778231bc2d5131ee0b3c2c329e",
+      "size": [
+        2190,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "Turn180L_front": {
+    "Turn180L/front": {
       "path": "previews/sheets/Turn180L_front.png",
-      "sha256": "940751520080d5b7ecfd03d729f8335e94fc9cc166f7a938e43bdf9dbf6cec22",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "c2346f7b7a3dcb0710c36e133780aaeb06cb8a3a2a491d9a9da59d8f62bcf1a5",
+      "size": [
+        2580,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "Turn180L_side": {
+    "Turn180L/side": {
       "path": "previews/sheets/Turn180L_side.png",
-      "sha256": "323cff5d4da6fdc35f1e7fd479f18257b1cd62b8f772417e23862604e6343b31",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "eb88558eca56e69853c4b96e62dc700323f42c80bd561391d2a0a4dee7e90738",
+      "size": [
+        2202,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "Turn180L_three_quarter": {
+    "Turn180L/three_quarter": {
       "path": "previews/sheets/Turn180L_three_quarter.png",
-      "sha256": "4ce41ac5be6b1b1dfabb368ec426516a41fab58b96c9aa0f4b1dbb76c8306849",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "503ded6029764fea43787f11a85a8977dad0b15c25c70fe8ce93608842d14bdd",
+      "size": [
+        2487,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "Turn180R_front": {
+    "Turn180R/front": {
       "path": "previews/sheets/Turn180R_front.png",
-      "sha256": "c7cb6d867c07080369ebbfba64436614aaaaac63c40ac609ee435de00f13f66d",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "f4d316e2aaa786fc4f91285a3fbf845961eb49cf8315c6434cf869dbef0fccb4",
+      "size": [
+        2565,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "Turn180R_side": {
+    "Turn180R/side": {
       "path": "previews/sheets/Turn180R_side.png",
-      "sha256": "615b253f523bb32d0206fbd6e0a213e612294b2296aafe55269fcfb2780726f1",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "014857d82bc03f3118249934647a65bdca97a16012408de33966d11be63aedce",
+      "size": [
+        2265,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     },
-    "Turn180R_three_quarter": {
+    "Turn180R/three_quarter": {
       "path": "previews/sheets/Turn180R_three_quarter.png",
-      "sha256": "262d5bc42c2871c6bdecdc67caa8b0a320b079b49ca9ef7f504db9859930c993",
-      "pose_count": 33,
-      "review_basis": "全33元姿勢の順序付き一覧を目視。公開横長シートと同じ元画像。"
+      "sha256": "bef0e9a78e412737b8ff4d6b5329e7ef9e3a565f4ad6008e614dc9398c6821cf",
+      "size": [
+        2450,
+        300
+      ],
+      "visually_reviewed_all_33_poses": true
     }
   },
   "related_reports": [
-    "reports/comparison_visual_review.json",
-    "reports/comparison_validation.json",
-    "reports/blender_validation.json"
+    "contact_visual_review.json",
+    "contact_mechanics.json",
+    "blender_validation.json",
+    "preview_validation.json",
+    "comparison_visual_review.json",
+    "runtime_visual_review.json"
   ],
-  "conclusion": "レビューした全姿勢の範囲では、今回の修正を差し戻す明瞭な動作破綻は見つからなかった。通常速度の主観的な軽やかさと実操作は、本画像一覧レビューだけでは保証しない。"
+  "conclusion": "レビューした全姿勢・出力画像の範囲に、今回の改修を差し戻す明瞭な破綻は見つからなかった。実操作・通常速度での主観的な軽やかさは、本一覧レビューだけでは保証しない。"
 }

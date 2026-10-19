@@ -2,7 +2,7 @@
 
 Run through validate_blender.py. This is separate from 60Hz baked-pose finite
 changes: compare the left/right limit at each piecewise mathematical join.
-Four stencil sizes distinguish convergence from float32 Vector roundoff.
+Seven stencil sizes distinguish convergence from float32 Vector roundoff.
 """
 import math
 from pathlib import Path
@@ -45,7 +45,7 @@ def norm(values):
 def check(rig, body):
     sys.path.insert(0, str(ROOT/'tools'))
     import build_character as build
-    from motion_authoring import Author, DUTIES, DURATIONS
+    from motion_authoring import Author, DUTIES, DURATIONS, SWING_APICES, REAR_TIME
     names = set(build.NAMES.values())
     rest = {bone.name: bone.matrix_local.copy() for bone in rig.data.bones if bone.name in names}
     build.DESC = {bone.name: [child.name for child in bone.children_recursive if child.name in rest] for bone in rig.data.bones}
@@ -55,12 +55,14 @@ def check(rig, body):
         duty, duration = DUTIES[clip], DURATIONS[clip]
         jog = clip == 'Jog'
         joins = {'cycle': 0., 'contact_rise_end': .035,
-                 'heel_settle': .065 if jog else .12,
-                 'push_start': duty-(.13 if jog else .20),
+                 'heel_settle': .09 if jog else .15,
+                 'push_start': duty-(.14 if jog else .22),
                  'contact_fall_start': duty-.045, 'toe_off': duty,
                  'swing_roll_middle': duty+.45*(1-duty),
+                 'toe_release': duty+.35*(1-duty),
                  'swing_retraction': duty+.8*(1-duty),
-                 'swing_apex': duty+(.40 if jog else .48)*(1-duty)}
+                 'swing_apex': duty+SWING_APICES[clip]*(1-duty)}
+        if not jog: joins["rear_return"] = duty+REAR_TIME*(1-duty)
         observations = {}
         for side in ['Left', 'Right']:
             def function(t):
@@ -68,7 +70,7 @@ def check(rig, body):
                 return list(position)+[2*math.atan2(rotation.x, rotation.w), weight]+list(support)
             for label, phase in joins.items():
                 rows = []
-                for step in [.002, .001, .0005, .00025]:
+                for step in [.002, .001, .0005, .00025, .000125, .0000625, .00003125]:
                     difference = limits(function, phase, step, duration)
                     rows.append({'phase_step': step,
                                  'ankle_position_limit_difference_m': norm(difference[0][:3]),
@@ -101,7 +103,7 @@ def check(rig, body):
                     if best[field] > threshold:
                         failures.append(f'{clip} {side} {label}: authored join {field}={best[field]:.6g}')
         result[clip] = observations
-    return {'method': 'one-sided fourth-degree extrapolation of 5 points, phase steps .002/.001/.0005/.00025; derivative units use true cycle duration',
-            'precision': 'best resolved difference across stencils; Blender Vector/Quaternion components are float32, so acceleration differences include numerical noise',
+    return {'method': 'one-sided fourth-degree extrapolation of 5 points, phase steps .002/.001/.0005/.00025/.000125/.0000625/.00003125; derivative units use true cycle duration',
+            'precision': 'best resolved difference across stencils; Blender Vector/Quaternion components are float32; support coordinates are float64. Smaller stencils resolve rapidly migrating but continuous sole contact, while larger stencils avoid float32 derivative noise',
             'note': 'This tests joins of authored functions, separate from finite 60Hz motion and FK/IK. Support pressure-centre sample travel is reported, not treated as skin-point slip.',
             'clips': result, 'failures': failures}

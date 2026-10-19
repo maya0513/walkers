@@ -63,7 +63,32 @@ func _run() -> void:
 	actor.set_move_intent(Vector3.FORWARD,-1)
 	if actor.requested_speed != 0:
 		failures.append("negative speed")
-	var report := {"extra_gait_speed":speed,"footfalls":footfalls[0],"unlocked_footfalls":unlocked_footfalls,"failures":failures}
+	var legacy_results: Array[Dictionary] = []
+	for schema in [1, 2, 3]:
+		var legacy := metadata.duplicate(true)
+		legacy.schema_version = schema
+		legacy.erase("support_material_space")
+		for clip: String in legacy.clips:
+			legacy.clips[clip].erase("support_materials")
+			if schema < 3:
+				legacy.clips[clip].erase("support_offsets")
+			if schema < 2:
+				legacy.clips[clip].erase("support_regions")
+		actor.animator.metadata = legacy
+		actor.config.foot_lock = true
+		actor.reset_at(Vector3(-3, .01, 8))
+		var legacy_events_before: int = footfalls[0]
+		for i in range(120):
+			actor.set_move_intent(Vector3.FORWARD, 1.4)
+			await physics_frame
+		var legacy_speed := Vector2(actor.actual_velocity.x, actor.actual_velocity.z).length()
+		var legacy_events: int = footfalls[0] - legacy_events_before
+		if absf(legacy_speed - 1.4) > .05 or legacy_events < 2 or not actor.animator.support_materials.is_empty():
+			failures.append("legacy schema %d metadata compatibility" % schema)
+		legacy_results.append({"schema":schema, "speed_mps":legacy_speed, "footsteps":legacy_events,
+			"continuous_offsets":actor.animator.support_offsets.size() == 2, "deforming_materials":actor.animator.support_materials.size()})
+	var report := {"extra_gait_speed":speed,"footfalls":footfalls[0],"unlocked_footfalls":unlocked_footfalls,
+		"legacy_metadata":legacy_results,"failures":failures}
 	file = FileAccess.open("res://reports/extensibility.json",FileAccess.WRITE)
 	file.store_string(JSON.stringify(report,"\t"))
 	file.close()

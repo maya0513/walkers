@@ -65,8 +65,11 @@ def main():
             for future in futures:future.result()
         run("controls",[godot,"--headless","--path",str(ROOT),"--fixed-fps","60","--script","tests/controls.gd"])
         run("presentation",[godot,"--headless","--path",str(ROOT),"--fixed-fps","120","--script","tests/presentation_test.gd"])
+        run("articulation",[godot,"--headless","--path",str(ROOT),"--fixed-fps","120","--script","tests/articulation_test.gd"])
         run("extensibility",[godot,"--headless","--path",str(ROOT),"--fixed-fps","60","--script","tests/extensibility.gd"])
         run("blender_source",[blender,"--background","source/character.blend","-noaudio","--python-exit-code","1","--python","tools/validate_blender.py"])
+        run("contact_mechanics",[blender,"--background","source/character.blend","-noaudio","--python-exit-code","1","--python","tools/validate_contact_mechanics.py"])
+        run("contact_export",[sys.executable,"tools/validate_contact_export.py"])
         run("assets",[sys.executable,"tools/validate_assets.py"])
         run("previews",[sys.executable,"tools/validate_previews.py"])
         run("comparison",[sys.executable,"tools/validate_motion_comparison.py"])
@@ -80,8 +83,12 @@ def main():
     summary["controls"]=json.loads((REPORTS/"controls.json").read_text())
     summary["environment_limitations"]=limitations
     summary["presentation"]=json.loads((REPORTS/"presentation.json").read_text())
+    summary["articulation"]=json.loads((REPORTS/"articulation.json").read_text())
     summary["comparison"]=json.loads((REPORTS/"comparison_validation.json").read_text()) if (REPORTS/"comparison_validation.json").exists() else {}
+    summary["contact_mechanics"]=json.loads((REPORTS/"contact_mechanics.json").read_text())
+    summary["contact_mechanics"].pop("sampled_clips", None)
     summary["blender_source"]=json.loads((REPORTS/"blender_validation.json").read_text())
+    summary["contact_export"]=json.loads((REPORTS/"contact_export_validation.json").read_text())
     summary["exported_pack"]={"export":"pass","standalone_start":"pass","original_project_directory_used":False}
     table=[]
     for rate in [30,60,120]:
@@ -101,7 +108,7 @@ Godot 4.7.2 / Blender 5.2.2。物理60Hz、描画30・60・120fpsで検証。
 |---|---|---|---|---|
 """+"\n".join(table)+"""
 
-支持点ずれは、前フレームの支持位置を同じ足の材質点として前後の最終姿勢に適用し、その水平変位を全面接地区間で積算した値です。支持領域やアンカー移動で区間をリセットしません。貫通はGLBから独立に読み出した足部の全検証頂点を8物理フレームごとにスキニングし、地面への垂直貫通と壁への水平貫通を検査。接地補正用サンプルについては毎物理フレームでも検査しています。姿勢とワールド変換は同じSkeleton評価時点で取得しています。
+支持点ずれは、前フレームの支持位置に対応する同じ皮膚上の材質点を、骨ウェイトで前後の最終姿勢に変形させ、その水平変位を全面接地区間で積算した値です。つま先が曲がるため、足首に固定した剛体点では代用しません。支持領域やアンカー移動で区間をリセットしません。旧メタデータに材質点の情報がない場合は従来の足首基準点で計測します。貫通はGLBから独立に読み出した足部の全検証頂点を8物理フレームごとにスキニングし、地面への垂直貫通と壁への水平貫通を検査。接地補正用サンプルについては毎物理フレームでも検査しています。姿勢とワールド変換は同じSkeleton評価時点で取得しています。
 
 ## シナリオ
 
@@ -117,11 +124,17 @@ Blenderソースも開き直し、15 Action、実寸、非変形の編集用コ�
 
 Linux Export PresetからPCKを生成し、元プロジェクトと異なる空の作業ディレクトリで起動しました。モデル・アニメーション・JSONを含む書き出し後のデータ読み込みにも成功しています。
 
+## 足部と胴体の幾何検証
+
+Blenderの評価済み変形メッシュで、踵・前足部・つま先の固定材質点パッチを毎60Hzフレーム追跡しました。接触順序・支持期間・踵が上がり前足部が残る時間、足首とつま先の相対角、荷重後の膝伸展と離地後の回収、骨盤三軸と背骨・胸郭の相対運動を検査しています。接地ラベルやIK重みから接触したと推定せず、床との実距離2mm以内を接触判定に用います。周期の接地開始・支持期間は足部全体の評価済み下側皮膚から求め、踵・前足部・つま先の固定パッチの接触時刻と区別します。固定パッチ間にある関節付近の接触が抜けても、支持期間が途中で切れないようにしています。床反力・筋力・推進力は計測していません。詳細と全サンプルはcontact_mechanics.json、変更前の測定はcontact_mechanics_before.jsonを参照してください。
+
 ## 画像
 
 各33ポーズの横長PNG45枚、各視点に分離した全モーションGIF45本、実動作GIF、スローGIFをデコードし、サイズ、空白、周期境界、周期全体の等位相サンプルと25fpsの再生時間、全GIFフレームを検査しました。非周期GIFは320msの無地リセット区間を含みます。個別フレームは生成・検証用の一時データであり、納品には含めません。
 
 表示補間は最終IK姿勢を含む前後の物理スナップショットで検査し、描画中にIKや接地イベントが再実行されないことを確認しました。参考値との比較では、元モーションの足・膝・手・骨盤の周期内速度変化、骨盤の山谷、胸郭基準の腕振り、肘屈曲変化、区分曲線の接続を検査しました。実測の変化はmotion_curve_comparison.jsonに記録しています。
+
+つま先と胴体の局所姿勢を、接地補正前のアニメーションと最終IK姿勢で比較しました。足首の傾斜補正や表示補間によって、制作したつま先・背骨・胸郭の動きが消えないことを確認しています。接地重みを開始しきい値の前後へ揺らす試験でも、離地しきい値へ下がるまで接地イベントが再発行されないことを確認しました。詳細はarticulation.jsonを参照してください。
 
 詳細と計測値はvalidation_summary.json、runtime_p60_r*.json、presentation.json、blender_validation.json、asset_validation.json、preview_validation.jsonを参照してください。
 """

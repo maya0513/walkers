@@ -1,0 +1,91 @@
+{
+	"contact_hysteresis": {
+		"onsets": [
+			"Left",
+			"Left"
+		],
+		"weights": [
+			0,
+			0.8,
+			0.6,
+			0.8,
+			0.4,
+			0.8,
+			0,
+			0.8
+		]
+	},
+	"failures": [],
+	"physics_hz": 60,
+	"results": [
+		{
+			"footsteps": [
+				"Left",
+				"Right",
+				"Right",
+				"Left",
+				"Right",
+				"Left",
+				"Right",
+				"Left",
+				"Right",
+				"Left"
+			],
+			"gait": "Walk",
+			"maximum_local_position_error_m": 0.000000312931319967902,
+			"maximum_local_rotation_error_degrees": 0.0559529096807445,
+			"maximum_support_material_offset_m": 0.00167599145788699,
+			"maximum_support_weight_error": 0.0000000176720995614943,
+			"post_ik_frames": 180,
+			"steady_cycle_footsteps": [
+				"Right",
+				"Left",
+				"Right",
+				"Left",
+				"Right",
+				"Left"
+			],
+			"toe_excursion_from_reference_degrees": {
+				"Left": 24.1502511692228,
+				"Right": 40.4307139805273
+			}
+		},
+		{
+			"footsteps": [
+				"Right",
+				"Left",
+				"Right",
+				"Left",
+				"Right",
+				"Left",
+				"Right",
+				"Left",
+				"Right",
+				"Left",
+				"Right",
+				"Left"
+			],
+			"gait": "Jog",
+			"maximum_local_position_error_m": 0.000000313196238721503,
+			"maximum_local_rotation_error_degrees": 0.0559529096807445,
+			"maximum_support_material_offset_m": 0.00171916978433728,
+			"maximum_support_weight_error": 0.0000000165338263080628,
+			"post_ik_frames": 180,
+			"steady_cycle_footsteps": [
+				"Left",
+				"Right",
+				"Left",
+				"Right",
+				"Left",
+				"Right",
+				"Left",
+				"Right",
+				"Left"
+			],
+			"toe_excursion_from_reference_degrees": {
+				"Left": 41.1358319745881,
+				"Right": 41.0586201011157
+			}
+		}
+	]
+}

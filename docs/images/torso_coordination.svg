@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="590" viewBox="0 0 1240 590" role="img" aria-labelledby="title desc">
+<title id="title">胴体の三つの向きと、骨盤から胸・肩へ分散する動き</title><desc id="desc">左から骨盤の前後傾斜、左右の傾斜、水平回旋を分けて示す。右の図は骨盤、背骨、胸郭、肩の向きが少しずつ変わる例。どの姿勢も理想角度や固定の位相を示さず、身体を一塊で回す動きとの違いを説明する。</desc>
+<rect width="1240" height="590" fill="white"/>
+<g font-family="Noto Sans CJK JP,sans-serif" fill="#222"><text x="32" y="38" font-size="24">胴体は一枚の板ではなく、脚から肩へ動きを受け渡す</text><text x="32" y="69" font-size="15" fill="#666">角度を読み分ける模式図。姿勢の変化は見やすく誇張しています。計測値・推奨角度・固定の逆位相を示す図ではありません。</text>
+<text x="55" y="126" font-size="19">横から：前後の傾き</text><text x="360" y="126" font-size="19">正面から：左右の傾き</text><text x="695" y="126" font-size="19">上から：水平の回旋</text></g>
+<g stroke="#b3b9b3" stroke-width="5" fill="none" stroke-linecap="round"><circle cx="151" cy="178" r="19"/><path d="M151 200L157 315M157 315L131 422M157 315L187 422"/><circle cx="478" cy="178" r="19"/><path d="M478 200L478 317M478 317L442 422M478 317L514 422M438 228H518"/></g>
+<g stroke="#c3c8c2" stroke-width="2" stroke-dasharray="5 5"><path d="M95 301H214M412 315H546M704 267H871"/></g>
+<g stroke="#647d6c" stroke-width="8" stroke-linecap="round" fill="none"><path d="M118 314L195 291M438 308L518 325M721 291L852 245"/></g>
+<g stroke="#8c9d91" stroke-width="2" fill="none"><path d="M120 286Q151 267 184 275M432 344Q472 361 512 351M729 240Q784 215 838 234"/></g>
+<g fill="#f4f4f0" stroke="#b3b9b3" stroke-width="3"><ellipse cx="788" cy="268" rx="76" ry="49"/><path d="M988 361Q964 299 1009 238L1090 219Q1115 275 1091 348Z"/></g>
+<path d="M721 291L852 245" stroke="#647d6c" stroke-width="8" stroke-linecap="round"/>
+<g stroke="#8d9b91" stroke-width="4" fill="none"><path d="M1035 355C1059 321 1015 289 1048 243"/></g>
+<g stroke="#647d6c" stroke-width="8" stroke-linecap="round"><path d="M984 365L1097 340"/></g>
+<g stroke="#5c6c80" stroke-width="7" stroke-linecap="round"><path d="M991 241L1090 219M985 222L1097 203"/></g>
+<g stroke="#b3b9b3" stroke-width="5" fill="none" stroke-linecap="round"><circle cx="1038" cy="175" r="19"/><path d="M1038 195L1040 213M987 225L957 277L965 322M1094 204L1121 261L1107 307M1004 359L984 422M1080 349L1114 414"/></g>
+<g font-family="Noto Sans CJK JP,sans-serif" fill="#444" font-size="15"><text x="55" y="461">腰を折る動きと区別する</text><text x="360" y="461">支持脚の切り替わりと見る</text><text x="682" y="461">脚と肩の相対回旋を見る</text>
+<text x="948" y="126" font-size="19" fill="#222">骨盤 → 胸郭 → 肩</text><text x="948" y="461">背骨に沿って向きが変わる</text><text x="948" y="488">腰だけをねじらない</text>
+<text x="32" y="539">緑：骨盤　青：胸・肩　頭は胴体に無理なくつながる。大きく動かすこと自体を目標にしません。</text><text x="32" y="568" font-size="14" fill="#666">参照：本文 [12] 図2・3のA/B/C、[14] 体幹・肩・腕の協調。独自制作の概念図で、計測姿勢の転載ではありません。</text></g>
+</svg>

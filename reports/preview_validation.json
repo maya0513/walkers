@@ -2,7 +2,7 @@
   "pose_divisions": 32,
   "poses_per_strip": 33,
   "decoded_pose_strips": 45,
-  "decoded_gif_frames": 1273,
+  "decoded_gif_frames": 1280,
   "gifs": {
     "Idle_front.gif": {
       "frames": 1,
@@ -53,7 +53,7 @@
       ]
     },
     "Runtime.gif": {
-      "frames": 487,
+      "frames": 494,
       "duration_ms": 20320,
       "size": [
         768,

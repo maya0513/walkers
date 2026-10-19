@@ -1,0 +1,639 @@
+{
+  "measurement_source": {
+    "kind": "evaluated_Blender_mesh_and_FK",
+    "blend": "character.blend",
+    "blend_sha256": "4b0ccee210cc774e2bdab3eb00c965d7d356a0c88da4753fd4108af04d444fac"
+  },
+  "validation_mode": "observe_only_baseline",
+  "coordinate_system": "+X left, -Y forward, +Z up; metres; XYZ deformation rotations relative rest",
+  "contact_tolerance_m": 0.002,
+  "floor_z_m": 0,
+  "contact_definition": "cycle support uses the complete evaluated lower-foot skin envelope (rest Z<13cm), minimum height <= tolerance; heel/forefoot/toes landmark patch timings are separate proxies; not metadata support/IK weight",
+  "limits_are": "production visual regression checks, not medical recommendations or measured forces",
+  "acceptance_thresholds": {
+    "maximum_skin_penetration_m": 0.01,
+    "minimum_toe_articulation_span_degrees": 8,
+    "minimum_supported_toe_articulation_degrees": 8,
+    "heel_raise_minimum_m": 0.025,
+    "minimum_heel_raised_forefoot_support_frames": {
+      "Walk": 3,
+      "Jog": 2
+    },
+    "minimum_post_support_knee_recovery_degrees": 8,
+    "minimum_load_to_late_support_knee_extension_degrees": 3,
+    "minimum_geometric_contact_samples": 4,
+    "minimum_pelvis_rotation_span_each_axis_degrees": 0.5,
+    "minimum_chest_relative_pelvis_yaw_span_degrees": 1,
+    "minimum_spine_relative_pelvis_motion_span_degrees": 0.5,
+    "maximum_head_vertical_range_m": 0.06,
+    "chosen_contact_order": {
+      "Walk": "heel strictly before forefoot",
+      "Jog": "forefoot no later than heel or toes; simultaneous samples allowed"
+    }
+  },
+  "kinematic_limitations": "No force plate, muscle force, power or propulsion force is measured. Contact timing is quantized to 1/60s. Skin minimum is not pressure or contact area. Landmark patches intentionally leave gaps; only whole_foot defines cycle landing/support duration. Heel-raised distal-support counts require the selected forefoot/toes patches and remain a conservative anatomical proxy.",
+  "patches": {
+    "Left": {
+      "heel": {
+        "vertex_count": 34,
+        "rest_y_range_m": [
+          0.02062951773405075,
+          0.06823454052209854
+        ],
+        "rest_z_range_m": [
+          0.001135671162046492,
+          0.02450011856853962
+        ]
+      },
+      "forefoot": {
+        "vertex_count": 37,
+        "rest_y_range_m": [
+          -0.11983951926231384,
+          -0.08258836716413498
+        ],
+        "rest_z_range_m": [
+          0.0,
+          0.024707598611712456
+        ]
+      },
+      "toes": {
+        "vertex_count": 456,
+        "rest_y_range_m": [
+          -0.194132000207901,
+          -0.14448890089988708
+        ],
+        "rest_z_range_m": [
+          0.006176868919283152,
+          0.02499960921704769
+        ]
+      },
+      "whole_foot": {
+        "vertex_count": 1111,
+        "rest_y_range_m": [
+          -0.194132000207901,
+          0.07148050516843796
+        ],
+        "rest_z_range_m": [
+          0.0,
+          0.12923729419708252
+        ]
+      }
+    },
+    "Right": {
+      "heel": {
+        "vertex_count": 34,
+        "rest_y_range_m": [
+          0.0206295233219862,
+          0.06823454797267914
+        ],
+        "rest_z_range_m": [
+          0.001135671162046492,
+          0.02450011856853962
+        ]
+      },
+      "forefoot": {
+        "vertex_count": 37,
+        "rest_y_range_m": [
+          -0.11983951181173325,
+          -0.08258835971355438
+        ],
+        "rest_z_range_m": [
+          0.0,
+          0.024707598611712456
+        ]
+      },
+      "toes": {
+        "vertex_count": 456,
+        "rest_y_range_m": [
+          -0.1941320151090622,
+          -0.14448893070220947
+        ],
+        "rest_z_range_m": [
+          0.006176929920911789,
+          0.024999668821692467
+        ]
+      },
+      "whole_foot": {
+        "vertex_count": 1111,
+        "rest_y_range_m": [
+          -0.1941320151090622,
+          0.07148051261901855
+        ],
+        "rest_z_range_m": [
+          0.0,
+          0.1292373538017273
+        ]
+      }
+    }
+  },
+  "clips": {
+    "Walk": {
+      "torso": {
+        "pelvis_deformation_degrees_xyz": {
+          "sagittal_x": {
+            "min": 0.8000053298881957,
+            "max": 0.8000082647351047,
+            "span": 2.934846908941857e-06
+          },
+          "frontal_y": {
+            "min": -2.0257934921526773e-07,
+            "max": 6.165938441564643e-08,
+            "span": 2.6423873363091413e-07
+          },
+          "transverse_z": {
+            "min": -2.499222139481495,
+            "max": 2.499222139481495,
+            "span": 4.99844427896299
+          }
+        },
+        "chest_relative_pelvis_degrees_xyz": {
+          "sagittal_x": {
+            "min": -4.802477777942713e-07,
+            "max": 0.0019445730744313125,
+            "span": 0.0019450533222091068
+          },
+          "frontal_y": {
+            "min": -0.055786824026122075,
+            "max": 0.055786770665269186,
+            "span": 0.11157359469139126
+          },
+          "transverse_z": {
+            "min": -3.9983726764447773,
+            "max": 3.9983726764447773,
+            "span": 7.996745352889555
+          }
+        },
+        "spine_relative_pelvis_degrees_xyz": {
+          "sagittal_x": {
+            "min": -4.355423286581694e-06,
+            "max": -6.185486766747853e-08,
+            "span": 4.293568418914216e-06
+          },
+          "frontal_y": {
+            "min": -1.19739270815024e-07,
+            "max": 1.1724789144415873e-07,
+            "span": 2.3698716225918275e-07
+          },
+          "transverse_z": {
+            "min": -3.225799471251395e-07,
+            "max": 3.224553966038134e-07,
+            "span": 6.450353437289529e-07
+          }
+        },
+        "upper_chest_relative_chest_degrees_xyz": {
+          "sagittal_x": {
+            "min": -2.2188917350846896e-06,
+            "max": -1.5502778899190027e-09,
+            "span": 2.2173414571947704e-06
+          },
+          "frontal_y": {
+            "min": -4.424874820050317e-08,
+            "max": 5.966036127058107e-08,
+            "span": 1.0390910947108424e-07
+          },
+          "transverse_z": {
+            "min": -1.629440146635555e-07,
+            "max": 3.755213230200353e-07,
+            "span": 5.384653376835908e-07
+          }
+        }
+      },
+      "feet": {
+        "Left": {
+          "geometric_contact_cycle": {
+            "landing_frame": 62,
+            "landing_phase": 0.9841269841269841,
+            "contact_samples": 28,
+            "contact_sample_frames": [
+              62,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26
+            ],
+            "patch_first_contact_delay_seconds": {
+              "heel": 0.0,
+              "forefoot": 0.11666666666666667,
+              "toes": null
+            },
+            "contact_duration_seconds": 0.4666666666666667
+          },
+          "toe_relative_foot_angle_min_degrees": 0.0,
+          "toe_relative_foot_angle_max_degrees": 46.85843083860244,
+          "toe_relative_foot_angle_span_degrees": 46.85843083860244,
+          "toe_relative_foot_max_degrees_while_geometrically_supported": 12.999977594460724,
+          "heel_raised_forefoot_supported_frames": [],
+          "heel_raised_forefoot_supported_seconds": 0.0,
+          "minimum_patch_height_m": 0.000758946524001658,
+          "peak_sole_clearance_m": 0.07449343055486679,
+          "contact_tolerance_sensitivity": {
+            "0.002": {
+              "whole_foot_contact_samples": 28,
+              "any_landmark_patch_contact_samples": 28,
+              "heel_raised_forefoot_supported_samples": 0
+            },
+            "0.003": {
+              "whole_foot_contact_samples": 30,
+              "any_landmark_patch_contact_samples": 30,
+              "heel_raised_forefoot_supported_samples": 0
+            },
+            "0.006": {
+              "whole_foot_contact_samples": 31,
+              "any_landmark_patch_contact_samples": 31,
+              "heel_raised_forefoot_supported_samples": 0
+            }
+          },
+          "patch_contact_fraction": {
+            "heel": 0.3968253968253968,
+            "forefoot": 0.3333333333333333,
+            "toes": 0.0
+          },
+          "support_load_knee_flexion_max_degrees": 28.119829162472797,
+          "late_support_knee_flexion_min_degrees": 13.900618404935187,
+          "load_to_late_support_knee_extension_degrees": 14.21921075753761,
+          "late_support_foot_pitch_change_degrees": 4.413331773882434
+        },
+        "Right": {
+          "geometric_contact_cycle": {
+            "landing_frame": 30,
+            "landing_phase": 0.47619047619047616,
+            "contact_samples": 29,
+            "contact_sample_frames": [
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58
+            ],
+            "patch_first_contact_delay_seconds": {
+              "heel": 0.0,
+              "forefoot": 0.13333333333333333,
+              "toes": null
+            },
+            "contact_duration_seconds": 0.48333333333333334
+          },
+          "toe_relative_foot_angle_min_degrees": 0.0,
+          "toe_relative_foot_angle_max_degrees": 46.668838447621226,
+          "toe_relative_foot_angle_span_degrees": 46.668838447621226,
+          "toe_relative_foot_max_degrees_while_geometrically_supported": 12.992313268438323,
+          "heel_raised_forefoot_supported_frames": [],
+          "heel_raised_forefoot_supported_seconds": 0.0,
+          "minimum_patch_height_m": 0.0007567730499431491,
+          "peak_sole_clearance_m": 0.07462546974420547,
+          "contact_tolerance_sensitivity": {
+            "0.002": {
+              "whole_foot_contact_samples": 29,
+              "any_landmark_patch_contact_samples": 29,
+              "heel_raised_forefoot_supported_samples": 0
+            },
+            "0.003": {
+              "whole_foot_contact_samples": 29,
+              "any_landmark_patch_contact_samples": 29,
+              "heel_raised_forefoot_supported_samples": 0
+            },
+            "0.006": {
+              "whole_foot_contact_samples": 31,
+              "any_landmark_patch_contact_samples": 31,
+              "heel_raised_forefoot_supported_samples": 1
+            }
+          },
+          "patch_contact_fraction": {
+            "heel": 0.3968253968253968,
+            "forefoot": 0.3333333333333333,
+            "toes": 0.0
+          },
+          "support_load_knee_flexion_max_degrees": 28.180481242302506,
+          "late_support_knee_flexion_min_degrees": 14.324021831584275,
+          "load_to_late_support_knee_extension_degrees": 13.85645941071823,
+          "late_support_foot_pitch_change_degrees": 6.268540479725633
+        }
+      },
+      "head_vertical_peak_to_peak_m": 0.05797910690307617
+    },
+    "Jog": {
+      "torso": {
+        "pelvis_deformation_degrees_xyz": {
+          "sagittal_x": {
+            "min": 4.00000509165641,
+            "max": 4.000007226090526,
+            "span": 2.1344341156748214e-06
+          },
+          "frontal_y": {
+            "min": -1.0195250220325087e-07,
+            "max": 5.6088865529890776e-08,
+            "span": 1.5804136773314165e-07
+          },
+          "transverse_z": {
+            "min": -2.9916113305213607,
+            "max": 2.991611117077949,
+            "span": 5.98322244759931
+          }
+        },
+        "chest_relative_pelvis_degrees_xyz": {
+          "sagittal_x": {
+            "min": -0.6986181619310851,
+            "max": 0.7120376160203089,
+            "span": 1.410655777951394
+          },
+          "frontal_y": {
+            "min": -0.3236057450974623,
+            "max": 0.32360585181916807,
+            "span": 0.6472115969166303
+          },
+          "transverse_z": {
+            "min": -4.975479048539292,
+            "max": 4.9754794754261145,
+            "span": 9.950958523965406
+          }
+        },
+        "spine_relative_pelvis_degrees_xyz": {
+          "sagittal_x": {
+            "min": -3.423848692822761e-06,
+            "max": 8.537736462515939e-07,
+            "span": 4.277622339074354e-06
+          },
+          "frontal_y": {
+            "min": -1.0697725698899547e-07,
+            "max": 1.2155104198377288e-07,
+            "span": 2.2852829897276833e-07
+          },
+          "transverse_z": {
+            "min": -2.3000132834572263e-07,
+            "max": 5.389835136522948e-07,
+            "span": 7.689848419980174e-07
+          }
+        },
+        "upper_chest_relative_chest_degrees_xyz": {
+          "sagittal_x": {
+            "min": -6.403693173446212e-07,
+            "max": 1.4941038809402893e-06,
+            "span": 2.1344731982849106e-06
+          },
+          "frontal_y": {
+            "min": -5.169332305733479e-08,
+            "max": 4.58569765918571e-08,
+            "span": 9.75502996491919e-08
+          },
+          "transverse_z": {
+            "min": -3.1422457908805993e-07,
+            "max": 3.050531061641543e-07,
+            "span": 6.192776852522142e-07
+          }
+        }
+      },
+      "feet": {
+        "Left": {
+          "geometric_contact_cycle": {
+            "landing_frame": 41,
+            "landing_phase": 0.9761904761904762,
+            "contact_samples": 13,
+            "contact_sample_frames": [
+              41,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "patch_first_contact_delay_seconds": {
+              "heel": 0.06666666666666667,
+              "forefoot": 0.0,
+              "toes": null
+            },
+            "contact_duration_seconds": 0.21666666666666667
+          },
+          "toe_relative_foot_angle_min_degrees": 0.0,
+          "toe_relative_foot_angle_max_degrees": 37.51466716722788,
+          "toe_relative_foot_angle_span_degrees": 37.51466716722788,
+          "toe_relative_foot_max_degrees_while_geometrically_supported": 2.4495446795441116,
+          "heel_raised_forefoot_supported_frames": [],
+          "heel_raised_forefoot_supported_seconds": 0.0,
+          "minimum_patch_height_m": 0.000760398106649518,
+          "peak_sole_clearance_m": 0.20664608478546143,
+          "contact_tolerance_sensitivity": {
+            "0.002": {
+              "whole_foot_contact_samples": 13,
+              "any_landmark_patch_contact_samples": 13,
+              "heel_raised_forefoot_supported_samples": 0
+            },
+            "0.003": {
+              "whole_foot_contact_samples": 13,
+              "any_landmark_patch_contact_samples": 13,
+              "heel_raised_forefoot_supported_samples": 0
+            },
+            "0.006": {
+              "whole_foot_contact_samples": 15,
+              "any_landmark_patch_contact_samples": 15,
+              "heel_raised_forefoot_supported_samples": 1
+            }
+          },
+          "patch_contact_fraction": {
+            "heel": 0.16666666666666666,
+            "forefoot": 0.30952380952380953,
+            "toes": 0.0
+          },
+          "support_load_knee_flexion_max_degrees": 53.34407293716673,
+          "late_support_knee_flexion_min_degrees": 35.302551716306596,
+          "load_to_late_support_knee_extension_degrees": 18.041521220860133,
+          "late_support_foot_pitch_change_degrees": 2.4499693997093854
+        },
+        "Right": {
+          "geometric_contact_cycle": {
+            "landing_frame": 20,
+            "landing_phase": 0.47619047619047616,
+            "contact_samples": 13,
+            "contact_sample_frames": [
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32
+            ],
+            "patch_first_contact_delay_seconds": {
+              "heel": 0.06666666666666667,
+              "forefoot": 0.0,
+              "toes": null
+            },
+            "contact_duration_seconds": 0.21666666666666667
+          },
+          "toe_relative_foot_angle_min_degrees": 0.0,
+          "toe_relative_foot_angle_max_degrees": 37.51464326156579,
+          "toe_relative_foot_angle_span_degrees": 37.51464326156579,
+          "toe_relative_foot_max_degrees_while_geometrically_supported": 2.449864204331221,
+          "heel_raised_forefoot_supported_frames": [],
+          "heel_raised_forefoot_supported_seconds": 0.0,
+          "minimum_patch_height_m": 0.0007603359408676624,
+          "peak_sole_clearance_m": 0.2066458761692047,
+          "contact_tolerance_sensitivity": {
+            "0.002": {
+              "whole_foot_contact_samples": 13,
+              "any_landmark_patch_contact_samples": 13,
+              "heel_raised_forefoot_supported_samples": 0
+            },
+            "0.003": {
+              "whole_foot_contact_samples": 13,
+              "any_landmark_patch_contact_samples": 13,
+              "heel_raised_forefoot_supported_samples": 0
+            },
+            "0.006": {
+              "whole_foot_contact_samples": 15,
+              "any_landmark_patch_contact_samples": 15,
+              "heel_raised_forefoot_supported_samples": 1
+            }
+          },
+          "patch_contact_fraction": {
+            "heel": 0.16666666666666666,
+            "forefoot": 0.30952380952380953,
+            "toes": 0.0
+          },
+          "support_load_knee_flexion_max_degrees": 53.344100257923415,
+          "late_support_knee_flexion_min_degrees": 35.302565376684925,
+          "load_to_late_support_knee_extension_degrees": 18.04153488123849,
+          "late_support_foot_pitch_change_degrees": 2.4499504667304035
+        }
+      },
+      "head_vertical_peak_to_peak_m": 0.03615391254425049
+    }
+  },
+  "other_clips_mesh_clearance": {
+    "Idle": {
+      "evaluated_frames": 193,
+      "minimum_patch_height_m": 0.004664797801524401
+    },
+    "StartWalkL": {
+      "evaluated_frames": 34,
+      "minimum_patch_height_m": -0.0034148823469877243
+    },
+    "StopWalkL": {
+      "evaluated_frames": 30,
+      "minimum_patch_height_m": -0.0003048824146389961
+    },
+    "StartWalkR": {
+      "evaluated_frames": 34,
+      "minimum_patch_height_m": -0.003414933104068041
+    },
+    "StopWalkR": {
+      "evaluated_frames": 30,
+      "minimum_patch_height_m": -0.0003047859645448625
+    },
+    "StartJogL": {
+      "evaluated_frames": 28,
+      "minimum_patch_height_m": -0.015084462240338326
+    },
+    "StopJogL": {
+      "evaluated_frames": 37,
+      "minimum_patch_height_m": -0.014725737273693085
+    },
+    "StartJogR": {
+      "evaluated_frames": 28,
+      "minimum_patch_height_m": -0.015084533952176571
+    },
+    "StopJogR": {
+      "evaluated_frames": 37,
+      "minimum_patch_height_m": -0.014725763350725174
+    },
+    "Turn90L": {
+      "evaluated_frames": 19,
+      "minimum_patch_height_m": 0.004664793144911528
+    },
+    "Turn90R": {
+      "evaluated_frames": 19,
+      "minimum_patch_height_m": 0.004664798267185688
+    },
+    "Turn180L": {
+      "evaluated_frames": 28,
+      "minimum_patch_height_m": 0.004664794076234102
+    },
+    "Turn180R": {
+      "evaluated_frames": 28,
+      "minimum_patch_height_m": 0.004664798267185688
+    }
+  },
+  "baseline_acceptance_failures": [
+    "Walk: missing heel-rise with geometric forefoot support: Left",
+    "Walk: missing knee recovery after distal support: Left",
+    "Walk: missing heel-rise with geometric forefoot support: Right",
+    "Walk: missing knee recovery after distal support: Right",
+    "Walk: pelvis lacks distributed three-axis motion: sagittal_x",
+    "Walk: pelvis lacks distributed three-axis motion: frontal_y",
+    "Walk: no relative motion distributed through spine",
+    "Jog: toe articulation is absent during actual sole support: Left",
+    "Jog: missing heel-rise with geometric forefoot support: Left",
+    "Jog: missing knee recovery after distal support: Left",
+    "Jog: chosen midfoot landing becomes toe/heel-first: Left",
+    "Jog: toe articulation is absent during actual sole support: Right",
+    "Jog: missing heel-rise with geometric forefoot support: Right",
+    "Jog: missing knee recovery after distal support: Right",
+    "Jog: chosen midfoot landing becomes toe/heel-first: Right",
+    "Jog: pelvis lacks distributed three-axis motion: sagittal_x",
+    "Jog: pelvis lacks distributed three-axis motion: frontal_y",
+    "Jog: no relative motion distributed through spine",
+    "StartJogL: evaluated sole patch penetrates floor >1cm",
+    "StopJogL: evaluated sole patch penetrates floor >1cm",
+    "StartJogR: evaluated sole patch penetrates floor >1cm",
+    "StopJogR: evaluated sole patch penetrates floor >1cm"
+  ],
+  "failures": []
+}

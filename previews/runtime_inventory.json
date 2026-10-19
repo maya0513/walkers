@@ -9,7 +9,7 @@
       "frame_duration_ms": 40,
       "reset_ms": 320,
       "duration_ms": 20320,
-      "sha256": "e09590334a7f59071bdd38ad35754004a1638421fc2dfa92bdb9b530bc673240"
+      "sha256": "133aff0eab028e40fd41980c95c0fc4476b69ce21af4474c6b23a7461fbaaf61"
     },
     "Runtime_slow.gif": {
       "captured_frames": 140,
@@ -18,7 +18,7 @@
       "frame_duration_ms": 100,
       "reset_ms": 320,
       "duration_ms": 14320,
-      "sha256": "bc28689ac8f63110b8ed20e02526b7c16c6d956f96064ada33768e03ec6ce83c"
+      "sha256": "d2e3edb393d91f0cd05a44e6fa5b94d0170867f3694a2071e7502237bd9cf2ba"
     }
   }
 }

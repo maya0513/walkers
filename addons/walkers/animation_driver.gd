@@ -17,6 +17,9 @@ var contacts: Vector2 = Vector2.ONE
 var support_regions: Array[String] = ["sole", "sole"]
 # Schema 3 offsets are in rest-skeleton space, relative to each ankle.
 var support_offsets: Array[Vector3] = []
+# Optional schema 3 skin bindings for each continuous support point. Weighted
+# rest positions use metadata.support_material_space, not ankle-offset space.
+var support_materials: Array = []
 var next_left: bool = true
 var forced_turn: bool = false
 var gaits: Array[Dictionary] = []
@@ -101,6 +104,23 @@ func change(next_state: StringName, enter_phase: float = 0.0) -> void:
 		tree.set("parameters/Move/Phase/seek_request", phase)
 	state_changed.emit(previous, state)
 
+func reset_to_idle() -> void:
+	# A teleport/reset must not crossfade from the previous moving pose or use
+	# its contact metadata while the new visual pose has already become Idle.
+	change(&"Idle")
+	forced_turn = false
+	state_time = 0.0
+	phase = 0.0
+	blend = 0.0
+	next_left = true
+	stride_scale = 1.0
+	playback.start(&"Idle")
+	tree.advance(0.0)
+	contacts = _sample_contacts("Idle", 0.0)
+	support_regions = _sample_regions("Idle", 0.0)
+	support_offsets = _sample_support_offsets("Idle", 0.0)
+	support_materials = _sample_support_materials("Idle", 0.0)
+
 func begin_turn(angle: float) -> void:
 	forced_turn = true
 	var magnitude := "180" if absf(angle) > deg_to_rad(135) else "90"
@@ -159,6 +179,45 @@ func tick(delta: float, speed: float, intent_speed: float) -> void:
 
 	_update_support_regions(speed)
 	_update_support_offsets(speed)
+	_update_support_materials(speed)
+
+func _update_support_materials(speed: float) -> void:
+	if state == &"Move":
+		var mix := _gait_mix(speed)
+		var a := _sample_support_materials(String(mix.a.animation), phase)
+		var b := _sample_support_materials(String(mix.b.animation), phase)
+		support_materials = _blend_support_materials(a, b, float(mix.weight))
+	else:
+		support_materials = _sample_support_materials(String(state), state_time / maxf(float(metadata.clips[String(state)].duration), .001))
+
+func _sample_support_materials(clip: String, normalized: float) -> Array:
+	var samples: Array = metadata.clips[clip].get("support_materials", [])
+	if samples.is_empty():
+		return []
+	var index := clampf(normalized, 0, 1) * (samples.size() - 1)
+	var a := mini(int(index), samples.size() - 1)
+	var b := mini(a + 1, samples.size() - 1)
+	return _blend_support_materials(samples[a], samples[b], index - a)
+
+func _blend_support_materials(a: Array, b: Array, weight: float) -> Array:
+	if a.size() != 2 or b.size() != 2:
+		return []
+	var result: Array = []
+	for side in range(2):
+		var merged: Dictionary = {}
+		for source in range(2):
+			var scale := 1.0 - weight if source == 0 else weight
+			var entries: Array = a[side] if source == 0 else b[side]
+			for entry: Dictionary in entries:
+				var name := String(entry.bone)
+				if not merged.has(name):
+					merged[name] = {"bone":name, "position":Vector3.ZERO, "weight":0.0}
+				var position_value = entry.position
+				var position: Vector3 = position_value if position_value is Vector3 else Vector3(position_value[0], position_value[1], position_value[2])
+				merged[name].position += position * scale
+				merged[name].weight += float(entry.weight) * scale
+		result.append(merged.values())
+	return result
 
 func _update_support_regions(speed: float) -> void:
 	if state == &"Move":

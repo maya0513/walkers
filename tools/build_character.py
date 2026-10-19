@@ -371,7 +371,7 @@ def main():
     rig.animation_data_create()
     metadata = {"fps": FPS, "height": HEIGHT, "forward": "+Z", "sole_height": ankle_z,
                 "bones": {n: list(rest[n].translation) for n in rest}, "clips": {},
-                "schema_version": 3, "support_points": author.support_metadata(),
+                "schema_version": 3, "support_material_space":"rest_skeleton", "support_points": author.support_metadata(),
                 "phenotype": {"gender":"male", "age":"adult", "muscle":"average", "weight":"average", "height_m":HEIGHT}}
     sampled_motion = {}
     for name, duration, loop, kind, g, parameter in clips:
@@ -382,6 +382,7 @@ def main():
         contact_samples = []
         support_samples = []
         support_offsets = []
+        support_materials = []
         frames = []
         previous_q = {}
         for f in range(count+1):
@@ -415,6 +416,8 @@ def main():
                     solve_leg(poses, side, position, Quaternion(Z, foot_yaw) @ foot_rest[side])
                 # Head and chest lead the pelvis by a small bounded amount.
                 world_rotate(poses, "Chest", Quaternion(Z, .08*math.sin(math.pi*u)*math.copysign(1, parameter)))
+            if kind in ["start", "stop", "turn"]:
+                poses = author.clear_blended_feet(poses)
             for b in bones:
                 n = b.name
                 parent_pose = poses[parents[n]] if parents[n] else Matrix.Identity(4)
@@ -435,11 +438,9 @@ def main():
             support_phase = u % 1 if kind == "gait" else (parameter+u*duration/DURATIONS[g]) % 1 if kind in ["start","stop"] else 0
             regions = author.support(g if kind in ["gait","start","stop"] else "", support_phase)
             support_samples.append(regions)
-            offsets = author.offsets(g if kind in ["gait", "start", "stop"] else "", support_phase)
-            if kind in ["start", "stop"]:
-                neutral_offsets = author.offsets("", 0)
-                offsets = [[a+(b-a)*weight for a,b in zip(old,new)] for old,new in zip(neutral_offsets,offsets)]
+            offsets, materials = author.contact_metadata(poses)
             support_offsets.append(offsets)
+            support_materials.append(materials)
             frames.append({"positions": {n: list(m.translation) for n,m in poses.items()},
                            "hips": list(poses["Hips"].translation)})
         # Persist the authored contact curves as ordinary Action channels too.
@@ -455,7 +456,7 @@ def main():
         action["loop"] = loop
         action["source"] = "Walkers authored relaxed locomotion; Quaternius CC0 retained as reference"
         metadata["clips"][name] = {"duration": duration, "loop": loop, "frames": count,
-            "type": kind, "contacts": contact_samples, "support_regions":support_samples, "support_offsets":support_offsets,
+            "type": kind, "contacts": contact_samples, "support_regions":support_samples, "support_offsets":support_offsets, "support_materials":support_materials,
             "nominal_speed": 1.4 if name=="Walk" else 2.8 if name=="Jog" else 0,
             "exit_phase": (parameter+duration/DURATIONS[g]) % 1 if kind=="start" else 0,
             "turn_radians": parameter if kind=="turn" else 0}

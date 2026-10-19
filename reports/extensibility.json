@@ -1,6 +1,29 @@
 {
 	"extra_gait_speed": 4.20001029968262,
 	"failures": [],
-	"footfalls": 20,
+	"footfalls": 29,
+	"legacy_metadata": [
+		{
+			"continuous_offsets": false,
+			"deforming_materials": 0,
+			"footsteps": 3,
+			"schema": 1,
+			"speed_mps": 1.40001285076141
+		},
+		{
+			"continuous_offsets": false,
+			"deforming_materials": 0,
+			"footsteps": 3,
+			"schema": 2,
+			"speed_mps": 1.40001285076141
+		},
+		{
+			"continuous_offsets": true,
+			"deforming_materials": 0,
+			"footsteps": 3,
+			"schema": 3,
+			"speed_mps": 1.40001285076141
+		}
+	],
 	"unlocked_footfalls": 5
 }

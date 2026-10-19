@@ -1,44 +1,88 @@
 {
   "status": "approved",
-  "reviewer": "independent runtime_smoothing agent",
-  "reviewed_at": "2026-10-19T16:14:04.995858+09:00",
-  "capture_source": "Actual Godot 4.7.2 OpenGL viewport PNGs; 500 frames from reports/captures/runtime, not Blender re-rendering.",
+  "reviewer": "/root/contact_runtime; runtime implementer and reviewer, independent of source-motion authoring",
+  "reviewed_at": "2026-10-20T02:21:28.122769+09:00",
+  "capture_source": "Actual Godot 4.7.2 OpenGL viewport PNGs on AMD Radeon 680M / Mesa, not Blender re-rendering.",
   "sha256": {
-    "source/character.blend": "4b0ccee210cc774e2bdab3eb00c965d7d356a0c88da4753fd4108af04d444fac",
-    "addons/walkers/assets/humanoid.glb": "41925fc5b5c22cff2a53ca58f91e47696df010213a780576a9571810c1d38833",
-    "addons/walkers/assets/motions.json": "b3d0490ac45563226f70acc24f965fec365e06391968a500c6dba418d88c75fb",
-    "previews/gifs/Runtime.gif": "e09590334a7f59071bdd38ad35754004a1638421fc2dfa92bdb9b530bc673240",
-    "previews/gifs/Runtime_slow.gif": "bc28689ac8f63110b8ed20e02526b7c16c6d956f96064ada33768e03ec6ce83c"
+    "source/character.blend": "4d1669adc251d1dacd0e3fdc8b3834f609ef2b23a4ff9c862318bfe571925aa2",
+    "addons/walkers/assets/humanoid.glb": "63c7b9d225bee4e7faff63e881d24950f32a8e82db5605f237a32378592855d9",
+    "addons/walkers/assets/motions.json": "249ce0fa7be003d785a06f457e475fb9f83730808ee02d838e0356ef7a8710e5",
+    "addons/walkers/grounding.gd": "77e7a01a0688f2c68e8ed84f17932e7b5babdccbc56c6d90b635bceb763f4ee9",
+    "addons/walkers/animation_driver.gd": "02e343cd89c90ece8047ace6f84b8c10a7c0d774e4c29db378090f2aac5ecb0f",
+    "addons/walkers/motor.gd": "02a5b7dc8385cbf48ac1ba3d2502139570467c54dfc53444477f74657072f7c9",
+    "addons/walkers/presentation.gd": "af56a7b7a5d32cbb44d5c4bd1fd6b193872d693344e682074bd6ce733f9a9f2c",
+    "tests/contact_viewport_capture.gd": "0dc0e7b0399624521da881d2496621fbd3eb71c42038eecc8a6fb947fb26a213",
+    "previews/gifs/Runtime.gif": "133aff0eab028e40fd41980c95c0fc4476b69ce21af4474c6b23a7461fbaaf61",
+    "previews/gifs/Runtime_slow.gif": "d2e3edb393d91f0cd05a44e6fa5b94d0170867f3694a2071e7502237bd9cf2ba",
+    "reports/runtime_feet_capture.json": "cc6514c454e633343c6e15a861fcc053ca647958b5b9caa741d566b27ecbd000",
+    "reports/runtime_stairs_capture.json": "31cb75dc4547a107e355bcb46c05142d32f66a836690edd76c3235877e90be05"
   },
   "review_method": {
     "full_body_frames_reviewed": 500,
-    "foot_closeup_frames_reviewed": 500,
-    "boards": "10 full-body boards and 10 foot close-up boards, 50 consecutive frames each; enlarged transition and Jog arm crops.",
+    "main_foot_crop_frames_reviewed": 500,
+    "orthographic_foot_frames_reviewed": {
+      "Jog": 84,
+      "Walk": 126
+    },
+    "continuous_stair_side_frames_reviewed": 300,
+    "boards": "Final main capture: five full-body and five foot-crop boards, 100 consecutive poses each. Foot camera: four boards covering two Walk cycles and two Jog cycles at 60Hz. Stair camera: three boards covering all 300 consecutive frames, with enlarged reverse poses.",
+    "main_capture_fps": 25,
+    "auxiliary_capture_fps": 60,
     "normal_timing_ms_per_capture": 40,
     "slow_timing_ms_per_capture": 100,
     "slow_capture_frames": "0036..0175 inclusive (140 poses)",
-    "gif_decoding": "Every encoded frame decoded; merged identical idle frames preserve original timing. Blank reset interval inspected.",
-    "timed_playback_note": "Review used ordered frame boards and verified GIF timing; did not rely on still-frame numerical tests alone."
+    "main_raw_png_set_sha256": "1a060a251866ba2448cdc9411da25516a1df178b792a0383648b499396f2160e",
+    "main_raw_set_hash_method": "SHA-256 over concatenated binary SHA-256 digests of sorted 0001.png..0500.png.",
+    "gif_decoding": "Every encoded frame decoded. Durations, loop flag, merged identical final-Idle frames, and blank reset were verified.",
+    "timed_playback_note_ja": "確認は順番付きの全フレーム画像と記録時刻・GIF再生時間を組み合わせて行った。実時間の動画再生を目で連続視聴したという意味ではない。",
+    "phase_note_ja": "補助撮影のphase/stateは最終物理姿勢の記録。描画は前後の物理姿勢を補間するため、画素の姿勢は最大1物理刻み遅れる。厳密な接地時刻は別の変形メッシュ検証を参照する。"
   },
   "gif_inspection": {
     "Runtime.gif": {
-      "frames": 487,
+      "encoded_frames": 494,
       "duration_ms": 20320,
       "frame_durations_ms": [
         40,
         80,
-        320,
-        520
+        120,
+        320
       ],
       "loop": 0,
       "size": [
         768,
         480
       ],
-      "sha256": "e09590334a7f59071bdd38ad35754004a1638421fc2dfa92bdb9b530bc673240"
+      "sha256": "133aff0eab028e40fd41980c95c0fc4476b69ce21af4474c6b23a7461fbaaf61",
+      "long_frames": [
+        {
+          "encoded_frame": 481,
+          "start_ms": 19240,
+          "duration_ms": 80
+        },
+        {
+          "encoded_frame": 487,
+          "start_ms": 19520,
+          "duration_ms": 120
+        },
+        {
+          "encoded_frame": 490,
+          "start_ms": 19720,
+          "duration_ms": 120
+        },
+        {
+          "encoded_frame": 492,
+          "start_ms": 19880,
+          "duration_ms": 120
+        },
+        {
+          "encoded_frame": 493,
+          "start_ms": 20000,
+          "duration_ms": 320
+        }
+      ]
     },
     "Runtime_slow.gif": {
-      "frames": 141,
+      "encoded_frames": 141,
       "duration_ms": 14320,
       "frame_durations_ms": [
         100,
@@ -49,261 +93,74 @@
         768,
         480
       ],
-      "sha256": "bc28689ac8f63110b8ed20e02526b7c16c6d956f96064ada33768e03ec6ce83c"
+      "sha256": "d2e3edb393d91f0cd05a44e6fa5b94d0170867f3694a2071e7502237bd9cf2ba",
+      "long_frames": []
     }
   },
   "findings": [
     {
-      "area": "Idle and head",
+      "area": "Walk contact and push-off",
       "result": "pass",
-      "observation_ja": "待機中は直立を保持。歩行・ジョギング中の頭と骨盤は小さく連続して上下し、着地時の瞬間的な跳ねや急な沈み込みは見られない。"
+      "observation_ja": "側面の足元では踵側の初期接触、足底の受け入れ、後脚の踵上げ、前足部・つま先を残した曲がり、離地後の回収を確認。足を剛体として傾けるだけの形から、前足部で曲がる形へ変わった。支持脚の上を腰が通過する間も腕・胴体は止まらない。"
     },
     {
-      "area": "Walk rhythm and apparent pause",
+      "area": "Jog contact and recovery",
       "result": "pass",
-      "observation_ja": "支持脚の上を腰が進み、後脚の踵上げから遊脚回収へ連続して移る。移動中に同一の全身姿勢を複数コマ保持する箇所はない。14.00〜14.16秒の開脚シルエットが似る区間は拡大確認し、足・腰の連続した変化を認めた。開脚幅が近いまま支持脚上を身体が通過する区間で、表示停止ではない。"
+      "observation_ja": "接地後の膝と足首の屈曲、踵の下降と再上昇、前足部側の支持、踵の回収、両足が離れる区間がつながる。足裏全体を周期中ずっと水平に貼り付ける動きではない。初期接地は短く、部位ごとの順序の厳密な判定には60Hzの変形メッシュ計測を併用する。"
     },
     {
-      "area": "Jog arms and upper body",
+      "area": "Pelvis, spine, chest and arms",
       "result": "pass",
-      "observation_ja": "肘の曲がりが変化し、片腕の肘が腰の後ろへ抜ける間、反対腕が前に出る。手が常に胸の前に残る姿勢から改善し、肩を大きくすくめず、胸郭と骨盤の小さな逆回旋を維持している。"
+      "observation_ja": "腰の傾きと回旋に対し、胸郭・肩の向きが相対的に変わる。全身を一塊で回す姿勢ではなく、後方へ抜ける肘と反対側の脚が連動する。待機は静止を保ち、頭の上下動が新たに大きくなった様子はない。"
     },
     {
-      "area": "Jog contact and lightness",
+      "area": "Stair-side corner and anchor release",
       "result": "pass",
-      "observation_ja": "荷重時の膝屈曲、後脚の踵回収、両足が離れる区間、次の接地への流れを確認。足裏を常時べったり貼り付ける姿勢や膝の逆折れ、目立つ足滑り・床の貫通は見られない。"
+      "observation_ja": "すり付け中も歩行を継続し、入力解放で停止し、反転後に離脱する。古い支持点への即時再固定による大きな足位置の飛びと、壁のレイ交点を接線方向までコピーする飛びを修正。壁側の足は必要に応じて固定を解除するため、ここで足滑りゼロを主張するものではない。"
     },
     {
-      "area": "Transitions and reversal",
+      "area": "Sharp reversal and leg ordering",
       "result": "pass",
-      "observation_ja": "歩行→ジョギング、ジョギング→停止、停止後の反転、左右への再発進で、体幹や足が瞬間的に飛ぶ、入力後に古い向きへ引きずられる、といった表示破綻は見られない。反転では短い接地中に足の向きが変わる箇所があるが、膝の反転や支持脚の大きな引きずりはない。"
+      "observation_ja": "修正前の階段側面での反転では両脚が交差する姿勢が見えた。最終撮影では大きな旋回中に短い踏み替えとなり、反転途中の拡大姿勢とその前後で以前の脚の入れ替わりを認めない。通常の90度・180度変更でも長い入力待ちは増えていない。"
     },
     {
-      "area": "GIF reset and timing",
+      "area": "GIF reset and apparent pause",
       "result": "pass",
-      "observation_ja": "通常GIFは20秒の実動作＋320msの無地リセット、スローGIFは140姿勢×100ms＋320msリセット。通常GIFの80ms/520msフレームは待機部分の同一画素結合で、移動中に余分な停止時間を加えていない。"
+      "observation_ja": "通常GIFは20秒の動作と320msの無地リセット、スローは140姿勢を各100msと320msリセット。通常GIFの80ms/120msへの同一画素結合は19.24秒以降の最終待機に限られ、歩行・ジョギングへ余分な停止時間を加えていない。"
     }
   ],
+  "numeric_cross_checks": {
+    "render_rates_checked": [
+      30,
+      60,
+      120
+    ],
+    "physics_hz": 60,
+    "flat_material_slip_max_m": {
+      "walk": 0.00114345550537109,
+      "jog": 0.000632924435194582
+    },
+    "minimum_lateral_foot_order_after_turn_release_m": {
+      "reverse180": 0.0999634116888046,
+      "turn90": 0.0991158485412598,
+      "stairs_side_reverse": 0.0287015438079834
+    },
+    "maximum_stair_full_contact_material_step_m": 0.0247717201709747,
+    "maximum_full_mesh_penetration_m": 0.000132918357849121,
+    "force_measurement_ja": "映像と関節・変形メッシュの運動学的確認。床反力、筋力、推進力、足底圧は測定していない。"
+  },
   "blocking_findings": [],
-  "limits_ja": "この実行画面のカメラは主に斜め後方・斜め前方・側方を通る。左右足の幅や上腕の厳密な角度は、別の正面・側面の元モーション画像と数値検証を併用して判断する。審美的な自然さを数値だけで保証するものではない。",
-  "supporting_numeric_reports": [
+  "limits_ja": "通常実行画面のカメラは主に斜め後方・斜め前方・側方。足元の側面と階段側面は補助カメラで確認したが、左右すべての地形を全視点で連続撮影したものではない。30/120fpsと斜面・段差の範囲は数値回帰テストを併用した。画面から自然さや実際の推進力を保証するものではない。極端な壁寄せでSpringArmが約0.57mに縮む既存のカメラ視認性制約は今回変更していない。",
+  "supporting_reports": [
+    "reports/articulation.json",
     "reports/presentation.json",
     "reports/runtime_p60_r30.json",
     "reports/runtime_p60_r60.json",
     "reports/runtime_p60_r120.json",
-    "reports/controls.json"
+    "reports/controls.json",
+    "reports/contact_mechanics.json",
+    "reports/runtime_feet_capture.json",
+    "reports/runtime_stairs_capture.json"
   ],
-  "terrain_sample_review": {
-    "source": "Actual Godot viewport; current model and runtime. Eighteen sampled screenshots, not continuous terrain video.",
-    "sample_count": 18,
-    "capture_manifest_sha256": "5d7ee6d46765fd9ffd65613b6cb5f127298f1640fdaa8cd89873181a50726b77",
-    "samples": [
-      {
-        "name": "stairs_up_010",
-        "sha256": "b5d10e479215d5459a6acc70a64127fe10b6adfd31591895b0531d52c07f7ad4",
-        "state": "StartWalkL",
-        "position": [
-          4.5,
-          0.00146926869638264,
-          2.68499994277954
-        ],
-        "camera_distance_m": 3.60595726966858
-      },
-      {
-        "name": "stairs_up_035",
-        "sha256": "6b47e82edcbec808db950a781cbe570d0552674681112cce74d44eca23002497",
-        "state": "Move",
-        "position": [
-          4.5,
-          0.302000015974045,
-          1.28500127792358
-        ],
-        "camera_distance_m": 3.60000014305115
-      },
-      {
-        "name": "stairs_up_060",
-        "sha256": "431e35e026ac735450534e39ed081727071a1ca2157da1a6bf8f18aface91048",
-        "state": "Move",
-        "position": [
-          4.5,
-          0.601999998092651,
-          -0.114998117089272
-        ],
-        "camera_distance_m": 3.60000014305115
-      },
-      {
-        "name": "stairs_up_085",
-        "sha256": "6c66b6f269f362f44e83ec3aa9e4476a2d330ba4106393bcfdb3a58a6591defd",
-        "state": "Move",
-        "position": [
-          4.5,
-          0.750847458839417,
-          -1.51498866081238
-        ],
-        "camera_distance_m": 3.60000014305115
-      },
-      {
-        "name": "stairs_up_099",
-        "sha256": "d61484b9db95d0de499299d2301897fc78ce5128247f5f44050ac6c16fcdf236",
-        "state": "Move",
-        "position": [
-          4.5,
-          0.751763582229614,
-          -2.30832123756409
-        ],
-        "camera_distance_m": 3.60000014305115
-      },
-      {
-        "name": "stairs_stop_014",
-        "sha256": "a78cfb95f7ba74cba205f11f01a2538ce0fd1dcf42c6f9513406163973fa57c2",
-        "state": "StopWalkR",
-        "position": [
-          4.5,
-          0.751763582229614,
-          -2.51457118988037
-        ],
-        "camera_distance_m": 3.60000014305115
-      },
-      {
-        "name": "stairs_down_010",
-        "sha256": "e5a97259f33ac72e6aa6412cd3ccda43ad19f736192a909f4b5327a3964dd266",
-        "state": "StartWalkR",
-        "position": [
-          4.64511775970459,
-          0.751763582229614,
-          -2.44793295860291
-        ],
-        "camera_distance_m": 3.60000014305115
-      },
-      {
-        "name": "stairs_down_035",
-        "sha256": "7bb96906b5cfad0f1f8849d8c86410ebc5ff795a09c0cdb6ecce0ce6c74af279",
-        "state": "Move",
-        "position": [
-          4.68262386322021,
-          0.751763582229614,
-          -1.11699104309082
-        ],
-        "camera_distance_m": 3.60000014305115
-      },
-      {
-        "name": "stairs_down_060",
-        "sha256": "6cb42fc7874670c16765a501aa411edb8b6c9883163b5d50f17abacde86b1861",
-        "state": "Move",
-        "position": [
-          4.68262386322021,
-          0.451667994260788,
-          0.283064097166061
-        ],
-        "camera_distance_m": 3.60000014305115
-      },
-      {
-        "name": "stairs_down_085",
-        "sha256": "1dad53fc47eabbb5ba2fc13be94e1aaa205b6662a826d19caed6275f0d143cd1",
-        "state": "Move",
-        "position": [
-          4.68262386322021,
-          0.151650458574295,
-          1.68273973464966
-        ],
-        "camera_distance_m": 3.60000014305115
-      },
-      {
-        "name": "stairs_down_114",
-        "sha256": "e0685d9fd580f0b46ebadec463570e124ef1240de40680863ae447e0d83a4086",
-        "state": "Move",
-        "position": [
-          4.68262386322021,
-          0.00168111524544656,
-          3.31586527824402
-        ],
-        "camera_distance_m": 3.60000014305115
-      },
-      {
-        "name": "side_rub_015",
-        "sha256": "779ed947f5cae82450313a59d1920d8fd0b0ad184074e51fe1f5a27f6408dd37",
-        "state": "Move",
-        "position": [
-          2.91813373565674,
-          0.00189231557305902,
-          0.417789041996002
-        ],
-        "camera_distance_m": 3.60000014305115
-      },
-      {
-        "name": "side_rub_030",
-        "sha256": "0ad5ab0bd3a3c081e186ed8533e344a1da7c15cdde4c5548d832504fa4ef9604",
-        "state": "Move",
-        "position": [
-          2.91814064979553,
-          0.00189231557305902,
-          -0.15217699110508
-        ],
-        "camera_distance_m": 3.60000014305115
-      },
-      {
-        "name": "side_rub_049",
-        "sha256": "e26ec8d6c684de4bbc9136ddbf2eea21efcb86320a1e4f14a6edf4d3a8c8c213",
-        "state": "Move",
-        "position": [
-          2.91813683509827,
-          0.00189231557305902,
-          -0.908515810966492
-        ],
-        "camera_distance_m": 3.60000014305115
-      },
-      {
-        "name": "side_exit_004",
-        "sha256": "16cf6c38e60cbc2b52b87f75ee93f0b93c0897cfb10cd39c2855ade79126afdf",
-        "state": "Move",
-        "position": [
-          2.89901113510132,
-          0.00189231557305902,
-          -1.03969657421112
-        ],
-        "camera_distance_m": 3.60000014305115
-      },
-      {
-        "name": "side_exit_015",
-        "sha256": "9cbb27621eb8339beb00ad198c15f7f7542210fdd34f77ae925035464b6d779c",
-        "state": "Move",
-        "position": [
-          2.47055411338806,
-          0.00189231557305902,
-          -1.15844571590424
-        ],
-        "camera_distance_m": 3.60000014305115
-      },
-      {
-        "name": "side_exit_034",
-        "sha256": "bf1ca4083d250be63aa09f5c62ab0bc305d1d20707ddfd4b0b956937ba4cb03b",
-        "state": "Move",
-        "position": [
-          1.39722180366516,
-          0.00189231557305902,
-          -1.15844571590424
-        ],
-        "camera_distance_m": 3.60000014305115
-      },
-      {
-        "name": "camera_wall_014",
-        "sha256": "eb03bd76c600f469d025945bb9ad7b664d46bef63ded4a2ef1085a8ec78ec7c1",
-        "state": "Idle",
-        "position": [
-          0.0,
-          0.000732421875,
-          -10.6999998092651
-        ],
-        "camera_distance_m": 0.558471202850342
-      }
-    ],
-    "findings_ja": [
-      "15cm段差の上り・上面での停止・下り・床への復帰を確認。サンプル間の身体高さと支持位置に順当な進行があり、目立つ足の貫通、膝の反転、異常な浮き上がりを認めない。",
-      "階段側面の3サンプルはMoveを維持し、身体高さ約1.89mmのまま階段沿いへ進む。離脱3サンプルでは向きを変えて階段から離れ、支持点に引きずられる目立つ表示破綻を認めない。",
-      "壁際のカメラは距離約0.558mへ縮み、壁越しの映像を防いでいる。ただし人物の背中・腰が画面を埋め、下部には近接クリップが見える。この極端な壁寄せでの視認性低下は残る制約として記録する。"
-    ],
-    "limits_ja": "静止サンプル18枚での確認。サンプル間の全フレームや壁際での視点操作を連続目視したという意味ではない。入力・接地・30/60/120fps挙動の判定には別の回帰テストを併用した。",
-    "blocking_gait_findings": [],
-    "known_camera_limitation": "Extreme wall proximity shortens the spring arm enough to fill the view with the back and reveal near clipping; no new camera behavior was added in this review."
-  }
+  "raw_frame_policy_ja": "個別PNGは生成・検証用。確認後に削除し、GIF・再生成スクリプト・ハッシュ付き撮影記録を残す。"
 }

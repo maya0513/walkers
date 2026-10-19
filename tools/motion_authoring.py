@@ -5,12 +5,21 @@ support metadata. References and artistic choices: docs/gait_reference.ja.md.
 """
 import math
 from mathutils import Vector, Quaternion
+import numpy as np
 
 TAU = math.tau
 SIDES = [("Left", 1, 0), ("Right", -1, .5)]
 DURATIONS = {"Walk": 1.05, "Jog": .7}
 SPEEDS = {"Walk": 1.4, "Jog": 2.8}
 DUTIES = {"Walk": .56, "Jog": .36}
+PUSH_RATES = {"Walk": 190., "Jog": 180.}
+SWING_HEIGHTS = {"Walk": .20, "Jog": .30}
+SWING_APICES = {"Walk": .44, "Jog": .42}
+REAR_TIME = .10
+REAR_CURVATURE = 1.0
+REAR_DISTANCE = .35
+FOOT_FRONT_FACTORS = {"Walk": .36, "Jog": .37}
+PUSH_ANGLES = {"Walk": 45., "Jog": 45.}
 
 
 def smooth(t):
@@ -27,78 +36,64 @@ def quintic(t, p0, p1, v0=0., v1=0., a0=0., a1=0.):
     return c0+t*(c1+t*(c2+t*(c3+t*(c4+t*c5))))
 
 
-def swing_lift(u, height, apex):
-    # A curved apex, with zero velocity AND acceleration at the ground joins.
-    curvature = -8*height
-    if u <= apex:
-        return quintic(u/apex, 0, height, a1=curvature*apex*apex)
-    width = 1-apex
-    return quintic((u-apex)/width, height, 0, a0=curvature*width*width)
-
 
 class SoleRocker:
-    """Smooth lower sole envelope, with no-slip ankle travel integral.
+    """Skin-weighted flexible sole; support follows the articulated toe joint.
 
-    Soft minimum stays slightly below the skin, so the smooth virtual contact
-    plane does not cut through the mesh. No heel/ball/toe pivot replacement.
+    Coordinates are rest-skeleton axes relative to the ankle. The smooth lower
+    envelope stays below actual skin; its convex weights also identify a material
+    point that runtime can transport when the toe bends.
     """
-    def __init__(self, vertices):
-        points = sorted(set((round(v.y, 8), round(v.z, 8)) for v in vertices))
-        hull = []
-        for p in points:
-            while len(hull) > 1:
-                a, b = hull[-2:]
-                cross=(b[0]-a[0])*(p[1]-b[1])-(b[1]-a[1])*(p[0]-b[0])
-                if cross > 0: break
-                hull.pop()
-            hull.append(p)
-        self.points=hull
-        self.x=sum(v.x for v in vertices)/len(vertices)
-        self.step=math.radians(.1)
-        self.first=math.radians(-30)
-        self.integrals=[0.]
-        for i in range(900):
-            a=self.first+i*self.step
-            self.integrals.append(self.integrals[-1]-self.step*(self.contact(a)[0]+4*self.contact(a+self.step*.5)[0]+self.contact(a+self.step)[0])/6)
-        self.zero=self._integral(0)
+    def __init__(self, vertices, toe_weights, toe_pivot):
+        self.vertices = np.asarray([list(v) for v in vertices], dtype=float)
+        self.toe_weights = np.asarray(toe_weights, dtype=float)
+        self.toe_pivot = np.asarray(list(toe_pivot), dtype=float)
 
-    def contact(self, angle):
-        s,c=math.sin(angle),math.cos(angle)
-        heights=[s*y+c*z for y,z in self.points]
-        lo=min(heights); softness=.0005
-        weights=[math.exp(-(v-lo)/softness) for v in heights]
-        total=sum(weights)
-        height=-lo+softness*math.log(total)+.0007
-        y=sum(w*p[0] for w,p in zip(weights,self.points))/total
-        z=sum(w*p[1] for w,p in zip(weights,self.points))/total
-        # A virtual point on the smooth supporting plane, below the sole skin.
-        z+=(-height-(s*y+c*z))/c
-        return height,Vector((self.x,y,z))
-
-    def _integral(self, angle):
-        index=(angle-self.first)/self.step
-        i=max(0,min(len(self.integrals)-2,int(index)))
-        a=self.first+i*self.step
-        h0,p0=self.contact(a);h1,p1=self.contact(a+self.step)
-        # d height / d angle for the soft lower envelope (virtual-plane offset
-        # differs by <2mm; differentiating the soft weights is unnecessary here).
-        def derivative(x):
-            eps=1e-5
-            return (self.contact(x+eps)[0]-self.contact(x-eps)[0])/(2*eps)
-        return quintic(index-i,self.integrals[i],self.integrals[i+1],-h0*self.step,-h1*self.step,
-                       -derivative(a)*self.step**2,-derivative(a+self.step)*self.step**2)
-
-    def travel(self, angle):
-        return self._integral(angle)-self.zero
+    def contact(self, angle, bend=0.):
+        c, s = math.cos(bend), math.sin(bend)
+        dy = self.vertices[:, 1]-self.toe_pivot[1]
+        dz = self.vertices[:, 2]-self.toe_pivot[2]
+        deformed = self.vertices.copy()
+        deformed[:, 1] += self.toe_weights*((c-1)*dy+s*dz)
+        deformed[:, 2] += self.toe_weights*(-s*dy+(c-1)*dz)
+        sa, ca = math.sin(angle), math.cos(angle)
+        heights = sa*deformed[:, 1]+ca*deformed[:, 2]
+        lo = float(heights.min()); softness = .00035
+        weights = np.exp(-(heights-lo)/softness)
+        total = float(weights.sum()); weights /= total
+        height = -lo+softness*math.log(total)+.0007
+        point = (deformed*weights[:, None]).sum(axis=0)
+        # Below-skin offset is virtual, separate from the material correspondence.
+        point[2] += (-height-(sa*point[1]+ca*point[2]))/ca
+        material_dy = self.toe_weights*(-s*dy+c*dz)
+        material_dz = self.toe_weights*(-c*dy-s*dz)
+        material_velocity = float((weights*(ca*material_dy-sa*material_dz)).sum())
+        return height, point, material_velocity, weights
 
 
 class Author:
     def __init__(self, rest, body, solve_leg, aim, rotate):
         self.rest,self.solve_leg,self.aim,self.rotate=rest,solve_leg,aim,rotate
+        self.parents={bone.name:bone.parent.name for bone in body.parent.data.bones if bone.name in rest and bone.parent}
+        self.hierarchy=sorted(rest,key=lambda name:len(body.parent.data.bones[name].parent_recursive))
         self.feet={s:rest[s+"Foot"].to_quaternion() for s,_,_ in SIDES}
-        self.soles={s:[v.co.copy()-rest[s+"Foot"].translation for v in body.data.vertices
-                       if v.co.z<.13 and v.co.x*sign>0] for s,sign,_ in SIDES}
-        self.rockers={s:SoleRocker(self.soles[s]) for s,_,_ in SIDES}
+        group_names={group.index:group.name for group in body.vertex_groups}
+        self.sole_indices={s:[v.index for v in body.data.vertices if v.co.z<.13 and v.co.x*sign>0] for s,sign,_ in SIDES}
+        self.soles={s:[body.data.vertices[i].co.copy()-rest[s+"Foot"].translation for i in self.sole_indices[s]] for s,_,_ in SIDES}
+        self.sole_bindings={s:[[(group_names[g.group],g.weight) for g in body.data.vertices[i].groups if g.weight>0 and group_names[g.group] in rest] for i in self.sole_indices[s]] for s,_,_ in SIDES}
+        self.sole_rest={s:[body.data.vertices[i].co.copy() for i in self.sole_indices[s]] for s,_,_ in SIDES}
+        self.rockers={s:SoleRocker(self.soles[s], [sum(w for n,w in bindings if n==s+"Toes") for bindings in self.sole_bindings[s]], rest[s+"Toes"].translation-rest[s+"Foot"].translation) for s,_,_ in SIDES}
+        self.skin_bindings={}
+        for side,_,_ in SIDES:
+            entries={}
+            for i,(point,influences) in enumerate(zip(self.sole_rest[side],self.sole_bindings[side])):
+                for bone,weight in influences:
+                    local=rest[bone].inverted()@point
+                    entries.setdefault(bone,[]).append((i,local,weight))
+            self.skin_bindings[side]={bone:(np.array([i for i,_,_ in rows]), np.array([list(point*weight) for _,point,weight in rows]), np.array([weight for _,_,weight in rows])) for bone,rows in entries.items()}
+        self.travel_profiles={}
+        self.height_endpoints={}
+        self._build_travel_profiles()
         self.points={}
         for s,_,_ in SIDES:
             points=self.soles[s]
@@ -127,56 +122,133 @@ class Author:
     def standing(self,phase=0):
         return {n:m.copy() for n,m in self.idle.items()}
 
+    def foot_angles(self,name,t):
+        jog=name=="Jog"; duty=DUTIES[name]
+        touchdown=math.radians(4 if jog else -16)
+        push=math.radians(PUSH_ANGLES[name])
+        push_rate=math.radians(PUSH_RATES[name])
+        leave=duty-(.14 if jog else .22)
+        settle=.09 if jog else .15
+        if t<=duty:
+            loading=touchdown*(1-smooth(t/settle))
+            extension=quintic((t-leave)/(duty-leave),0,push,v1=push_rate*(duty-leave)) if t>leave else 0.
+            return loading+extension, .85*extension
+        u=(t-duty)/(1-duty)
+        middle=math.radians(7 if jog else 10)
+        roll=quintic(u/.45,push,middle,v0=push_rate*(1-duty)*.45) if u<.45 else quintic((u-.45)/.55,middle,touchdown)
+        # The toe joint releases after leaving the floor rather than remaining
+        # world-horizontal throughout swing and landing.
+        bend=quintic(u/.35,.85*push,0,v0=.85*push_rate*(1-duty)*.35) if u<.35 else 0.
+        return roll,bend
+
+    def _travel_rate(self,name,side,t):
+        eps=1e-5
+        # Stance endpoints use the exact polynomial continuation through toe-off.
+        a,b=self.foot_angles(name,t)
+        ap,bp=self.foot_angles(name,t+eps)
+        am,bm=self.foot_angles(name,t-eps)
+        da,db=(ap-am)/(2*eps),(bp-bm)/(2*eps)
+        height,_,material_velocity,_=self.rockers[side].contact(a,b)
+        return -height*da-material_velocity*db
+
+    def _build_travel_profiles(self):
+        # Integrate the no-slip velocity of the *same skin material*, including
+        # toe deformation. A changing pressure centre is not a fixed skin point.
+        count=1024
+        for name in DURATIONS:
+            step=DUTIES[name]/count
+            for side,_,_ in SIDES:
+                values=[0.]
+                rates=[self._travel_rate(name,side,i*step) for i in range(count+1)]
+                for i in range(count):
+                    mid=self._travel_rate(name,side,(i+.5)*step)
+                    values.append(values[-1]+step*(rates[i]+4*mid+rates[i+1])/6)
+                accelerations=[(rates[min(count,i+1)]-rates[max(0,i-1)])/((min(count,i+1)-max(0,i-1))*step) for i in range(count+1)]
+                self.travel_profiles[name,side]=(step,values,rates,accelerations)
+                def ground_height(t):
+                    a,b=self.foot_angles(name,t)
+                    return self.rockers[side].contact(a,b)[0]
+                t=DUTIES[name]; eps=1e-4
+                h=ground_height(t)
+                velocity=(ground_height(t+eps)-ground_height(t-eps))/(2*eps)
+                acceleration=(ground_height(t+eps)-2*h+ground_height(t-eps))/eps**2
+                self.height_endpoints[name,side]=(h,velocity,acceleration,ground_height(0))
+
+    def travel(self,name,side,t):
+        step,values,rates,accelerations=self.travel_profiles[name,side]
+        t=max(0.,min(DUTIES[name],t)); x=t/step
+        i=min(len(values)-2,int(x))
+        return quintic(x-i,values[i],values[i+1],rates[i]*step,rates[i+1]*step,accelerations[i]*step*step,accelerations[i+1]*step*step)
+
     def foot(self,name,side,t):
         jog=name=="Jog";duty=DUTIES[name];stride=DURATIONS[name]*SPEEDS[name]
-        front=-(.32 if jog else .36)*stride*duty
+        front=-FOOT_FRONT_FACTORS[name]*stride*duty
         back=front+stride*duty
-        touchdown=math.radians(1.5 if jog else -13)
-        push=math.radians(32 if jog else 45)
-        push_rate=math.radians(150 if jog else 105)
+        roll,bend=self.foot_angles(name,t)
         rocker=self.rockers[side]
         if t<duty:
-            settle=.065 if jog else .12
-            leave=duty-(.13 if jog else .20)
-            roll=touchdown*(1-smooth(t/settle))
-            if t>leave:
-                roll+=quintic((t-leave)/(duty-leave),0,push,v1=push_rate*(duty-leave))
-            y=front+stride*t+rocker.travel(roll)
-            height=0
+            y=front+stride*t+self.travel(name,side,t)
             contact=smooth(t/.035)*(1-smooth((t-(duty-.045))/.045))
         else:
             u=(t-duty)/(1-duty)
-            roll=quintic(u/.45,push,math.radians(7 if jog else 10),v0=push_rate*(1-duty)*.45) if u<.45 else quintic((u-.45)/.55,math.radians(7 if jog else 10),touchdown)
             tangent=stride*(1-duty)
-            end=front+rocker.travel(touchdown)
-            # The rear heel continues rising through toe-off. Preserve this
-            # velocity while recovering early and retracting before touchdown.
-            turn=.80
-            width=1-turn
+            end=front
+            turn=.80; width=1-turn
             minimum=end-.4*tangent*width
             curvature=.5*tangent/width
-            initial=(stride-rocker.contact(push)[0]*push_rate)*(1-duty)
+            initial=(stride+self._travel_rate(name,side,duty))*(1-duty)
             eps=1e-5
-            height_derivative=(rocker.contact(push+eps)[0]-rocker.contact(push-eps)[0])/(2*eps)
-            initial_acceleration=-height_derivative*push_rate**2*(1-duty)**2
-            if u<turn:
-                y=quintic(u/turn,back+rocker.travel(push),minimum,initial*turn,0,initial_acceleration*turn*turn,curvature*turn*turn)
+            acceleration=(self._travel_rate(name,side,duty+eps)-self._travel_rate(name,side,duty-eps))/(2*eps)
+            initial_acceleration=acceleration*(1-duty)**2
+            rear=REAR_TIME
+            maximum=back+self.travel(name,side,duty)+REAR_DISTANCE*initial*rear
+            rear_curvature=-REAR_CURVATURE*initial/rear
+            if jog and u<turn:
+                y=quintic(u/turn,back+self.travel(name,side,duty),minimum,initial*turn,0,initial_acceleration*turn*turn,curvature*turn*turn)
+            elif u<rear:
+                y=quintic(u/rear,back+self.travel(name,side,duty),maximum,initial*rear,0,initial_acceleration*rear*rear,rear_curvature*rear*rear)
+            elif u<turn:
+                width=turn-rear
+                y=quintic((u-rear)/width,maximum,minimum,0,0,rear_curvature*width*width,curvature*width*width)
             else:
                 y=quintic((u-turn)/width,minimum,end,0,tangent*width,curvature*width*width,0)
-            height=swing_lift(u,.205 if jog else .070,.40 if jog else .48)
-            contact=0
-        support,pivot=rocker.contact(roll)
-        return Vector((0,y,support+height)),Quaternion(Vector((1,0,0)),roll),contact,pivot
+            contact=0.
+        support,pivot,_,_=rocker.contact(roll,bend)
+        z=support
+        if t>=duty:
+            # In flight the ankle follows its own recovery arc. Rolling an
+            # imaginary floor under an airborne deforming foot adds false jolts.
+            start,velocity,acceleration,end=self.height_endpoints[name,side]
+            apex=SWING_APICES[name]; peak=SWING_HEIGHTS[name]
+            curvature=-1.0 if jog else -.65
+            if u<apex:
+                z=quintic(u/apex,start,peak,velocity*(1-duty)*apex,0,acceleration*(1-duty)**2*apex**2,curvature*apex**2)
+            else:
+                width=1-apex
+                z=quintic((u-apex)/width,peak,end,0,0,curvature*width**2,0)
+        return Vector((0,y,z)),Quaternion(Vector((1,0,0)),roll),contact,pivot
 
     def gait(self,name,phase,_raw_height=False):
         jog=name=="Jog";phase%=1
         p={n:m.copy() for n,m in self.rest.items()}
         lateral=(.009 if jog else .014)*math.sin(TAU*phase)
-        self.rotate(p,"Hips",Quaternion(Vector((1,0,0)),math.radians(4.0 if jog else .8)))
-        self.rotate(p,"Hips",Quaternion(Vector((0,0,1)),math.radians(3 if jog else 2.5)*math.sin(TAU*phase)))
-        self.rotate(p,"Chest",Quaternion(Vector((0,0,1)),-math.radians(5 if jog else 4)*math.sin(TAU*phase)))
-        # Small thorax compliance rather than a rigid torso block.
-        if jog:self.rotate(p,"Chest",Quaternion(Vector((1,0,0)),math.radians(.7)*math.sin(2*TAU*(phase-.12))))
+        # Pelvis leads the leg; the spine distributes counter-rotation instead
+        # of leaving the abdomen rigid or rotating all the torso as one block.
+        wave=math.cos(TAU*phase)
+        sway=math.sin(TAU*phase)
+        twist=math.cos(TAU*(phase-.035))
+        pelvis_yaw=math.radians(3.2 if jog else 4.0)*-wave
+        pelvis_roll=math.radians(1.3 if jog else 2.0)*-sway
+        pitch_wave=math.sin(2*TAU*(phase-.12))
+        self.rotate(p,"Hips",Quaternion(Vector((1,0,0)),math.radians(4.0 if jog else .8)+math.radians(.45 if jog else .3)*pitch_wave))
+        self.rotate(p,"Hips",Quaternion(Vector((0,1,0)),pelvis_roll))
+        self.rotate(p,"Hips",Quaternion(Vector((0,0,1)),pelvis_yaw))
+        for bone,yaw_share,roll_share,pitch_share in [("Spine",.45,.48,.4),("Chest",.35,.32,.35),("UpperChest",.20,.20,.25)]:
+            self.rotate(p,bone,Quaternion(Vector((0,0,1)),math.radians(6.0 if jog else 6.2)*twist*yaw_share))
+            self.rotate(p,bone,Quaternion(Vector((0,1,0)),-pelvis_roll*.85*roll_share))
+            self.rotate(p,bone,Quaternion(Vector((1,0,0)),-math.radians(.35 if jog else .22)*pitch_wave*pitch_share))
+        self.rotate(p,"Neck",Quaternion(Vector((0,0,1)),-.55*(pelvis_yaw+math.radians(6.0 if jog else 6.2)*twist)))
+        self.rotate(p,"Neck",Quaternion(Vector((0,1,0)),-.5*pelvis_roll*.15))
         for n in p:
             if n!="Root":p[n].translation.x+=lateral
         targets=[];contacts=[]
@@ -200,8 +272,18 @@ class Author:
             if n!="Root":p[n].translation+=shift
         for s,target,q,t in targets:
             self.solve_leg(p,s,target,q)
-            toe=s+"Toes"
-            self.rotate(p,toe,self.rest[toe].to_quaternion()@p[toe].to_quaternion().inverted())
+            # Relative metatarsophalangeal extension, never a world-rest reset.
+            _,bend=self.foot_angles(name,t)
+            self.rotate(p,s+"Toes",Quaternion(Vector((1,0,0)),-bend))
+            # Include real skin weights shared with the shin, not just the
+            # flexible rocker approximation used for trajectory integration.
+            a,b=self.foot_angles(name,t)
+            desired_floor=target.z-self.rockers[s].contact(a,b)[0]
+            for _ in range(2):
+                _,_,bottom=self.skin_contact(p,s)
+                toe_rotation=p[s+"Toes"].to_quaternion().copy()
+                self.solve_leg(p,s,p[s+"Foot"].translation+Vector((0,0,desired_floor-bottom)),q)
+                self.rotate(p,s+"Toes",toe_rotation@p[s+"Toes"].to_quaternion().inverted())
         up=(p["Neck"].translation-p["Chest"].translation).normalized()
         left=(p["LeftUpperArm"].translation-p["RightUpperArm"].translation).normalized()
         forward=left.cross(up).normalized()
@@ -258,8 +340,63 @@ class Author:
         values=[]
         for s,_,offset in SIDES:
             _,_,_,v=self.foot(name,s,(phase+offset)%1)
-            values.append([v.x,v.z,-v.y])
+            values.append([float(v[0]),float(v[2]),float(-v[1])])
         return values
+
+    def skinned_sole(self,poses,side):
+        points=np.zeros((len(self.sole_rest[side]),3))
+        for bone,(indices,positions,weights) in self.skin_bindings[side].items():
+            matrix=poses[bone]
+            points[indices]+=positions@np.asarray(matrix.to_3x3(),dtype=float).T+np.asarray(matrix.translation,dtype=float)*weights[:,None]
+        return points
+
+    def skin_contact(self,poses,side):
+        points=self.skinned_sole(poses,side)
+        lo=float(points[:,2].min()); softness=.00035
+        weights=np.exp(-(points[:,2]-lo)/softness)
+        total=float(weights.sum()); weights/=total
+        bottom=lo-softness*math.log(total)-.0007
+        return points,weights,bottom
+
+    def clear_blended_feet(self,poses):
+        # Blend rotations in the real hierarchy before checking skin geometry.
+        # A global-space position blend alone does not preserve limb lengths.
+        for bone in self.hierarchy:
+            if bone in ["Root","Hips"]:continue
+            # Evaluate parents first, independently of dictionary ordering.
+            parent=self.parents[bone]
+            poses[bone].translation=poses[parent]@(self.rest[parent].inverted()@self.rest[bone].translation)
+        for side,_,_ in SIDES:
+            for _ in range(3):
+                _,_,bottom=self.skin_contact(poses,side)
+                # Smooth positive clearance avoids a hard kink where a blended
+                # sole changes from floating to penetrating the floor.
+                lift=.5*(-bottom+math.sqrt(bottom*bottom+1e-8))
+                foot=poses[side+"Foot"]
+                target=foot.translation+Vector((0,0,lift))
+                toe_rotation=poses[side+"Toes"].to_quaternion().copy()
+                self.solve_leg(poses,side,target,foot.to_quaternion())
+                self.rotate(poses,side+"Toes",toe_rotation@poses[side+"Toes"].to_quaternion().inverted())
+        return poses
+
+    def contact_metadata(self,poses):
+        offsets=[]; materials=[]
+        for side,_,_ in SIDES:
+            points,weights,bottom=self.skin_contact(poses,side)
+            point=Vector((points*weights[:,None]).sum(axis=0))
+            point.z=bottom
+            foot=poses[side+"Foot"]
+            offset=self.rest[side+"Foot"].to_3x3()@(foot.to_3x3().inverted()@(point-foot.translation))
+            offsets.append([offset.x,offset.z,-offset.y])
+            bindings={}
+            for bone,(indices,positions,skin_weights) in self.skin_bindings[side].items():
+                w=weights[indices]
+                total=float(np.dot(w,skin_weights))
+                if total<1e-12:continue
+                position=self.rest[bone].to_3x3()@Vector((positions*w[:,None]).sum(axis=0))+self.rest[bone].translation*total
+                bindings[bone]={"bone":bone,"position":[float(position.x),float(position.z),float(-position.y)],"weight":total}
+            materials.append(list(bindings.values()))
+        return offsets,materials
 
     def support_metadata(self):
         return {s:{r:[v.x,v.z,-v.y] for r,v in points.items()} for s,points in self.points.items()}

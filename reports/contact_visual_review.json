@@ -1,0 +1,99 @@
+{
+  "reviewer": "independent contact_validation agent",
+  "source_blend_sha256": "4d1669adc251d1dacd0e3fdc8b3834f609ef2b23a4ff9c862318bfe571925aa2",
+  "status": "pass_no_blocking_finding_in_inspected_source_poses",
+  "measurement_report": "contact_mechanics.json",
+  "method": {
+    "actual_images_opened": 8,
+    "full_body_poses": 96,
+    "full_body_sampling": "16 nearly equidistant baked Action frames per cycle, both Walk and Jog, front/side/three_quarter; each rendered400x500 and inspected in4x4 sheets",
+    "closeup_poses": 29,
+    "closeup_sampling": {
+      "Walk": [
+        60,
+        62,
+        0,
+        2,
+        4,
+        6,
+        8,
+        20,
+        23,
+        26,
+        29,
+        32,
+        35,
+        38,
+        41
+      ],
+      "Jog": [
+        40,
+        41,
+        0,
+        1,
+        2,
+        3,
+        4,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19
+      ]
+    },
+    "closeup_render_size": [
+      600,
+      360
+    ],
+    "closeup_camera": "side view, tracks LeftFoot fore/aft; floor line projected from z=0; does not establish horizontal material-point slip",
+    "render_engine": "Blender Workbench, original evaluated editable rig and skin",
+    "real_time_playback_watched": false,
+    "limitations": "This review inspects temporally ordered still poses. Real-time rhythm, Godot correction, terrain, all15 derived clips and media timing require the separate runtime/media reviews. Numerical forces are not inferred."
+  },
+  "findings": [
+    {
+      "severity": "observation",
+      "subject": "Walk landing",
+      "detail": "Heel-first approach and heel contact are visible before gradual lowering of forefoot. Foot does not appear to slap down in one rigid orientation."
+    },
+    {
+      "severity": "observation",
+      "subject": "Walk terminal support",
+      "detail": "Heel rises while distal forefoot/toe skin stays close to floor; toe-joint articulation is visible instead of the whole foot remaining flat. Rear leg leads into flexed-knee recovery."
+    },
+    {
+      "severity": "observation",
+      "subject": "Jog landing",
+      "detail": "At final4degree setup the forefoot lands with modest heel elevation, then heel settles. The8degree candidate tip-first portrayal was corrected before this review."
+    },
+    {
+      "severity": "observation",
+      "subject": "Jog terminal support",
+      "detail": "Heel rise, distal forefoot support, toe extension and subsequent foot release are readable. No observed foot mesh collapse or floor penetration in selected poses."
+    },
+    {
+      "severity": "observation",
+      "subject": "Trunk and shoulders",
+      "detail": "Pelvis shifts and rotates under a partly counterrotating rib cage; arm/leg alternation and rear elbow travel remain clear. The abdomen is not visually a single rigid block in inspected front/oblique phases."
+    },
+    {
+      "severity": "observation",
+      "subject": "Leg/arm shape",
+      "detail": "No obvious knee inversion, foot crossing, upper-arm flare, hand/trunk intersection or waist-hinge forward collapse in the selected3view samples."
+    }
+  ],
+  "blocking_findings": [],
+  "diagnostic_image_sha256": {
+    "Jog_front_sheet.jpg": "4eafddc8ec29df203baf2c64ee41bf6069eea9e1bf5032b441ab85ec04cc53ab",
+    "Jog_sheet.jpg": "c9d6e14e9a01f8b29e644c1724f88d5cd517ea1b42f3451a9c47cf49b71bfaee",
+    "Jog_side_sheet.jpg": "0bddf4b18b4286422c172f4d8d459a320e568926c130e627757f383185124942",
+    "Jog_three_quarter_sheet.jpg": "7b47acc535a46f74cb58a525c1fa4f2b7c1d5f18a4e04451b4e78db2c4f9c853",
+    "Walk_front_sheet.jpg": "b30ea9b580a00c6ca310badb823d93162cf6a17af876abaaf78321e9b5134c24",
+    "Walk_sheet.jpg": "2c62f3eecda4f6a0972f67b92d4d42820c2ff7d3e9c2ebf6df70b4253ad93b5a",
+    "Walk_side_sheet.jpg": "1b60b693190b1e5436dfd57f2fbfae7224c227c60486d8a2c14d5cf23ec41849",
+    "Walk_three_quarter_sheet.jpg": "316e56a310b84dddf430a5e3ff011c80e662b3c1052b78efb276b6153cc0e256"
+  },
+  "measurement_method_update": "Contact-cycle landing/duration uses complete evaluated lower-foot skin. Heel/forefoot/toes landmark-patch timings and conservative distal-support counts are separate; gaps around MTP joint do not truncate whole-foot support. This changes numerical support durations, not the inspected source poses or image observations."
+}

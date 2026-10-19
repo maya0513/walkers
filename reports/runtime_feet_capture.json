@@ -1,0 +1,1718 @@
+{
+	"camera": {
+		"projection": "orthographic",
+		"size": 0.850000023841858,
+		"target_height_m": 0.35,
+		"world_offset_m": [
+			3,
+			0,
+			0.025
+		]
+	},
+	"captured": {
+		"Jog": 84,
+		"Walk": 126
+	},
+	"fps": 60,
+	"frames": [
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0001.png",
+			"gait": "Walk",
+			"phase": 0.460318987144944,
+			"sha256": "a9f286ab5522a15ae6a4621f79132c368e16d50973c9df368a73ce9372228c6a",
+			"state": "Move",
+			"time_seconds": 1.51666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0002.png",
+			"gait": "Walk",
+			"phase": 0.476191986528693,
+			"sha256": "8704a860a30da4ffcc2b2bdfc3b866438982f4517175304226e73e09ef12b25f",
+			"state": "Move",
+			"time_seconds": 1.53333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0003.png",
+			"gait": "Walk",
+			"phase": 0.492064985912443,
+			"sha256": "f000e6bfadc940d8ce45a38d70532c3c452d7039c632d42a419b31bdea96531b",
+			"state": "Move",
+			"time_seconds": 1.55
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0004.png",
+			"gait": "Walk",
+			"phase": 0.507937985296192,
+			"sha256": "c4114681302ae5019417b8536b7b7f04d60b00085e7e0cc6446910b55e4dc044",
+			"state": "Move",
+			"time_seconds": 1.56666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0005.png",
+			"gait": "Walk",
+			"phase": 0.523810984679941,
+			"sha256": "1531c157bdd44d4ba9aea1f8480503c6b13da1fb004fb45a7be7a7f076c5cead",
+			"state": "Move",
+			"time_seconds": 1.58333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0006.png",
+			"gait": "Walk",
+			"phase": 0.53968398406369,
+			"sha256": "73acfc203640aca63762c097e8ffea208e29f9c8b504e179c278549e407ddbc5",
+			"state": "Move",
+			"time_seconds": 1.6
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0007.png",
+			"gait": "Walk",
+			"phase": 0.555556983447439,
+			"sha256": "4f533bb5bbfdaf06fa84f9771c2716c073d41012bb6e7d7d6b9e774c6e2aadac",
+			"state": "Move",
+			"time_seconds": 1.61666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0008.png",
+			"gait": "Walk",
+			"phase": 0.571429982831188,
+			"sha256": "e1366e7f6da058747b02c41ae94dfecebe0165d782d21c2303e9ae09fb0c50fe",
+			"state": "Move",
+			"time_seconds": 1.63333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0009.png",
+			"gait": "Walk",
+			"phase": 0.587302982214937,
+			"sha256": "0517942d5183d8ad5c9fa011defe38259e1e7cc17503e75e473c119d968f7cd8",
+			"state": "Move",
+			"time_seconds": 1.65
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0010.png",
+			"gait": "Walk",
+			"phase": 0.603175981598686,
+			"sha256": "8608beb8df5d34ed8a9eea265f9862d65c7a4fcfa3d9c850dc514bb20b7615f0",
+			"state": "Move",
+			"time_seconds": 1.66666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0011.png",
+			"gait": "Walk",
+			"phase": 0.619048980982435,
+			"sha256": "f0ea1db827c3e58627d29a3bb8e967c82f315989674ebefa4208167cadeda9cf",
+			"state": "Move",
+			"time_seconds": 1.68333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0012.png",
+			"gait": "Walk",
+			"phase": 0.634921980366184,
+			"sha256": "9737baa206d627e53b57165cb1a219cfd086bd55cdf4d3a0c9285236ef9941ff",
+			"state": "Move",
+			"time_seconds": 1.7
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0013.png",
+			"gait": "Walk",
+			"phase": 0.650794979749933,
+			"sha256": "59781601143dd94353f5a44794298a251f730c049fbcf6c962c0292451c0229b",
+			"state": "Move",
+			"time_seconds": 1.71666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0014.png",
+			"gait": "Walk",
+			"phase": 0.666667979133682,
+			"sha256": "3cdc2bf308ef7e4e256a43769dab8b3e3a7f6deca0ac307478bcc5862e0ae06b",
+			"state": "Move",
+			"time_seconds": 1.73333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0015.png",
+			"gait": "Walk",
+			"phase": 0.682540978517432,
+			"sha256": "28b48cc65ac24296e331c044b5d819913f19eb9561e8a0866689d10bb266eb8a",
+			"state": "Move",
+			"time_seconds": 1.75
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0016.png",
+			"gait": "Walk",
+			"phase": 0.698413977901181,
+			"sha256": "813d85e6e3f0bbd3cba7f8ddf106d74c24d0f1c5f5c3dccba79f97521a772071",
+			"state": "Move",
+			"time_seconds": 1.76666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0017.png",
+			"gait": "Walk",
+			"phase": 0.71428697728493,
+			"sha256": "467966c5e420e43829386b6161d7b92f4936a0b62919046faf48624c6b0e9ada",
+			"state": "Move",
+			"time_seconds": 1.78333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0018.png",
+			"gait": "Walk",
+			"phase": 0.730159976668679,
+			"sha256": "d76d33da594f6fb0076543d87d39e6ab771004401f22e297faa4128786b69a6c",
+			"state": "Move",
+			"time_seconds": 1.8
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0019.png",
+			"gait": "Walk",
+			"phase": 0.746032976052428,
+			"sha256": "fd2ac61eccd16f3621f5263f77add1db3528af1314c478f73d3db58c3ea17d80",
+			"state": "Move",
+			"time_seconds": 1.81666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0020.png",
+			"gait": "Walk",
+			"phase": 0.761905975436177,
+			"sha256": "a194fabc7e1db89358f98ea0c7856917a5d9814af2f946554d0bb4ccbef23b00",
+			"state": "Move",
+			"time_seconds": 1.83333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0021.png",
+			"gait": "Walk",
+			"phase": 0.777778974819926,
+			"sha256": "89c843af4f51a1f113834b4750464ed92d3e46e279b8dedc6a74b83f20aa5dab",
+			"state": "Move",
+			"time_seconds": 1.85
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0022.png",
+			"gait": "Walk",
+			"phase": 0.793651974203675,
+			"sha256": "3b9df286877076771dc181682a82a1ef93a0f48245f121104587f1ea82b5a2e4",
+			"state": "Move",
+			"time_seconds": 1.86666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0023.png",
+			"gait": "Walk",
+			"phase": 0.809524973587424,
+			"sha256": "4c78705771769110b5d47cf294f3c82ed86c3c9c6bfae67e8f692f486d723f89",
+			"state": "Move",
+			"time_seconds": 1.88333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0024.png",
+			"gait": "Walk",
+			"phase": 0.825397972971173,
+			"sha256": "d57345e807568cde53ecdf33f9f5dc4d49428ed8098d00544e1313df73653fa5",
+			"state": "Move",
+			"time_seconds": 1.9
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0025.png",
+			"gait": "Walk",
+			"phase": 0.841270972354922,
+			"sha256": "c6bd33d506f60a8fef9d7b412b3ac00f592b7d782fd524d59afc989bb4a41b26",
+			"state": "Move",
+			"time_seconds": 1.91666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0026.png",
+			"gait": "Walk",
+			"phase": 0.857143971738672,
+			"sha256": "4406534eb0788caa22fe03961187087acb26fc18df401cc017da21f17fad7f17",
+			"state": "Move",
+			"time_seconds": 1.93333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0027.png",
+			"gait": "Walk",
+			"phase": 0.873016971122421,
+			"sha256": "52086b0b25a7f28a4d7699e49f0a4719a9f5700b0ee4fd7b98d8c612bbf0ab94",
+			"state": "Move",
+			"time_seconds": 1.95
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0028.png",
+			"gait": "Walk",
+			"phase": 0.88888997050617,
+			"sha256": "b0d6143b5f20da66b75f3a249125f69b21dc9c510844d4df04fff55be4c42480",
+			"state": "Move",
+			"time_seconds": 1.96666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0029.png",
+			"gait": "Walk",
+			"phase": 0.904762969889919,
+			"sha256": "b454ced4f0b3a10676cd2d43cc9f5e7992c30c1ce5700aa18eec898aa4d35a80",
+			"state": "Move",
+			"time_seconds": 1.98333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0030.png",
+			"gait": "Walk",
+			"phase": 0.920635969273668,
+			"sha256": "ec18f3e3d515e4d219e54158556423181f179d8d3b2a08d1a4c62ed09e9105e2",
+			"state": "Move",
+			"time_seconds": 2.0
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0031.png",
+			"gait": "Walk",
+			"phase": 0.936508968657417,
+			"sha256": "de14040050d6b3edf8607c22e07ae9d34117770fd8bc083249ef01ebfdd1a3a4",
+			"state": "Move",
+			"time_seconds": 2.01666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0032.png",
+			"gait": "Walk",
+			"phase": 0.952381968041166,
+			"sha256": "87f0b1ccf5d280f9e43ba8599536072fd6a117735ec79714ac2bfa6d84160e35",
+			"state": "Move",
+			"time_seconds": 2.03333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0033.png",
+			"gait": "Walk",
+			"phase": 0.968254967424915,
+			"sha256": "83929324d61486b729f7d34a006dcb1d4a8b8422ab02fdf7c0090b1bf8f7ea9c",
+			"state": "Move",
+			"time_seconds": 2.05
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0034.png",
+			"gait": "Walk",
+			"phase": 0.984127966808664,
+			"sha256": "cbbaacd9f366325bf7d971c9f4ae7998e7c8550d866c07105bc088134d4ea78a",
+			"state": "Move",
+			"time_seconds": 2.06666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0035.png",
+			"gait": "Walk",
+			"phase": 0.000000966192413187628,
+			"sha256": "30e9c52b3adf47da339f60128c1812dac686e77d0ee4a18728076596fc86fbc1",
+			"state": "Move",
+			"time_seconds": 2.08333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0036.png",
+			"gait": "Walk",
+			"phase": 0.0158739655761623,
+			"sha256": "45bfb525bfe7fe76ba9c5f7bd799a4937d9e5cc4b581d2f81a44dcf211493101",
+			"state": "Move",
+			"time_seconds": 2.1
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0037.png",
+			"gait": "Walk",
+			"phase": 0.0317469649599113,
+			"sha256": "eaf725c224ba9133f403b087e335c2874add241f8194894bb77d7589ca624f46",
+			"state": "Move",
+			"time_seconds": 2.11666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0038.png",
+			"gait": "Walk",
+			"phase": 0.0476199643436604,
+			"sha256": "d98b1b0d40a200bd5d89a2fe7dc8921fafff071c241790bdf52f482ac040e341",
+			"state": "Move",
+			"time_seconds": 2.13333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0039.png",
+			"gait": "Walk",
+			"phase": 0.0634929637274095,
+			"sha256": "79408366a1fda170b930c1db62752d274d7c24679174992fef003d3dfd733cb9",
+			"state": "Move",
+			"time_seconds": 2.15
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0040.png",
+			"gait": "Walk",
+			"phase": 0.0793659631111585,
+			"sha256": "1a11801259271a9fad4e8f374a74677c1997973b3e65de827d1f8bd7e2fa029d",
+			"state": "Move",
+			"time_seconds": 2.16666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0041.png",
+			"gait": "Walk",
+			"phase": 0.0952389624949076,
+			"sha256": "a458c392b69dd3d8970c5bd804f3908beb5408080440ac377ee2224d40e040d0",
+			"state": "Move",
+			"time_seconds": 2.18333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0042.png",
+			"gait": "Walk",
+			"phase": 0.111111961878657,
+			"sha256": "3046cfb46b33ec69cad816389f02dab8ea4ea6e7a72cc76fedc5560d5eb84e3b",
+			"state": "Move",
+			"time_seconds": 2.2
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0043.png",
+			"gait": "Walk",
+			"phase": 0.126984961262406,
+			"sha256": "9e4c218d98337bdca360992b847c551d8a7c702db4bc6136f9b0a4ed78c737c6",
+			"state": "Move",
+			"time_seconds": 2.21666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0044.png",
+			"gait": "Walk",
+			"phase": 0.142857960646155,
+			"sha256": "0b62d34b58e7d65829a848f396239b40845c05c09beaa43c0c798a9720a36132",
+			"state": "Move",
+			"time_seconds": 2.23333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0045.png",
+			"gait": "Walk",
+			"phase": 0.158730960029904,
+			"sha256": "ccd54f77e16d27e26d67dc22e00d64bfaaab9dc0d61407c279bed5d8c8c3ac96",
+			"state": "Move",
+			"time_seconds": 2.25
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0046.png",
+			"gait": "Walk",
+			"phase": 0.174603959413653,
+			"sha256": "08739bb38416453f909ad9f180f88c2a2ec49e01824672470b05029139f44733",
+			"state": "Move",
+			"time_seconds": 2.26666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0047.png",
+			"gait": "Walk",
+			"phase": 0.190476958797402,
+			"sha256": "e806296b950549e68abefac2ff794bdd5bf22437e4cd785a300f5b48534c6ae7",
+			"state": "Move",
+			"time_seconds": 2.28333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0048.png",
+			"gait": "Walk",
+			"phase": 0.206349958181151,
+			"sha256": "96f0b94f4e38cecd151c41c4df5984dc2a71220e61cc81c730669167183e6c12",
+			"state": "Move",
+			"time_seconds": 2.3
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0049.png",
+			"gait": "Walk",
+			"phase": 0.2222229575649,
+			"sha256": "bb3013df3fb580717302389c133c7ee3f7be9909bc0577a5efbb9a7fb9b38d8c",
+			"state": "Move",
+			"time_seconds": 2.31666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0050.png",
+			"gait": "Walk",
+			"phase": 0.238095956948649,
+			"sha256": "a50b2bc084ca5292372ac13951f6d41481395737d59c8f5c195b6c0f15fcd5d2",
+			"state": "Move",
+			"time_seconds": 2.33333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0051.png",
+			"gait": "Walk",
+			"phase": 0.253968956332398,
+			"sha256": "69f16792c70ec2b9dca75f54d440546ea2ff558e6ce22a9fe39deda3a300ff56",
+			"state": "Move",
+			"time_seconds": 2.35
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0052.png",
+			"gait": "Walk",
+			"phase": 0.269841955716147,
+			"sha256": "591b80c43c6d7cda569876f2565bd3f5427502cd0acf1bc3e0ae243af1f62f59",
+			"state": "Move",
+			"time_seconds": 2.36666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0053.png",
+			"gait": "Walk",
+			"phase": 0.285714955099896,
+			"sha256": "f81b4790f589ed8b4fca7e5120bf90bc3f1a7cbd46beac985a749cc0b5f2f0a2",
+			"state": "Move",
+			"time_seconds": 2.38333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0054.png",
+			"gait": "Walk",
+			"phase": 0.301587954483645,
+			"sha256": "96c486211534c23def4b185817bfaf49487e08a5f495564b6c7c8075db4d0689",
+			"state": "Move",
+			"time_seconds": 2.4
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0055.png",
+			"gait": "Walk",
+			"phase": 0.317460953867395,
+			"sha256": "14db9046ce7e62cd301481a70f1af946078b1868eed5188af32fbbd590596704",
+			"state": "Move",
+			"time_seconds": 2.41666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0056.png",
+			"gait": "Walk",
+			"phase": 0.333333953251144,
+			"sha256": "a5b7e208a07de1237fc2f522ae639516184ff8f9786873dd221e84edd89dd2a0",
+			"state": "Move",
+			"time_seconds": 2.43333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0057.png",
+			"gait": "Walk",
+			"phase": 0.349206952634893,
+			"sha256": "6069378c966d3e454e12492f7ebfeb7c7f4785bfeac70439b7fdb1d4dd4aa25f",
+			"state": "Move",
+			"time_seconds": 2.45
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0058.png",
+			"gait": "Walk",
+			"phase": 0.365079952018642,
+			"sha256": "1650d92638917f8585e6f86c347842b800e342c0b6bd3698c2b02ce694e7e0fa",
+			"state": "Move",
+			"time_seconds": 2.46666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0059.png",
+			"gait": "Walk",
+			"phase": 0.380952951402391,
+			"sha256": "437595ee30e8ad5d51b908031b1eb3e6b689b2e93e8cda2a4d33ccad2d42af27",
+			"state": "Move",
+			"time_seconds": 2.48333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0060.png",
+			"gait": "Walk",
+			"phase": 0.39682595078614,
+			"sha256": "e317fcecefcbad8f42ad7427634a32b1692c41d9a27143e5b593c00a432dc77f",
+			"state": "Move",
+			"time_seconds": 2.5
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0061.png",
+			"gait": "Walk",
+			"phase": 0.412698950169889,
+			"sha256": "e78ea9ece4445f971f06e9a0477d6549ea59011dc944a36220e294a85184588f",
+			"state": "Move",
+			"time_seconds": 2.51666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0062.png",
+			"gait": "Walk",
+			"phase": 0.428571949553638,
+			"sha256": "f253333dd300655368f595fd95212d01d8aa98fc75e4c87284c1443e7b4308bc",
+			"state": "Move",
+			"time_seconds": 2.53333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0063.png",
+			"gait": "Walk",
+			"phase": 0.444444948937387,
+			"sha256": "9a37c3dac7e75e75e4260458a8ab93fe44cfb5d037ad7e3eb0aa31f529d15305",
+			"state": "Move",
+			"time_seconds": 2.55
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0064.png",
+			"gait": "Walk",
+			"phase": 0.460317948321136,
+			"sha256": "0307541cdf3dd67ce8d2e4acef414d7b32a20163f9f6e8e9c81ac11320532541",
+			"state": "Move",
+			"time_seconds": 2.56666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0065.png",
+			"gait": "Walk",
+			"phase": 0.476190947704885,
+			"sha256": "7a0ee8c25c8989bb370d39a051efdec50fdc6f78c9c3590e259a3465dcf2ecfb",
+			"state": "Move",
+			"time_seconds": 2.58333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0066.png",
+			"gait": "Walk",
+			"phase": 0.492063947088634,
+			"sha256": "d3e37b652d7ed3cc1eecc8b0c6090d7c38142f4430099f71fe560bc18fb87f16",
+			"state": "Move",
+			"time_seconds": 2.6
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0067.png",
+			"gait": "Walk",
+			"phase": 0.507936946472384,
+			"sha256": "430af12a192898301f4e88c5697b6318c41cbc36c9cecdaf72655956bb37a865",
+			"state": "Move",
+			"time_seconds": 2.61666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0068.png",
+			"gait": "Walk",
+			"phase": 0.523809945856133,
+			"sha256": "fa3727b53cdfc8af22b942b663cba952d13043c1289729d849a125de05b6d917",
+			"state": "Move",
+			"time_seconds": 2.63333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0069.png",
+			"gait": "Walk",
+			"phase": 0.539682945239882,
+			"sha256": "407f74b2c23005c2e269978a4a3e7e342d7edc9a5eaebf35adfcd6aff6dd2b7f",
+			"state": "Move",
+			"time_seconds": 2.65
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0070.png",
+			"gait": "Walk",
+			"phase": 0.555555944623631,
+			"sha256": "263951cd685ccb280bc6a742604ae36f320343686cdc8bffa6dda3ba4092e293",
+			"state": "Move",
+			"time_seconds": 2.66666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0071.png",
+			"gait": "Walk",
+			"phase": 0.57142894400738,
+			"sha256": "f6a55dc865feea83f538e995f5b749ff7647d764ce3143e722b66d69236aacf5",
+			"state": "Move",
+			"time_seconds": 2.68333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0072.png",
+			"gait": "Walk",
+			"phase": 0.587301943391129,
+			"sha256": "69e5183aa05fc0c45604a326fcf1d6e7a766fed1c1b009424ecee3bf8f246298",
+			"state": "Move",
+			"time_seconds": 2.7
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0073.png",
+			"gait": "Walk",
+			"phase": 0.603174942774878,
+			"sha256": "a8119362a83afaba0168aa6505fd072a0c4738d4de5d20c7de71e2f0de804809",
+			"state": "Move",
+			"time_seconds": 2.71666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0074.png",
+			"gait": "Walk",
+			"phase": 0.619047942158627,
+			"sha256": "9bb273dd2e544150dc4a9d063228a9c3069c77694600238dd048ccb7e4fe62f2",
+			"state": "Move",
+			"time_seconds": 2.73333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0075.png",
+			"gait": "Walk",
+			"phase": 0.634920941542376,
+			"sha256": "a8305de4a40f94b668825df3b02cb7cb3cb3b720d8523b94184fb7bd2af3c109",
+			"state": "Move",
+			"time_seconds": 2.75
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0076.png",
+			"gait": "Walk",
+			"phase": 0.650793940926125,
+			"sha256": "8c499c76e20a3cd92631064113011fb266b6097f6007dc7b921e2845281f5b79",
+			"state": "Move",
+			"time_seconds": 2.76666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0077.png",
+			"gait": "Walk",
+			"phase": 0.666666940309874,
+			"sha256": "4a4950f2221dadf5638ced62337226a170375601b5c4ffb590fe618f4c3cbb01",
+			"state": "Move",
+			"time_seconds": 2.78333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0078.png",
+			"gait": "Walk",
+			"phase": 0.682539939693623,
+			"sha256": "b1f0616e80ced36a07b9fbff96cd434c3b41e5f592fd22ea4a009265071308a2",
+			"state": "Move",
+			"time_seconds": 2.8
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0079.png",
+			"gait": "Walk",
+			"phase": 0.698412939077373,
+			"sha256": "4c3b09684aa24665d0617b7da1379d72ee296c3363f242bc4bfb0b5cbc2e9a06",
+			"state": "Move",
+			"time_seconds": 2.81666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0080.png",
+			"gait": "Walk",
+			"phase": 0.714285938461122,
+			"sha256": "00084ce08b1ba77c24e0949d330fb469500f8c51a2ace9458886eb2333c00494",
+			"state": "Move",
+			"time_seconds": 2.83333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0081.png",
+			"gait": "Walk",
+			"phase": 0.730158937844871,
+			"sha256": "3d865de7351dd76e265a60119018dc98685221cbccda4ac52f6d9097bd313aa4",
+			"state": "Move",
+			"time_seconds": 2.85
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0082.png",
+			"gait": "Walk",
+			"phase": 0.74603193722862,
+			"sha256": "75d69eb082faaf28401dcab8946c92330a3205dd467b3946505918ccb93977cf",
+			"state": "Move",
+			"time_seconds": 2.86666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0083.png",
+			"gait": "Walk",
+			"phase": 0.761904936612369,
+			"sha256": "b33e79d4eb7e7dff22507a1a218ea53ec36b1b26dcdd9b025460aad9e8118218",
+			"state": "Move",
+			"time_seconds": 2.88333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0084.png",
+			"gait": "Walk",
+			"phase": 0.777777935996118,
+			"sha256": "7adf9a78fcc08ab9dfb7f0def417cf4f42c686853d191e30abb4e9287abbb007",
+			"state": "Move",
+			"time_seconds": 2.9
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0085.png",
+			"gait": "Walk",
+			"phase": 0.793650935379867,
+			"sha256": "1f909cf3e7e754f4b4dfd2e437f6c40ef1ad03123d293fc01df42fa851e7f6df",
+			"state": "Move",
+			"time_seconds": 2.91666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0086.png",
+			"gait": "Walk",
+			"phase": 0.809523934763616,
+			"sha256": "bb92461d10be70d057f9d7b3c035b0a82404a3ea06f780ab20b27cbec61fc4b2",
+			"state": "Move",
+			"time_seconds": 2.93333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0087.png",
+			"gait": "Walk",
+			"phase": 0.825396934147365,
+			"sha256": "a388e0a603f15c16cc14122b1aab79ef322b1caf3da3736138bb355d396f6359",
+			"state": "Move",
+			"time_seconds": 2.95
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0088.png",
+			"gait": "Walk",
+			"phase": 0.841269933531114,
+			"sha256": "5bea3ef73905589effd681a5d65c0da8696bb612586f0a5d86e81b8bd495481f",
+			"state": "Move",
+			"time_seconds": 2.96666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0089.png",
+			"gait": "Walk",
+			"phase": 0.857142932914863,
+			"sha256": "1c54658271ce3e956fd26a48ed1c96c4ebe21ed33958f59f8ea051a675b7eea3",
+			"state": "Move",
+			"time_seconds": 2.98333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0090.png",
+			"gait": "Walk",
+			"phase": 0.873015932298613,
+			"sha256": "ed6fb87d9767f832f8a17cb860efba92c34098f6a4e8af7df56fddaae4844e2c",
+			"state": "Move",
+			"time_seconds": 3.0
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0091.png",
+			"gait": "Walk",
+			"phase": 0.888888931682362,
+			"sha256": "63f8175083257929a82a792ab964091e4f0723458ab1e46af342c421ce01060b",
+			"state": "Move",
+			"time_seconds": 3.01666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0092.png",
+			"gait": "Walk",
+			"phase": 0.904761931066111,
+			"sha256": "cf0222336e996c15385c5d3ae7873ed2212720703ef1c4c1523812b94439e897",
+			"state": "Move",
+			"time_seconds": 3.03333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0093.png",
+			"gait": "Walk",
+			"phase": 0.92063493044986,
+			"sha256": "17548a5f5ad82641aeb86d64a8dabb4a86aac33bc045710e0c843304b8de631d",
+			"state": "Move",
+			"time_seconds": 3.05
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0094.png",
+			"gait": "Walk",
+			"phase": 0.936507929833609,
+			"sha256": "14f86a8be6e0b3303c408cffb063f2dacb1f5d6508d5c4e9bcb6987744ac5af6",
+			"state": "Move",
+			"time_seconds": 3.06666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0095.png",
+			"gait": "Walk",
+			"phase": 0.952380929217358,
+			"sha256": "b5ff1a38a01927559c80dddbd605494c8aa7bbcb421a7c646d47e5fdb0dc7c38",
+			"state": "Move",
+			"time_seconds": 3.08333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0096.png",
+			"gait": "Walk",
+			"phase": 0.968253928601107,
+			"sha256": "4ad61fdba2c5b4b8667ce72337f2341f889b5bb7626e6a37724744e2585261f1",
+			"state": "Move",
+			"time_seconds": 3.1
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0097.png",
+			"gait": "Walk",
+			"phase": 0.984126927984856,
+			"sha256": "8a09b2a68bf5f6a4be2ac43afc37b039a10aaa934cf6c5b6b916fe02b4605908",
+			"state": "Move",
+			"time_seconds": 3.11666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0098.png",
+			"gait": "Walk",
+			"phase": 0.999999927368605,
+			"sha256": "e0dbfef43d5f5ec065e2dedcf81eb6633d0d3fa5c3ad316b9eb35995c3e6bce1",
+			"state": "Move",
+			"time_seconds": 3.13333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0099.png",
+			"gait": "Walk",
+			"phase": 0.0158729267523543,
+			"sha256": "3b6e7a08c103f5e3bf57046dc49a26d69c2422a27f0e7147b039957914703879",
+			"state": "Move",
+			"time_seconds": 3.15
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0100.png",
+			"gait": "Walk",
+			"phase": 0.0317459261361034,
+			"sha256": "9928568f11acae409cf1065184e6458bb8048bffe6df0f68804789d906c5d052",
+			"state": "Move",
+			"time_seconds": 3.16666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0101.png",
+			"gait": "Walk",
+			"phase": 0.0476189255198524,
+			"sha256": "96784f4821a65319401b0416ccc292b7cbf7add36c6acfc31b032c49bdd6d45e",
+			"state": "Move",
+			"time_seconds": 3.18333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0102.png",
+			"gait": "Walk",
+			"phase": 0.0634919249036015,
+			"sha256": "affa207688c6d10042aeae314678732282973ff96e82a71b1db05ead8d0fb6e3",
+			"state": "Move",
+			"time_seconds": 3.2
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0103.png",
+			"gait": "Walk",
+			"phase": 0.0793649242873506,
+			"sha256": "6228d9be2bf1b824810dbf2176fc91641dcd738f171a7e35e37868e9451353fb",
+			"state": "Move",
+			"time_seconds": 3.21666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0104.png",
+			"gait": "Walk",
+			"phase": 0.0952379236710996,
+			"sha256": "413737025c0af18b708f0db5b2ca91ba242d98611a44ef9bf8d7b6bd3475989c",
+			"state": "Move",
+			"time_seconds": 3.23333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0105.png",
+			"gait": "Walk",
+			"phase": 0.111110923054849,
+			"sha256": "76343e1d0fd5ec4dad5c4e1cd8049c70ec8479ba2fa1d5ac162a9b9690bdb215",
+			"state": "Move",
+			"time_seconds": 3.25
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0106.png",
+			"gait": "Walk",
+			"phase": 0.126983922438598,
+			"sha256": "348bd0df87dc3c238dfc7299b8ebb955445b0cbcf6faa15a92633213ecc3dec9",
+			"state": "Move",
+			"time_seconds": 3.26666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0107.png",
+			"gait": "Walk",
+			"phase": 0.142856921822347,
+			"sha256": "2c654a1bd45a98922cf6000f98a258f11acfc485eaee2cba3f1e2b17eabfaf72",
+			"state": "Move",
+			"time_seconds": 3.28333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0108.png",
+			"gait": "Walk",
+			"phase": 0.158729921206096,
+			"sha256": "428d60126630a51fa99ab546fee22d630ffe226197bde61a12ff7e6468cdf18f",
+			"state": "Move",
+			"time_seconds": 3.3
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0109.png",
+			"gait": "Walk",
+			"phase": 0.174602920589845,
+			"sha256": "052627dc3b9b094bc8b1a0e235a8b393e807a7b796f290fc5bdf8963f6307eac",
+			"state": "Move",
+			"time_seconds": 3.31666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0110.png",
+			"gait": "Walk",
+			"phase": 0.190475919973594,
+			"sha256": "e0d104ed20e5c4aa25033930e16855d29177394684f3da9c12d1f6e445eb316e",
+			"state": "Move",
+			"time_seconds": 3.33333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0111.png",
+			"gait": "Walk",
+			"phase": 0.206348919357343,
+			"sha256": "62f5fe3954b766fd9f090f4dd3c5bd7aa8a9e4b0ed242874de06e42287983e87",
+			"state": "Move",
+			"time_seconds": 3.35
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0112.png",
+			"gait": "Walk",
+			"phase": 0.222221918741092,
+			"sha256": "2b47a21792dbd477d4bbb7f188748dd97654a6729d7bb6a164199dc64a59799b",
+			"state": "Move",
+			"time_seconds": 3.36666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0113.png",
+			"gait": "Walk",
+			"phase": 0.238094918124841,
+			"sha256": "5a804e69d1fea28fa305a74b00fc884600622e4c29eae6ac2a682906fb5574ad",
+			"state": "Move",
+			"time_seconds": 3.38333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0114.png",
+			"gait": "Walk",
+			"phase": 0.25396791750859,
+			"sha256": "452a711fee59253a900ff6e82f93374c8813112ef766a2bc88a29a9bf59cfc7c",
+			"state": "Move",
+			"time_seconds": 3.4
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0115.png",
+			"gait": "Walk",
+			"phase": 0.269840935904554,
+			"sha256": "fef1ff6a449483eb1f445d5632c79721ed147efece7e620133a8827dab399b0a",
+			"state": "Move",
+			"time_seconds": 3.41666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0116.png",
+			"gait": "Walk",
+			"phase": 0.285713954300517,
+			"sha256": "edea174a972fc0a0ba036bc7066c2f04992b3e21217b0ca70a463f2d67d2456b",
+			"state": "Move",
+			"time_seconds": 3.43333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0117.png",
+			"gait": "Walk",
+			"phase": 0.301586972696481,
+			"sha256": "957ed71dcbddfd70249a64c9d896f38137495f85eae975dc22683703d3837c06",
+			"state": "Move",
+			"time_seconds": 3.45
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0118.png",
+			"gait": "Walk",
+			"phase": 0.317459991092445,
+			"sha256": "37d82044948092376f922231b29ab75bf181a404cb31a719526ca5745680f60e",
+			"state": "Move",
+			"time_seconds": 3.46666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0119.png",
+			"gait": "Walk",
+			"phase": 0.333333009488408,
+			"sha256": "4e06871e5c22714c6faf81752980bd348a9f36f61f6a092f6aab4400abd96756",
+			"state": "Move",
+			"time_seconds": 3.48333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0120.png",
+			"gait": "Walk",
+			"phase": 0.349206027884372,
+			"sha256": "f32891936da1c2226282dcf93dfb1b6c53b75bdea0679450dbcece25978556ab",
+			"state": "Move",
+			"time_seconds": 3.5
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0121.png",
+			"gait": "Walk",
+			"phase": 0.365079046280335,
+			"sha256": "0662bf9f5ec6293e19bec8ec47315f1a267d24a9f6bcd7464555562c730e3497",
+			"state": "Move",
+			"time_seconds": 3.51666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0122.png",
+			"gait": "Walk",
+			"phase": 0.380952064676299,
+			"sha256": "3d96bd309a2c58d852d2fea81cc66058f21813aec8c46f28781639cd23a66e9d",
+			"state": "Move",
+			"time_seconds": 3.53333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0123.png",
+			"gait": "Walk",
+			"phase": 0.396825083072263,
+			"sha256": "f8541851dfe8052552485c2c6b2face4ab947bf7b58e2f93fc920ae061c8dfd1",
+			"state": "Move",
+			"time_seconds": 3.55
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0124.png",
+			"gait": "Walk",
+			"phase": 0.412698101468226,
+			"sha256": "e30e5017365993fadabb6bd806c4abdba1a1b43b71a131ea9ae510064bd0a845",
+			"state": "Move",
+			"time_seconds": 3.56666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0125.png",
+			"gait": "Walk",
+			"phase": 0.42857111986419,
+			"sha256": "b2cf2167dd2eb451edc9dadafcd5fcaa7c66c91fb41ebb7969d15b8dc2694f55",
+			"state": "Move",
+			"time_seconds": 3.58333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Walk_0126.png",
+			"gait": "Walk",
+			"phase": 0.444444138260154,
+			"sha256": "ed23adbd923532f53087943b155e9f21aacefd042343caa79496ce4eca20dc44",
+			"state": "Move",
+			"time_seconds": 3.6
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0001.png",
+			"gait": "Jog",
+			"phase": 0.814646455720106,
+			"sha256": "d0ee1b2b4d5cbb311aeb92fbe9d2d01e963d7b868b2b1163c702ca4a7ffa9b80",
+			"state": "Move",
+			"time_seconds": 4.61666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0002.png",
+			"gait": "Jog",
+			"phase": 0.838455967162673,
+			"sha256": "f406ea117419d53553d430a4ffb5614f232bfa56a4da4c558408cedeb5aa35f9",
+			"state": "Move",
+			"time_seconds": 4.63333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0003.png",
+			"gait": "Jog",
+			"phase": 0.86226547860524,
+			"sha256": "fe522f947ac3e6492eb7547dc834deb6e4e649600a95cdbbeb5187d443cd9692",
+			"state": "Move",
+			"time_seconds": 4.65
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0004.png",
+			"gait": "Jog",
+			"phase": 0.886074990047808,
+			"sha256": "6999477c0a961cdb0054a36e93fb6cc8ba56fad497e82e3d4c14531bb28998c5",
+			"state": "Move",
+			"time_seconds": 4.66666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0005.png",
+			"gait": "Jog",
+			"phase": 0.909884501490375,
+			"sha256": "9da6d0f3a1154c7f3b241a3e5d4dbb498c7e3aab9c82b16f6508cc2f475bf255",
+			"state": "Move",
+			"time_seconds": 4.68333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0006.png",
+			"gait": "Jog",
+			"phase": 0.933694012932942,
+			"sha256": "d3df1738abd3acaaba1e3209c675074071d2a79887defe72afcef1ad21c1698c",
+			"state": "Move",
+			"time_seconds": 4.7
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0007.png",
+			"gait": "Jog",
+			"phase": 0.957503524375509,
+			"sha256": "1202e2addfbc71cf76ced4f70542a662c563d4ce57e7d056a93447ae45ebf26f",
+			"state": "Move",
+			"time_seconds": 4.71666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0008.png",
+			"gait": "Jog",
+			"phase": 0.981313035818077,
+			"sha256": "b9baa782fb340d2dcfade0348ce3cf9b1483a1a00b20b8a76547c63a623bf663",
+			"state": "Move",
+			"time_seconds": 4.73333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0009.png",
+			"gait": "Jog",
+			"phase": 0.00512254726064398,
+			"sha256": "cc44bd6676688b91fd0bd41045a2e3e6a12d0f2718fb01f9705afd2198368f89",
+			"state": "Move",
+			"time_seconds": 4.75
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0010.png",
+			"gait": "Jog",
+			"phase": 0.0289320587032113,
+			"sha256": "dada9ad95f3406ddabab97301adad397b2dadcf2334d82b5a8db0fc5c8f9f49d",
+			"state": "Move",
+			"time_seconds": 4.76666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0011.png",
+			"gait": "Jog",
+			"phase": 0.0527415701457785,
+			"sha256": "5ed26bfb75e1324944b89a2838d6205239c741c0c624cfd892c7d71443ffa41e",
+			"state": "Move",
+			"time_seconds": 4.78333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0012.png",
+			"gait": "Jog",
+			"phase": 0.0765510815883458,
+			"sha256": "890b5efc9c73aeb7a16cc82fcaf721ac3e28a3ab7392c07406c81d434c3a5837",
+			"state": "Move",
+			"time_seconds": 4.8
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0013.png",
+			"gait": "Jog",
+			"phase": 0.100360593030913,
+			"sha256": "01293691c74c13914231f5550b08aaeac9ca85e4d7fdffcf3d3feb62363aeb5f",
+			"state": "Move",
+			"time_seconds": 4.81666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0014.png",
+			"gait": "Jog",
+			"phase": 0.12417010447348,
+			"sha256": "097f207ff52ebdb79eb60ad01b1bf8bf7e71cecb5414d074f6b7d332f541a493",
+			"state": "Move",
+			"time_seconds": 4.83333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0015.png",
+			"gait": "Jog",
+			"phase": 0.147979615916048,
+			"sha256": "a9f6dfca72e46231a04a946d67d7140b458e1b148b5a343ef4e333bcd5a2e05d",
+			"state": "Move",
+			"time_seconds": 4.85
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0016.png",
+			"gait": "Jog",
+			"phase": 0.171789127358615,
+			"sha256": "147b0aae7e1a63dfae1a72367d4b7d01d708e14d0fe685a6d8f9930b14834295",
+			"state": "Move",
+			"time_seconds": 4.86666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0017.png",
+			"gait": "Jog",
+			"phase": 0.195598638801182,
+			"sha256": "a72ec061752f98c5cea1bb106fd71ca2af73238478f8eaf3e45299549b5042d5",
+			"state": "Move",
+			"time_seconds": 4.88333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0018.png",
+			"gait": "Jog",
+			"phase": 0.219408150243749,
+			"sha256": "4a5e9a534fd787037fd0b5a8561925c7b1c3ca31e3793c1a5fe56c7f2967067a",
+			"state": "Move",
+			"time_seconds": 4.9
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0019.png",
+			"gait": "Jog",
+			"phase": 0.243217661686317,
+			"sha256": "edfff07c97d2963a0fafb51f9fab5d62528e604a3fbdb324428bea367a6f69eb",
+			"state": "Move",
+			"time_seconds": 4.91666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0020.png",
+			"gait": "Jog",
+			"phase": 0.267027173128884,
+			"sha256": "5b8d339b30920c5f5262db129b0bfb2eb03d644a614e83c37c5ae11c215cdda1",
+			"state": "Move",
+			"time_seconds": 4.93333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0021.png",
+			"gait": "Jog",
+			"phase": 0.290836684571451,
+			"sha256": "bcc5d1b10cca0cb5fb955842e53515e1ecfb6977e68974134a452f7c36782182",
+			"state": "Move",
+			"time_seconds": 4.95
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0022.png",
+			"gait": "Jog",
+			"phase": 0.314646196014018,
+			"sha256": "987eb1ed19010ece06253e31d5e775e7f55d88e83a67d173a195d59cc44fa5a8",
+			"state": "Move",
+			"time_seconds": 4.96666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0023.png",
+			"gait": "Jog",
+			"phase": 0.338455707456586,
+			"sha256": "c3c23e7bc97916ff6fd68de3f6fcace6aa9b4432a567a75c700445efeaebef9f",
+			"state": "Move",
+			"time_seconds": 4.98333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0024.png",
+			"gait": "Jog",
+			"phase": 0.362265218899153,
+			"sha256": "941d9dd6370ba208dee836ed1a92f36ca41a66ad410fc8ac835a49ba3d028b04",
+			"state": "Move",
+			"time_seconds": 5.0
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0025.png",
+			"gait": "Jog",
+			"phase": 0.38607473034172,
+			"sha256": "df84c15d553cc84024bd4525c36ee30791a8cd1bfe69d7f7ab2620788237f6c7",
+			"state": "Move",
+			"time_seconds": 5.01666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0026.png",
+			"gait": "Jog",
+			"phase": 0.409884241784288,
+			"sha256": "e9427142c122faef913ac31d2130864e56b51b1d38feb565ed8106f834652bf1",
+			"state": "Move",
+			"time_seconds": 5.03333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0027.png",
+			"gait": "Jog",
+			"phase": 0.433693753226855,
+			"sha256": "a8d8cd3a92b64256cdf27b63a13883b22a4e38f6bc906b58be5e0a2e413eebf0",
+			"state": "Move",
+			"time_seconds": 5.05
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0028.png",
+			"gait": "Jog",
+			"phase": 0.457503264669422,
+			"sha256": "fd9125b34889b3417a2fbf399f13acd1161dcbff3a6d7fa17d1a535d82713b9e",
+			"state": "Move",
+			"time_seconds": 5.06666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0029.png",
+			"gait": "Jog",
+			"phase": 0.481312776111989,
+			"sha256": "66ec3932c8d3bc3558990c0fa232760e2da9cb3cae55b8b6a7b1435edc5e951d",
+			"state": "Move",
+			"time_seconds": 5.08333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0030.png",
+			"gait": "Jog",
+			"phase": 0.505122287554557,
+			"sha256": "d133090cedd3f9df7845c20421958a5dcbfb67b0a85880fc9a2f5e0076ead50b",
+			"state": "Move",
+			"time_seconds": 5.1
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0031.png",
+			"gait": "Jog",
+			"phase": 0.528931798997124,
+			"sha256": "38a4c16e9630a5495c5164ada7fe857b9bcdf5c6487d1318fd40de26cc67ce0b",
+			"state": "Move",
+			"time_seconds": 5.11666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0032.png",
+			"gait": "Jog",
+			"phase": 0.552741310439691,
+			"sha256": "f91f591fbd48a05524b26838f87ff5ac49535e8b53724516041e83520eb5a385",
+			"state": "Move",
+			"time_seconds": 5.13333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0033.png",
+			"gait": "Jog",
+			"phase": 0.576550821882258,
+			"sha256": "c9f6e88ea8ea7cd9e1834f140b63ef66c604cc3124af0f16dfcb9c22209b0694",
+			"state": "Move",
+			"time_seconds": 5.15
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0034.png",
+			"gait": "Jog",
+			"phase": 0.600360333324826,
+			"sha256": "b40def837f6fd56b6e0d612c10b2c39115b69f377550f55deb20f11e513961c4",
+			"state": "Move",
+			"time_seconds": 5.16666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0035.png",
+			"gait": "Jog",
+			"phase": 0.624169844767393,
+			"sha256": "f9750d70df4a3164b718149f464f09efc65b60cc3c47a2d25e2d8c49870f7fa4",
+			"state": "Move",
+			"time_seconds": 5.18333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0036.png",
+			"gait": "Jog",
+			"phase": 0.64797935620996,
+			"sha256": "208c80e37fccd8aec931d1db447e2ca87a5f57a640bb8b91cc49fbe9769463b4",
+			"state": "Move",
+			"time_seconds": 5.2
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0037.png",
+			"gait": "Jog",
+			"phase": 0.671788867652528,
+			"sha256": "5dd005103c1d28be40bc4e43f322c9c136d2651c59d0b69ee1acbea97fb7cf93",
+			"state": "Move",
+			"time_seconds": 5.21666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0038.png",
+			"gait": "Jog",
+			"phase": 0.695598379095095,
+			"sha256": "a6424e81d7a2ae63b3b4027e06f1eee2fb0ec821319cfe516914cdc0707be652",
+			"state": "Move",
+			"time_seconds": 5.23333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0039.png",
+			"gait": "Jog",
+			"phase": 0.719407890537662,
+			"sha256": "a7d44e1e581c06d2e07fe076882ac9088f51c44736b2db3247a39feee9981159",
+			"state": "Move",
+			"time_seconds": 5.25
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0040.png",
+			"gait": "Jog",
+			"phase": 0.743217401980229,
+			"sha256": "c4364dc07008bae71d83b801b83318ccd230d2b9907111f0e4efd1c5cc828782",
+			"state": "Move",
+			"time_seconds": 5.26666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0041.png",
+			"gait": "Jog",
+			"phase": 0.767026913422797,
+			"sha256": "48c2ad277e23e24342d40b8c182218e2657eff1d856b9cf60034fe0a6afdd124",
+			"state": "Move",
+			"time_seconds": 5.28333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0042.png",
+			"gait": "Jog",
+			"phase": 0.790836424865364,
+			"sha256": "712d51e9045bf8f037d8732edffb65b07d433d703b9a5594514f6242d0d6d647",
+			"state": "Move",
+			"time_seconds": 5.3
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0043.png",
+			"gait": "Jog",
+			"phase": 0.814645936307931,
+			"sha256": "e48adf019b6d3e01d819c830e22711a2c71366df6e14381178b9b591ef0339b1",
+			"state": "Move",
+			"time_seconds": 5.31666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0044.png",
+			"gait": "Jog",
+			"phase": 0.838455447750498,
+			"sha256": "f35770d7f7892b3df123c9bc069c34bb7c2ac7222aa6043b22c4110c810f6a30",
+			"state": "Move",
+			"time_seconds": 5.33333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0045.png",
+			"gait": "Jog",
+			"phase": 0.862264959193066,
+			"sha256": "3891259d7127154e8920069b30f7b15111c6aec339effe2194ddeda1864dfd22",
+			"state": "Move",
+			"time_seconds": 5.35
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0046.png",
+			"gait": "Jog",
+			"phase": 0.886074470635633,
+			"sha256": "c922026dee44a1cf9eabe62b36d6f5cebd41aafb3e8e1776b276c2281c46d0c7",
+			"state": "Move",
+			"time_seconds": 5.36666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0047.png",
+			"gait": "Jog",
+			"phase": 0.9098839820782,
+			"sha256": "c4c1235ea85ffa867b7dfd6c73f6aae84e34724329c80fe4653bc5f834620961",
+			"state": "Move",
+			"time_seconds": 5.38333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0048.png",
+			"gait": "Jog",
+			"phase": 0.933693493520767,
+			"sha256": "c701dfd088b63d39d8555287727f4b5cde14a24a159a6934add1d52840a0c7c9",
+			"state": "Move",
+			"time_seconds": 5.4
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0049.png",
+			"gait": "Jog",
+			"phase": 0.957503004963335,
+			"sha256": "ce8fad6d4104d70f783ab9dbcad9e541dbd7ff8f7d15b59dd6a8b2de97def269",
+			"state": "Move",
+			"time_seconds": 5.41666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0050.png",
+			"gait": "Jog",
+			"phase": 0.981312516405902,
+			"sha256": "3e4f19579f7c7927bf5b519922474c2035c77cc87b36bb0c55ef141b48e0b712",
+			"state": "Move",
+			"time_seconds": 5.43333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0051.png",
+			"gait": "Jog",
+			"phase": 0.00512202784846938,
+			"sha256": "033c47656f9100c11f9d87ead04aae10d2fe761140c2fd1a663e25fb4c8c2892",
+			"state": "Move",
+			"time_seconds": 5.45
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0052.png",
+			"gait": "Jog",
+			"phase": 0.0289315392910367,
+			"sha256": "5529f2ff2a7028001f868063647f43e5c65124b87507feac1ffcad98ff2fcf63",
+			"state": "Move",
+			"time_seconds": 5.46666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0053.png",
+			"gait": "Jog",
+			"phase": 0.0527410507336039,
+			"sha256": "f906956dd7f69476bcc53f22a1b67aacae13ee1a0e1774e9ece7737a2be03e68",
+			"state": "Move",
+			"time_seconds": 5.48333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0054.png",
+			"gait": "Jog",
+			"phase": 0.0765505621761712,
+			"sha256": "8d0df1f5e2698171df4096cfdeab53c65de6f677560a9bd022228717b85ca780",
+			"state": "Move",
+			"time_seconds": 5.5
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0055.png",
+			"gait": "Jog",
+			"phase": 0.100360073618738,
+			"sha256": "6ea41f88c86a07d68636007f3cbaea20d5f16dc199a3f3afdd3b64a7ce65a425",
+			"state": "Move",
+			"time_seconds": 5.51666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0056.png",
+			"gait": "Jog",
+			"phase": 0.124169585061306,
+			"sha256": "1dacb50d65151d12b232c539456400cca21c59b21a557deb1209f4bcf638e510",
+			"state": "Move",
+			"time_seconds": 5.53333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0057.png",
+			"gait": "Jog",
+			"phase": 0.147979096503873,
+			"sha256": "8ae3217536fc52f86361277aa871b43a2ef26053afdc6c3cb8062bae1b2be42a",
+			"state": "Move",
+			"time_seconds": 5.55
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0058.png",
+			"gait": "Jog",
+			"phase": 0.17178860794644,
+			"sha256": "4743c2193767466f367d9bfe29649215aa4c5816e212ee50a415f174109c3539",
+			"state": "Move",
+			"time_seconds": 5.56666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0059.png",
+			"gait": "Jog",
+			"phase": 0.195598119389008,
+			"sha256": "c01ad6dcb3da429f962d1ac9dd0a0173533aeb88c49ecda0cf1fe454cf383ce7",
+			"state": "Move",
+			"time_seconds": 5.58333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0060.png",
+			"gait": "Jog",
+			"phase": 0.219407630831575,
+			"sha256": "a68ee2215cad751b1cb3ff4dd30b1fdc6b728b5508c7fa2f12612bcd8740d14b",
+			"state": "Move",
+			"time_seconds": 5.6
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0061.png",
+			"gait": "Jog",
+			"phase": 0.243217142274142,
+			"sha256": "ed5cd1d32a26d07f293ff1e336d7517753b3d06e8d98da645a64acc55e2a63ad",
+			"state": "Move",
+			"time_seconds": 5.61666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0062.png",
+			"gait": "Jog",
+			"phase": 0.267026653716709,
+			"sha256": "a4861067c8dd7649a9e6c91c654fb2f917a81d6b33155e3d3028e0f69fa181b2",
+			"state": "Move",
+			"time_seconds": 5.63333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0063.png",
+			"gait": "Jog",
+			"phase": 0.290836165159277,
+			"sha256": "3fc27057bb117905553b889afa7c2123e91c14cf0e93fbbcf0b84855eb017fc0",
+			"state": "Move",
+			"time_seconds": 5.65
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0064.png",
+			"gait": "Jog",
+			"phase": 0.314645676601844,
+			"sha256": "48cca3c741cd0ebd5c1e9340433a6e44183aee4ea10c760742421dcbc51e142d",
+			"state": "Move",
+			"time_seconds": 5.66666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0065.png",
+			"gait": "Jog",
+			"phase": 0.338455188044411,
+			"sha256": "c3dda2d871fce380adf8e40382d998a041b6f40e3a6bf4c92abed0caba7406a0",
+			"state": "Move",
+			"time_seconds": 5.68333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0066.png",
+			"gait": "Jog",
+			"phase": 0.362264699486978,
+			"sha256": "75d0013844073d601bb91ddc9f369ccfedd9098e3439948c564fb2f22943cb41",
+			"state": "Move",
+			"time_seconds": 5.7
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0067.png",
+			"gait": "Jog",
+			"phase": 0.386074210929546,
+			"sha256": "273124bb38d890c0d5b09f014c8901c4df9f657566896a7654e137c047377d88",
+			"state": "Move",
+			"time_seconds": 5.71666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0068.png",
+			"gait": "Jog",
+			"phase": 0.409883722372113,
+			"sha256": "71ad3cafa5388f1cf3ce126230f10728cbcdee17448d20d14cda24cd284fc72f",
+			"state": "Move",
+			"time_seconds": 5.73333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0069.png",
+			"gait": "Jog",
+			"phase": 0.43369323381468,
+			"sha256": "79c856b64cbc64ad4d26837780e4a5587e9f7ec994062816c55c0aa0a465cc2e",
+			"state": "Move",
+			"time_seconds": 5.75
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0070.png",
+			"gait": "Jog",
+			"phase": 0.457502745257247,
+			"sha256": "4358c599bb95c606c7122c47411f12925522b0e14bc3c81b756cd58811b08497",
+			"state": "Move",
+			"time_seconds": 5.76666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0071.png",
+			"gait": "Jog",
+			"phase": 0.481312256699815,
+			"sha256": "09db5a6efc9abaaf0c672ea15079dc980f611827ecc5a15482afddd2749f3f00",
+			"state": "Move",
+			"time_seconds": 5.78333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0072.png",
+			"gait": "Jog",
+			"phase": 0.505121768142382,
+			"sha256": "42d98209f9e9805f9b14d3ca3224a9bcd309b6640c98c300577621b9a56d2a56",
+			"state": "Move",
+			"time_seconds": 5.8
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0073.png",
+			"gait": "Jog",
+			"phase": 0.528931279584949,
+			"sha256": "d8e17a1d6ab9ac98b06ec245b46a00027b1e9bbffcc67662ead36a2443ab3013",
+			"state": "Move",
+			"time_seconds": 5.81666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0074.png",
+			"gait": "Jog",
+			"phase": 0.552740791027517,
+			"sha256": "79348baad1bf33aa3e1fe8f6323d671f56f3b57a3d4ddf8cb81c55bb23b7cbf7",
+			"state": "Move",
+			"time_seconds": 5.83333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0075.png",
+			"gait": "Jog",
+			"phase": 0.576550302470084,
+			"sha256": "08e3f564a799d1f005c975b7239116b00fdd4886fb4b630fa66538b48dad0023",
+			"state": "Move",
+			"time_seconds": 5.85
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0076.png",
+			"gait": "Jog",
+			"phase": 0.600359813912651,
+			"sha256": "03c51561f9b8c30a7c95134e5129601d994393d656be76730c092d5060c3af97",
+			"state": "Move",
+			"time_seconds": 5.86666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0077.png",
+			"gait": "Jog",
+			"phase": 0.624169325355218,
+			"sha256": "2f62dfa65c83212804df6f3f8c4207e7dd2e13fdd38ccf70368cd51afb244807",
+			"state": "Move",
+			"time_seconds": 5.88333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0078.png",
+			"gait": "Jog",
+			"phase": 0.647978836797786,
+			"sha256": "e75a2a308c9e8ffb48c74de505029bbd49c5ec981fec5b34eee7ee51bd92eb90",
+			"state": "Move",
+			"time_seconds": 5.9
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0079.png",
+			"gait": "Jog",
+			"phase": 0.671788348240353,
+			"sha256": "b2ff0963e0dfb2e18ac6e3ced4ff9a61c5ad359addf68b680698d57b743f9132",
+			"state": "Move",
+			"time_seconds": 5.91666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0080.png",
+			"gait": "Jog",
+			"phase": 0.69559785968292,
+			"sha256": "fe765a0b9d26ffbdc9f4d878e129d07725159db03ee4033f2363e80e66f0aa2d",
+			"state": "Move",
+			"time_seconds": 5.93333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0081.png",
+			"gait": "Jog",
+			"phase": 0.719407371125487,
+			"sha256": "4a59b4d53aa31733a190dbb05827350cfc1fca6e4560f5d79c3fa1e8128e3c86",
+			"state": "Move",
+			"time_seconds": 5.95
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0082.png",
+			"gait": "Jog",
+			"phase": 0.743216882568055,
+			"sha256": "8a607ed2312169dbe7fc2cb7c8abe9425159c708279bfdf31c55fbe03d7c3a5f",
+			"state": "Move",
+			"time_seconds": 5.96666666666667
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0083.png",
+			"gait": "Jog",
+			"phase": 0.767026394010622,
+			"sha256": "03315843d591841061d5188f4121261484a1e4030cb2b08fa2ea2485e64572b0",
+			"state": "Move",
+			"time_seconds": 5.98333333333333
+		},
+		{
+			"file": "res://reports/captures/contact_feet/Jog_0084.png",
+			"gait": "Jog",
+			"phase": 0.790835905453189,
+			"sha256": "d0b119bcd42a1fbb27049fb184ec83f4503517f7fa71dcf403fa0aad25d737fe",
+			"state": "Move",
+			"time_seconds": 6.0
+		}
+	],
+	"godot": "4.7.2-stable (official)",
+	"mode": "steady_gait_feet",
+	"physics_hz": 60,
+	"sequence": "Walk: settle 1.5s then 2 cycles; Jog: settle 1s then 2 cycles.",
+	"sha256": {
+		"addons/walkers/animation_driver.gd": "02e343cd89c90ece8047ace6f84b8c10a7c0d774e4c29db378090f2aac5ecb0f",
+		"addons/walkers/assets/humanoid.glb": "63c7b9d225bee4e7faff63e881d24950f32a8e82db5605f237a32378592855d9",
+		"addons/walkers/assets/motions.json": "249ce0fa7be003d785a06f457e475fb9f83730808ee02d838e0356ef7a8710e5",
+		"addons/walkers/grounding.gd": "77e7a01a0688f2c68e8ed84f17932e7b5babdccbc56c6d90b635bceb763f4ee9",
+		"addons/walkers/motor.gd": "02a5b7dc8385cbf48ac1ba3d2502139570467c54dfc53444477f74657072f7c9",
+		"addons/walkers/presentation.gd": "af56a7b7a5d32cbb44d5c4bd1fd6b193872d693344e682074bd6ce733f9a9f2c",
+		"source/character.blend": "4d1669adc251d1dacd0e3fdc8b3834f609ef2b23a4ff9c862318bfe571925aa2",
+		"tests/contact_viewport_capture.gd": "0dc0e7b0399624521da881d2496621fbd3eb71c42038eecc8a6fb947fb26a213"
+	},
+	"size": [
+		960,
+		600
+	],
+	"source": "Actual Godot OpenGL viewport"
+}

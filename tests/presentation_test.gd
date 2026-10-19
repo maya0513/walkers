@@ -68,6 +68,13 @@ func _run() -> void:
 	_check(max_final_pose_error < .00001, "snapshot omitted final IK pose")
 	_check(actor.visual.global_transform.is_equal_approx(display.current_transform), "physics world transform restoration mismatch")
 	actor.reset_at(Vector3(2, .04, 4), .8)
+	_check(actor.animator.state == &"Idle" and actor.animator.playback.get_current_node() == &"Idle", "reset retained animation crossfade/state")
+	_check(actor.animator.phase == 0.0 and actor.animator.state_time == 0.0, "reset retained previous gait time")
+	_check(actor.animator.contacts.is_equal_approx(Vector2.ONE), "reset retained previous gait contacts")
+	_check(actor.animator.support_regions == ["sole", "sole"], "reset retained previous support regions")
+	_check(actor.animator.support_offsets == actor.animator._sample_support_offsets("Idle", 0.0), "reset retained previous support offsets")
+	_check(actor.animator.support_materials == actor.animator._sample_support_materials("Idle", 0.0), "reset retained previous skin bindings")
+	_check(steps == events, "reset emitted a moving footstep while idle")
 	display.render_at(0)
 	var start := actor.visual.global_transform
 	display.render_at(1)

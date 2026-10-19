@@ -14,6 +14,11 @@ var eligible_support_samples: Array[int] = [0, 0]
 var previous_lock_anchors: Array[Vector3] = [Vector3.ZERO, Vector3.ZERO]
 var previous_foot_transforms: Array[Transform3D] = [Transform3D.IDENTITY, Transform3D.IDENTITY]
 var previous_support_local: Array[Vector3] = [Vector3.ZERO, Vector3.ZERO]
+var previous_support_materials: Array = [[], []]
+var previous_material_world: Array[Vector3] = [Vector3.ZERO, Vector3.ZERO]
+var previous_contact_materials: Array = [[], []]
+var previous_contact_material_world: Array[Vector3] = [Vector3.ZERO, Vector3.ZERO]
+var previous_full_contact: Array[bool] = [false, false]
 var cumulative_material_slip: Array[Vector3] = [Vector3.ZERO, Vector3.ZERO]
 var sole_samples: Dictionary
 var bindings: Dictionary = {}
@@ -109,6 +114,9 @@ func _next_case() -> void:
 		var max_drift := 0.0
 		var max_penetration := 0.0
 		var max_constraint_residual := 0.0
+		var max_contact_material_step := 0.0
+		var min_lateral_foot_order := INF
+		var turn_order_samples := 0
 		var states: Array[String] = []
 		var max_y := -100.0
 		var samples_grounded := 0
@@ -145,6 +153,13 @@ func _next_case() -> void:
 						midstance_knees[side].max_flex_degrees = maxf(midstance_knees[side].max_flex_degrees, sample["knee_flex_" + side.to_lower() + "_degrees"])
 			max_drift = maxf(max_drift, sample.drift)
 			max_constraint_residual = maxf(max_constraint_residual, sample.constraint_residual)
+			max_contact_material_step = maxf(max_contact_material_step, sample.contact_material_step)
+			if sample.foot_diagnostics.size() == 2:
+				var test_name: String = cases[case_index].name
+				var order_window: bool = (test_name == "reverse180" and sample.time > 1.65) or (test_name == "stairs_side_reverse" and sample.time > 1.45) or (test_name == "turn90" and sample.time > .25)
+				if order_window:
+					turn_order_samples += 1
+					min_lateral_foot_order = minf(min_lateral_foot_order, sample.foot_diagnostics[0].ankle_lateral_m - sample.foot_diagnostics[1].ankle_lateral_m)
 			max_penetration = maxf(max_penetration, sample.penetration)
 			max_y = maxf(max_y, sample.position[1])
 			if sample.grounded:
@@ -157,6 +172,9 @@ func _next_case() -> void:
 		results.append({"name":cases[case_index].name,"mean_speed_after_settle":mean_speed,
 			"support_drift_max_m":max_drift,"support_drift_method":"material_point_integration" if int(actor.animator.metadata.get("schema_version",1)) >= 3 else "fixed_region_point",
 			"support_constraint_residual_max_m":max_constraint_residual,"eligible_support_samples":{"Left":eligible_support_samples[0],"Right":eligible_support_samples[1]},"sole_penetration_max_m":max_penetration,
+			"maximum_full_contact_material_step_m":max_contact_material_step,
+			"minimum_lateral_foot_order_after_turn_release_m":min_lateral_foot_order if is_finite(min_lateral_foot_order) else 0.0,
+			"turn_foot_order_sample_count":turn_order_samples,
 			"head_height":{"min_m":head_min if head_sample_count else 0.0,"max_m":head_max if head_sample_count else 0.0,
 				"peak_to_peak_m":head_max-head_min if head_sample_count else 0.0,"vertical_speed_max_mps":head_speed_max,"sample_count":head_sample_count},
 			"midstance_knees":midstance_knees,
@@ -178,6 +196,8 @@ func _next_case() -> void:
 	eligible_support_samples = [0, 0]
 	previous_locked = [false,false]
 	previous_regions = ["", ""]
+	previous_full_contact = [false, false]
+	previous_contact_materials = [[], []]
 	cumulative_material_slip = [Vector3.ZERO, Vector3.ZERO]
 	actor.reset_at(cases[case_index].start, cases[case_index].get("yaw",0))
 
@@ -204,6 +224,7 @@ func _physics_process(delta: float) -> void:
 	actor.set_move_intent(direction, speed)
 	var drift := 0.0
 	var constraint_residual := 0.0
+	var contact_material_step := 0.0
 	var penetration := 0.0
 	var head_y := 0.0
 	var head_valid := false
@@ -230,6 +251,14 @@ func _physics_process(delta: float) -> void:
 				full_mesh_worst["time"] = clock
 				full_mesh_worst["state"] = String(actor.animator.state)
 		for i in range(2):
+			var full_contact: bool = actor.animator.contacts[i] > .995 and actor.is_on_floor() and clock > 1.2 and actor.animator.state == &"Move"
+			if actor.animator.support_materials.size() == 2:
+				if full_contact and previous_full_contact[i]:
+					var advected := _skin_material(previous_contact_materials[i], final, pose_world)
+					contact_material_step = maxf(contact_material_step, advected.distance_to(previous_contact_material_world[i]))
+				previous_contact_materials[i] = actor.animator.support_materials[i]
+				previous_contact_material_world[i] = _skin_material(previous_contact_materials[i], final, pose_world)
+			previous_full_contact[i] = full_contact
 			var supported: bool = actor.grounding.locked[i] and actor.animator.contacts[i] > .995 and actor.is_on_floor() and clock > 1.2 and actor.animator.state == &"Move"
 			var foot := actor.grounding.actual_support_points[i]
 			var region: String = actor.grounding.support_regions[i]
@@ -243,6 +272,10 @@ func _physics_process(delta: float) -> void:
 						# so it must not be measured as slip or reset this integral.
 						var previous_point := previous_support_local[i]
 						var displacement := foot_world * previous_point - previous_foot_transforms[i] * previous_point
+						if not previous_support_materials[i].is_empty():
+							# For an articulated sole, the same material point follows
+							# its skin bindings rather than the ankle's rigid transform.
+							displacement = _skin_material(previous_support_materials[i], final, pose_world) - previous_material_world[i]
 						cumulative_material_slip[i] += Vector3(displacement.x, 0, displacement.z)
 					else:
 						cumulative_material_slip[i] = Vector3.ZERO
@@ -256,6 +289,11 @@ func _physics_process(delta: float) -> void:
 				constraint_residual = maxf(constraint_residual, Vector2(residual.x,residual.z).length())
 				previous_foot_transforms[i] = foot_world
 				previous_support_local[i] = actor.grounding.support_local[i]
+				if actor.animator.support_materials.size() == 2:
+					previous_support_materials[i] = actor.animator.support_materials[i]
+					previous_material_world[i] = _skin_material(previous_support_materials[i], final, pose_world)
+				else:
+					previous_support_materials[i] = []
 			previous_locked[i] = supported
 			previous_regions[i] = region
 			previous_lock_anchors[i] = actor.grounding.anchors[i]
@@ -281,16 +319,40 @@ func _physics_process(delta: float) -> void:
 								"world":[world.x,world.y,world.z],"floor":hit.position.y,"foot":[foot.x,foot.y,foot.z],
 								"target":[target.x,target.y,target.z],"state":String(actor.animator.state),"phase":actor.animator.phase}
 	var v := actor.actual_velocity
+	var foot_diagnostics: Array = []
+	if String(test.name).begins_with("stairs_") or test.name in ["reverse180", "turn90"]:
+		for i in range(2):
+			var foot_position: Vector3 = actor.grounding.actual_feet[i]
+			var target_position: Vector3 = actor.grounding.targets[i].global_position
+			var lateral: float = (pose_world.affine_inverse() * foot_position).x
+			foot_diagnostics.append({"ankle":[foot_position.x,foot_position.y,foot_position.z],
+				"ankle_lateral_m":lateral,
+				"target":[target_position.x,target_position.y,target_position.z], "contact":actor.animator.contacts[i],
+				"locked":actor.grounding.locked[i], "lock_suspended":actor.grounding._lock_suspended[i],
+				"lock_release":actor.grounding._lock_release[i]})
 	samples.append({"time":clock,"speed":Vector2(v.x,v.z).length(),"position":[actor.position.x,actor.position.y,actor.position.z],
 		"state":String(actor.animator.state),"phase":actor.animator.phase,
 		"pose_phase":actor.pose_recorder.get("final_phase"),"pose_state":String(actor.pose_recorder.get("final_state")),"grounded":actor.is_on_floor(),
 		"drift":drift,"constraint_residual":constraint_residual,"penetration":penetration,"yaw":actor.facing_yaw,
+		"contact_material_step":contact_material_step,
+		"foot_diagnostics":foot_diagnostics,
 		"blocked":actor.movement_blocked,"step_active":actor.step_active,
 		"pelvis_offset_m":actor.grounding.pelvis_offset,"support_regions":actor.grounding.support_regions.duplicate(),
 		"head_valid":head_valid,"head_y":head_y,"head_vertical_speed_mps":head_vertical_speed,
 		"knee_flex_left_degrees":knee_flex.x,"knee_flex_right_degrees":knee_flex.y})
 	if clock >= float(test.duration):
 		_next_case()
+
+func _skin_material(material: Array, final: Array, world: Transform3D) -> Vector3:
+	var point := Vector3.ZERO
+	for entry: Dictionary in material:
+		var pose: Transform3D = final[bindings[String(entry.bone)].index]
+		var local_position: Vector3 = entry.position
+		if actor.animator.metadata.get("support_material_space", "bone_local") == "rest_skeleton":
+			var inverse: Transform3D = bindings[String(entry.bone)].inverse
+			local_position = inverse.basis * local_position + inverse.origin * float(entry.weight)
+		point += pose.basis * local_position + pose.origin * float(entry.weight)
+	return world * point
 
 func _finish() -> void:
 	var failures: Array[String] = []
@@ -315,8 +377,8 @@ func _finish() -> void:
 				failures.append(result.name+": support drift > 2cm")
 			if result.head_height.sample_count < 10:
 				failures.append(result.name+": missing steady post-IK head samples")
-			elif result.head_height.peak_to_peak_m > .065:
-				failures.append(result.name+": steady post-IK head excursion > 6.5cm")
+			elif result.head_height.peak_to_peak_m > .060:
+				failures.append(result.name+": steady post-IK head excursion > 6cm")
 			if result.sole_penetration_max_m > .010:
 				failures.append(result.name+": sole penetration > 1cm")
 		if result.name == "walk":
@@ -333,6 +395,11 @@ func _finish() -> void:
 				failures.append("idle: settled head excursion > 1mm")
 		if result.full_mesh_penetration_m > .010:
 			failures.append(result.name+": full mesh penetration > 1cm")
+		if result.name in ["reverse180", "turn90", "stairs_side_reverse"]:
+			if result.turn_foot_order_sample_count < 4:
+				failures.append(result.name+": insufficient turn foot-order samples")
+			elif result.minimum_lateral_foot_order_after_turn_release_m < -.005:
+				failures.append(result.name+": left/right feet swapped across body midline after turn release")
 		if result.name == "wall" and result.end_position[2] < -5.66:
 			failures.append("wall collision")
 		if result.name == "steps_up" and result.max_body_height_m < .59:
@@ -340,6 +407,8 @@ func _finish() -> void:
 		if result.name == "over_limit_step" and result.max_body_height_m > .1:
 			failures.append("over-limit step climbed")
 		if String(result.name).begins_with("stairs_"):
+			if result.maximum_full_contact_material_step_m > .04:
+				failures.append(result.name+": planted skin point jumped > 4cm in one physics tick")
 			if result.max_body_height_m > .025:
 				failures.append(result.name+": unsupported rise at stair side")
 			for sample: Dictionary in result.samples:

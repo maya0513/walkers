@@ -1,56 +1,308 @@
 {
-  "status": "reviewed_no_blocking_source_motion_issue",
-  "reviewer": "independent motion_validation agent",
+  "schema_version": 2,
+  "reviewed_at_utc": "2026-10-19T17:21:11.122692+00:00",
+  "status": "reviewed_pose_sequences_no_blocking_issue_in_scope",
+  "reviewer": "independent subagent /root/contact_docs (source motion authored by parent)",
   "source_hashes": {
-    "before_blend": "87b58eb2501fa82c3447ab3417afb3440ca60676a08d92ee91775d2d91366a0a",
-    "after_blend": "4b0ccee210cc774e2bdab3eb00c965d7d356a0c88da4753fd4108af04d444fac"
+    "before_blend": "4b0ccee210cc774e2bdab3eb00c965d7d356a0c88da4753fd4108af04d444fac",
+    "after_blend": "4d1669adc251d1dacd0e3fdc8b3834f609ef2b23a4ff9c862318bfe571925aa2",
+    "before_metadata": "b3d0490ac45563226f70acc24f965fec365e06391968a500c6dba418d88c75fb",
+    "after_metadata": "249ce0fa7be003d785a06f457e475fb9f83730808ee02d838e0356ef7a8710e5"
   },
+  "comparison_inventory_sha256": "58467a8f531af31614568771a024912a6f441efe2a4251bbb6adb62f3e176419",
   "videos": {
-    "Walk_front_normal.mp4": "cbc4833259b7580b97e9a97b54fc1ba1cfc773c8bef8a3f85452d942e3d5c870",
-    "Walk_front_slow.mp4": "3f0ee43f1425386d9f79e85dfcc226828008b7de180a0ee60be91b6cf7513ed0",
-    "Walk_side_normal.mp4": "7df58501c59d858c3188c6ffca26afb0986c303caeb61ce4d48f542d81fce586",
-    "Walk_side_slow.mp4": "c71de572cc03352ac3b66f3970b4a140ec82a6349dddf61734148871532ca6f2",
-    "Walk_three_quarter_normal.mp4": "5dd5951dda3cceb7477f38e4fd02bd07f376c55e88f907d028b0e2b3b4f57465",
-    "Walk_three_quarter_slow.mp4": "21e7ea8a428cf754e4776fd60a475e2d6bd0be3de758e44d246533043a3e4c19",
-    "Jog_front_normal.mp4": "6666a6d4c025de2a04e0792ce693edb008430b8ca3e0cc2c75dbdf59cabed130",
-    "Jog_front_slow.mp4": "553f88eecfa43a11d28b7c622eb4ea3377df6766cf472642dd99379b325ad1b0",
-    "Jog_side_normal.mp4": "2d610e6cb2ba4ef2d2b7733520d4de6f1778adf1dfabf74347df20279db00888",
-    "Jog_side_slow.mp4": "6a1cab777af37ab8abb115b0ac5e2a698c962c8ad47604dc42cb126092a3c435",
-    "Jog_three_quarter_normal.mp4": "584bac1964ad5da6e63768347d2f68c6c16c6183400cf2a0038369e822250d3f",
-    "Jog_three_quarter_slow.mp4": "48ac9d360485546f314a2f74d8bbff1ebf48bf58976fcd856df91c21c7fdd77b"
+    "Walk_front_normal.mp4": "15846e16e2b3c879b994b2a2620af9e2d41b2f4004d7438b047ce9e98268e4c1",
+    "Walk_front_slow.mp4": "88981023ba2b16dc66a560637f438d4a0d45592672564a9566b9e9bc5bad36af",
+    "Walk_side_normal.mp4": "09d4189fd806feb5c935566bc0f093a91711dac0916792675093023793ee2aa9",
+    "Walk_side_slow.mp4": "c91dffc96026a0a9cb8778d30bddeb34cf0ed23c8419487498aaac6da5d661b9",
+    "Walk_three_quarter_normal.mp4": "785494f9cdab03c670492ae90673c8497410ac877b8260226829840a209426f1",
+    "Walk_three_quarter_slow.mp4": "88e6a9a72f7393072499a51b762f4c474fb5ddeace0d3864e55dd633f5720a81",
+    "Walk_feet_front_normal.mp4": "f2d4ed52ee38f69d6e8bb198388dac88a57f32b14d9debde66ddf6260abfd1f9",
+    "Walk_feet_front_slow.mp4": "33a7a76b7e617255ce885ac105fcd02ed5c6d0ac2b17e15cef2af2eae6a3a8ee",
+    "Walk_feet_side_normal.mp4": "052fbd180c7508035d51cb76bbc1c35fc5a6e4192f13690783a8a06108a67d89",
+    "Walk_feet_side_slow.mp4": "2e92941305e8bdd33f9332aa82c9142972d99a42ef3edb012c54e58fdd3147a1",
+    "Walk_feet_three_quarter_normal.mp4": "4befc3cc0dea7c53894d607d1c2912fd1620b8888123d902daa02f57806b1bd6",
+    "Walk_feet_three_quarter_slow.mp4": "515b090b629e6126068eb1f61cbb967b7e3f250ebab73c120243bfcc84d0307c",
+    "Jog_front_normal.mp4": "ba816bb1ffba35a3ae85aa596b1df6f7e7e04578f6386d2efcdcc09794e3ccda",
+    "Jog_front_slow.mp4": "d8e7126c6c3bac8d09afc93d74c81c69eda8278fba1b93a84cfd29d7adb8e181",
+    "Jog_side_normal.mp4": "420643a6cd9b25e70a50a03032e9f5b5e39db125b82d420fdbbbc47ec9187638",
+    "Jog_side_slow.mp4": "902ee8cbfd6a99d16eab7534fb6f74df3c2a2732de96ee7155c6dfe242a20e89",
+    "Jog_three_quarter_normal.mp4": "fc3a55d06fe14f2cb021faeb203e92c59964cbeaf4fa81b835884f26cacb8647",
+    "Jog_three_quarter_slow.mp4": "c2db89774126c611edd7333093546c2e4cfbfd1f9cbd51a67afeed2a5d61d479",
+    "Jog_feet_front_normal.mp4": "4c2f76221150f24eca6033dc7a50f32bd86bbeef2739178a4df20b8643f7b76b",
+    "Jog_feet_front_slow.mp4": "bb1dea99718f2b304ba588bd6d2c8bc1ea5e613058db5ea665b9cdf2196736be",
+    "Jog_feet_side_normal.mp4": "0d8ea02956ad6d7ff4da16aaa7407f9e1c15ae5a43c2bf12d209996c914dac6f",
+    "Jog_feet_side_slow.mp4": "404b8bee4b5cd395d61d61bdc67b952be321ae574d27318240fddcf9e56ab0ed",
+    "Jog_feet_three_quarter_normal.mp4": "7a7bedb46f56b61df10d3df9d89287e6fb174aac99fb540a1aa1d3d830b3f56c",
+    "Jog_feet_three_quarter_slow.mp4": "cd68e110fe1a9cc16e061cb56154efbc20ada44158aab512080fc436b26b42ba"
   },
   "scope": {
-    "full_decode_and_timestamps": "All 6804 encoded frames across all 12 normal/slow MP4s, independently checked by validate_motion_comparison.py.",
-    "visual_method": "Ordered contact sheets of every independently rendered after-pose at source 60Hz, in front/side/three-quarter views; selected old matching views and earlier full old-gait review for comparison.",
-    "after_poses_visually_inspected": {
-      "Walk": 189,
-      "Jog": 126
+    "clips": [
+      "Walk",
+      "Jog"
+    ],
+    "views": [
+      "front",
+      "side",
+      "three_quarter",
+      "feet_front",
+      "feet_side",
+      "feet_three_quarter"
+    ],
+    "playback_speeds": [
+      1.0,
+      0.5
+    ],
+    "video_count": 24,
+    "full_decode_and_timestamps": {
+      "report": "reports/comparison_validation.json",
+      "decoded_frames": 13608,
+      "status": "pass"
     },
-    "normal_and_slow": "Both encodings use the same inspected source poses; normal time is 60 source poses/second, slow is 30 source poses/second duplicated to output 60fps. Rhythm/hold assessment combines ordered poses with exact timestamps and trajectory derivatives.",
-    "not_in_this_review": "Godot runtime capture, terrain IK and player control are reviewed in separate runtime reports."
+    "current_encoded_first_cycles": {
+      "decoded_frames": 1890,
+      "visually_ordered_unique_pose_rows": 1260,
+      "rows_show": "Each row contains both before and after figures. Counts include both normal and slow outputs. Repeated full-video cycles are decoded numerically; visually ordered review covers one full cycle per output.",
+      "slow_duplicate_pairs_compared_numerically": 630
+    },
+    "prior_source_pose_review": "The same after_blend hash was previously reviewed as all 630 source images (Walk 63 + Jog 42, six views), with the matching before source. Raw source frames have since been removed. Current evidence is re-decoded from the delivered MP4s.",
+    "excluded": [
+      "Godot runtime capture and terrain/contact IK, covered by separate reports",
+      "Idle and 13 derived noncyclic motions, covered by the artifact/source review"
+    ]
   },
+  "method": [
+    "Delivered MP4s were independently decoded, rather than using cached PNGs. For every one of 24 outputs, the first complete cycle was decoded: normal Walk 63/Jog 42 frames; slow Walk 126/Jog 84 frames.",
+    "All 24 ordered boards were opened and visually inspected. Normal boards include every first-cycle frame. Slow boards include the even frame from each duplicate pair (every unique source pose); all odd/even pairs were compared numerically. Foot panels were cropped from the delivered image, then stacked Before above After for larger inspection; body panels retain Before left/After right.",
+    "The last unique pose and first pose were compared in each view; there is no appended terminal duplicate. Timestamp continuity and every repeated encoded cycle were checked by the separate full-decode validator.",
+    "This is ordered image inspection at encoded times, not continuous real-time video playback. It does not claim direct perception of normal-speed rhythm or lightness. Numeric timing and pose-order checks complement that limitation; they do not establish subjective naturalness.",
+    "Framing, labels, visibility of both feet and the projected floor were checked in the actual decoded images. Whole-body output is 640x424; foot output is 1280x344. The gallery displays body up to 640px and feet up to 1280px, limited by viewport width."
+  ],
   "observations": [
     {
-      "topic": "Walk rhythm and stride",
-      "result": "The period is 1.05s rather than .9s, at the same 1.4m/s. The 73.5cm step is carried by forward/rear leg travel; ordered side poses show heel-rise and passing rather than the whole body waiting for the swing foot. Support knees extend through midstance. Front and diagonal views retain narrow noncrossing ankle paths."
+      "topic": "Walk contact and push-off",
+      "frames": "normal f0-9, f28-34, f59-62; mirrored phases in slow",
+      "finding": "Side and diagonal foot panels show a raised forefoot at heel entry, subsequent lowering, and an articulated toe/forefoot segment remaining near the floor as the heel rises. The revised foot bends at its forefoot rather than leaving the floor solely as one rigid shape. The trailing limb then folds into recovery."
     },
     {
-      "topic": "Intermittent holds",
-      "result": "No repeated nonterminal Action frames or whole-pose hold was visible in the ordered 60Hz samples. Arm reversals naturally slow near their extrema, while feet and knees continue. Authored joins independently pass position/velocity/acceleration limit checks; timestamps are exactly 1/60s across video joins."
+      "topic": "Jog contact and recovery",
+      "frames": "normal f0-5, f12-20, f21-26, f33-41",
+      "finding": "The selected midfoot-biased initial contact is subtle; the heel lowers during the early support images, then lifts before toe release. Late support and recovery are clearer in the enlarged side/diagonal panels than in the full-body view. The foot is not held flat for the whole support interval."
     },
     {
-      "topic": "Jog arms and upper body",
-      "result": "The rear elbow now passes behind the torso and the hand returns beside the waist. Chest-relative upper-arm motion is about -38 to +20 degrees, and elbow flexion changes about 80 to 105 degrees. The arms stay near the sides without being pinned there. Frontal and diagonal views show alternating arm/leg coordination and thorax response rather than a fixed bent-arm frame."
+      "topic": "Pelvis, abdomen and chest",
+      "frames": "full cycle in front and three-quarter views",
+      "finding": "Small changes of pelvic level and orientation, with relative chest/shoulder orientation, are visible through alternating support. The change is restrained; it is not an exaggerated torso sway. The upper body does not add a new visible whole-body snap in the inspected ordered poses."
     },
     {
-      "topic": "Jog support and lightness",
-      "result": "Ordered side views show compliant knee loading, heel recovery, toe-off and flight. The pelvis has one rise/fall pair per step, replacing the old double pulse. The foot does not remain flat throughout support. No new body jump, backwards knee branch or obvious hand/body intersection was seen in these full-body source views."
-    },
-    {
-      "topic": "Before/after differentiation",
-      "result": "The source numerical comparison separates sampled FK velocity changes from mathematical curve continuity. Walk knee peak adjacent velocity change falls from about 1.867 to .978m/s; Jog knee from about 4.598 to 1.517m/s. The nonzero remaining values represent finite 60Hz acceleration and are not reported as perfectly zero motion."
+      "topic": "Image continuity and framing",
+      "frames": "all unique poses in all 24 boards",
+      "finding": "No blank frame, abrupt camera/scale change, backward-knee pose jump, clipped foot tip, or gross new body/limb intersection was visible at the inspected resolution. Repeated slow poses match within small codec differences. A pose-sequence review cannot independently determine the perceived continuous-playback smoothness."
     }
   ],
-  "followup": "All 15 derived-motion GIFs and Godot execution require the separate final artifact/runtime review before release.",
+  "residual_notes": [
+    "Jog initial-contact differences are small by design (the selected 4-degree contact setting); describing this as a dramatically exaggerated forefoot landing would overstate the visual result.",
+    "Floor proximity and apparent contact are kinematic observations. No pressure, force, muscle work, ankle power or propulsion force was measured from these images.",
+    "A smooth 60fps file and ordered poses do not prove that every viewer will find the motion natural; the delivered normal/slow videos remain the material for user judgement."
+  ],
+  "slow_pair_diagnostic": {
+    "maximum_pair_mean_absolute_rgb_difference_0_to_255": 0.09689342570754716,
+    "interpretation": "Small nonzero differences are allowed by lossy video compression; this is an encoding observation, not a biomechanical metric."
+  },
+  "files": [
+    {
+      "path": "Walk_front_normal.mp4",
+      "sha256": "15846e16e2b3c879b994b2a2620af9e2d41b2f4004d7438b047ce9e98268e4c1",
+      "decoded_cycle_frames": 63,
+      "visually_ordered_unique_poses": 63,
+      "duplicate_pairs_evaluated": 0,
+      "duplicate_pair_mean_absolute_rgb_max": 0
+    },
+    {
+      "path": "Walk_front_slow.mp4",
+      "sha256": "88981023ba2b16dc66a560637f438d4a0d45592672564a9566b9e9bc5bad36af",
+      "decoded_cycle_frames": 126,
+      "visually_ordered_unique_poses": 63,
+      "duplicate_pairs_evaluated": 63,
+      "duplicate_pair_mean_absolute_rgb_max": 0.09689342570754716
+    },
+    {
+      "path": "Walk_side_normal.mp4",
+      "sha256": "09d4189fd806feb5c935566bc0f093a91711dac0916792675093023793ee2aa9",
+      "decoded_cycle_frames": 63,
+      "visually_ordered_unique_poses": 63,
+      "duplicate_pairs_evaluated": 0,
+      "duplicate_pair_mean_absolute_rgb_max": 0
+    },
+    {
+      "path": "Walk_side_slow.mp4",
+      "sha256": "c91dffc96026a0a9cb8778d30bddeb34cf0ed23c8419487498aaac6da5d661b9",
+      "decoded_cycle_frames": 126,
+      "visually_ordered_unique_poses": 63,
+      "duplicate_pairs_evaluated": 63,
+      "duplicate_pair_mean_absolute_rgb_max": 0.04508524960691824
+    },
+    {
+      "path": "Walk_three_quarter_normal.mp4",
+      "sha256": "785494f9cdab03c670492ae90673c8497410ac877b8260226829840a209426f1",
+      "decoded_cycle_frames": 63,
+      "visually_ordered_unique_poses": 63,
+      "duplicate_pairs_evaluated": 0,
+      "duplicate_pair_mean_absolute_rgb_max": 0
+    },
+    {
+      "path": "Walk_three_quarter_slow.mp4",
+      "sha256": "88e6a9a72f7393072499a51b762f4c474fb5ddeace0d3864e55dd633f5720a81",
+      "decoded_cycle_frames": 126,
+      "visually_ordered_unique_poses": 63,
+      "duplicate_pairs_evaluated": 63,
+      "duplicate_pair_mean_absolute_rgb_max": 0.07766312893081762
+    },
+    {
+      "path": "Walk_feet_front_normal.mp4",
+      "sha256": "f2d4ed52ee38f69d6e8bb198388dac88a57f32b14d9debde66ddf6260abfd1f9",
+      "decoded_cycle_frames": 63,
+      "visually_ordered_unique_poses": 63,
+      "duplicate_pairs_evaluated": 0,
+      "duplicate_pair_mean_absolute_rgb_max": 0
+    },
+    {
+      "path": "Walk_feet_front_slow.mp4",
+      "sha256": "33a7a76b7e617255ce885ac105fcd02ed5c6d0ac2b17e15cef2af2eae6a3a8ee",
+      "decoded_cycle_frames": 126,
+      "visually_ordered_unique_poses": 63,
+      "duplicate_pairs_evaluated": 63,
+      "duplicate_pair_mean_absolute_rgb_max": 0.03650602592054264
+    },
+    {
+      "path": "Walk_feet_side_normal.mp4",
+      "sha256": "052fbd180c7508035d51cb76bbc1c35fc5a6e4192f13690783a8a06108a67d89",
+      "decoded_cycle_frames": 63,
+      "visually_ordered_unique_poses": 63,
+      "duplicate_pairs_evaluated": 0,
+      "duplicate_pair_mean_absolute_rgb_max": 0
+    },
+    {
+      "path": "Walk_feet_side_slow.mp4",
+      "sha256": "2e92941305e8bdd33f9332aa82c9142972d99a42ef3edb012c54e58fdd3147a1",
+      "decoded_cycle_frames": 126,
+      "visually_ordered_unique_poses": 63,
+      "duplicate_pairs_evaluated": 63,
+      "duplicate_pair_mean_absolute_rgb_max": 0.03130753391472868
+    },
+    {
+      "path": "Walk_feet_three_quarter_normal.mp4",
+      "sha256": "4befc3cc0dea7c53894d607d1c2912fd1620b8888123d902daa02f57806b1bd6",
+      "decoded_cycle_frames": 63,
+      "visually_ordered_unique_poses": 63,
+      "duplicate_pairs_evaluated": 0,
+      "duplicate_pair_mean_absolute_rgb_max": 0
+    },
+    {
+      "path": "Walk_feet_three_quarter_slow.mp4",
+      "sha256": "515b090b629e6126068eb1f61cbb967b7e3f250ebab73c120243bfcc84d0307c",
+      "decoded_cycle_frames": 126,
+      "visually_ordered_unique_poses": 63,
+      "duplicate_pairs_evaluated": 63,
+      "duplicate_pair_mean_absolute_rgb_max": 0.027038668846899223
+    },
+    {
+      "path": "Jog_front_normal.mp4",
+      "sha256": "ba816bb1ffba35a3ae85aa596b1df6f7e7e04578f6386d2efcdcc09794e3ccda",
+      "decoded_cycle_frames": 42,
+      "visually_ordered_unique_poses": 42,
+      "duplicate_pairs_evaluated": 0,
+      "duplicate_pair_mean_absolute_rgb_max": 0
+    },
+    {
+      "path": "Jog_front_slow.mp4",
+      "sha256": "d8e7126c6c3bac8d09afc93d74c81c69eda8278fba1b93a84cfd29d7adb8e181",
+      "decoded_cycle_frames": 84,
+      "visually_ordered_unique_poses": 42,
+      "duplicate_pairs_evaluated": 42,
+      "duplicate_pair_mean_absolute_rgb_max": 0.053881682389937104
+    },
+    {
+      "path": "Jog_side_normal.mp4",
+      "sha256": "420643a6cd9b25e70a50a03032e9f5b5e39db125b82d420fdbbbc47ec9187638",
+      "decoded_cycle_frames": 42,
+      "visually_ordered_unique_poses": 42,
+      "duplicate_pairs_evaluated": 0,
+      "duplicate_pair_mean_absolute_rgb_max": 0
+    },
+    {
+      "path": "Jog_side_slow.mp4",
+      "sha256": "902ee8cbfd6a99d16eab7534fb6f74df3c2a2732de96ee7155c6dfe242a20e89",
+      "decoded_cycle_frames": 84,
+      "visually_ordered_unique_poses": 42,
+      "duplicate_pairs_evaluated": 42,
+      "duplicate_pair_mean_absolute_rgb_max": 0.039617727987421386
+    },
+    {
+      "path": "Jog_three_quarter_normal.mp4",
+      "sha256": "fc3a55d06fe14f2cb021faeb203e92c59964cbeaf4fa81b835884f26cacb8647",
+      "decoded_cycle_frames": 42,
+      "visually_ordered_unique_poses": 42,
+      "duplicate_pairs_evaluated": 0,
+      "duplicate_pair_mean_absolute_rgb_max": 0
+    },
+    {
+      "path": "Jog_three_quarter_slow.mp4",
+      "sha256": "c2db89774126c611edd7333093546c2e4cfbfd1f9cbd51a67afeed2a5d61d479",
+      "decoded_cycle_frames": 84,
+      "visually_ordered_unique_poses": 42,
+      "duplicate_pairs_evaluated": 42,
+      "duplicate_pair_mean_absolute_rgb_max": 0.04465040290880503
+    },
+    {
+      "path": "Jog_feet_front_normal.mp4",
+      "sha256": "4c2f76221150f24eca6033dc7a50f32bd86bbeef2739178a4df20b8643f7b76b",
+      "decoded_cycle_frames": 42,
+      "visually_ordered_unique_poses": 42,
+      "duplicate_pairs_evaluated": 0,
+      "duplicate_pair_mean_absolute_rgb_max": 0
+    },
+    {
+      "path": "Jog_feet_front_slow.mp4",
+      "sha256": "bb1dea99718f2b304ba588bd6d2c8bc1ea5e613058db5ea665b9cdf2196736be",
+      "decoded_cycle_frames": 84,
+      "visually_ordered_unique_poses": 42,
+      "duplicate_pairs_evaluated": 42,
+      "duplicate_pair_mean_absolute_rgb_max": 0.024118822674418606
+    },
+    {
+      "path": "Jog_feet_side_normal.mp4",
+      "sha256": "0d8ea02956ad6d7ff4da16aaa7407f9e1c15ae5a43c2bf12d209996c914dac6f",
+      "decoded_cycle_frames": 42,
+      "visually_ordered_unique_poses": 42,
+      "duplicate_pairs_evaluated": 0,
+      "duplicate_pair_mean_absolute_rgb_max": 0
+    },
+    {
+      "path": "Jog_feet_side_slow.mp4",
+      "sha256": "404b8bee4b5cd395d61d61bdc67b952be321ae574d27318240fddcf9e56ab0ed",
+      "decoded_cycle_frames": 84,
+      "visually_ordered_unique_poses": 42,
+      "duplicate_pairs_evaluated": 42,
+      "duplicate_pair_mean_absolute_rgb_max": 0.02568359375
+    },
+    {
+      "path": "Jog_feet_three_quarter_normal.mp4",
+      "sha256": "7a7bedb46f56b61df10d3df9d89287e6fb174aac99fb540a1aa1d3d830b3f56c",
+      "decoded_cycle_frames": 42,
+      "visually_ordered_unique_poses": 42,
+      "duplicate_pairs_evaluated": 0,
+      "duplicate_pair_mean_absolute_rgb_max": 0
+    },
+    {
+      "path": "Jog_feet_three_quarter_slow.mp4",
+      "sha256": "cd68e110fe1a9cc16e061cb56154efbc20ada44158aab512080fc436b26b42ba",
+      "decoded_cycle_frames": 84,
+      "visually_ordered_unique_poses": 42,
+      "duplicate_pairs_evaluated": 42,
+      "duplicate_pair_mean_absolute_rgb_max": 0.018136052567829457
+    }
+  ],
+  "temporary_review_artifacts": "Ordered JPEG boards and decode records are temporary /tmp analysis files; no individual source image is added to the delivery.",
   "blocking_findings": []
 }
