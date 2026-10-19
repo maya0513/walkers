@@ -52,7 +52,7 @@ def log(*items):
 
 def smooth(t):
     t = max(0.0, min(1.0, t))
-    return t * t * (3 - 2 * t)
+    return t * t * t * (10 + t * (-15 + 6 * t))
 
 
 def world_rotate(poses, bone, rotation):
@@ -360,7 +360,7 @@ def main():
                       a[n].to_quaternion().slerp(b[n].to_quaternion(), weight), Vector((1, 1, 1))) for n in a}
 
     clips = [("Idle", 3.2, True, "idle", "", 0),
-             ("Walk", .9, True, "gait", "Walk", 0), ("Jog", .7, True, "gait", "Jog", 0)]
+             ("Walk", DURATIONS["Walk"], True, "gait", "Walk", 0), ("Jog", DURATIONS["Jog"], True, "gait", "Jog", 0)]
     for g in ["Walk", "Jog"]:
         for side, phase in [("L", 0), ("R", .5)]:
             clips += [(f"Start{g}{side}", .55 if g=="Walk" else .45, False, "start", g, phase),
@@ -371,7 +371,7 @@ def main():
     rig.animation_data_create()
     metadata = {"fps": FPS, "height": HEIGHT, "forward": "+Z", "sole_height": ankle_z,
                 "bones": {n: list(rest[n].translation) for n in rest}, "clips": {},
-                "schema_version": 2, "support_points": author.support_metadata(),
+                "schema_version": 3, "support_points": author.support_metadata(),
                 "phenotype": {"gender":"male", "age":"adult", "muscle":"average", "weight":"average", "height_m":HEIGHT}}
     sampled_motion = {}
     for name, duration, loop, kind, g, parameter in clips:
@@ -381,6 +381,7 @@ def main():
         count = round(duration*FPS)
         contact_samples = []
         support_samples = []
+        support_offsets = []
         frames = []
         previous_q = {}
         for f in range(count+1):
@@ -434,6 +435,11 @@ def main():
             support_phase = u % 1 if kind == "gait" else (parameter+u*duration/DURATIONS[g]) % 1 if kind in ["start","stop"] else 0
             regions = author.support(g if kind in ["gait","start","stop"] else "", support_phase)
             support_samples.append(regions)
+            offsets = author.offsets(g if kind in ["gait", "start", "stop"] else "", support_phase)
+            if kind in ["start", "stop"]:
+                neutral_offsets = author.offsets("", 0)
+                offsets = [[a+(b-a)*weight for a,b in zip(old,new)] for old,new in zip(neutral_offsets,offsets)]
+            support_offsets.append(offsets)
             frames.append({"positions": {n: list(m.translation) for n,m in poses.items()},
                            "hips": list(poses["Hips"].translation)})
         # Persist the authored contact curves as ordinary Action channels too.
@@ -449,7 +455,8 @@ def main():
         action["loop"] = loop
         action["source"] = "Walkers authored relaxed locomotion; Quaternius CC0 retained as reference"
         metadata["clips"][name] = {"duration": duration, "loop": loop, "frames": count,
-            "type": kind, "contacts": contact_samples, "support_regions":support_samples, "nominal_speed": 1.4 if name=="Walk" else 2.8 if name=="Jog" else 0,
+            "type": kind, "contacts": contact_samples, "support_regions":support_samples, "support_offsets":support_offsets,
+            "nominal_speed": 1.4 if name=="Walk" else 2.8 if name=="Jog" else 0,
             "exit_phase": (parameter+duration/DURATIONS[g]) % 1 if kind=="start" else 0,
             "turn_radians": parameter if kind=="turn" else 0}
         sampled_motion[name] = frames
@@ -564,6 +571,15 @@ def main():
     rig["foot_ik_Left"] = rig["foot_ik_Right"] = 0.0
     rig.update_tag()
     log("Editing IK knee match maximum",max_knee_error)
+    # These channels are already baked at 60Hz. Linear interpolation preserves
+    # the sampled timing instead of adding automatic Bezier ease between keys.
+    for name, *_ in clips:
+        for layer in bpy.data.actions[name].layers:
+            for strip in layer.strips:
+                for bag in strip.channelbags:
+                    for curve in bag.fcurves:
+                        for key in curve.keyframe_points:
+                            key.interpolation = "LINEAR"
     rig["README"] = "Metres; forward -Y; 60 fps. Actions: Idle / Walk / Jog / Start / Stop / Turn. Foot IK properties default 0 for baked FK. See README.ja.md."
     rig.animation_data.action = bpy.data.actions["Idle"]
     scene.frame_start, scene.frame_end = 0, 192

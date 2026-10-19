@@ -17,6 +17,7 @@ var actual_support_points: Array[Vector3] = [Vector3.ZERO, Vector3.ZERO]
 var support_regions: Array[String] = ["sole", "sole"]
 var support_local: Array[Vector3] = [Vector3.ZERO, Vector3.ZERO]
 var _locked_regions: Array[String] = ["", ""]
+var _previous_support_local: Array[Vector3] = [Vector3.ZERO, Vector3.ZERO]
 var _was_contact: Array[bool] = [false, false]
 var normals: Array[Vector3] = [Vector3.UP, Vector3.UP]
 var contact_weights := Vector2.ONE
@@ -135,11 +136,12 @@ func _process_modification_with_delta(delta: float) -> void:
 		var basis := pose.basis
 		support_regions[i] = animator.support_regions[i]
 		support_local[i] = _support_offset(i, support_regions[i])
-		var on_contact := weight > .72 and support_regions[i] != "air"
+		var continuous_support := animator.support_offsets.size() == 2
+		var on_contact := weight > .72 and (continuous_support or support_regions[i] != "air")
 		if on_contact and not _was_contact[i] and animator.state != &"Idle":
 			footstep.emit(&"Left" if i == 0 else &"Right", hit.position, hit.normal)
 		_was_contact[i] = on_contact if weight > .2 else false
-		if not config.foot_lock or weight < .2 or support_regions[i] == "air":
+		if not config.foot_lock or weight < .2 or (not continuous_support and support_regions[i] == "air"):
 			locked[i] = false
 		if weight > 0.01:
 			normals[i] = hit.normal
@@ -148,7 +150,13 @@ func _process_modification_with_delta(delta: float) -> void:
 			basis = Basis(Quaternion.IDENTITY.slerp(slope, weight)) * basis
 			var source_support := corrected + basis * support_local[i]
 			var floor_target: Vector3 = hit.position
-			if locked[i] and (_locked_regions[i] != support_regions[i] or source_support.distance_to(anchors[i]) > config.foot_correction_limit):
+			if locked[i] and continuous_support:
+				# A rolling contact migrates over the floor. Advance only by the
+				# local support-point change, preserving the previous support pivot
+				# during authored ankle rotation. Body/ankle translation is excluded.
+				var rolling := basis * (support_local[i] - _previous_support_local[i])
+				anchors[i] += rolling.slide(normals[i])
+			if locked[i] and ((not continuous_support and _locked_regions[i] != support_regions[i]) or source_support.distance_to(anchors[i]) > config.foot_correction_limit):
 				locked[i] = false
 			if config.foot_lock and on_contact and not locked[i]:
 				anchors[i] = hit.position
@@ -189,6 +197,7 @@ func _process_modification_with_delta(delta: float) -> void:
 				lift = maxf(lift, sole_hit.position.y + .001 - world.y)
 		if is_finite(lift):
 			corrected.y += clampf(lift, -.15, config.foot_correction_limit) * (1.0 if lift > 0 else weight)
+		_previous_support_local[i] = support_local[i]
 		desired_basis[i] = basis
 		targets[i].global_transform = Transform3D(basis, corrected)
 		var side := "Left" if i == 0 else "Right"
@@ -197,6 +206,8 @@ func _process_modification_with_delta(delta: float) -> void:
 
 
 func _support_offset(index: int, region: String) -> Vector3:
+	if animator.support_offsets.size() == 2:
+		return get_skeleton().get_bone_global_rest(_indices[index]).basis.inverse() * animator.support_offsets[index]
 	var side := "Left" if index == 0 else "Right"
 	var points: Dictionary = animator.metadata.get("support_points", {}).get(side, {})
 	if points.is_empty():

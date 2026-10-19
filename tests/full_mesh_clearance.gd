@@ -5,8 +5,10 @@ extends RefCounted
 var points: Array[Dictionary] = []
 var binds: Array[Dictionary] = []
 var worst: Dictionary = {}
+var probe := SphereShape3D.new()
 
 func setup(mesh_instance: MeshInstance3D, skeleton: Skeleton3D) -> void:
+	probe.radius = .0001
 	var skin := mesh_instance.skin
 	assert(skin != null)
 	for i in range(skin.get_bind_count()):
@@ -53,10 +55,24 @@ func penetration(poses: Array, world: Transform3D, grounding: HumanoidGrounding)
 		var from := Vector3(world.origin.x,position_value.y,world.origin.z)
 		var query := PhysicsRayQueryParameters3D.create(from,position_value,1,[grounding.motor.get_rid()])
 		var wall := grounding.motor.get_world_3d().direct_space_state.intersect_ray(query)
-		if not wall.is_empty() and absf(wall.normal.y) < .5:
+		if not wall.is_empty() and absf(wall.normal.y) < .5 and _inside_collider(position_value, wall.collider_id, grounding):
 			var wall_depth: float = (position_value-wall.position).length()
 			if wall_depth > maximum:
 				maximum = wall_depth
 				worst = {"depth":wall_depth,"kind":"wall","world":[position_value.x,position_value.y,position_value.z],
 					"hit":[wall.position.x,wall.position.y,wall.position.z],"normal":[wall.normal.x,wall.normal.y,wall.normal.z]}
 	return maximum
+
+func _inside_collider(position_value: Vector3, collider_id: int, grounding: HumanoidGrounding) -> bool:
+	# A horizontal ray can cross a ramp's end face then leave through its
+	# walkable top before reaching an airborne/trailing foot. Require actual
+	# overlap at the material point before reporting wall penetration.
+	var query := PhysicsShapeQueryParameters3D.new()
+	query.shape = probe
+	query.transform = Transform3D(Basis.IDENTITY, position_value)
+	query.collision_mask = 1
+	query.exclude = [grounding.motor.get_rid()]
+	for hit: Dictionary in grounding.motor.get_world_3d().direct_space_state.intersect_shape(query, 8):
+		if int(hit.collider_id) == collider_id:
+			return true
+	return false

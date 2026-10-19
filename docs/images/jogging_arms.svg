@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="440" viewBox="0 0 1120 440" role="img" aria-labelledby="title desc">
+<title id="title">胸郭に対して腕を前後へ通す。肘の屈曲角と内角は異なる</title>
+<desc id="desc">左向きのジョギングの腕の模式図。前振りでは肘屈曲80度、内角100度の例。後振りでは上腕が胸郭より後ろへ抜け、前腕の向きも変わる。手だけを胸の前へ固定せず、肩をすくめずに前後の流れを見る。角度は説明用で推奨値ではない。</desc>
+<rect width="1120" height="440" fill="white"/>
+<g font-family="Noto Sans CJK JP,sans-serif" fill="#222"><text x="36" y="36" font-size="23">手だけでなく、肩 → 上腕 → 肘 → 前腕の流れを見る</text><text x="36" y="66" font-size="15" fill="#666">横からの模式図。前方は左。角度と姿勢は説明用で、計測データや万人向けの推奨値ではありません。</text>
+<text x="170" y="112" font-size="19">前へ振る側</text><text x="680" y="112" font-size="19">後ろへ抜ける側</text></g>
+<g fill="none" stroke="#b9b9b5" stroke-width="5" stroke-linecap="round"><path d="M250 173L265 340M760 173L775 340"/><circle cx="246" cy="148" r="20"/><circle cx="756" cy="148" r="20"/>
+<path d="M265 340L235 380M265 340L295 380M775 340L745 380M775 340L805 380"/></g>
+<g stroke="#aaa" stroke-dasharray="5 5" fill="none"><path d="M250 173L272 380M760 173L782 380"/></g>
+<g stroke="#4d625a" stroke-width="8" fill="none" stroke-linejoin="round" stroke-linecap="round"><path d="M250 190L217.55 289.86L120.5 276.22"/><path d="M760 190L812.5 280.93L723.68 322.35"/></g>
+<g fill="#4d625a"><circle cx="250" cy="190" r="6"/><circle cx="217.55" cy="289.86" r="6"/><circle cx="120.5" cy="276.22" r="6"/><circle cx="760" cy="190" r="6"/><circle cx="812.5" cy="280.93" r="6"/><circle cx="723.68" cy="322.35" r="6"/></g>
+<g stroke="#888" stroke-dasharray="3 4"><path d="M217.55 289.86L198 350"/></g>
+<path d="M227 261 A30 30 0 0 0 188 286" stroke="#788b82" stroke-width="2" fill="none"/>
+<g font-family="Noto Sans CJK JP,sans-serif" font-size="15" fill="#444">
+<text x="294" y="205">肩をすくめない</text><path d="M287 210L256 194" stroke="#999"/>
+<text x="63" y="234">内角100°</text><path d="M143 239L195 275" stroke="#999"/>
+<text x="306" y="310">屈曲角80°</text><text x="306" y="334">伸ばした姿を0°と数える</text>
+<text x="845" y="258">肘が胸郭の後ろへ</text><path d="M842 264L817 278" stroke="#999"/>
+<text x="850" y="313">肘の曲げ方も</text><text x="850" y="336">前後で変わる</text>
+<text x="510" y="185">← 前方</text><text x="36" y="414">内角 ＝ 180° − 屈曲角。腕を曲げることと、脇を横へ張ることは別の動きです。</text>
+</g>
+</svg>

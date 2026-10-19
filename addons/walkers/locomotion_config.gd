@@ -28,7 +28,7 @@ extends Resource
 @export var motion_metadata: String = "res://addons/walkers/assets/motions.json"
 @export var walk_animation: StringName = &"Walk"
 @export var jog_animation: StringName = &"Jog"
-@export var walk_stride_length: float = 1.26
+@export var walk_stride_length: float = 1.47
 @export var jog_stride_length: float = 1.96
 @export var extra_gaits: Array[LocomotionGait] = []
 

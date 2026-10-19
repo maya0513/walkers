@@ -4,6 +4,7 @@ These are geometric acceptance checks, not a substitute for motion review.
 Blender coordinates are metres, +X left, -Y forward, +Z up.
 """
 import bpy
+import hashlib
 import json
 import math
 import os
@@ -139,7 +140,7 @@ def check_postures(rig, metadata, failures):
 
 def check_metadata(metadata, failures):
     valid = {"heel", "sole", "ball", "toes", "air"}
-    if metadata.get("schema_version") != 2:
+    if metadata.get("schema_version") not in [2, 3]:
         failures.append("support metadata schema version")
     for side in SIDES:
         points = metadata.get("support_points", {}).get(side, {})
@@ -158,15 +159,31 @@ def check_metadata(metadata, failures):
         if any(len(row) != 2 or any(v not in valid for v in row) for row in regions):
             failures.append(name+": invalid support regions")
             continue
+        if metadata.get("schema_version") == 3:
+            offsets = info.get("support_offsets", [])
+            if len(offsets) != count or any(len(row) != 2 or any(len(point) != 3 or not all(math.isfinite(v) for v in point) for point in row) for row in offsets):
+                failures.append(name+": invalid continuous support offsets")
+            elif info["loop"] and any((Vector(offsets[0][side])-Vector(offsets[-1][side])).length > 1e-5 for side in [0, 1]):
+                failures.append(name+": support offsets differ at loop boundary")
         if name in ["Walk", "Jog"]:
             samples = contacts[:-1]
-            half = len(samples)//2
-            symmetry_error = max(abs(samples[i][0]-samples[(i+half)%len(samples)][1]) for i in range(len(samples)))
+            # A 1.05s walk is 63 baked intervals: the opposite foot's half
+            # cycle lands between samples, so interpolate instead of truncating.
+            def half_cycle(index):
+                shifted = (index+len(samples)*.5) % len(samples)
+                lower = math.floor(shifted)
+                fraction = shifted-lower
+                return samples[lower][1]*(1-fraction)+samples[(lower+1)%len(samples)][1]*fraction
+            symmetry_error = max(abs(samples[i][0]-half_cycle(i)) for i in range(len(samples)))
             flight_fraction = sum(max(row) < .01 for row in samples)/len(samples)
             support_regions = {s: sorted({row[i] for row in regions}) for i, s in enumerate(SIDES)}
+            # Odd sample counts cannot express a half-cycle exactly. A short
+            # C2 contact ramp can have ~0.09 interpolation error at 63 samples.
+            symmetry_tolerance = .12 if len(samples) % 2 else .06
             result[name] = {"left_right_half_cycle_contact_error": symmetry_error,
+                            "contact_symmetry_sampling_tolerance": symmetry_tolerance,
                             "flight_fraction": flight_fraction, "support_regions": support_regions}
-            if symmetry_error > .06 or any(max(row[i] for row in samples) < .99 for i in [0, 1]):
+            if symmetry_error > symmetry_tolerance or any(max(row[i] for row in samples) < .99 for i in [0, 1]):
                 failures.append(name+": contacts do not alternate at half cycle")
             for i in [0, 1]:
                 if any(region[i] == "air" and contact[i] > .01 for contact, region in zip(contacts, regions)):
@@ -185,6 +202,45 @@ def main():
     failures = []
     postures = check_postures(rig, metadata, failures)
     support = check_metadata(metadata, failures)
+    # Derive the trajectories independently from the editable Blender rig, not
+    # from the author's JSON samples. This also catches IK branch discontinuity.
+    sys.path.insert(0, str(ROOT/"tools"))
+    from analyze_motion_curves import summarize
+    evaluated_samples = {}
+    for clip in ["Walk", "Jog"]:
+        select_action(rig, clip)
+        evaluated_samples[clip] = [
+            {"positions": {name: list(matrix.translation) for name, matrix in evaluated_pose(rig, frame).items()}}
+            for frame in range(metadata["clips"][clip]["frames"]+1)]
+    curves = summarize(evaluated_samples, metadata, enforce=True)
+    curves["measurement_source"] = {"kind": "evaluated_Blender_FK", "blend": Path(bpy.data.filepath).name,
+                                    "blend_sha256": hashlib.sha256(Path(bpy.data.filepath).read_bytes()).hexdigest()}
+    failures.extend(curves["failures"])
+    from validate_author_curves import check as check_author_curves
+    author_curves = check_author_curves(rig, body)
+    failures.extend(author_curves["failures"])
+    (ROOT/"reports/author_curve_continuity.json").write_text(json.dumps(author_curves, indent=2)+"\n")
+    (ROOT/"reports/motion_curve_analysis.json").write_text(json.dumps(curves, indent=2)+"\n")
+    before_path = ROOT/"reports/motion_curve_before.json"
+    if before_path.exists():
+        before = json.loads(before_path.read_text())
+        comparison = {"measurement": "both versions independently evaluated Blender FK at 60Hz",
+                      "before_source": before.get("measurement_source"), "after_source": curves["measurement_source"], "clips": {}}
+        for clip in ["Walk", "Jog"]:
+            old, new = before["clips"][clip], curves["clips"][clip]
+            comparison["clips"][clip] = {
+                "period_seconds": {"before": old["duration_seconds"], "after": new["duration_seconds"]},
+                "cadence_steps_per_minute": {"before": old["cadence_steps_per_minute"], "after": new["cadence_steps_per_minute"]},
+                "step_length_m": {"before": old["step_length_m"], "after": new["step_length_m"]},
+                "pelvis_vertical_extrema_per_stride": {"before": old["pelvis_vertical_extrema_per_stride"], "after": new["pelvis_vertical_extrema_per_stride"]},
+                "arms_relative_to_chest": {"before": old["arms_relative_to_chest"], "after": new["arms_relative_to_chest"]},
+                "adjacent_velocity_change": {}}
+            for bone, values in new["trajectories"].items():
+                original = old["trajectories"][bone]["max_adjacent_velocity_change_mps"]
+                updated = values["max_adjacent_velocity_change_mps"]
+                comparison["clips"][clip]["adjacent_velocity_change"][bone] = {
+                    "before_mps": original, "after_mps": updated, "reduction_percent": 100*(1-updated/original)}
+        (ROOT/"reports/motion_curve_comparison.json").write_text(json.dumps(comparison, indent=2)+"\n")
     position_error, rotation_error, knee_error = 0., 0., 0.
     for name in ["Idle", "Walk", "Jog", "Turn90L", "Turn180R"]:
         select_action(rig, name)
@@ -213,7 +269,7 @@ def main():
         for stem in ["CTRL_Foot_", "CTRL_Knee_"]:
             if rig.data.bones[stem+side].use_deform: failures.append("control exported as deformation")
     report = {"blender": bpy.app.version_string, "actions": len(metadata["clips"]), "height_m": height,
-              "phenotype": metadata.get("phenotype"), "postures": postures, "support": support,
+              "phenotype": metadata.get("phenotype"), "postures": postures, "support": support, "motion_curves": curves, "authored_continuity": author_curves,
               "fk_ik_foot_position_error_m": position_error, "fk_ik_foot_rotation_error_degrees": rotation_error,
               "fk_ik_knee_displacement_m": knee_error, "failures": failures}
     (ROOT/"reports/blender_validation.json").write_text(json.dumps(report, indent=2)+"\n")

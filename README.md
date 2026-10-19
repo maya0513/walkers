@@ -9,6 +9,7 @@ Godot 4 / Blender の再利用可能な人型ロコモーション。
 
 - Open `project.godot` in Godot **4.7.2**, then press **F5**.
 - Editable source: [`source/character.blend`](source/character.blend), Blender **5.2.2**.
+- [Before/after comparison at 60fps](previews/comparison/index.html).
 - Offline motion gallery: [`previews/index.html`](previews/index.html).
 - Adult male mannequin; still upright idle; walking and jogging. The demo stays still until movement input. Orbit the camera with right drag; zoom with the wheel. Hold Shift to jog, press R to reset, and F1 for help.
 - Pose sheets show one full two-step cycle in a single horizontal row; GIFs are separated by camera view.

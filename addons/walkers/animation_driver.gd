@@ -15,6 +15,8 @@ var phase: float = 0.0
 var blend: float = 0.0
 var contacts: Vector2 = Vector2.ONE
 var support_regions: Array[String] = ["sole", "sole"]
+# Schema 3 offsets are in rest-skeleton space, relative to each ankle.
+var support_offsets: Array[Vector3] = []
 var next_left: bool = true
 var forced_turn: bool = false
 var gaits: Array[Dictionary] = []
@@ -156,6 +158,7 @@ func tick(delta: float, speed: float, intent_speed: float) -> void:
 		contacts = _sample_contacts(String(state), state_time / maxf(float(metadata.clips[String(state)].duration), 0.001))
 
 	_update_support_regions(speed)
+	_update_support_offsets(speed)
 
 func _update_support_regions(speed: float) -> void:
 	if state == &"Move":
@@ -186,3 +189,29 @@ func _sample_regions(clip: String, normalized: float) -> Array[String]:
 	var samples: Array = info.support_regions
 	var sample: Array = samples[clampi(int(clampf(normalized, 0, 1) * (samples.size()-1)), 0, samples.size()-1)]
 	return [String(sample[0]), String(sample[1])]
+
+func _update_support_offsets(speed: float) -> void:
+	if state == &"Move":
+		var mix := _gait_mix(speed)
+		var a := _sample_support_offsets(String(mix.a.animation), phase)
+		var b := _sample_support_offsets(String(mix.b.animation), phase)
+		if a.size() == 2 and b.size() == 2:
+			support_offsets = [a[0].lerp(b[0], float(mix.weight)), a[1].lerp(b[1], float(mix.weight))]
+		else:
+			support_offsets = []
+	else:
+		support_offsets = _sample_support_offsets(String(state), state_time / maxf(float(metadata.clips[String(state)].duration), .001))
+
+func _sample_support_offsets(clip: String, normalized: float) -> Array[Vector3]:
+	var samples: Array = metadata.clips[clip].get("support_offsets", [])
+	if samples.is_empty():
+		return []
+	var index := clampf(normalized, 0, 1) * (samples.size() - 1)
+	var a := mini(int(index), samples.size() - 1)
+	var b := mini(a + 1, samples.size() - 1)
+	var values: Array[Vector3] = []
+	for side in range(2):
+		var left: Array = samples[a][side]
+		var right: Array = samples[b][side]
+		values.append(Vector3(left[0],left[1],left[2]).lerp(Vector3(right[0],right[1],right[2]), index - a))
+	return values

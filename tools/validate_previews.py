@@ -41,9 +41,19 @@ def validate_dataset(directory, require_runtime=True):
             times = record["animation"]["sample_times_seconds"]
             if not times or abs(times[0]) > 1e-6:
                 failures.append(clip+" "+view+": missing initial sample")
-            for a, b in zip(times, times[1:]):
-                if abs((b-a)-.04) > 1e-6 and not (not info["loop"] and b == times[-1] and 0 < b-a <= .04+1e-6):
-                    failures.append(clip+" "+view+": GIF was not sampled at 25Hz")
+            if info["loop"]:
+                expected_count = max(1, round(info["duration"]*25))
+                gaps = [b-a for a, b in zip(times, times[1:])]+[info["duration"]-times[-1]]
+                if len(times) != expected_count or any(abs(gap-info["duration"]/expected_count) > 1e-6 for gap in gaps):
+                    failures.append(clip+" "+view+": GIF cycle phase is not uniformly sampled")
+                animation = record["animation"]
+                encoded = len(times)*.04
+                if abs(animation.get("source_duration_seconds", -1)-info["duration"]) > 1e-6 or abs(animation.get("encoded_motion_duration_seconds", -1)-encoded) > 1e-6 or abs(animation.get("encoded_to_source_duration_ratio", -1)-encoded/info["duration"]) > 1e-6:
+                    failures.append(clip+" "+view+": missing/inaccurate GIF timing provenance")
+            else:
+                for a, b in zip(times, times[1:]):
+                    if abs((b-a)-.04) > 1e-6 and not (b == times[-1] and 0 < b-a <= .04+1e-6):
+                        failures.append(clip+" "+view+": event GIF was not sampled at 25Hz")
             if info["loop"] and times[-1] >= info["duration"]:
                 failures.append(clip+" "+view+": duplicated GIF cycle boundary")
             if not info["loop"] and abs(times[-1]-info["duration"]) > 1e-6:

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="360" viewBox="0 0 1120 360" role="img" aria-labelledby="title desc">
+<title id="title">同じ速度でも、歩調と一歩の長さは変わる</title>
+<desc id="desc">どちらも秒速1.4メートルの計算例。上は一周期0.90秒、毎分133.3歩、一歩0.630メートル。下は一周期1.05秒、毎分114.3歩、一歩0.735メートル。左右二歩で一周期。人の測定データではない。</desc>
+<rect width="1120" height="360" fill="white"/>
+<defs><g id="foot" fill="#53625d"><ellipse cx="0" cy="0" rx="12" ry="6"/><circle cx="9" cy="-5" r="3"/></g></defs>
+<g font-family="Noto Sans CJK JP,sans-serif" fill="#222">
+<text x="36" y="36" font-size="23">同じ1.4m/sでも、テンポと一歩の長さで印象が変わる</text>
+<text x="36" y="65" font-size="15" fill="#666">速度 ＝ 一歩の長さ × 歩調 ÷ 60　　下の値は制作上の比較例です。</text>
+<text x="36" y="112" font-size="18">細かい足運びの例</text><text x="36" y="139" font-size="15">0.90秒 / 周期</text><text x="36" y="162" font-size="15">約133.3歩 / 分</text>
+<text x="36" y="231" font-size="18">今回の歩行</text><text x="36" y="258" font-size="15">1.05秒 / 周期</text><text x="36" y="281" font-size="15">約114.3歩 / 分</text>
+</g>
+<g stroke="#bbb" stroke-width="1"><path d="M235 160H1040M235 278H1040"/></g>
+<g><use href="#foot" x="245" y="160"/><use href="#foot" x="560" y="160"/><use href="#foot" x="875" y="160"/>
+<use href="#foot" x="245" y="278"/><use href="#foot" x="612.5" y="278"/><use href="#foot" x="980" y="278"/></g>
+<g font-family="Noto Sans CJK JP,sans-serif" text-anchor="middle" font-size="14" fill="#444">
+<text x="245" y="111">左 0.00秒</text><text x="560" y="111">右 0.45秒</text><text x="875" y="111">次の左 0.90秒</text>
+<text x="245" y="231">左 0.000秒</text><text x="612.5" y="231">右 0.525秒</text><text x="980" y="231">次の左 1.050秒</text>
+<text x="403" y="141">一歩 0.630m</text><text x="718" y="141">一歩 0.630m</text>
+<text x="429" y="260">一歩 0.735m</text><text x="796" y="260">一歩 0.735m</text>
+<text x="560" y="194">一周期で1.260m</text><text x="612" y="313">一周期で1.470m</text>
+</g>
+<g fill="none" stroke="#777"><path d="M245 172V180H875V172M245 290V298H980V290"/></g>
+<text x="36" y="345" font-family="Noto Sans CJK JP,sans-serif" font-size="14" fill="#666">地面上の接地位置と時刻の模式図。一周期の時間が異なるため、各行の進行距離も異なります。</text>
+</svg>

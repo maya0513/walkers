@@ -7,6 +7,7 @@ var final_world_transform: Transform3D = Transform3D.IDENTITY
 var final_phase: float = 0.0
 var final_state: StringName = &"Idle"
 var refine_targets: bool = false
+var evaluation_count: int = 0
 
 func _process_modification_with_delta(_delta: float) -> void:
 	if not is_instance_valid(grounding):
@@ -22,6 +23,7 @@ func _process_modification_with_delta(_delta: float) -> void:
 	if refine_targets:
 		grounding.refine_from_skinned_soles()
 	else:
+		evaluation_count += 1
 		final_world_transform = skeleton.global_transform
 		final_phase = grounding.animator.phase
 		final_state = grounding.animator.state

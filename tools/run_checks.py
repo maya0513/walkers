@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Offline validation. Leaves concise reports plus full diagnostic logs."""
 import concurrent.futures
+import argparse
 import json
 import os
 import shutil
@@ -8,6 +9,7 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
+from godot_validation_support import classify_errors
 
 ROOT=Path(__file__).resolve().parents[1]
 REPORTS=ROOT/"reports"
@@ -26,15 +28,19 @@ def posture_report(summary):
 |---|---|---|---|---|---|
 """+"\n".join(rows)+"""
 
-平地の定速区間を同時刻の最終骨姿勢で計測しています。頭部の値は頭骨の基準点であり、頭頂や全身重心の変位とは異なります。頭を空間へ固定せず、脚・骨盤の連続した動きで揺れを抑えました。Blender単体の歩行上下幅は約4.83cm、ジョギングは約2.32cmです。Godotでは接地補正後の最終姿勢を別に測っています。
+平地の定速区間を同時刻の最終骨姿勢で計測しています。頭部の値は頭骨の基準点であり、頭頂や全身重心の変位とは異なります。頭を空間へ固定せず、脚・骨盤の連続した動きで揺れを抑えました。Blender単体の姿勢と、Godotの接地補正後の最終姿勢を別に測っています。
 
-歩行の中間支持期は左右それぞれ18サンプルを確認し、膝屈曲20度以内という今回の演出上の基準を満たしました。支持点ずれの計測にも左右それぞれ歩行78点以上、ジョギング33点以上の対象サンプルがあり、対象区間が空のために合格したものではありません。衝突主体の上下幅と接地率は、平地で偽の段差処理や沈み込みが発生していないことの確認です。
+歩行の中間支持期は左右それぞれのサンプルを確認し、膝屈曲20度以内という今回の演出上の基準を満たしました。支持点ずれの計測にも左右それぞれ8点以上の対象サンプルがあることを検査し、対象区間が空のために合格することを防いでいます。詳細な点数はJSONに記録しています。衝突主体の上下幅と接地率は、平地で偽の段差処理や沈み込みが発生していないことの確認です。
 
 頭・体幹・重心の違いと参考文献は[人間向けの解説](../docs/gait_reference.ja.md)を参照してください。これらの角度・上下幅の上限は作品の表現設定であり、万人の歩き方の医学的な推奨値ではありません。
 
 """
 
 def main():
+    parser=argparse.ArgumentParser()
+    parser.add_argument("--allow-editor-socket-errors",action="store_true",help="Record a sandbox's blocked optional editor TCP services separately; project errors still fail")
+    options=parser.parse_args()
+    limitations={}
     REPORTS.mkdir(exist_ok=True)
     godot=shutil.which("godot") or shutil.which("godot4")
     assert godot,"Godot executable not found"
@@ -47,7 +53,8 @@ def main():
         def run(name,args,cwd=ROOT):
             result=subprocess.run(args,cwd=cwd,env=env,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,timeout=240)
             (REPORTS/(name+".log")).write_text(result.stdout)
-            errors=[line for line in result.stdout.splitlines() if "SCRIPT ERROR" in line or line.startswith("ERROR:")]
+            errors,network_limitations=classify_errors(result.stdout,options.allow_editor_socket_errors and name=="import")
+            if network_limitations:limitations[name]=network_limitations
             if result.returncode or errors:
                 print(result.stdout[-5000:])
                 raise RuntimeError(f"{name} failed: exit={result.returncode}, errors={errors[:3]}")
@@ -57,10 +64,12 @@ def main():
             futures=[pool.submit(run,f"runtime_{rate}",[godot,"--headless","--path",str(ROOT),"--fixed-fps",str(rate),"--script","tests/runtime_test.gd","--","--rate=60",f"--render-rate={rate}"]) for rate in [30,60,120]]
             for future in futures:future.result()
         run("controls",[godot,"--headless","--path",str(ROOT),"--fixed-fps","60","--script","tests/controls.gd"])
+        run("presentation",[godot,"--headless","--path",str(ROOT),"--fixed-fps","120","--script","tests/presentation_test.gd"])
         run("extensibility",[godot,"--headless","--path",str(ROOT),"--fixed-fps","60","--script","tests/extensibility.gd"])
         run("blender_source",[blender,"--background","source/character.blend","-noaudio","--python-exit-code","1","--python","tools/validate_blender.py"])
         run("assets",[sys.executable,"tools/validate_assets.py"])
         run("previews",[sys.executable,"tools/validate_previews.py"])
+        run("comparison",[sys.executable,"tools/validate_motion_comparison.py"])
         pack=Path(profile)/"Walkers.pck"
         run("pack_export",[godot,"--headless","--path",str(ROOT),"--export-pack","Linux Desktop",str(pack)])
         run("pack_runtime",[godot,"--headless","--main-pack",str(pack),"--fixed-fps","60","--quit-after","120"],cwd=profile)
@@ -69,6 +78,9 @@ def main():
              "previews":json.loads((REPORTS/"preview_validation.json").read_text()),
              "extensibility":json.loads((REPORTS/"extensibility.json").read_text()),"runtime":{}}
     summary["controls"]=json.loads((REPORTS/"controls.json").read_text())
+    summary["environment_limitations"]=limitations
+    summary["presentation"]=json.loads((REPORTS/"presentation.json").read_text())
+    summary["comparison"]=json.loads((REPORTS/"comparison_validation.json").read_text()) if (REPORTS/"comparison_validation.json").exists() else {}
     summary["blender_source"]=json.loads((REPORTS/"blender_validation.json").read_text())
     summary["exported_pack"]={"export":"pass","standalone_start":"pass","original_project_directory_used":False}
     table=[]
@@ -89,7 +101,7 @@ Godot 4.7.2 / Blender 5.2.2。物理60Hz、描画30・60・120fpsで検証。
 |---|---|---|---|---|
 """+"\n".join(table)+"""
 
-支持点ずれは全面支持中の踵・足裏・前足部・つま先の対応する支持点の水平位置変化です。支持領域の切り替わりは新しい計測区間として扱います。貫通はGLBから独立に読み出した足部の全検証頂点を8物理フレームごとにスキニングし、地面への垂直貫通と壁への水平貫通を検査。接地補正用サンプルについては毎物理フレームでも検査しています。姿勢とワールド変換は同じSkeleton評価時点で取得しています。
+支持点ずれは、前フレームの支持位置を同じ足の材質点として前後の最終姿勢に適用し、その水平変位を全面接地区間で積算した値です。支持領域やアンカー移動で区間をリセットしません。貫通はGLBから独立に読み出した足部の全検証頂点を8物理フレームごとにスキニングし、地面への垂直貫通と壁への水平貫通を検査。接地補正用サンプルについては毎物理フレームでも検査しています。姿勢とワールド変換は同じSkeleton評価時点で取得しています。
 
 ## シナリオ
 
@@ -107,9 +119,11 @@ Linux Export PresetからPCKを生成し、元プロジェクトと異なる空�
 
 ## 画像
 
-各33ポーズの横長PNG45枚、各視点に分離した全モーションGIF45本、実動作GIF、スローGIFをデコードし、サイズ、空白、周期境界、25Hzの直接時刻サンプル、全GIFフレームを検査しました。非周期GIFは320msの無地リセット区間を含みます。個別フレームは生成・検証用の一時データであり、納品には含めません。
+各33ポーズの横長PNG45枚、各視点に分離した全モーションGIF45本、実動作GIF、スローGIFをデコードし、サイズ、空白、周期境界、周期全体の等位相サンプルと25fpsの再生時間、全GIFフレームを検査しました。非周期GIFは320msの無地リセット区間を含みます。個別フレームは生成・検証用の一時データであり、納品には含めません。
 
-詳細と計測値はvalidation_summary.json、runtime_p60_r*.json、asset_validation.json、preview_validation.jsonを参照してください。
+表示補間は最終IK姿勢を含む前後の物理スナップショットで検査し、描画中にIKや接地イベントが再実行されないことを確認しました。参考値との比較では、元モーションの足・膝・手・骨盤の周期内速度変化、骨盤の山谷、胸郭基準の腕振り、肘屈曲変化、区分曲線の接続を検査しました。実測の変化はmotion_curve_comparison.jsonに記録しています。
+
+詳細と計測値はvalidation_summary.json、runtime_p60_r*.json、presentation.json、blender_validation.json、asset_validation.json、preview_validation.jsonを参照してください。
 """
     report_text=report_text.replace("## シナリオ\n",posture_report(summary)+"## シナリオ\n")
     (REPORTS/"VALIDATION.md").write_text(report_text)

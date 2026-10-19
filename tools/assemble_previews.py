@@ -76,7 +76,7 @@ def pose_strip(cache, records, floor_y, path, crop_bounds, clip):
             "source_crops": crop_records}
 
 
-def animation(cache, records, floor_y, loop, path):
+def animation(cache, records, floor_y, loop, path, source_duration):
     images = [plain(read_frame(cache, record), floor_y) for record in records]
     if not loop:
         reset = Image.new("RGB", images[0].size, PAPER)
@@ -90,7 +90,11 @@ def animation(cache, records, floor_y, loop, path):
     indexed = [image.quantize(palette=palette, dither=Image.Dither.NONE) for image in images]
     indexed[0].save(path, save_all=True, append_images=indexed[1:], duration=40, loop=0, disposal=1, optimize=False)
     return {"sample_count": len(records), "duration_ms": len(images)*40, "reset_ms": 0 if loop else 320,
-            "sample_times_seconds": [record["time"] for record in records], "size": [320, 400]}
+            "sample_times_seconds": [record["time"] for record in records], "size": [320, 400],
+            "source_duration_seconds": source_duration,
+            "encoded_motion_duration_seconds": len(records)*.04,
+            "encoded_to_source_duration_ratio": len(records)*.04/source_duration,
+            "sampling": "uniform_cycle_phase" if loop else "25Hz_with_terminal_pose"}
 
 
 def gallery(clips, probe):
@@ -99,8 +103,8 @@ def gallery(clips, probe):
 <style>body{margin:24px;background:#fafaf8;color:#444;font:14px system-ui,sans-serif}header{display:flex;align-items:center;gap:16px;flex-wrap:wrap}h1{font-size:18px;font-weight:500;margin:0}select,button,input{font:inherit}select,button{padding:5px;background:white;border:1px solid #ccc}#gif{width:320px;height:400px;display:block;margin:16px 0}.strip{overflow-x:auto;border-bottom:1px solid #ddd;margin:16px 0;padding-bottom:8px}.strip img{max-width:none;display:block;height:300px}label{display:inline-flex;align-items:center;gap:6px}p{max-width:850px;line-height:1.7}a{color:#555}#status{font-size:12px;color:#777}</style>
 <header><h1>移動モーション</h1><select id="motion">OPTIONS</select><select id="view"><option value="side">側面</option><option value="front">正面</option><option value="three_quarter">斜め</option></select><button id="restart">先頭から</button><a id="download" download>GIF</a></header>
 <img id="gif" alt="モーションGIF"><p id="status"></p><label>連続画像の倍率 <input id="zoom" type="range" min="50" max="200" value="100" step="10"><output id="zoomvalue">100%</output></label>
-<div id="strips"></div><p>1周期は同じ足の接地から次の同じ足の接地まで。連続画像は0〜100%をBOUNDARY分割し、両端の姿勢を含みます。GIFはActionを25Hzで直接描画した画像です。発進・停止・旋回には空白のリセット区間があります。<a href="GUIDE">日本語ガイド</a></p>
-<script>const motion=document.querySelector('#motion'),view=document.querySelector('#view'),gif=document.querySelector('#gif'),zoom=document.querySelector('#zoom');function scale(){document.querySelectorAll('.strip img').forEach(i=>i.style.height=(300*zoom.value/100)+'px');document.querySelector('#zoomvalue').value=zoom.value+'%'}function show(){let n=motion.value,v=view.value;gif.src='gifs/'+n+'_'+v+'.gif';document.querySelector('#download').href=gif.src;document.querySelector('#strips').innerHTML=['side','front','three_quarter'].map(v=>'<div>'+({side:'側面',front:'正面',three_quarter:'斜め'}[v])+'</div><div class="strip"><a href="sheets/'+n+'_'+v+'.png"><img alt="'+n+' '+v+'" src="sheets/'+n+'_'+v+'.png"></a></div>').join('');scale()}motion.onchange=view.onchange=show;zoom.oninput=scale;document.querySelector('#restart').onclick=()=>gif.src=gif.src.split('?')[0]+'?t='+Date.now();show();</script></html>'''.replace("OPTIONS", names).replace("BOUNDARY", "8" if probe else "32").replace("GUIDE", "../../README.ja.md" if probe else "../README.ja.md")
+<div id="strips"></div><p>1周期は同じ足の接地から次の同じ足の接地まで。連続画像は0〜100%をBOUNDARY分割し、両端の姿勢を含みます。GIFは周期全体を等間隔の位相で直接描画し、25fpsで符号化しています。40ms単位への丸めにより原周期と再生時間がわずかに異なります。正確な歩調は比較動画で確認できます。発進・停止・旋回には空白のリセット区間があります。<a href="GUIDE">日本語ガイド</a> · <a href="COMPARISON">修正前後の60fps比較動画</a></p>
+<script>const motion=document.querySelector('#motion'),view=document.querySelector('#view'),gif=document.querySelector('#gif'),zoom=document.querySelector('#zoom');function scale(){document.querySelectorAll('.strip img').forEach(i=>i.style.height=(300*zoom.value/100)+'px');document.querySelector('#zoomvalue').value=zoom.value+'%'}function show(){let n=motion.value,v=view.value;gif.src='gifs/'+n+'_'+v+'.gif';document.querySelector('#download').href=gif.src;document.querySelector('#strips').innerHTML=['side','front','three_quarter'].map(v=>'<div>'+({side:'側面',front:'正面',three_quarter:'斜め'}[v])+'</div><div class="strip"><a href="sheets/'+n+'_'+v+'.png"><img alt="'+n+' '+v+'" src="sheets/'+n+'_'+v+'.png"></a></div>').join('');scale()}motion.onchange=view.onchange=show;zoom.oninput=scale;document.querySelector('#restart').onclick=()=>gif.src=gif.src.split('?')[0]+'?t='+Date.now();show();</script></html>'''.replace("OPTIONS", names).replace("BOUNDARY", "8" if probe else "32").replace("GUIDE", "../../README.ja.md" if probe else "../README.ja.md").replace("COMPARISON", "../comparison/index.html" if probe else "comparison/index.html")
 
 
 def main():
@@ -119,7 +123,7 @@ def main():
         shutil.rmtree(stage)
     (stage/"sheets").mkdir(parents=True)
     (stage/"gifs").mkdir()
-    inventory = {"version": 2, "asset_sha256": manifest["asset_sha256"], "probe": args.probe,
+    inventory = {"version": 3, "asset_sha256": manifest["asset_sha256"], "probe": args.probe,
                  "pose_divisions": manifest["pose_divisions"], "gif_fps": 25, "clips": {}}
     tops, bottoms = [], []
     for clip in expected:
@@ -141,7 +145,7 @@ def main():
             rendered = record["views"][view]
             stem = clip+"_"+view
             strip = pose_strip(cache, rendered["poses"], rendered["floor_y"], stage/"sheets"/(stem+".png"), crop_bounds, clip)
-            gif = animation(cache, rendered["gif"], rendered["floor_y"], record["loop"], stage/"gifs"/(stem+".gif"))
+            gif = animation(cache, rendered["gif"], rendered["floor_y"], record["loop"], stage/"gifs"/(stem+".gif"), record["duration"])
             result["views"][view] = {"sheet": "sheets/"+stem+".png", "gif": "gifs/"+stem+".gif", "strip": strip, "animation": gif}
         inventory["clips"][clip] = result
         print("ASSEMBLED", clip, flush=True)

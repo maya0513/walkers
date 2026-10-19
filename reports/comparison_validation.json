@@ -1,0 +1,181 @@
+{
+  "status": "pass",
+  "source_hashes": {
+    "before_blend": "87b58eb2501fa82c3447ab3417afb3440ca60676a08d92ee91775d2d91366a0a",
+    "after_blend": "4b0ccee210cc774e2bdab3eb00c965d7d356a0c88da4753fd4108af04d444fac"
+  },
+  "total_decoded_frames": 6804,
+  "files": {
+    "Walk_front_normal.mp4": {
+      "sha256": "cbc4833259b7580b97e9a97b54fc1ba1cfc773c8bef8a3f85452d942e3d5c870",
+      "decoded_frames": 378,
+      "frame_rate": "60/1",
+      "duration_seconds": 6.3,
+      "speed": 1.0,
+      "source_cycle_seconds": {
+        "before": 0.9,
+        "after": 1.05
+      },
+      "frame_interval_seconds_min": 0.016665999999999848,
+      "frame_interval_seconds_max": 0.0166670000000001,
+      "full_decode": "pass"
+    },
+    "Walk_front_slow.mp4": {
+      "sha256": "3f0ee43f1425386d9f79e85dfcc226828008b7de180a0ee60be91b6cf7513ed0",
+      "decoded_frames": 756,
+      "frame_rate": "60/1",
+      "duration_seconds": 12.6,
+      "speed": 0.5,
+      "source_cycle_seconds": {
+        "before": 0.9,
+        "after": 1.05
+      },
+      "frame_interval_seconds_min": 0.01666599999999896,
+      "frame_interval_seconds_max": 0.0166670000000001,
+      "full_decode": "pass"
+    },
+    "Walk_side_normal.mp4": {
+      "sha256": "7df58501c59d858c3188c6ffca26afb0986c303caeb61ce4d48f542d81fce586",
+      "decoded_frames": 378,
+      "frame_rate": "60/1",
+      "duration_seconds": 6.3,
+      "speed": 1.0,
+      "source_cycle_seconds": {
+        "before": 0.9,
+        "after": 1.05
+      },
+      "frame_interval_seconds_min": 0.016665999999999848,
+      "frame_interval_seconds_max": 0.0166670000000001,
+      "full_decode": "pass"
+    },
+    "Walk_side_slow.mp4": {
+      "sha256": "c71de572cc03352ac3b66f3970b4a140ec82a6349dddf61734148871532ca6f2",
+      "decoded_frames": 756,
+      "frame_rate": "60/1",
+      "duration_seconds": 12.6,
+      "speed": 0.5,
+      "source_cycle_seconds": {
+        "before": 0.9,
+        "after": 1.05
+      },
+      "frame_interval_seconds_min": 0.01666599999999896,
+      "frame_interval_seconds_max": 0.0166670000000001,
+      "full_decode": "pass"
+    },
+    "Walk_three_quarter_normal.mp4": {
+      "sha256": "5dd5951dda3cceb7477f38e4fd02bd07f376c55e88f907d028b0e2b3b4f57465",
+      "decoded_frames": 378,
+      "frame_rate": "60/1",
+      "duration_seconds": 6.3,
+      "speed": 1.0,
+      "source_cycle_seconds": {
+        "before": 0.9,
+        "after": 1.05
+      },
+      "frame_interval_seconds_min": 0.016665999999999848,
+      "frame_interval_seconds_max": 0.0166670000000001,
+      "full_decode": "pass"
+    },
+    "Walk_three_quarter_slow.mp4": {
+      "sha256": "21e7ea8a428cf754e4776fd60a475e2d6bd0be3de758e44d246533043a3e4c19",
+      "decoded_frames": 756,
+      "frame_rate": "60/1",
+      "duration_seconds": 12.6,
+      "speed": 0.5,
+      "source_cycle_seconds": {
+        "before": 0.9,
+        "after": 1.05
+      },
+      "frame_interval_seconds_min": 0.01666599999999896,
+      "frame_interval_seconds_max": 0.0166670000000001,
+      "full_decode": "pass"
+    },
+    "Jog_front_normal.mp4": {
+      "sha256": "6666a6d4c025de2a04e0792ce693edb008430b8ca3e0cc2c75dbdf59cabed130",
+      "decoded_frames": 378,
+      "frame_rate": "60/1",
+      "duration_seconds": 6.3,
+      "speed": 1.0,
+      "source_cycle_seconds": {
+        "before": 0.7,
+        "after": 0.7
+      },
+      "frame_interval_seconds_min": 0.016665999999999848,
+      "frame_interval_seconds_max": 0.0166670000000001,
+      "full_decode": "pass"
+    },
+    "Jog_front_slow.mp4": {
+      "sha256": "553f88eecfa43a11d28b7c622eb4ea3377df6766cf472642dd99379b325ad1b0",
+      "decoded_frames": 756,
+      "frame_rate": "60/1",
+      "duration_seconds": 12.6,
+      "speed": 0.5,
+      "source_cycle_seconds": {
+        "before": 0.7,
+        "after": 0.7
+      },
+      "frame_interval_seconds_min": 0.01666599999999896,
+      "frame_interval_seconds_max": 0.0166670000000001,
+      "full_decode": "pass"
+    },
+    "Jog_side_normal.mp4": {
+      "sha256": "2d610e6cb2ba4ef2d2b7733520d4de6f1778adf1dfabf74347df20279db00888",
+      "decoded_frames": 378,
+      "frame_rate": "60/1",
+      "duration_seconds": 6.3,
+      "speed": 1.0,
+      "source_cycle_seconds": {
+        "before": 0.7,
+        "after": 0.7
+      },
+      "frame_interval_seconds_min": 0.016665999999999848,
+      "frame_interval_seconds_max": 0.0166670000000001,
+      "full_decode": "pass"
+    },
+    "Jog_side_slow.mp4": {
+      "sha256": "6a1cab777af37ab8abb115b0ac5e2a698c962c8ad47604dc42cb126092a3c435",
+      "decoded_frames": 756,
+      "frame_rate": "60/1",
+      "duration_seconds": 12.6,
+      "speed": 0.5,
+      "source_cycle_seconds": {
+        "before": 0.7,
+        "after": 0.7
+      },
+      "frame_interval_seconds_min": 0.01666599999999896,
+      "frame_interval_seconds_max": 0.0166670000000001,
+      "full_decode": "pass"
+    },
+    "Jog_three_quarter_normal.mp4": {
+      "sha256": "584bac1964ad5da6e63768347d2f68c6c16c6183400cf2a0038369e822250d3f",
+      "decoded_frames": 378,
+      "frame_rate": "60/1",
+      "duration_seconds": 6.3,
+      "speed": 1.0,
+      "source_cycle_seconds": {
+        "before": 0.7,
+        "after": 0.7
+      },
+      "frame_interval_seconds_min": 0.016665999999999848,
+      "frame_interval_seconds_max": 0.0166670000000001,
+      "full_decode": "pass"
+    },
+    "Jog_three_quarter_slow.mp4": {
+      "sha256": "48ac9d360485546f314a2f74d8bbff1ebf48bf58976fcd856df91c21c7fdd77b",
+      "decoded_frames": 756,
+      "frame_rate": "60/1",
+      "duration_seconds": 12.6,
+      "speed": 0.5,
+      "source_cycle_seconds": {
+        "before": 0.7,
+        "after": 0.7
+      },
+      "frame_interval_seconds_min": 0.01666599999999896,
+      "frame_interval_seconds_max": 0.0166670000000001,
+      "full_decode": "pass"
+    }
+  },
+  "visual_review": "reports/comparison_visual_review.json",
+  "scope": "All pixels decoded and all PTS checked. Motion aesthetics are reviewed separately; timing checks alone do not establish natural motion.",
+  "failures": []
+}

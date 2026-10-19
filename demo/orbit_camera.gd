@@ -17,7 +17,7 @@ func _ready() -> void:
 	rotation = Vector3(pitch, yaw, 0)
 	arm.spring_length = distance
 	if is_instance_valid(target):
-		global_position = target.global_position + Vector3.UP * 1.05
+		global_position = _target_position() + Vector3.UP * 1.05
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
@@ -55,6 +55,9 @@ func _process(delta: float) -> void:
 		if stick.length() > .18:
 			yaw = wrapf(yaw - stick.x * delta * 2.4, -PI, PI)
 			pitch = clampf(pitch - stick.y * delta * 1.8, MIN_PITCH, MAX_PITCH)
-	global_position = global_position.lerp(target.global_position + Vector3.UP * 1.05, 1 - exp(-12 * delta))
+	global_position = global_position.lerp(_target_position() + Vector3.UP * 1.05, 1 - exp(-12 * delta))
 	rotation = Vector3(pitch, yaw, 0)
 	arm.spring_length = lerpf(arm.spring_length, distance, 1 - exp(-12 * delta))
+
+func _target_position() -> Vector3:
+	return target.get_display_position() if target.has_method("get_display_position") else target.global_position

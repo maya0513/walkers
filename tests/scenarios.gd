@@ -12,6 +12,9 @@ var previous_locked: Array[bool] = [false, false]
 var previous_regions: Array[String] = ["", ""]
 var eligible_support_samples: Array[int] = [0, 0]
 var previous_lock_anchors: Array[Vector3] = [Vector3.ZERO, Vector3.ZERO]
+var previous_foot_transforms: Array[Transform3D] = [Transform3D.IDENTITY, Transform3D.IDENTITY]
+var previous_support_local: Array[Vector3] = [Vector3.ZERO, Vector3.ZERO]
+var cumulative_material_slip: Array[Vector3] = [Vector3.ZERO, Vector3.ZERO]
 var sole_samples: Dictionary
 var bindings: Dictionary = {}
 var physics_rate: int = 60
@@ -23,6 +26,7 @@ var full_mesh: RefCounted
 var full_mesh_max: float = 0.0
 var frame_number: int = 0
 var full_mesh_worst: Dictionary = {}
+var mesh_oracle: Dictionary = {}
 var cases: Array[Dictionary] = [
 	{"name":"idle", "duration":.7, "start":Vector3(0,.005,5), "direction":Vector3.ZERO, "speed":0.0},
 	{"name":"walk", "duration":4.0, "start":Vector3(0,.005,5), "direction":Vector3.FORWARD, "speed":1.4},
@@ -78,6 +82,14 @@ func _ready() -> void:
 	full_mesh = load("res://tests/full_mesh_clearance.gd").new()
 	full_mesh.setup(actor._find_type(actor.visual,"MeshInstance3D"),actor.skeleton)
 	print("Independent sole surface vertices: ",full_mesh.points.size())
+	# Validate the independent wall oracle with a known intrusive foot and a
+	# known point above the ramp beyond its end face before testing motion.
+	var rest_poses: Array[Transform3D] = []
+	for i in range(actor.skeleton.get_bone_count()):
+		rest_poses.append(actor.skeleton.get_bone_global_rest(i))
+	var intrusive_world := Transform3D(Basis(Vector3.UP, PI), Vector3(0,.002,-5.78))
+	var known_intrusion: float = full_mesh.penetration(rest_poses, intrusive_world, actor.grounding)
+	mesh_oracle = {"known_wall_intrusion_depth_m":known_intrusion}
 	_next_case()
 
 func _box(position_value: Vector3, size: Vector3) -> StaticBody3D:
@@ -96,6 +108,7 @@ func _next_case() -> void:
 		var speeds: Array[float] = []
 		var max_drift := 0.0
 		var max_penetration := 0.0
+		var max_constraint_residual := 0.0
 		var states: Array[String] = []
 		var max_y := -100.0
 		var samples_grounded := 0
@@ -131,6 +144,7 @@ func _next_case() -> void:
 						midstance_knees[side].sample_count += 1
 						midstance_knees[side].max_flex_degrees = maxf(midstance_knees[side].max_flex_degrees, sample["knee_flex_" + side.to_lower() + "_degrees"])
 			max_drift = maxf(max_drift, sample.drift)
+			max_constraint_residual = maxf(max_constraint_residual, sample.constraint_residual)
 			max_penetration = maxf(max_penetration, sample.penetration)
 			max_y = maxf(max_y, sample.position[1])
 			if sample.grounded:
@@ -141,7 +155,8 @@ func _next_case() -> void:
 		for speed: float in speeds:
 			mean_speed += speed / maxf(speeds.size(), 1)
 		results.append({"name":cases[case_index].name,"mean_speed_after_settle":mean_speed,
-			"support_drift_max_m":max_drift,"eligible_support_samples":{"Left":eligible_support_samples[0],"Right":eligible_support_samples[1]},"sole_penetration_max_m":max_penetration,
+			"support_drift_max_m":max_drift,"support_drift_method":"material_point_integration" if int(actor.animator.metadata.get("schema_version",1)) >= 3 else "fixed_region_point",
+			"support_constraint_residual_max_m":max_constraint_residual,"eligible_support_samples":{"Left":eligible_support_samples[0],"Right":eligible_support_samples[1]},"sole_penetration_max_m":max_penetration,
 			"head_height":{"min_m":head_min if head_sample_count else 0.0,"max_m":head_max if head_sample_count else 0.0,
 				"peak_to_peak_m":head_max-head_min if head_sample_count else 0.0,"vertical_speed_max_mps":head_speed_max,"sample_count":head_sample_count},
 			"midstance_knees":midstance_knees,
@@ -163,6 +178,7 @@ func _next_case() -> void:
 	eligible_support_samples = [0, 0]
 	previous_locked = [false,false]
 	previous_regions = ["", ""]
+	cumulative_material_slip = [Vector3.ZERO, Vector3.ZERO]
 	actor.reset_at(cases[case_index].start, cases[case_index].get("yaw",0))
 
 func _physics_process(delta: float) -> void:
@@ -187,6 +203,7 @@ func _physics_process(delta: float) -> void:
 		direction = Vector3(-1,0,1).normalized()
 	actor.set_move_intent(direction, speed)
 	var drift := 0.0
+	var constraint_residual := 0.0
 	var penetration := 0.0
 	var head_y := 0.0
 	var head_valid := false
@@ -218,10 +235,27 @@ func _physics_process(delta: float) -> void:
 			var region: String = actor.grounding.support_regions[i]
 			if supported:
 				eligible_support_samples[i] += 1
-				if not previous_locked[i] or previous_regions[i] != region or previous_lock_anchors[i].distance_to(actor.grounding.anchors[i]) > .001:
-					anchors[i] = foot
-				var offset := foot-anchors[i]
-				drift = maxf(drift, Vector2(offset.x,offset.z).length())
+				var foot_world: Transform3D = pose_world * final[bindings[("Left" if i == 0 else "Right") + "Foot"].index]
+				if int(actor.animator.metadata.get("schema_version",1)) >= 3:
+					if previous_locked[i]:
+						# Track the SAME material point on the foot across the step.
+						# R*delta_support is a legitimate rolling-contact migration,
+						# so it must not be measured as slip or reset this integral.
+						var previous_point := previous_support_local[i]
+						var displacement := foot_world * previous_point - previous_foot_transforms[i] * previous_point
+						cumulative_material_slip[i] += Vector3(displacement.x, 0, displacement.z)
+					else:
+						cumulative_material_slip[i] = Vector3.ZERO
+					drift = maxf(drift, cumulative_material_slip[i].length())
+				else:
+					if not previous_locked[i] or previous_regions[i] != region or previous_lock_anchors[i].distance_to(actor.grounding.anchors[i]) > .001:
+						anchors[i] = foot
+					var offset := foot-anchors[i]
+					drift = maxf(drift, Vector2(offset.x,offset.z).length())
+				var residual := foot-actor.grounding.anchors[i]
+				constraint_residual = maxf(constraint_residual, Vector2(residual.x,residual.z).length())
+				previous_foot_transforms[i] = foot_world
+				previous_support_local[i] = actor.grounding.support_local[i]
 			previous_locked[i] = supported
 			previous_regions[i] = region
 			previous_lock_anchors[i] = actor.grounding.anchors[i]
@@ -250,7 +284,7 @@ func _physics_process(delta: float) -> void:
 	samples.append({"time":clock,"speed":Vector2(v.x,v.z).length(),"position":[actor.position.x,actor.position.y,actor.position.z],
 		"state":String(actor.animator.state),"phase":actor.animator.phase,
 		"pose_phase":actor.pose_recorder.get("final_phase"),"pose_state":String(actor.pose_recorder.get("final_state")),"grounded":actor.is_on_floor(),
-		"drift":drift,"penetration":penetration,"yaw":actor.facing_yaw,
+		"drift":drift,"constraint_residual":constraint_residual,"penetration":penetration,"yaw":actor.facing_yaw,
 		"blocked":actor.movement_blocked,"step_active":actor.step_active,
 		"pelvis_offset_m":actor.grounding.pelvis_offset,"support_regions":actor.grounding.support_regions.duplicate(),
 		"head_valid":head_valid,"head_y":head_y,"head_vertical_speed_mps":head_vertical_speed,
@@ -260,6 +294,8 @@ func _physics_process(delta: float) -> void:
 
 func _finish() -> void:
 	var failures: Array[String] = []
+	if mesh_oracle.known_wall_intrusion_depth_m < .01:
+		failures.append("independent wall oracle failed to detect known intrusive foot")
 	for result: Dictionary in results:
 		if result.name in ["idle", "walk", "jog"]:
 			if result.body_height_after_settle.sample_count < 10:
@@ -321,7 +357,7 @@ func _finish() -> void:
 		if result.name == "stairs_side_reverse" and result.end_position[2] < -.8:
 			failures.append("stair-side reverse blocked")
 	var file := FileAccess.open(report_path,FileAccess.WRITE)
-	file.store_string(JSON.stringify({"godot":Engine.get_version_info().string,"physics_rate":physics_rate,"render_rate":render_rate,"failures":failures,"results":results},"\t"))
+	file.store_string(JSON.stringify({"godot":Engine.get_version_info().string,"physics_rate":physics_rate,"render_rate":render_rate,"full_mesh_oracle":mesh_oracle,"failures":failures,"results":results},"\t"))
 	file.close()
 	print("VALIDATION_COMPLETE rate=",physics_rate," failures=",failures)
 	get_tree().quit(0 if failures.is_empty() else 1)

@@ -1,7 +1,7 @@
 """Render the delivered Actions, with separate 25 Hz animation samples.
 
 Quick review: blender -b source/character.blend --python tools/render_previews.py -- --probe --eevee
-Full set:    blender -b source/character.blend --python tools/render_previews.py -- --eevee
+Full set:    blender -b source/character.blend --python tools/render_previews.py -- --workbench
 Published previews stay intact until assemble_previews.py validates a replacement.
 """
 import argparse
@@ -24,13 +24,14 @@ def options():
     parser = argparse.ArgumentParser()
     parser.add_argument("--probe", action="store_true")
     parser.add_argument("--eevee", action="store_true")
+    parser.add_argument("--workbench", action="store_true")
     parser.add_argument("--clips")
     parser.add_argument("--views")
     parser.add_argument("--overwrite", action="store_true")
     return parser.parse_args(sys.argv[sys.argv.index("--")+1:] if "--" in sys.argv else [])
 
 
-def setup(eevee):
+def setup(eevee, workbench=False):
     scene = bpy.context.scene
     rig = bpy.data.objects["Humanoid"]
     body = bpy.data.objects["Humanoid_CC0"]
@@ -41,7 +42,18 @@ def setup(eevee):
     for track in rig.animation_data.nla_tracks:
         track.mute = True
     rig["preview_root_motion"] = 1.0
-    scene.render.engine = "BLENDER_EEVEE" if eevee else "CYCLES"
+    scene.render.engine = "BLENDER_WORKBENCH" if workbench else ("BLENDER_EEVEE" if eevee else "CYCLES")
+    if workbench:
+        scene.display.shading.light = "STUDIO"
+        scene.display.shading.studiolight_rotate_z = .4
+        scene.display.shading.color_type = "SINGLE"
+        scene.display.shading.single_color = (.48, .48, .48)
+        scene.display.shading.show_shadows = True
+        scene.display.shading.show_cavity = True
+        scene.display.shading.cavity_type = "BOTH"
+        scene.display.shading.background_type = "WORLD"
+        scene.display.shading.show_specular_highlight = False
+        scene.display.render_aa = "8"
     if eevee and hasattr(scene.eevee, "taa_render_samples"):
         scene.eevee.taa_render_samples = 16
     scene.cycles.device = "CPU"
@@ -95,14 +107,14 @@ def main():
     meta = json.loads(metadata_path.read_text())
     blend_path = Path(bpy.data.filepath)
     digest = hashlib.sha256(blend_path.read_bytes()+metadata_path.read_bytes()+Path(__file__).read_bytes()
-                            +json.dumps({"eevee": args.eevee}).encode()).hexdigest()
+                            +json.dumps({"eevee": args.eevee, "workbench": args.workbench}).encode()).hexdigest()
     cache = ROOT/"previews/.frames"/("probe" if args.probe else "full")
     manifest_path = cache/"manifest.json"
     manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
     if manifest.get("asset_sha256") != digest:
         if cache.exists():
             shutil.rmtree(cache)
-        manifest = {"version": 2, "asset_sha256": digest, "probe": args.probe,
+        manifest = {"version": 3, "asset_sha256": digest, "probe": args.probe,
                     "render_size": [320, 400], "pose_divisions": 8 if args.probe else 32,
                     "gif_fps": 25, "clips": {}}
     cache.mkdir(parents=True, exist_ok=True)
@@ -110,7 +122,7 @@ def main():
     views = args.views.split(",") if args.views else VIEWS
     if set(clips)-set(meta["clips"]) or set(views)-set(VIEWS):
         raise ValueError("Unknown clip or view")
-    rig, camera = setup(args.eevee)
+    rig, camera = setup(args.eevee, args.workbench)
     scene = bpy.context.scene
     divisions = manifest["pose_divisions"]
     for clip in clips:
@@ -118,8 +130,14 @@ def main():
         rig.animation_data.action = bpy.data.actions[clip]
         entry = manifest["clips"].setdefault(clip, {"duration": info["duration"], "loop": info["loop"], "views": {}})
         pose_times = [info["duration"]*i/divisions for i in range(divisions+1)]
-        gif_times = [i/25 for i in range(max(1, math.ceil(info["duration"]*25-1e-8)))]
-        if not info["loop"]:
+        if info["loop"]:
+            # All phase gaps, including the last-to-first gap, are identical.
+            # GIF durations are multiples of 40ms; retain the exact Action time
+            # separately rather than introducing one short terminal interval.
+            sample_count = max(1, round(info["duration"]*25))
+            gif_times = [i*info["duration"]/sample_count for i in range(sample_count)]
+        else:
+            gif_times = [i/25 for i in range(max(1, math.ceil(info["duration"]*25-1e-8)))]
             gif_times.append(info["duration"])
         for view in views:
             floor_y = place_camera(camera, view)

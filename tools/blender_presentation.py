@@ -27,7 +27,7 @@ Humanoid = target rig. Humanoid_CC0 = MakeHuman CC0 surface.
 REFERENCE collection = hidden original Quaternius rig and animations.
 
 Select an Action in the Action Editor. Set playback range to frame 0 through
-duration_seconds * 60 (e.g. Walk 0..54, Jog 0..42, Idle 0..192).
+duration_seconds * 60 (e.g. Walk 0..63, Jog 0..42, Idle 0..192).
 NLA tracks are muted for normal editing, and used for GLB export.
 
 Custom Properties on Humanoid:

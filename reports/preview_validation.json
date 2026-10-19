@@ -2,7 +2,7 @@
   "pose_divisions": 32,
   "poses_per_strip": 33,
   "decoded_pose_strips": 45,
-  "decoded_gif_frames": 1264,
+  "decoded_gif_frames": 1273,
   "gifs": {
     "Idle_front.gif": {
       "frames": 1,
@@ -357,24 +357,24 @@
       ]
     },
     "Walk_front.gif": {
-      "frames": 23,
-      "duration_ms": 920,
+      "frames": 26,
+      "duration_ms": 1040,
       "size": [
         320,
         400
       ]
     },
     "Walk_side.gif": {
-      "frames": 23,
-      "duration_ms": 920,
+      "frames": 26,
+      "duration_ms": 1040,
       "size": [
         320,
         400
       ]
     },
     "Walk_three_quarter.gif": {
-      "frames": 23,
-      "duration_ms": 920,
+      "frames": 26,
+      "duration_ms": 1040,
       "size": [
         320,
         400

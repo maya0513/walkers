@@ -16,6 +16,7 @@ var requested_direction: Vector3 = Vector3.FORWARD
 var animator: LocomotionAnimator
 var grounding: HumanoidGrounding
 var skeleton: Skeleton3D
+var presentation: Node
 var pose_recorder: SkeletonModifier3D
 var movement_blocked: bool = false
 var step_active: bool = false
@@ -74,6 +75,13 @@ func _ready() -> void:
 		if solve_pass == 2:
 			pose_recorder = orientation
 	visual.rotation.y = facing_yaw + PI
+	presentation = preload("res://addons/walkers/presentation.gd").new()
+	presentation.name = "Presentation"
+	add_child(presentation)
+	presentation.setup(self)
+	skeleton.advance(0.0)
+	skeleton.notification(Skeleton3D.NOTIFICATION_UPDATE_SKELETON)
+	presentation.capture_physics(true)
 
 func set_move_intent(world_direction: Vector3, speed_mps: float) -> void:
 	world_direction.y = 0
@@ -85,6 +93,8 @@ func set_move_intent(world_direction: Vector3, speed_mps: float) -> void:
 		requested_direction = world_direction.normalized()
 
 func reset_at(position_on_floor: Vector3, yaw: float = 0.0) -> void:
+	if is_instance_valid(presentation):
+		presentation.restore_physics()
 	global_position = position_on_floor
 	velocity = Vector3.ZERO
 	actual_velocity = Vector3.ZERO
@@ -98,10 +108,19 @@ func reset_at(position_on_floor: Vector3, yaw: float = 0.0) -> void:
 	if is_instance_valid(animator):
 		animator.forced_turn = false
 		animator.change(&"Idle")
+		animator.state_time = 0.0
+		animator.tree.advance(0.0)
+	visual.position.y = 0.0
+	visual.rotation.y = facing_yaw + PI
+	skeleton.advance(0.0)
+	skeleton.notification(Skeleton3D.NOTIFICATION_UPDATE_SKELETON)
+	if is_instance_valid(presentation):
+		presentation.capture_physics(true)
 
 func _physics_process(delta: float) -> void:
 	if not is_instance_valid(animator):
 		return
+	presentation.restore_physics()
 	var desired_speed := requested_speed
 	step_active = false
 	var horizontal := Vector3(velocity.x, 0, velocity.z)
@@ -144,6 +163,10 @@ func _physics_process(delta: float) -> void:
 		animation_intent = 0.0
 	animator.tick(delta, actual_speed, animation_intent)
 	skeleton.advance(delta)
+	# Flush the documented deferred skeleton update before capturing this tick.
+	# Otherwise final_pose still describes the previous physics frame.
+	skeleton.notification(Skeleton3D.NOTIFICATION_UPDATE_SKELETON)
+	presentation.capture_physics()
 	if global_position.y < -12:
 		reset_at(Vector3(0, 0.04, 4))
 
@@ -207,3 +230,6 @@ func _find_type(node: Node, type_name: String) -> Node:
 			return found
 	return null
 
+
+func get_display_position() -> Vector3:
+	return presentation.display_position if is_instance_valid(presentation) and presentation.initialized else global_position

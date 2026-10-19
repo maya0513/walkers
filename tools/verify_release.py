@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Expand the ZIP into a new directory and import/start with empty caches."""
 import hashlib
+import argparse
 import json
 import os
 import shutil
@@ -9,11 +10,16 @@ import tempfile
 import zipfile
 import sys
 from pathlib import Path
+from godot_validation_support import classify_errors
 
 ROOT=Path(__file__).resolve().parents[1]
 
 def main():
-    archive=Path(sys.argv[1]).resolve() if len(sys.argv)>1 else ROOT/"dist/Walkers-Godot4-Blender.zip"
+    parser=argparse.ArgumentParser()
+    parser.add_argument("archive",nargs="?",type=Path,default=ROOT/"dist/Walkers-Godot4-Blender.zip")
+    parser.add_argument("--allow-editor-socket-errors",action="store_true")
+    options=parser.parse_args()
+    archive=options.archive.resolve()
     godot=shutil.which("godot") or shutil.which("godot4")
     results={}
     with tempfile.TemporaryDirectory(prefix="walkers-release-") as directory:
@@ -33,8 +39,9 @@ def main():
         ]:
             process=subprocess.run(args,env=env,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,timeout=180)
             (ROOT/"reports"/(name+".log")).write_text(process.stdout)
-            errors=[line for line in process.stdout.splitlines() if line.startswith("ERROR:") or "SCRIPT ERROR" in line]
+            errors,limitations=classify_errors(process.stdout,options.allow_editor_socket_errors and name=="fresh_import")
             results[name]={"exit_code":process.returncode,"errors":errors}
+            if limitations:results[name]["environment_limitations"]=limitations
             assert process.returncode==0 and not errors,process.stdout[-5000:]
     results["status"]="pass"
     report_name="runtime_release_validation.json" if archive.name=="Walkers-Godot-Project.zip" else "release_validation.json"
